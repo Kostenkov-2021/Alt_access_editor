@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [immage, accessability, blind, people, immages, edit, editor],
+  "keywords": [ "immage", "accessability", "blind", "people", "immages", "edit", "editor" ],
   "author": "Danil Kostenkov",
   "license": "ISC",
   "dependencies": {
