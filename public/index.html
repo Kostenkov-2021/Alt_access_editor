@@ -24,14 +24,24 @@
             color: #ff9800; /* Оранжевый */
             margin-top: 5px;
         }
+        /* Стили для таблицы */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
     <input type="text" id="folderPath" placeholder="Введите путь к папке">
     <button id="loadButton">Загрузить HTML-файлы</button>
-    <button id="saveChangesButton">Сохранить изменения</button>
 
     <table id="filesContainer"></table>
+    <button id="saveChangesButton">Сохранить изменения</button>
 
     <script src="app.js"></script>
 </body>
