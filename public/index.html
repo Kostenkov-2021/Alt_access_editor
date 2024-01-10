@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактор описаний изображений</title>
+    <style>
+        .message {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            color: #fff;
+        }
+        .success {
+            background-color: #4CAF50; /* Зеленый */
+            border-color: #4CAF50;
+        }
+        .error {
+            background-color: #f44336; /* Красный */
+            border-color: #f44336;
+        }
+        .warnings {
+            color: #ff9800; /* Оранжевый */
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="folderPath" placeholder="Введите путь к папке">
+    <button id="loadButton">Загрузить HTML-файлы</button>
+    <button id="saveChangesButton">Сохранить изменения</button>
+
+    <table id="filesContainer"></table>
+
+    <script src="app.js"></script>
+</body>
+</html>
