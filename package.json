@@ -1,12 +1,12 @@
 {
   "name": "Alt_access_editor",
   "version": "1.0.0",
-  "description": "An Editor of immages for web sites.",
+    "description": "Alt text editor for images on web pages.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [ "immage", "accessability", "blind", "people", "immages", "edit", "editor" ],
+  "keywords": [ "image", "accessibility", "blind", "people", "edit", "editor" ],
   "author": "Danil Kostenkov",
   "license": "ISC",
   "dependencies": {
