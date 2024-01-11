@@ -1,8 +1,11 @@
 document.getElementById('loadButton').addEventListener('click', () => {
     const folderPath = document.getElementById('folderPath').value;
+
+    // Отправляем запрос на сервер для получения данных
     fetchFiles(folderPath);
 });
 
+// функция отправляющая запрос для получения данных
 function fetchFiles(folderPath) {
     fetch('/read-html', {
         method: 'POST',
@@ -10,10 +13,85 @@ function fetchFiles(folderPath) {
         body: JSON.stringify({ folderPath })
     })
     .then(response => response.json())
-    .then(data => displayHtmlFiles(data))
-    .catch(error => console.error('Error:', error));
+   .then(data => {
+        displayHtmlFiles(data);
+        showMessage('Файлы успешно загружены', 'success');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        showMessage('Ошибка при загрузке файлов', 'error');
+    });
+
+
+
 }
 
+
+// Проверяем alt-текст на соответствие требованиям
+function validateAltText(altText, image) {
+    const warnings = [];
+
+    // Проверка длины alt-текста
+    if (altText.length > 255) {
+        warnings.push(`Максимальная длина alt-текста составляет 255 символов, в вашем описании ${altText.length} символов.`);
+    } else if (altText.length > 125) {
+        warnings.push(`Рекомендуемая длина alt-текста составляет 125 символов, в вашем описании ${altText.length} символов.`);
+    }
+
+    // Проверка наличия точки в конце
+    if (!altText.endsWith('.')) {
+        warnings.push('В конце alt-текста рекомендуется ставить точку.');
+    }
+
+    // Проверка количества слов
+    const wordCount = altText.split(/\s+/).length;
+    if (wordCount < 3) {
+        warnings.push('Кажется, в вашем alt-тексте менее 3 слов. Рекомендуемая длина от 3 до 15 слов.');
+    } else if (wordCount > 15) {
+        warnings.push('Кажется, в вашем alt-тексте более 15 слов. Рекомендуемая длина от 3 до 15 слов.');
+    }
+
+    // Проверка начальных слов
+    if (/^(рисунок|изображение|картинка)\b/.test(altText.toLowerCase())) {
+        warnings.push('Alt-текст не нужно начинать словами "рисунок", "изображение" или "картинка", скринридер может делать это по умолчанию.');
+    }
+
+    // Проверка на значок
+
+    // Убедимся, что размеры изображения загружены
+    if (image.complete && image.naturalWidth !== undefined) {
+        if (image.naturalWidth < 35 && image.naturalHeight < 35 && image.parentElement.className === "bodytext" && altText) {
+            warnings.push('Изображение похоже на значок. У значков не должно быть alt-текста, они всегда должны сопровождаться текстовым описанием.');
+        }
+    }
+
+    // Проверка на дублирование с подписью
+    const caption = image.parentElement.querySelector('.picturename');
+    if (caption && caption.textContent === altText) {
+        warnings.push('Alt-текст не должен дублировать подрисуночную подпись.');
+    }
+
+    return warnings;
+}
+
+document.getElementById('filesContainer').addEventListener('input', (event) => {
+    if (event.target.tagName === 'INPUT' && event.target.type === 'text') {
+        const filePath = event.target.dataset.filepath;
+        const imgIndex = event.target.dataset.index;
+        const newAltText = event.target.value;
+
+        // Валидация alt-текста и отображение предупреждений
+        const image = event.target.previousElementSibling; // Получаем изображение перед input
+        const warnings = validateAltText(newAltText, image);
+        displayWarnings(warnings, event.target); // Функция для отображения предупреждений
+
+        updateAltText(filePath, imgIndex, newAltText);
+    }
+});
+
+
+
+// функция для отображения файлов в папке
 function displayHtmlFiles(data) {
     const filesContainer = document.getElementById('filesContainer');
     filesContainer.innerHTML = '';
@@ -38,6 +116,7 @@ function displayHtmlFiles(data) {
     });
 }
 
+// Функция для отображения данных  изображений
 function displayImagesData(imageData, filePath) {
     const filesContainer = document.getElementById('filesContainer');
     filesContainer.innerHTML = '';
@@ -67,7 +146,7 @@ function displayImagesData(imageData, filePath) {
     });
 }
 
-
+// Функция для отображения сообщений
 function showMessage(message, type) {
     const messageElement = document.createElement('div');
     messageElement.classList.add('message', type);
@@ -80,6 +159,7 @@ function showMessage(message, type) {
     }, 5000);
 }
 
+// собираем и сохраняем обновлённые данные
 function gatherUpdatedData() {
     const rows = document.querySelectorAll('#filesContainer tr');
     return Array.from(rows).map(row => {
@@ -91,7 +171,7 @@ function gatherUpdatedData() {
 }
 
 
-
+// Функция для отображения предупреждений
 function displayWarnings(warnings, inputElement) {
     let warningsContainer = inputElement.parentElement.querySelector('.warnings');
     if (!warningsContainer) {
