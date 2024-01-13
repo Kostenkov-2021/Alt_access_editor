@@ -25,24 +25,50 @@
             margin-top: 5px;
         }
         /* Стили для таблицы */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
+				form {
+			max-width: 560px;
+			padding: 10px;
+			border: 1px solid;
+		}
+		table {
+			max-width: 900px;
+			margin: 10px 0;
+		}
+		td {
+			vertical-align: top;
+		}
+		.oldAltTD {
+			max-width: 300px;
+		}
+		.html-file {
+			border-top: 1px dashed;
+		}
+		.save-file-button {
+			border-top: 1px dashed;
+			vertical-align: middle;
+		}
+		.imgFileName {
+			text-decoration: underline;
+		}
+		.emptyAlt {
+			color: red;
+		}
+		.recommendation {
+			color: red;
+			font-size: 80%;
+		}
+	
+
     </style>
 </head>
 <body>
-    <input type="text" id="folderPath" placeholder="Введите путь к папке">
-    <button id="loadButton">Загрузить HTML-файлы</button>
+<form id="Form" action="index.html" method="post">
+<p><label for="folderPath">Папка с HTML-файлами:</label></p>
+<p><input type="text" id="folderPath" placeholder="Введите путь к папке"></p>
+<p><button id="loadButton">Извлечь ALT-тексты</button></p>
+</form>
 
-    <table id="filesContainer"></table>
-    <button id="saveChangesButton">Сохранить изменения</button>
-
+    <div id="filesContainer"></div>
     <script src="app.js"></script>
 </body>
 </html>

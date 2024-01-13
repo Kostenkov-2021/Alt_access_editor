@@ -1,11 +1,10 @@
 document.getElementById('loadButton').addEventListener('click', () => {
     const folderPath = document.getElementById('folderPath').value;
-
     // Отправляем запрос на сервер для получения данных
     fetchFiles(folderPath);
 });
 
-// функция отправляющая запрос для получения данных
+// функция отправки запроса для получения данных
 function fetchFiles(folderPath) {
     fetch('/read-html', {
         method: 'POST',
@@ -13,7 +12,7 @@ function fetchFiles(folderPath) {
         body: JSON.stringify({ folderPath })
     })
     .then(response => response.json())
-   .then(data => {
+    .then(data => {
         displayHtmlFiles(data);
         showMessage('Файлы успешно загружены', 'success');
     })
@@ -21,10 +20,11 @@ function fetchFiles(folderPath) {
         console.error('Error:', error);
         showMessage('Ошибка при загрузке файлов', 'error');
     });
-
-
-
 }
+
+
+
+
 
 
 // Проверяем alt-текст на соответствие требованиям
@@ -97,54 +97,128 @@ function displayHtmlFiles(data) {
     filesContainer.innerHTML = '';
 
     data.forEach(file => {
-        const tr = document.createElement('tr');
-        const tdPath = document.createElement('td');
-        tdPath.textContent = file.filePath;
+        // Создаем заголовок для каждого файла
+        const fileHeader = document.createElement('h2');
+        fileHeader.textContent = `Файл: ${file.filePath}`;
+        filesContainer.appendChild(fileHeader);
 
-        const tdLink = document.createElement('td');
-        const link = document.createElement('a');
-        link.href = '#';
-        link.textContent = file.imageData.length > 0 ? 'Открыть' : 'Нет изображений';
-        link.onclick = file.imageData.length > 0 ? 
-            () => displayImagesData(file.imageData, file.filePath) : 
-            () => showMessage('В этом файле нет изображений', 'error');
-        tdLink.appendChild(link);
+        // Проверяем, есть ли изображения в файле
+        if (file.imageData.length > 0) {
+            // Создаем таблицу для каждого файла
+            const table = document.createElement('table');
+            file.imageData.forEach((img, index) => {
+                const tr = document.createElement('tr');
+                // Добавляем ячейки для названия изображения, текущего и нового alt-текста, а также рекомендаций
+            // Столбец с названием изображения
+            const tdName = document.createElement('td');
+            const imgName = document.createElement('a');
+            imgName.href = img.src;
+            imgName.target = '_blank';
+            imgName.textContent = img.name;
+            tdName.appendChild(imgName);
 
-        tr.appendChild(tdPath);
-        tr.appendChild(tdLink);
-        filesContainer.appendChild(tr);
+            // Столбец с текущим alt-текстом
+            const tdCurrentAlt = document.createElement('td');
+            tdCurrentAlt.textContent = img.alt;
+
+            // Столбец с рекомендацией
+            const tdRecommendation = document.createElement('td');
+            tdRecommendation.textContent = getRecommendation(img.alt); // Функция для получения рекомендации
+
+            // Столбец с новым alt-текстом
+            const tdNewAlt = document.createElement('td');
+            const newAltTextarea = document.createElement('textarea');
+            newAltTextarea.value = img.alt;
+            tdNewAlt.appendChild(newAltTextarea);
+
+            tr.appendChild(tdName);
+            tr.appendChild(tdCurrentAlt);
+            tr.appendChild(tdRecommendation);
+            tr.appendChild(tdNewAlt);
+
+                table.appendChild(tr);
+            });
+            filesContainer.appendChild(table);
+
+            // Кнопка сохранения изменений для данного файла
+            const saveButton = document.createElement('button');
+            saveButton.textContent = 'Сохранить изменения в этом файле';
+            saveButton.onclick = () => saveFileChanges(file.filePath, table);
+            filesContainer.appendChild(saveButton);
+        } else {
+            // Выводим сообщение, если в файле нет изображений
+            const noImagesMessage = document.createElement('p');
+            noImagesMessage.textContent = 'В этом файле нет изображений';
+            filesContainer.appendChild(noImagesMessage);
+        }
     });
 }
 
-// Функция для отображения данных  изображений
-function displayImagesData(imageData, filePath) {
-    const filesContainer = document.getElementById('filesContainer');
-    filesContainer.innerHTML = '';
-
-    const backButton = document.createElement('button');
-    backButton.textContent = 'Вернуться к списку файлов';
-    backButton.onclick = () => fetchFiles(document.getElementById('folderPath').value);
-    filesContainer.appendChild(backButton);
-
-    imageData.forEach((img, index) => {
-        const tr = document.createElement('tr');
-        const tdFilePath = document.createElement('td');
-        tdFilePath.textContent = filePath;
-
-        const tdCurrentAlt = document.createElement('td');
-        tdCurrentAlt.textContent = img.alt;
-
-        const tdNewAlt = document.createElement('td');
-        const newAltTextarea = document.createElement('textarea');
-        newAltTextarea.value = img.alt;
-        tdNewAlt.appendChild(newAltTextarea);
-
-        tr.appendChild(tdFilePath);
-        tr.appendChild(tdCurrentAlt);
-        tr.appendChild(tdNewAlt);
-        filesContainer.appendChild(tr);
-    });
+// Функция для сохранения изменений в конкретном файле
+function saveFileChanges(filePath, table) {
+    const updatedData = gatherUpdatedDataFromTable(table
+, filePath);
+// Отправляем обновленные данные на сервер
+fetch('/save-updated-alt-texts', {
+method: 'POST',
+headers: {'Content-Type': 'application/json'},
+body: JSON.stringify(updatedData)
+})
+.then(response => {
+if (response.ok) {
+showMessage(`Изменения в файле ${filePath} успешно сохранены`, 'success');
+} else {
+throw new Error(`Не удалось сохранить изменения в файле ${filePath}`);
 }
+})
+.catch(error => {
+console.error('Error:', error);
+showMessage(`Ошибка при сохранении изменений в файле ${filePath}`, 'error');
+});
+}
+
+
+// Функция для получения рекомендаций по улучшению описания
+function getRecommendation(altText) {
+    const recommendations = [];
+
+    if (altText.length > 255) {
+        recommendations.push('Длина alt-текста превышает 255 символов. Рекомендуется сократить.');
+    } else if (altText.length > 125) {
+        recommendations.push('Длина alt-текста более 125 символов. Рекомендуется сделать его более лаконичным.');
+    }
+
+    if (!altText.endsWith('.')) {
+        recommendations.push('В конце alt-текста рекомендуется ставить точку.');
+    }
+
+    const wordCount = altText.split(/\s+/).length;
+    if (wordCount < 3) {
+        recommendations.push('Кажется, в alt-тексте менее 3 слов. Рекомендуется расширить описание.');
+    } else if (wordCount > 15) {
+        recommendations.push('Кажется, в alt-тексте более 15 слов. Рекомендуется сделать описание более кратким.');
+    }
+
+    if (/^(рисунок|изображение|картинка)\b/.test(altText.toLowerCase())) {
+        recommendations.push('Не рекомендуется начинать alt-текст со слов "рисунок", "изображение" или "картинка".');
+    }
+
+    // Другие условия для рекомендаций могут быть добавлены здесь
+
+    return recommendations.length > 0 ? recommendations.join('. ') + '.' : 'Описание соответствует рекомендациям.';
+}
+
+
+
+// собираем и сохраняем обновлённые данные
+function gatherUpdatedDataFromTable(table, filePath) {
+return Array.from(table.querySelectorAll('tr')).map(row => {
+const imgName = row.cells[0].textContent;
+const newAltText = row.cells[3].querySelector('textarea').value;
+return { filePath, imgName, newAltText };
+});
+}
+
 
 // Функция для отображения сообщений
 function showMessage(message, type) {
@@ -159,16 +233,6 @@ function showMessage(message, type) {
     }, 5000);
 }
 
-// собираем и сохраняем обновлённые данные
-function gatherUpdatedData() {
-    const rows = document.querySelectorAll('#filesContainer tr');
-    return Array.from(rows).map(row => {
-        const filePath = row.cells[0].textContent;
-        const imgIndex = Array.from(row.parentNode.children).indexOf(row) - 1; // Получаем индекс изображения
-        const newAltText = row.cells[4].querySelector('textarea').value;
-        return { filePath, index: imgIndex, newAltText };
-    });
-}
 
 
 // Функция для отображения предупреждений
