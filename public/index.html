@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Редактор описаний изображений</title>
     <style>
-        .message {
+        .showMessage {
             padding: 10px;
             margin: 10px 0;
             border: 1px solid transparent;
@@ -25,48 +25,38 @@
             margin-top: 5px;
         }
         /* Стили для таблицы */
-				form {
-			max-width: 560px;
-			padding: 10px;
-			border: 1px solid;
-		}
-		table {
-			max-width: 900px;
-			margin: 10px 0;
-		}
-		td {
-			vertical-align: top;
-		}
-		.oldAltTD {
-			max-width: 300px;
-		}
-		.html-file {
-			border-top: 1px dashed;
-		}
-		.save-file-button {
-			border-top: 1px dashed;
-			vertical-align: middle;
-		}
-		.imgFileName {
-			text-decoration: underline;
-		}
-		.emptyAlt {
-			color: red;
-		}
-		.recommendation {
-			color: red;
-			font-size: 80%;
-		}
-	
+table {
+max-width: 900px;
+margin: 10px 0;
+}
+td {
+vertical-align: top;
+}
+.CurrentAltTD {
+max-width: 300px;
+}
+.html-file {
+border-top: 1px dashed;
+}
+.saveButton {
+border-top: 1px dashed;
+vertical-align: middle;
+}
+.imgName {
+text-decoration: underline;
+}
+.recommendation {
+color: red;
+font-size: 80%;
+}
+
 
     </style>
 </head>
 <body>
-<form>
 <p><label for="folderPath">Папка с HTML-файлами:</label></p>
-<p><input type="text" id="folderPath" placeholder="Введите путь к папке"></p>
-<p><button id="loadButton">Извлечь ALT-тексты</button></p>
-</form>
+<p><input type="text" id="folderPath" name="folderPath" placeholder="Введите путь к папке"></p>
+<p><button id="loadButton" name="loadButton">Извлечь ALT-тексты</button></p>
 
     <div id="filesContainer"></div>
     <script src="app.js"></script>
