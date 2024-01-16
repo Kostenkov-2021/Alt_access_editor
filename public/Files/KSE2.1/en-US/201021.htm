@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> ServerSettings </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h4 id="t234514" class="heading4">ServerSettings</h4>
+<p class="bodytext">Specifies server settings for KAV HTTPD. </p>
+<p class="introheading">Path</p>
+<p class="bodytext"><code class="programcharacter">ServerSettings</code></p>
+<p class="introheading">Attributes</p>
+<p class="bodytext">This element has no attributes.</p>
+<p class="spacer"></p>
+<p class="spacer"></p>
+<p class="introheading">Nested elements</p>
+<p class="bodytext">This element is a container for the following nested elements:</p>
+<ul class="listbullet1"><li class="listbullet1"><a id="h201056" class="englishcrossreferencetemplate" href="201026.htm" target="_self">ConnectionString</a></li><li class="listbullet1"><a id="h201057" class="englishcrossreferencetemplate" href="201027.htm" target="_self">MaxIncomingConnectionsNum</a></li><li class="listbullet1"><a id="h201058" class="englishcrossreferencetemplate" href="201028.htm" target="_self">MaxHTTPSessionsNum</a></li><li class="listbullet1"><a id="h201059" class="englishcrossreferencetemplate" href="201029.htm" target="_self">MaxTCPFileSize</a></li><li class="listbullet1"><a id="h201060" class="englishcrossreferencetemplate" href="201030.htm" target="_self">SessionTimeout</a></li><li class="listbullet1"><a id="h201061" class="englishcrossreferencetemplate" href="201031.htm" target="_self">Flags</a></li><li class="listbullet1"><a id="h201062" class="englishcrossreferencetemplate" href="200613.htm" target="_self">TlsCertificateKeyFile</a></li><li class="listbullet1"><a id="h201063" class="englishcrossreferencetemplate" href="200614.htm" target="_self">TlsCertificateFile</a></li><li class="listbullet1"><a id="h201539" class="englishcrossreferencetemplate" href="201900.htm" target="_self">CORS</a></li><li class="listbullet1"><a id="h207358" class="englishcrossreferencetemplate" href="207348.htm" target="_self">KeepAliveSettings</a></li><li class="listbullet1"><a id="h224310" class="englishcrossreferencetemplate" href="222092.htm" target="_self">AuthSettings</a></li></ul><p class="introheading">Example</p>
+<p class="bodytext">The following is an example of a <em class="emphasischaracter">ServerSettings</em> element.</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">&lt;ServerSettings&gt;</p>
+<p class="program2">&lt;ConnectionString&gt;/tmp/.kavhttpd&lt;/ConnectionString&gt;</p>
+<p class="program2">&lt;MaxIncomingConnectionsNum&gt;100&lt;/MaxIncomingConnectionsNum&gt;</p>
+<p class="program2">&lt;MaxHTTPSessionsNum&gt;50&lt;/MaxHTTPSessionsNum&gt;</p>
+<p class="program2">&lt;MaxTCPFileSize&gt;100&lt;/MaxTCPFileSize&gt;</p>
+<p class="program2">&lt;SessionTimeout&gt;1000&lt;/SessionTimeout&gt;</p>
+<p class="program2">&lt;Flags&gt;<code class="programcharacter">KAV_SHT_ENGINE_KSN</code> | <code class="programcharacter">KAV_SHT_ENGINE_APUF</code>&lt;/Flags&gt;</p>
+<p class="program2">&lt;<code class="programcharacter">TlsCertificateKeyFile</code>&gt;opt/kaspersky/http_data/https_key.pem&lt;/<code class="programcharacter">TlsCertificateKeyFile</code>&gt;</p>
+<p class="program2">&lt;<code class="programcharacter">TlsCertificateFile</code>&gt;opt/kaspersky/http_data/https_cert.crt&lt;/<code class="programcharacter">TlsCertificateFile</code>&gt;</p>
+<p class="program2">&lt;CORS&gt;</p>
+<p class="program3">&lt;AccessControlAllowOrigin&gt;http://example.com&lt;/AccessControlAllowOrigin&gt;</p>
+<p class="program3">&lt;AccessControlAllowOrigin&gt;https://www.kaspersky.com&lt;/AccessControlAllowOrigin&gt;</p>
+<p class="program2">&lt;/CORS&gt;</p>
+<p class="program2">&lt;KeepAliveSettings&gt;</p>
+<p class="program3">&lt;Enabled&gt;1&lt;/Enabled&gt;</p>
+<p class="program3">&lt;TimeoutMs&gt;5000&lt;/TimeoutMs&gt;</p>
+<p class="program3">&lt;MaxRequests&gt;1000&lt;/MaxRequests&gt;</p>
+<p class="program2">&lt;/KeepAliveSettings&gt;</p>
+<p class="program2">&lt;AuthSettings&gt;</p>
+<p class="program3">&lt;UseAccessToken&gt;0&lt;/UseAccessToken&gt; &lt;!--Enable or disable API-token authentication --&gt;</p>
+<p class="program3">&lt;AuthRequestField&gt;Authorization&lt;/AuthRequestField&gt;</p>
+<p class="program3">&lt;UseBearerAuthScheme&gt;1&lt;/UseBearerAuthScheme&gt;</p>
+<p class="program3">&lt;AccessTokens&gt;</p>
+<p class="program4">&lt;Token&gt;</p>
+<p class="program5">&lt;Name&gt;Unlimited key&lt;/Name&gt;</p>
+<p class="program5">&lt;Value&gt;SldYQTUyOUNVMnE3VWR2N3Izamk2QkVNc2hhLTV5dTBLcVUzeXZLdGYtNkkrVFUyQUVRQUNLQUFCSWdwRUlJTQ==&lt;/Value&gt;</p>
+<p class="program5">&lt;Description&gt;Kaspersky Scan Engine Clients. Full access scope&lt;/Description&gt;</p>
+<p class="program5">&lt;Enabled&gt;1&lt;/Enabled&gt;</p>
+<p class="program4">&lt;/Token&gt;</p>
+<p class="program4">&lt;Token&gt;</p>
+<p class="program5">&lt;Name&gt;Key for URL-scanning&lt;/Name&gt;</p>
+<p class="program5">&lt;Value&gt;XUmCkYURUdWQldFGIT3TlEQUQQwkBy2LLNaNMVtrkSQUR2kSNUZV=NT2zLRzQJycVW5VNhUVOdLVcUd3YeVFnT=h&lt;/Value&gt;</p>
+<p class="program5">&lt;Description&gt;Server access key. Only URL-scanning&lt;/Description&gt;</p>
+<p class="program5">&lt;Enabled&gt;0&lt;/Enabled&gt;</p>
+<p class="program4">&lt;/Token&gt;</p>
+<p class="program3">&lt;/AccessTokens&gt;</p>
+<p class="program2">&lt;/AuthSettings&gt;</p>
+<p class="program">&lt;/ServerSettings&gt;</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

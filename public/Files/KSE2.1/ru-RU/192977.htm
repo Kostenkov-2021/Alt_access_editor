@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Автоматическая установка (Linux) </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234280" class="heading3">Автоматическая установка (Linux)</h3>
+<p class="bodytext">В этом разделе описана установка Kaspersky Scan Engine с использованием инсталлятора. Вы можете использовать программу установки, если Kaspersky Scan Engine не установлен на вашем компьютере (папка <code class="programcharacter">/opt/kaspersky/ScanEngine</code> отсутствует).</p>
+<p class="attentionbody">Если вы хотите использовать Kaspersky Scan Engine вместе с Kaspersky Scan Engine GUI, вам нужно установить PostgreSQL на компьютер, к которому у Kaspersky Scan Engine есть доступ. Kaspersky Scan Engine GUI не будет работать без PostgreSQL. </p>
+<p class="bodytext">Перед установкой и настройкой Kaspersky Scan Engine вам необходимо указать региональные настройки компьютера, на котором установлен Kaspersky Scan Engine. Используйте следующие команды.</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">LC_ALL=en_US.utf8</p>
+<p class="program">export LC_ALL</p>
+</td>
+</tr>
+
+</table>
+<p class="introheading">Использование инсталлятора для установки Kaspersky Scan Engine:</p>
+<p class="bodytext">В приведенной ниже процедуре описаны действия, которые необходимо выполнить, если вы хотите установить Kaspersky Scan Engine с помощью инсталлятора.</p>
+<p class="procedureheading">Для автоматической установки Kaspersky Scan Engine:</p>
+<ol class="listnumber1"><li class="listnumber1">Убедитесь, что у вас есть права администратора.</li><li class="listnumber1">Запустите утилиту <code class="programcharacter">install</code>.</li><li class="listnumber1">Ознакомьтесь с Пользовательским соглашением (End User License Agreement, EULA) для Kaspersky Scan Engine.<p class="listcontinue1">Если вы согласны с условиями Пользовательского соглашения, примите его. Если вы не согласны с условиями Пользовательского соглашения, прекратите установку.</p> </li><li class="listnumber1">Выберите, использовать ли Kaspersky Scan Engine GUI.</li><li class="listnumber1">Если вы хотите использовать Kaspersky Scan Engine GUI, выполните следующие действия.<ol class="listalpha2"><li class="listalpha2">Убедитесь, что вы <a id="h198591" class="englishcrossreferencetemplate" href="192975.htm" target="_self">установили и настроили PostgreSQL</a>.</li><li class="listalpha2">Укажите IP-адрес и порт для соединения с PostgreSQL.</li><li class="listalpha2">Выберите, следует ли добавить экземпляр продукта в существующий кластер или подключиться к существующей базе данных. <p class="listcontinue2">Если вы решили добавить экземпляр продукта в существующий кластер, перейдите к следующему шагу. В противном случае перейдите к шагу f.</p> </li><li class="listalpha2">Введите имя пользователя и пароль учетной записи пользователя PostgreSQL.<p class="listcontinue2">Под этими учетными данными Kaspersky Scan Engine будет работать с базой данных.</p> </li><li class="listalpha2">Продолжите процедуру с шага 6.</li><li class="listalpha2">Введите учетные данные пользователя, у которого есть права на создание баз данных и пользователей. Учетные данные этого пользователя нигде не записываются. <p class="listcontinue2">С помощью этой учетной записи Kaspersky Scan Engine создаст новую базу данных kavebase, в которой будут храниться данные Kaspersky Scan Engine, и нового пользователя PostgreSQL. С этого момента Kaspersky Scan Engine будет использовать этого пользователя для внесения изменения в базу данных.</p> </li><li class="listalpha2">Задайте имя пользователя и пароль для новой учетной записи PostgreSQL.<p class="listcontinue2">Инсталлятор создаст учетную запись, под которой Kaspersky Scan Engine будет работать с базой данных. Эта учетная запись будет иметь доступ только к базе данных kavebase.</p> <p class="attentioncontinue2">Эти учетные данные будут храниться в зашифрованном виде и доступны только для пользователя root. Поэтому, если вы запустите службу от имени пользователя без root-прав, отобразится сообщение об ошибке. Чтобы решить эту проблему, после завершения установки настройте доступ к файлу ключа шифрования <code class="programcharacter">kl_scanengine_db.key</code>, хранящегося в директории <code class="programcharacter">httpsrv</code>, чтобы учетная запись пользователя, под которой Kaspersky Scan Engine работал с базой данных, имела разрешение на чтение.</p> </li></ol></li><li class="listnumber1">Выберите режим, в котором будет работать Kaspersky Scan Engine.<p class="listcontinue1">Доступны следующие режимы:</p> <ul class="listbullet2"><li class="listbullet2">HTTP</li><li class="listbullet2">ICAP</li></ul></li><li class="listnumber1">Если вы выбрали режим HTTP, укажите IP-адрес и порт или UNIX-сокет, которые Kaspersky Scan Engine будет использовать для получения запросов на сканирование объектов.<p class="listcontinue1">Если вы выбрали режим ICAP, укажите порт, трафик с которого будет сканироваться решением Kaspersky Scan Engine.</p> </li><li class="listnumber1">Укажите, должно ли решение Kaspersky Scan Engine использовать Kaspersky Security Network (KSN).</li><li class="listnumber1">Если вы хотите использовать KSN, ознакомьтесь с Пользовательским соглашением для KSN и Политикой конфиденциальности.<p class="listcontinue1">Если вы согласны с условиями Пользовательского соглашения и Политики конфиденциальности, примите их. Если вы не примете условия Пользовательского соглашения и Политики конфиденциальности, вы не сможете использовать KSN, но установка продолжится. Вы сможете включить KSN позже, используя <a id="h182505" class="englishcrossreferencetemplate" href="179699.htm" target="_self">Kaspersky Scan Engine GUI</a> или файлы конфигурации Kaspersky Scan Engine (<a id="h179927" class="englishcrossreferencetemplate" href="184799.htm" target="_self">HTTP</a> или <a id="h180154" class="englishcrossreferencetemplate" href="192989.htm" target="_self">ICAP</a>).</p> </li><li class="listnumber1">Если вы хотите использовать Kaspersky Scan Engine GUI, при необходимости укажите порт, на котором он будет доступен.</li><li class="listnumber1">Укажите, будет ли Kaspersky Scan Engine использовать прокси-сервер.</li><li class="listnumber1">Если вы хотите использовать прокси-сервер, укажите настройки прокси.</li><li class="listnumber1">Укажите директорию, где будут храниться временные файлы.<p class="listcontinue1">Если вы нажмете <kbd class="keycharacter">Enter</kbd>, директория <code class="programcharacter">/tmp</code> будет использоваться для хранения временных файлов.</p> <p class="listcontinue1">Инсталлятор создаст поддиректорию <code class="programcharacter">scanengine</code> в указанной вами директории. Kaspersky Scan Engine будет использовать эту поддиректорию для хранения временных файлов.</p> </li><li class="listnumber1">Начиная с Kaspersky Scan Engine версии 2.1, объекты KAV SDK поставляются отдельным пакетом. Укажите абсолютный путь к директории, в которой находится пакет KAV SDK. Вы также можете нажать <kbd class="keycharacter">Enter</kbd>. В этом случае инсталлятор Kaspersky Scan Engine будет искать файлы KAV SDK в директории на один уровень выше, чем директория, в которой находится установщик.</li><li class="listnumber1">Укажите режим лицензирования, который будет использоваться в Kaspersky Scan Engine.<ul class="listbullet2"><li class="listbullet2">Если вы хотите использовать режим лицензирования оффлайн, укажите файл ключа.</li><li class="listbullet2">Если вы хотите использовать режим лицензирования онлайн, укажите код активации.</li></ul></li><li class="listnumber1">Проверьте указанные вами параметры и при необходимости откорректируйте их.</li></ol><p class="bodytext">После того как вы укажете необходимые данные, Kaspersky Scan Engine будет установлен, а затем запущен. Информация об установке будет выведена на консоль.</p>
+<p class="bodytext">После установки Kaspersky Scan Engine вы можете в любой момент проверить целостность его компонентов <a id="h209330" class="englishcrossreferencetemplate" href="209025.htm" target="_self">с помощью утилиты проверки целостности</a>.</p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

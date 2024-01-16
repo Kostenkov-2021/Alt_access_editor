@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Supported API methods in KAV protocol versions 1 and 2  </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h4 id="t234523" class="heading4">Supported API methods in KAV protocol versions 1 and 2 </h4>
+<p class="bodytext">In addition to using <a id="h179981" class="englishcrossreferencetemplate" href="179875.htm" target="_self">KAV protocol version 3</a>, you can make POST and GET requests to Kaspersky Scan Engine by means of KAV protocol versions 1 and 2.</p>
+<p class="bodytext">The following table lists the API methods that Kaspersky Scan Engine supports in HTTP mode in KAV protocol versions 1 and 2.</p>
+<p class="tablename">API methods supported in HTTP mode in KAV protocol versions 1 and 2</p>
+<table class="tableintopic" width="960" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="186"><p class="tableheading">API method</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="84"><p class="tableheading">HTTP method</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="690"><p class="tableheading">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="bodytext"><code class="programcharacter"><a id="h181075" class="englishcrossreferencetemplate" href="181074.htm" target="_self">/scanfile</a></code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="bodytext">POST</p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="bodytext">Scans a file.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="bodytext"><code class="programcharacter"><a id="h181077" class="englishcrossreferencetemplate" href="181076.htm" target="_self">/scanmemory</a></code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="bodytext">POST</p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="bodytext">Scans a block of system memory.</p>
+<p class="bodytext">Use only the KAV_SKIP cleaning mode when scanning system memory. Kaspersky Scan Engine cannot disinfect or delete files in this mode.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="bodytext"><code class="programcharacter"><a id="h181081" class="englishcrossreferencetemplate" href="181080.htm" target="_self">/checkurl</a></code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="bodytext">POST</p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="bodytext">Checks a URL. </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="bodytext"><code class="programcharacter"><a id="h181083" class="englishcrossreferencetemplate" href="181082.htm" target="_self">/basesdate</a></code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="bodytext">GET</p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="bodytext">Gets the release date of the anti-virus database. You can use this method to check whether <code class="programcharacter">kavhttpd</code> is running.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="bodytext"><code class="programcharacter"><a id="h181085" class="englishcrossreferencetemplate" href="181084.htm" target="_self">/version</a></code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="bodytext">GET</p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="bodytext">Gets the current version of KAV SDK. You can use this method to check whether <code class="programcharacter">kavhttpd</code> is running.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="bodytext"><code class="programcharacter"><a id="h181087" class="englishcrossreferencetemplate" href="181086.htm" target="_self">/licenseinfo</a></code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="bodytext">GET</p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="bodytext">Gets information about the current key file or activation code. You can use this method to check whether <code class="programcharacter">kavhttpd</code> is running.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="bodytext"><code class="programcharacter"><a id="h181089" class="englishcrossreferencetemplate" href="181088.htm" target="_self">/getstatistics</a></code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="bodytext">GET</p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="bodytext">Gets the accumulated statistics.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="bodytext"><code class="programcharacter"><a id="h181091" class="englishcrossreferencetemplate" href="181090.htm" target="_self">/clearstatistics</a></code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="bodytext">POST</p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="bodytext">Clears the accumulated statistics.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

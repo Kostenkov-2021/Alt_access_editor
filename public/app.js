@@ -12,19 +12,12 @@ function fetchFiles(folderPath) {
         body: JSON.stringify({ folderPath })
     })
     .then(response => response.json())
-    .then(data => {
-        displayHtmlFiles(data);
-        showMessage('Файлы успешно загружены', 'success');
-    })
+    .then(data => displayHtmlFiles(data))
     .catch(error => {
         console.error('Error:', error);
         showMessage('Ошибка при загрузке файлов', 'error');
     });
 }
-
-
-
-
 
 
 // Проверяем alt-текст на соответствие требованиям
@@ -52,7 +45,7 @@ function validateAltText(altText, image) {
     }
 
     // Проверка начальных слов
-    if (/^(рисунок|изображение|картинка)\b/.test(altText.toLowerCase())) {
+    if (/^(рисунок\|изображение\|картинка)\b/.test(altText.toLowerCase())) {
         warnings.push('Alt-текст не нужно начинать словами "рисунок", "изображение" или "картинка", скринридер может делать это по умолчанию.');
     }
 
@@ -91,62 +84,26 @@ document.getElementById('filesContainer').addEventListener('input', (event) => {
 
 
 
-// функция для отображения файлов в папке
 function displayHtmlFiles(data) {
     const filesContainer = document.getElementById('filesContainer');
     filesContainer.innerHTML = '';
 
     data.forEach(file => {
-        // Создаем заголовок для каждого файла
+        const fileName = file.filePath.split('/').pop().split('\\').pop();
         const fileHeader = document.createElement('h2');
-        fileHeader.textContent = `Файл: ${file.filePath}`;
+        fileHeader.textContent = fileName;
         filesContainer.appendChild(fileHeader);
 
-        // Проверяем, есть ли изображения в файле
         if (file.imageData.length > 0) {
-            // Создаем таблицу для каждого файла
-            const table = document.createElement('table');
+            const table = createTable();
             file.imageData.forEach((img, index) => {
-                const tr = document.createElement('tr');
-                // Добавляем ячейки для названия изображения, текущего и нового alt-текста, а также рекомендаций
-            // Столбец с названием изображения
-            const tdName = document.createElement('td');
-            const imgName = document.createElement('a');
-            imgName.href = img.src;
-            imgName.target = '_blank';
-            imgName.textContent = img.name;
-            tdName.appendChild(imgName);
-
-            // Столбец с текущим alt-текстом
-            const tdCurrentAlt = document.createElement('td');
-            tdCurrentAlt.textContent = img.alt;
-
-            // Столбец с рекомендацией
-            const tdRecommendation = document.createElement('td');
-            tdRecommendation.textContent = getRecommendation(img.alt); // Функция для получения рекомендации
-
-            // Столбец с новым alt-текстом
-            const tdNewAlt = document.createElement('td');
-            const newAltTextarea = document.createElement('textarea');
-            newAltTextarea.value = img.alt;
-            tdNewAlt.appendChild(newAltTextarea);
-
-            tr.appendChild(tdName);
-            tr.appendChild(tdCurrentAlt);
-            tr.appendChild(tdRecommendation);
-            tr.appendChild(tdNewAlt);
-
+                const tr = createTableRow(img, file.filePath, index);
                 table.appendChild(tr);
             });
             filesContainer.appendChild(table);
-
-            // Кнопка сохранения изменений для данного файла
-            const saveButton = document.createElement('button');
-            saveButton.textContent = 'Сохранить изменения в этом файле';
-            saveButton.onclick = () => saveFileChanges(file.filePath, table);
+            const saveButton = createSaveButton(file.filePath, table);
             filesContainer.appendChild(saveButton);
         } else {
-            // Выводим сообщение, если в файле нет изображений
             const noImagesMessage = document.createElement('p');
             noImagesMessage.textContent = 'В этом файле нет изображений';
             filesContainer.appendChild(noImagesMessage);
@@ -154,11 +111,63 @@ function displayHtmlFiles(data) {
     });
 }
 
-// Функция для сохранения изменений в конкретном файле
+function createTable() {
+    const table = document.createElement('table');
+    const tableHeader = document.createElement('thead');
+    const headerRow = ['Название изображения', 'Текущий alt-текст', 'Рекомендации', 'Новый alt-текст']
+        .map(text => {
+            const th = document.createElement('th');
+            th.textContent = text;
+            return th;
+        });
+
+    const tableHeaderRow = document.createElement('tr');
+    headerRow.forEach(th => tableHeaderRow.appendChild(th));
+    tableHeader.appendChild(tableHeaderRow);
+    table.appendChild(tableHeader);
+
+    return table;
+}
+
+function createTableRow(img, filePath, index) {
+    const tr = document.createElement('tr');
+
+    const tdName = document.createElement('td');
+    const imgName = document.createElement('a');
+    imgName.href = img.src;
+    imgName.target = '_blank';
+    imgName.textContent = img.name;
+    tdName.appendChild(imgName);
+
+    const tdCurrentAlt = document.createElement('td');
+    tdCurrentAlt
+.textContent = img.alt;
+
+const tdRecommendation = document.createElement('td');
+tdRecommendation.textContent = getRecommendation(img.alt);
+
+const tdNewAlt = document.createElement('td');
+const newAltTextarea = document.createElement('textarea');
+newAltTextarea.dataset.filepath = filePath;
+newAltTextarea.dataset.index = index;
+newAltTextarea.value = img.alt;
+tdNewAlt.appendChild(newAltTextarea);
+
+tr.appendChild(tdName);
+tr.appendChild(tdCurrentAlt);
+tr.appendChild(tdRecommendation);
+tr.appendChild(tdNewAlt);
+
+return tr;
+}
+function createSaveButton(filePath, table) {
+const saveButton = document.createElement('button');
+saveButton.textContent = 'Сохранить изменения в этом файле';
+saveButton.onclick = () => saveFileChanges(filePath, table);
+return saveButton;
+}
 function saveFileChanges(filePath, table) {
-    const updatedData = gatherUpdatedDataFromTable(table
-, filePath);
-// Отправляем обновленные данные на сервер
+const updatedData = gatherUpdatedDataFromTable(table, filePath);
 fetch('/save-updated-alt-texts', {
 method: 'POST',
 headers: {'Content-Type': 'application/json'},
@@ -176,9 +185,13 @@ console.error('Error:', error);
 showMessage(`Ошибка при сохранении изменений в файле ${filePath}`, 'error');
 });
 }
-
-
-// Функция для получения рекомендаций по улучшению описания
+function gatherUpdatedDataFromTable(table, filePath) {
+return Array.from(table.querySelectorAll('tr')).slice(1).map(row => {
+const imgName = row.cells[0].textContent;
+const newAltText = row.cells[3].querySelector('textarea').value;
+return { filePath, imgName, newAltText };
+});
+}
 function getRecommendation(altText) {
     const recommendations = [];
 
@@ -199,49 +212,31 @@ function getRecommendation(altText) {
         recommendations.push('Кажется, в alt-тексте более 15 слов. Рекомендуется сделать описание более кратким.');
     }
 
-    if (/^(рисунок|изображение|картинка)\b/.test(altText.toLowerCase())) {
+    if (/^(рисунок\|изображение\|картинка)\b/.test(altText.toLowerCase())) {
         recommendations.push('Не рекомендуется начинать alt-текст со слов "рисунок", "изображение" или "картинка".');
     }
 
-    // Другие условия для рекомендаций могут быть добавлены здесь
 
     return recommendations.length > 0 ? recommendations.join('. ') + '.' : 'Описание соответствует рекомендациям.';
 }
-
-
-
-// собираем и сохраняем обновлённые данные
-function gatherUpdatedDataFromTable(table, filePath) {
-return Array.from(table.querySelectorAll('tr')).map(row => {
-const imgName = row.cells[0].textContent;
-const newAltText = row.cells[3].querySelector('textarea').value;
-return { filePath, imgName, newAltText };
-});
-}
-
-
-// Функция для отображения сообщений
 function showMessage(message, type) {
-    const messageElement = document.createElement('div');
-    messageElement.classList.add('message', type);
-    messageElement.textContent = message;
+const messageElement = document.createElement('div');
+messageElement.classList.add('message', type);
+messageElement.textContent = message;
 
-    document.body.appendChild(messageElement);
 
-    setTimeout(() => {
-        document.body.removeChild(messageElement);
-    }, 5000);
+document.body.appendChild(messageElement);
+
+setTimeout(() => {
+    document.body.removeChild(messageElement);
+}, 5000);
 }
-
-
-
-// Функция для отображения предупреждений
 function displayWarnings(warnings, inputElement) {
-    let warningsContainer = inputElement.parentElement.querySelector('.warnings');
-    if (!warningsContainer) {
-        warningsContainer = document.createElement('div');
-        warningsContainer.className = 'warnings';
-        inputElement.parentElement.appendChild(warningsContainer);
-    }
-    warningsContainer.innerHTML = warnings.join('<br>');
+let warningsContainer = inputElement.parentElement.querySelector('.warnings');
+if (!warningsContainer) {
+warningsContainer = document.createElement('div');
+warningsContainer.className = 'warnings';
+inputElement.parentElement.appendChild(warningsContainer);
+}
+warningsContainer.innerHTML = warnings.join('<br>');
 }

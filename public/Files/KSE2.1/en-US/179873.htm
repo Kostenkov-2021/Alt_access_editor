@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Configuring updating in HTTP mode </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234309" class="heading3">Configuring updating in HTTP mode</h3>
+<p class="bodytext">This section explains how to configure updating in Kaspersky Scan Engine.</p>
+<p class="introheading">Specifying the update settings</p>
+<p class="bodytext">Kaspersky Scan Engine uses update settings stored in the <a id="h179927" class="englishcrossreferencetemplate" href="184799.htm" target="_self">HTTP mode configuration file</a>. Set the necessary update settings in kavhttpd.xml before starting Kaspersky Scan Engine.</p>
+<p class="introheading">Specifying custom database update sources</p>
+<p class="bodytext">Kaspersky Scan Engine updates the anti-virus database from database update sources. A database update source used by Kaspersky Scan Engine can be either default or custom. The default update sources are Kaspersky update servers.</p>
+<p class="bodytext">You can use the default update sources, custom update sources, or both.</p>
+<p class="procedureheading">To specify custom update sources:</p>
+<ol class="listnumber1"><li class="listnumber1">Specify custom update sources in the <code class="programcharacter">UpdateSources</code> element of the kavhttpd.xml configuration file. Use a separate <code class="programcharacter">Source</code> element for each source.<p class="listcontinue1">To use a local directory, specify an absolute path. To use a network location, specify a URL, including the protocol. The supported protocols are HTTP and FTP.</p>
+<p class="listcontinue1">The following example shows two update sources:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">&lt;UpdateSources&gt;</p>
+<p class="program2">&lt;Source&gt;httpd://example.com/update/source1&lt;/Source&gt;</p>
+<p class="program2">&lt;Source&gt;httpd://example.com/update/source2&lt;/Source&gt;</p>
+<p class="program">&lt;/UpdateSources&gt;</p>
+</td>
+</tr>
+
+</table>
+</li><li class="listnumber1">If you want to use only custom sources, set the <code class="programcharacter">UseOnlyCustomSources</code> parameter of kavhttpd.xml to <code class="programcharacter">1</code>.<p class="listcontinue1">If <code class="programcharacter">UseOnlyCustomSources</code> is <code class="programcharacter">0</code>, Kaspersky Scan Engine uses default sources together with custom sources. In this case, Kaspersky Scan Engine first looks for updates in custom update sources.</p>
+</li></ol><p class="bodytext">The settings that you specified will be used after the <code class="programcharacter">kavhttpd</code> service is started or restarted.</p>
+<p class="introheading">Configuring database backup</p>
+<p class="bodytext">Database backup is a mechanism that protects Kaspersky Scan Engine from possible faults caused by the database update process.</p>
+<p class="bodytext">By default, database backup is enabled. Kaspersky Scan Engine creates database backup copies automatically during updates. Make sure that your hard disk has enough free space for a full copy of the database.</p>
+<p class="procedureheading">To disable database backup,</p>
+<p class="bodytextindent">Set the <code class="programcharacter">DisableBackup</code> parameter in kavhttpd.xml to <code class="programcharacter">1</code>.</p>
+<p class="bodytext">The setting that you specified will be used after the <code class="programcharacter">kavhttpd</code> service is started or restarted.</p>
+<p class="introheading">Establishing connections to update sources</p>
+<p class="bodytext">To connect to update sources, Kaspersky Scan Engine uses the connection settings defined in <a id="h179927_2" class="englishcrossreferencetemplate" href="184799.htm" target="_self">kavhttpd.xml</a>.</p>
+<p class="introheading">Scheduling automatic database updates</p>
+<p class="bodytext">If you want to update the database at regular intervals, use automatic updates.</p>
+<p class="bodytext">By default, automatic updates are disabled.</p>
+<p class="procedureheading">To set up automatic updates:</p>
+<ol class="listnumber1"><li class="listnumber1">Set the <code class="programcharacter">UpdatePeriodMinutes</code> parameter in kavhttpd.xml to the required update interval (in minutes).</li><li class="listnumber1">Restart the <code class="programcharacter">kavhttpd</code> service.</li></ol><p class="bodytext">Kaspersky Scan Engine will perform updates automatically.</p>
+<p class="bodytext">You can also <a id="h179933" class="englishcrossreferencetemplate" href="179882.htm" target="_self">update the database manually</a>.</p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Запуск Kaspersky Scan Engine в режиме ICAP с помощью файла модуля systemd </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234492" class="heading3">Запуск Kaspersky Scan Engine в режиме ICAP с помощью файла модуля systemd</h3>
+<p class="bodytext">Вы можете запустить Kaspersky Scan Engine в режиме ICAP, используя файл модуля kavicapd.service для <code class="programcharacter">systemd</code>. Файл модуля позволяет вам добавить службу kavicapd в список запуска служб и управлять службой вручную из командной строки.</p>
+<p class="attentionbody">В этом разделе предполагается, что вы хотите добавить службу kavicapd для всех пользователей. Для получения информации о том, как добавить службу и управлять ею от имени конкретного пользователя, обратитесь к официальной документации для <code class="programcharacter">systemd</code> и <code class="programcharacter">systemctl</code>.</p>
+<p class="introheading">Автоматический запуск Kaspersky Scan Engine</p>
+<p class="bodytext">Чтобы Kaspersky Scan Engine запускался автоматически, добавьте kavicapd в список запуска служб.</p>
+<p class="procedureheading">Чтобы добавить kavicapd в список запуска служб:</p>
+<ol class="listnumber1"><li class="listnumber1">Поместите файл модуля kavicapd.service в директорию <code class="programcharacter">/etc/systemd/system/</code>.</li><li class="listnumber1">При необходимости <a id="h192507" class="englishcrossreferencetemplate" href="192475.htm" target="_self">отредактируйте файл модуля</a>.</li><li class="listnumber1">Перезагрузите <code class="programcharacter">systemd</code>, выполнив следующую команду:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">systemctl daemon-reload</p>
+</td>
+</tr>
+
+</table> </li><li class="listnumber1">Убедитесь, что файл модуля kavicapd.service установлен, выполнив следующую команду:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">systemctl list-unit-files</p>
+</td>
+</tr>
+
+</table> </li><li class="listnumber1">Включите запуск kavicapd при старте системы, выполнив следующую команду:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">systemctl enable kavicapd.service</p>
+</td>
+</tr>
+
+</table> </li></ol><p class="introheading">Получение состояния службы kavicapd.</p>
+<p class="bodytext">Чтобы получить статус службы kavicapd, выполните следующую команду:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">service kavicapd status</p>
+</td>
+</tr>
+
+</table>
+<p class="introheading">Удаление Kaspersky Scan Engine из списка запуска служб</p>
+<p class="bodytext">Чтобы удалить kavicapd из списка запуска служб, выполните следующую команду:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">systemctl disable kavicapd.service</p>
+</td>
+</tr>
+
+</table>
+<p class="introheading">Управление Kaspersky Scan Engine с помощью systemd из терминала</p>
+<p class="bodytext">Чтобы запустить kavicapd без перезагрузки компьютера, выполните следующую команду:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">systemctl start kavicapd</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Чтобы остановить kavicapd без перезагрузки компьютера, выполните следующую команду:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">systemctl stop kavicapd</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Чтобы обновить антивирусные базы, выполните следующую команду:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">systemctl reload kavicapd</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

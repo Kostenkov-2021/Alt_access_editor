@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Kaspersky Scan Engine и режим ICAP </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234405" class="heading2">Kaspersky Scan Engine и режим ICAP</h2>
+<p class="bodytext">Протокол ICAP (Internet Content Adaptation Protocol) используется для коммуникации между прокси-серверами и поставщиками услуг. В режиме ICAP решение Kaspersky Scan Engine взаимодействует с прокси-серверами, совместимыми с протоколом ICAP. Kaspersky Scan Engine сканирует HTTP-трафик, который проходит через прокси-сервер, а также URL-адреса, запрашиваемые пользователями.</p>
+<p class="bodytext">При запуске в режиме ICAP решение Kaspersky Scan Engine состоит из службы kavicapd, файлов конфигурации и библиотек. Ключевые функции:</p>
+<ul class="listbullet1"><li class="listbullet1">Сканирование URL-адреса.<p class="listcontinue1">Kaspersky Scan Engine позволяет сканировать URL-адреса, которые запрашивает пользователь через прокси-сервер. Эта функция доступна как для режима REQMOD (проверяются объекты, передаваемые от пользователя через прокси-сервер), так и для режима RESPMOD (проверяются объекты, передаваемые пользователю с прокси-сервера).</p> </li><li class="listbullet1">Сканирование HTTP-трафика.<p class="listcontinue1">Kaspersky Scan Engine позволяет сканировать входящий и исходящий HTTP-трафик, который проходит через прокси-сервер. Эта функция доступна как для режима REQMOD (проверяются объекты, передаваемые от пользователя через прокси-сервер), так и для режима RESPMOD (проверяются объекты, передаваемые пользователю с прокси-сервера). </p> <p class="listcontinue1">Поддерживается сканирование составных объектов (объектов, включающих в себя несколько файлов).</p> </li><li class="listbullet1">Поддержка кода состояния HTTP <code class="programcharacter">204 No</code> <code class="programcharacter">Content</code>.<p class="listcontinue1">Служба kavicapd может быть настроена на возврат такого кода состояния, если сообщение, посланное клиентом, не требует модификации.</p> </li><li class="listbullet1">Управление поведением службы kavicapd с помощью настройки <a id="h180152" class="englishcrossreferencetemplate" href="179893.htm" target="_self">правил службы</a>.</li><li class="listbullet1">Режим отправки по частям.<p class="listcontinue1">Этот режим, также называемый <em class="emphasischaracter">Data Trickling</em>, позволяет сканировать файлы целиком и посылать их пользователю по блокам до окончания сканирования. Плагин продолжает сканирование файлов и одновременно отправляет пользователю первые блоки файлов. Эта функция позволяет пользователям быстро получать отсканированные файлы большого размера.</p> </li><li class="listbullet1">Режим предварительной проверки.<p class="listcontinue1">В этом режиме ICAP-клиент посылает запрос ICAP-плагину, а ICAP-плагин выполняет предварительную проверку объекта с помощью правил исключений. Такие запросы позволяют не сканировать те объекты, которые заведомо не являются вредоносными.</p> </li><li class="listbullet1">Обновления ISTag.<p class="listcontinue1">Значение ISTag в заголовке ICAP-ответа Kaspersky Scan Engine обновляется каждый раз, когда происходит одно из следующих событий:</p> <ul class="listbullet2"><li class="listbullet2">Инициализация Kaspersky Scan Engine.</li><li class="listbullet2">Изменение страниц настроек Kaspersky Scan Engine.</li><li class="listbullet2">Антивирусная база обновлена.</li></ul></li></ul><p class="introheading">Постоянные соединения Keep-Alive</p>
+<p class="bodytext">По умолчанию Kaspersky Scan Engine поддерживает <a id="h207296" class="englishcrossreferencetemplate" href="207291.htm" target="_self">постоянные соединения Keep-Alive</a>, поэтому он может обрабатывать несколько объектов один за другим, используя одно и то же соединение.</p>
+<p class="bodytext">Чтобы открыть постоянное соединение Keep-alive, запрос ICAP должен содержать поле <code class="programcharacter">Connection</code> со значением <code class="programcharacter">Keep-Alive</code>.</p>
+<p class="bodytext">Чтобы закрыть соединение, ICAP-запрос должен содержать поле <code class="programcharacter">Connection</code> со значением <code class="programcharacter">close</code>.</p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

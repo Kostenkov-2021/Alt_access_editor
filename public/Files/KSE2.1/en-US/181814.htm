@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Using the encrypting utility </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h1 id="t234582" class="heading1">Using the encrypting utility</h1>
+<p class="bodytext">The kav_encrypt utility allows you to encrypt the user names and passwords stored in kavhttpd.xml, kavicapd.xml, and klScanEngineUI.xml.</p>
+<p class="bodytext">The utility is run from the command line as follows:</p>
+<p class="program">./kav_encrypt [-m <code class="programcharacter">&lt;httpd | icap&gt;</code> -p &lt;user_name:password&gt;] | [-d &lt;user_name:password&gt;] | [-h]</p>
+<p class="bodytext">The table below describes the kav_encrypt options.</p>
+<p class="tablename">The kav_encrypt options</p>
+<table class="tableintopic" width="624" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="234"><p class="tableheading">Option</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="390"><p class="tableheading">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="234"><p class="tablebodytext"><code class="programcharacter">-m &lt;httpd | icap&gt;</code></p>
+<p class="tablebodytext"><code class="programcharacter">--mode &lt;httpd | icap&gt;</code></p>
+</td>
+<td style="border:1px solid #010101;" width="390"><p class="bodytext">Specifies the working mode of Kaspersky Scan Engine.</p>
+<p class="bodytext">Possible values:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet"><code class="programcharacter">httpd</code><p class="tablelistcontinue">HTTP mode </p>
+</li><li class="tablelistbullet"><code class="programcharacter">icap</code><p class="tablelistcontinue">ICAP mode</p>
+<p class="tablelistcontinue">For Linux systems only.</p>
+</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="234"><p class="tablebodytext"><code class="programcharacter">-p &lt;user_name:password&gt;</code></p>
+<p class="tablebodytext"><code class="programcharacter">--proxy &lt;user_name:password&gt;</code></p>
+</td>
+<td style="border:1px solid #010101;" width="390"><p class="bodytext">Specifies the user name and password of the proxy server that Kaspersky Scan Engine uses to gain access to the Internet.</p>
+<p class="bodytext">This option must be used together with the <code class="programcharacter">-m</code> option. </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="234"><p class="tablebodytext"><code class="programcharacter">-d &lt;user_name:password&gt;</code></p>
+<p class="tablebodytext"><code class="programcharacter">--database &lt;user_name:password&gt;</code></p>
+</td>
+<td style="border:1px solid #010101;" width="390"><p class="tablebodytext">Specifies the user name and password of the user that owns the kavebase database.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="234"><p class="tablebodytext"><code class="programcharacter">-h</code></p>
+<p class="tablebodytext"><code class="programcharacter">--help</code></p>
+</td>
+<td style="border:1px solid #010101;" width="390"><p class="tablebodytext">Prints the Help information about the kav_encrypt utility to the command line.</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

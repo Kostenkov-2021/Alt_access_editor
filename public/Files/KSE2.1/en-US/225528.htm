@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Recommended settings for ICAP mode </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t240949" class="heading2">Recommended settings for ICAP mode</h2>
+<p class="bodytext">This section describes the recommended settings for Kaspersky Scan Engine in ICAP mode.</p>
+<p class="bodytext">If you use the Kaspersky Scan Engine GUI, specify the recommended parameters as described in the table below.</p>
+<p class="tablename">Recommended settings for ICAP mode in the Kaspersky Scan Engine GUI</p>
+<p class="spacerfortables"></p>
+<table class="tableintopic" width="512" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="210"><p class="tableheading">Settings in the Kaspersky Scan Engine GUI</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="302"><p class="tableheading">Recommended settings</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Service &gt; Processes</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="bodytext">Equal to the number of processor cores</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Service &gt; Threads</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="bodytext">Twice the value of <code class="programcharacter">ScannersCount</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Service &gt; Sessions</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">See the description of <code class="programcharacter">MaxIcapSessionsCount</code> below</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Service &gt; Partial mode</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">On</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Service &gt; Delay</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">10</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Service &gt; Chunk size</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">4</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Service &gt; Prevent re-downloading</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">On</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Service &gt; Maximum cache size</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">5000</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Service &gt; Lifetime for blocked URLs</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">1800</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Service &gt; Keep-alive</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">See the description of <code class="programcharacter">KeepAliveSettings</code> below</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Scanning &gt; Skip large objects</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">On</p>
+<p class="tablebodytext">10343 KB (10.1 MB)</p>
+<p class="attentionbody">Get an updated value from your TAM at least once a year.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Scanning &gt; Types of files to scan</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">Select the checkboxes:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet">Packed objects</li><li class="tablelistbullet">Archives</li><li class="tablelistbullet">Email databases</li><li class="tablelistbullet">Emails</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Scanning &gt; Heuristic analysis level</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">Low</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Scanning &gt; Object scan timeout</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">10000 (10 seconds)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Scanning &gt; Maximum depth</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">5</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Scanning &gt; Scan scope in Request mode</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">URL (scans only the requested URLs)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Scanning &gt; Scan scope in Response mode</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">Files</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">Scanning &gt; Enable reputation checking</p>
+</td>
+<td style="border:1px solid #010101;" width="302"><p class="tablebodytext">See the description of <code class="programcharacter">UseKSN</code> below</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">If you do not use the Kaspersky Scan Engine GUI, specify the recommended parameters in the kavicapd.xml configuration file as described in the table below.</p>
+<p class="tablename">Recommended settings for ICAP mode in the configuration file</p>
+<p class="spacerfortables"></p>
+<table class="tableintopic" width="512" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="168"><p class="tableheading">Parameter in kavicapd.xml</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="344"><p class="tableheading">Recommended settings</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">ScannersCount</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="bodytext">Equal to the number of processor cores</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">ThreadsCount</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="bodytext">Twice the value of <code class="programcharacter">ScannersCount</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">MaxIcapSessionsCount</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="tablebodytext">See the description of <code class="programcharacter">MaxIcapSessionsCount</code> below</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">QueueLen</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><ul class="tablelistbullet"><li class="tablelistbullet">Greater than the <code class="programcharacter">ThreadsCount</code> value.</li><li class="tablelistbullet">At least twice the <code class="programcharacter">MaxIcapSessionsCount</code> value.</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">RAMUsageLimit</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><ul class="tablelistbullet"><li class="tablelistbullet">Does not exceed the RAM size.</li><li class="tablelistbullet">Twice the maximum file size for scanning large files.</li><li class="tablelistbullet">Not less than 600 MB, which is twice the size of the anti-virus database and Kaspersky Scan Engine libraries (300 MB in total).</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">ScanMaxFileSize</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="tablebodytext">10343 KB (10.1 MB)</p>
+<p class="attentionbody">Get an updated value from your TAM at least once a year.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">ScanningMode</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="tablebodytext">Specify the flags:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet">KAV_O_M_PACKED</li><li class="tablelistbullet">KAV_O_M_ARCHIVED</li><li class="tablelistbullet">KAV_O_M_MAILPLAIN</li><li class="tablelistbullet">KAV_O_M_MAILBASES</li><li class="tablelistbullet">KAV_O_M_HEURISTIC_LEVEL_SHALLOW</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">ScanTimeout</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="tablebodytext">10000 (10 seconds)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">MaxArchivesScanningDepth</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="tablebodytext">5</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">ScanInReqMode</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="tablebodytext"><code class="programcharacter">URL</code> (scans only the requested URLs)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">ScanInRespMode</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="tablebodytext"><code class="programcharacter">Content</code> (scans the HTTP message body)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">TransferBeforeScanEnding</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="tablebodytext"><code class="programcharacter">1</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">Delay</p>
+<p class="tablebodytext">(Attribute of TransferBeforeScanEnding)</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="tablebodytext">10</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">ChunkSize</p>
+<p class="tablebodytext">(Attribute of TransferBeforeScanEnding)</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="tablebodytext">4</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">BlockedUrlCacheEnabled</p>
+<p class="tablebodytext">(Attribute of TransferBeforeScanEnding)</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="tablebodytext">1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">BlockedUrlCacheKb</p>
+<p class="tablebodytext">(Attribute of TransferBeforeScanEnding)</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="tablebodytext">5000</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">BlockedUrlCacheTtlSec</p>
+<p class="tablebodytext">(Attribute of TransferBeforeScanEnding)</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="tablebodytext">1800</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">UseKSN</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="tablebodytext">See the description of <code class="programcharacter">UseKSN</code> below</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">KeepAliveSettings</p>
+</td>
+<td style="border:1px solid #010101;" width="344"><p class="tablebodytext">See the description of <code class="programcharacter">KeepAliveSettings</code> below</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><a id="h200733" class="englishcrossreferencetemplate" href="200690.htm" target="_self">ScannersCount</a></p>
+<p class="bodytext">This parameter in the Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Service</span> &gt; <span class="guicharacter">Processes</span>.</p>
+<p class="bodytext">The recommended number of scanning processes is equal to the number of processor cores. For example, if Kaspersky Scan Engine is running on a computer with a 4-core processor, set <code class="programcharacter">ScannersCount</code> to <code class="programcharacter">4</code>.</p>
+<p class="bodytext">See also the subsection &quot;Example of Kaspersky Scan Engine work in ICAP mode depending on the ScannersCount, ThreadsCount, QueueLen, and MaxIcapSessionsCount settings.&quot;</p>
+<p class="bodytext"><a id="h201166" class="englishcrossreferencetemplate" href="200691.htm" target="_self">ThreadsCount</a></p>
+<p class="bodytext">This parameter in the Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Service</span> &gt; <span class="guicharacter">Threads</span>.</p>
+<p class="bodytext">The recommended number of scanning threads depends on the number of scanning processes specified in <code class="programcharacter">ScannersCount</code>: the value of <code class="programcharacter">ThreadsCount</code> is twice the value of <code class="programcharacter">ScannersCount</code>. For example, if Kaspersky Scan Engine is running on a computer with a 4-core processor and <code class="programcharacter">ScannersCount</code> is set to <code class="programcharacter">4</code>, set <code class="programcharacter">ThreadsCount</code> to <code class="programcharacter">8</code>.</p>
+<p class="bodytext">See also the subsection &quot;Example of Kaspersky Scan Engine work in ICAP mode depending on the ScannersCount, ThreadsCount, QueueLen, and MaxIcapSessionsCount settings.&quot;</p>
+<p class="bodytext"><a id="h201196" class="englishcrossreferencetemplate" href="200717.htm" target="_self">MaxIcapSessionsCount</a></p>
+<p class="bodytext">This parameter in the Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Service</span> &gt; <span class="guicharacter">Sessions</span>.</p>
+<p class="bodytext">When specifying the maximum number of simultaneous connections to Kaspersky Scan Engine, consider the following:</p>
+<ul class="listbullet1"><li class="listbullet1">the maximum number of scanning threads (<code class="programcharacter">ThreadsCount</code>).</li><li class="listbullet1">the maximum length of the queue for scan tasks (<code class="programcharacter">QueueLen</code>).</li><li class="listbullet1">specifics of the ICAP mode: in general, kavicapd runs two threads for one scan task.</li></ul><p class="bodytext">This means that the greater the number of active connections, the faster all scanning threads are getting occupied and, as a result, the longer the queue is for scan tasks.</p>
+<p class="listheading">The recommended <code class="programcharacter">MaxIcapSessionsCount</code> value is:</p>
+<ul class="listbullet1"><li class="listbullet1">equal to the average number of ICAP client requests per minute.</li><li class="listbullet1">greater than the <code class="programcharacter">ScannersCount</code> value.</li><li class="listbullet1">greater than the <code class="programcharacter">ThreadsCount</code> value.</li><li class="listbullet1">exceeds the number of active processes used by the proxy server.</li><li class="listbullet1">exceeds the maximum number of connections from clients served by the proxy server that you use.</li></ul><p class="bodytext">See also the subsection &quot;Example of Kaspersky Scan Engine work in ICAP mode depending on the ScannersCount, ThreadsCount, QueueLen, and MaxIcapSessionsCount settings.&quot;</p>
+<p class="bodytext"><a id="h201167" class="englishcrossreferencetemplate" href="200692.htm" target="_self">QueueLen</a></p>
+<p class="bodytext">The length of the scan task queue must not be less than the number of scanning threads (<code class="programcharacter">ThreadsCount</code>). Otherwise, some scanning threads will never be in use. </p>
+<p class="bodytext">Since scan tasks are enqueued from all open sessions, it is necessary to consider the <code class="programcharacter">MaxIcapSessionsCount</code> value. The scan task queue must not be less than <code class="programcharacter">MaxIcapSessionsCount</code>. Otherwise, some clients will receive a <code class="programcharacter">503 - Service overloaded</code> error when trying to open a session.</p>
+<p class="bodytext">The recommended <code class="programcharacter">QueueLen</code> value is:</p>
+<ul class="listbullet1"><li class="listbullet1">greater than the <code class="programcharacter">ThreadsCount</code> value.</li><li class="listbullet1">at least twice the <code class="programcharacter">MaxIcapSessionsCount</code> value.</li></ul><p class="bodytext">See also the subsection &quot;Example of Kaspersky Scan Engine work in ICAP mode depending on the ScannersCount, ThreadsCount, QueueLen, and MaxIcapSessionsCount settings.&quot;</p>
+<p class="bodytext"><a id="h201197" class="englishcrossreferencetemplate" href="201149.htm" target="_self">RAMUsageLimit</a></p>
+<p class="bodytext">If Kaspersky Scan Engine receives a lot of large objects to scan or a lot of simultaneous requests, the program can frequently stop request processing due to excessive consumption of system memory. When request processing stops, Kaspersky Scan Engine writes one of the following messages to the log file: <code class="programcharacter">Can't accept request: Not enough memory!</code> or <code class="programcharacter">Can't accept new request: Not enough memory!</code> The clients receive the <code class="programcharacter">503 - Service overloaded</code> error message.</p>
+<p class="bodytext">We recommend that you limit the maximum amount of system memory to prevent its excessive consumption. When this limit is exceeded, Kaspersky Scan Engine stops scanning objects.</p>
+<p class="bodytext">The recommended <code class="programcharacter">RAMUsageLimit</code> value:</p>
+<ul class="listbullet1"><li class="listbullet1">does not exceed the RAM size.</li><li class="listbullet1">is twice the maximum file size for scanning large files. For example, scanning a 1 GB file requires about 2 GB of RAM.</li><li class="listbullet1">is not less than 600 MB, which is twice the size of the anti-virus database and Kaspersky Scan Engine libraries (300 MB in total). The reason for doubling is that the amount of system memory is doubled when the database is reloaded.</li></ul><p class="bodytext"><a id="h201198" class="englishcrossreferencetemplate" href="200719.htm" target="_self">ScanMaxFileSize</a></p>
+<p class="bodytext">This parameter in the Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Scanning</span> &gt; <span class="guicharacter">Skip large objects</span>.</p>
+<p class="bodytext">When specifying the maximum size of a file that Kaspersky Scan Engine can scan, consider the <code class="programcharacter">RAMUsageLimit</code> value: <code class="programcharacter">ScanMaxFileSize</code> must not be greater than <code class="programcharacter">RAMUsageLimit</code>. To improve Kaspersky Scan Engine performance, set <code class="programcharacter">ScanMaxFileSize</code> to 10343 KB (10.1 MB). This is the recommended value because it is sufficient to detect most malware.</p>
+<p class="attentionbody">If you have followed the recommendation above, we also recommend consulting with your Technical Account Manager (TAM) once a year to get an updated recommended value, as the average malware size changes from year to year.</p>
+<p class="bodytext"><a id="h201173" class="englishcrossreferencetemplate" href="201123.htm" target="_self">ScanningMode</a></p>
+<p class="bodytext">This parameter in the Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Scanning</span> &gt; <span class="guicharacter">Types of files to scan</span> and <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Scanning</span> &gt; <span class="guicharacter">Heuristic analysis level</span>.</p>
+<p class="bodytext">The recommended value for <code class="programcharacter">ScanningMode</code> is the following:</p>
+<p class="bodytext"><code class="programcharacter">KAV_O_M_PACKED | KAV_O_M_ARCHIVED | KAV_O_M_MAILPLAIN | KAV_O_M_MAILBASES | KAV_O_M_HEURISTIC_LEVEL_SHALLOW</code></p>
+<p class="bodytext"><a id="h201168" class="englishcrossreferencetemplate" href="200693.htm" target="_self">ScanTimeout</a></p>
+<p class="bodytext">This parameter in the Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Scanning</span> &gt; <span class="guicharacter">Object scan timeout</span>.</p>
+<p class="bodytext">The recommended value for <code class="programcharacter">ScanTimeout</code> is <code class="programcharacter">10000</code> (10 seconds).</p>
+<p class="bodytext"><a id="h207137" class="englishcrossreferencetemplate" href="207146.htm" target="_self">MaxArchivesScanningDepth</a></p>
+<p class="bodytext">This parameter in the Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Scanning</span> &gt; <span class="guicharacter">Maximum depth</span>.</p>
+<p class="bodytext">We recommend that you limit the maximum depth of nested archives to be unpacked during scanning. The recommended value for <code class="programcharacter">MaxArchivesScanningDepth</code> is <code class="programcharacter">5</code>.</p>
+<p class="bodytext"><a id="h201200" class="englishcrossreferencetemplate" href="200721.htm" target="_self">ScanInReqMode</a></p>
+<p class="bodytext">This parameter in the Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Scanning</span> &gt; <span class="guicharacter">Scan scope in Request mode</span>.</p>
+<p class="bodytext">The recommended value for <code class="programcharacter">ScanInReqMode</code> is <code class="programcharacter">URL</code>. If this value is specified, Kaspersky Scan Engine scans only the requested URLs.</p>
+<p class="bodytext"><a id="h201202" class="englishcrossreferencetemplate" href="200722.htm" target="_self">ScanInRespMode</a></p>
+<p class="bodytext">This parameter in the Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Scanning</span> &gt; <span class="guicharacter">Scan scope in Response mode</span>.</p>
+<p class="bodytext">The recommended value for <code class="programcharacter">ScanInRespMode</code> is <code class="programcharacter">Content</code>. If this value is specified, Kaspersky Scan Engine scans the HTTP message body.</p>
+<p class="bodytext"><a id="h201209" class="englishcrossreferencetemplate" href="201208.htm" target="_self">TransferBeforeScanEnding</a></p>
+<p class="bodytext">This parameter in the Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Service</span>, the <span class="guicharacter">Partial mode</span> block of settings.</p>
+<p class="bodytext">This parameter prevents the client from interrupting the connection to the proxy server due to a timeout. This may happen when a client sends a large object to scan and could not wait for the scanned object to be received.</p>
+<p class="bodytext">The recommended value for <code class="programcharacter">TransferBeforeScanEnding</code> is <code class="programcharacter">1</code> (enable). It is also recommended to use the default attributes:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">Delay</code>: <code class="programcharacter">10</code></li><li class="listbullet1"><code class="programcharacter">ChunkSize</code>: <code class="programcharacter">4</code><p class="listcontinue1">The value must be at least several times less than <code class="programcharacter">ScanMaxFileSize</code> (see above).</p>
+</li><li class="listbullet1"><code class="programcharacter">BlockedUrlCacheEnabled</code>: <code class="programcharacter">1</code></li><li class="listbullet1"><code class="programcharacter">BlockedUrlCacheKb</code>: <code class="programcharacter">5000</code></li><li class="listbullet1"><code class="programcharacter">BlockedUrlCacheTtlSec</code>: <code class="programcharacter">1800</code></li></ul><p class="bodytext">See also the <a id="h201209_2" class="englishcrossreferencetemplate" href="201208.htm" target="_self">detailed description of these attributes</a>.</p>
+<p class="bodytext"><a id="h201177" class="englishcrossreferencetemplate" href="200698.htm" target="_self">UseKSN</a></p>
+<p class="bodytext">This parameter in the Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Scanning</span> &gt; <span class="guicharacter">Enable reputation checking</span>.</p>
+<p class="bodytext">We recommend enabling the use of data from KSN (Kaspersky Security Network). This provides faster responses to threats, improves the performance of some protection components, and reduces the likelihood of false positives.</p>
+<p class="bodytext">To enable KSN, set <code class="programcharacter">UseKSN</code> to <code class="programcharacter">1</code>.</p>
+<p class="bodytext">If KSN is enabled, it is also recommended to enable <em class="emphasischaracter">Phishing Protection</em> by using one of the following ways:</p>
+<ul class="listbullet1"><li class="listbullet1">In the <a id="h201173_2" class="englishcrossreferencetemplate" href="201123.htm" target="_self">ScanningMode</a> element of the kavicapd.xml configuration file, add the <code class="programcharacter">KAV_O_M_PHISHING</code> flag.</li><li class="listbullet1">On the <a id="h182505" class="englishcrossreferencetemplate" href="179699.htm" target="_self">Settings &gt; Scanning</a> page of the Kaspersky Scan Engine GUI, turn on the <span class="guicharacter">Enable Phishing Protection</span> toggle switch.</li></ul><p class="bodytext">Phishing Protection is useful when Kaspersky Scan Engine checks URLs.</p>
+<p class="bodytext"><a id="h207296" class="englishcrossreferencetemplate" href="207291.htm" target="_self">KeepAliveSettings</a></p>
+<p class="bodytext">This parameter in the Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Service</span> &gt; <span class="guicharacter">Keep-alive</span>.</p>
+<p class="bodytext">We recommend enabling Keep-Alive. When Keep-Alive is enabled, Kaspersky Scan Engine maintains a persistent connection even after the request has been processed and the session timed out. This gives the following advantages:</p>
+<ul class="listbullet1"><li class="listbullet1">reduce network traffic</li><li class="listbullet1">reduce the use of server resources</li><li class="listbullet1">reduce latency in processing requests</li></ul><p class="bodytext">Keep-Alive is especially useful for HTTPS connections that require more CPU time and more client-server interactions.</p>
+<p class="bodytext">To enable Keep-Alive, set the <a id="h207297" class="englishcrossreferencetemplate" href="207292.htm" target="_self">Enabled</a> element in <code class="programcharacter">KeepAliveSettings</code> to <code class="programcharacter">1</code>.</p>
+<p class="bodytext">To determine the values for <a id="h207304" class="englishcrossreferencetemplate" href="207298.htm" target="_self">TimeoutMs</a> and <a id="h207305" class="englishcrossreferencetemplate" href="207303.htm" target="_self">MaxRequests</a>, estimate the number of clients and the number of requests from clients.</p>
+<p class="bodytext">For example, you have estimated that the maximum number of clients is 50, so you set <code class="programcharacter">MaxICAPSessionsCount</code> to <code class="programcharacter">50</code>. If <code class="programcharacter">TimeoutMs</code> and <code class="programcharacter">MaxRequests</code> are unlimited, and all 50 clients send requests continuously, Kaspersky Scan Engine maintains connections with these 50 clients without limits. As a result, new connections cannot be established.</p>
+<p class="bodytext">Another example. You have estimated that the maximum number of clients is 50, so you set <code class="programcharacter">MaxICAPSessionsCount</code> to <code class="programcharacter">50</code>. You have also estimated that the maximum number of requests from one client is 15, so you set <code class="programcharacter">MaxRequests</code> to <code class="programcharacter">15</code>. If you did not set the limit for <code class="programcharacter">TimeoutMs</code>, and clients do not send 15 requests, Kaspersky Scan Engine maintains connections with these 50 clients without limits, so new connections cannot be established.</p>
+<p class="introheading">Example of Kaspersky Scan Engine work in ICAP mode depending on the ScannersCount, ThreadsCount, QueueLen, and MaxIcapSessionsCount settings</p>
+<p class="bodytext">Let's say Kaspersky Scan Engine is installed on a computer with four CPU cores, there are 140 simultaneous connections to this computer, and Kaspersky Scan Engine is configured as follows:</p>
+<ul class="listbullet1"><li class="listbullet1">ScannersCount = 4</li><li class="listbullet1">ThreadsCount = 8</li><li class="listbullet1">QueueLen = 200</li><li class="listbullet1">MaxIcapSessionsCount = 100</li></ul><p class="bodytext">In this case:</p>
+<ol class="listnumber1"><li class="listnumber1">Kaspersky Scan Engine tries to open connections for all 140 clients. Generally, 100 sessions are guaranteed to be open. The remaining 40 clients will probably receive the error <code class="programcharacter">429: Too many requests</code>.</li><li class="listnumber1">The open sessions form a queue of scanning tasks. Ideally, a queue of 200 tasks is guaranteed.<p class="listcontinue1">If the <code class="programcharacter">QueueLen</code> value limits the queue length to less than 200 tasks, the rest of the clients will receive the error <code class="programcharacter">500 - Internal Server Error</code>.</p>
+</li><li class="listnumber1">Kaspersky Scan Engine runs four scanning processes.</li><li class="listnumber1">Four scanning processes create eight threads for simultaneous processing of eight scanning tasks from the queue. The remaining 192 scanning tasks are queued.</li></ol><p class="bodytext">If <code class="programcharacter">500: Internal Server Error</code> is returned to the client, it may mean that the queue length limit specified in <code class="programcharacter">QueueLen</code> has been reached. In this case, you can do one of the following:</p>
+<ul class="listbullet1"><li class="listbullet1">Decrease <code class="programcharacter">MaxIcapSessionsCount</code>.<p class="listcontinue1">Before decreasing <code class="programcharacter">MaxIcapSessionsCount</code>, evaluate your solution scalability needs. If <code class="programcharacter">MaxIcapSessionsCount</code> is decreased, all clients over the number specified in <code class="programcharacter">MaxIcapSessionsCount</code> will be unable to create a session and  will receive the error <code class="programcharacter">429: Too many requests</code>.</p>
+</li><li class="listbullet1">Increase <code class="programcharacter">QueueLen</code>.<p class="listcontinue1">Before increasing <code class="programcharacter">QueueLen</code>, evaluate your solution scalability needs. If the <code class="programcharacter">QueueLen</code> is too large and the bandwidth is low, the request processing time can increase so much that the client is disconnected before Kaspersky Scan Engine finishes processing the request. </p>
+</li></ul><p class="bodytext">If <code class="programcharacter">503: Service overloaded</code> is returned to the client, it may mean that the system memory consumption limit has been reached while the request was being processed (the log contains the record <code class="programcharacter">Not enough memory</code>).  In this case, increase the <code class="programcharacter">RAMUsageLimit</code> value.</p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

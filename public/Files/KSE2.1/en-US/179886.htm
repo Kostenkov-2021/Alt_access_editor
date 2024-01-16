@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Scan results for the HTTP client </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234493" class="heading3">Scan results for the HTTP client</h3>
+<p class="bodytext">For each scanned file, the sample HTTP client prints a scan result that specifies whether a scanned object is considered uninfected or malicious.</p>
+<p class="bodytext">The following scan results are possible:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">CLEAN</code><p class="listcontinue1">Scanned object is considered uninfected.</p>
+</li><li class="listbullet1"><code class="programcharacter">DETECT</code><p class="listcontinue1">Scanned object is considered malicious. This scan result is followed by the name of the detected object or the type of the detected URL.</p>
+<p class="listcontinue1">Kaspersky Scan Engine detects URLs of the following types:</p>
+<ul class="listbullet2"><li class="listbullet2">Malicious URLs. When such a URL is detected, Kaspersky Scan Engine returns <code class="programcharacter">DETECT</code> <code class="programcharacter">MALICIOUS_URL</code>. The priority of this type is 1 (highest priority).</li><li class="listbullet2">Phishing URLs. When such a URL is detected, Kaspersky Scan Engine returns <code class="programcharacter">DETECT</code> <code class="programcharacter">PHISHING_URL</code>. The priority of this type is 2.</li><li class="listbullet2">Adware URLs. When such a URL is detected, Kaspersky Scan Engine returns <code class="programcharacter">DETECT</code> <code class="programcharacter">ADWARE_URL</code>. The priority of this type is 3.<p class="attentioncontinue2">A URL of this type can only be detected when Cloud Protection is enabled.</p>
+</li><li class="listbullet2">URLs leading to legitimate software that can be used by intruders to damage computers or users' personal data). When such a URL is detected, Kaspersky Scan Engine returns <code class="programcharacter">DETECT</code> <code class="programcharacter">RISKWARE_URL</code>. The priority of this type is 4 (lowest priority).<p class="attentioncontinue2">A URL of this type can only be detected when Cloud Protection is enabled.</p>
+</li></ul><p class="listcontinue1">A URL can belong to several types simultaneously. In this case, Kaspersky Scan Engine returns the <code class="programcharacter">DETECT</code> scan result of the highest priority.</p>
+</li><li class="listbullet1"><code class="programcharacter">DISINFECTED</code><p class="listcontinue1">Scanned object has been successfully disinfected.</p>
+</li><li class="listbullet1"><code class="programcharacter">DELETED</code><p class="listcontinue1">Scanned object was deleted.</p>
+</li></ul><p class="bodytext">If the scanned object contains macros, the scan result of this file is appended with &quot;<code class="programcharacter">AND CONTAINS OFFICE MACRO&quot;</code>.</p>
+<p class="bodytext">Below is an example of the output produced by the sample HTTP client:</p>
+<table class="tableintopic" width="564" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="564"><p class="program">./kavhttp_client test.sh service.sh eicar.txt</p>
+<p class="program">Server address: /tmp/.kavhttpd</p>
+<p class="program">Network timeout: 2000</p>
+<p class="program">Scan mode: scanmemory</p>
+<p class="program">Scan file: test.sh</p>
+<p class="program">CLEAN</p>
+<p class="program">Scan file: service.sh</p>
+<p class="program">CLEAN</p>
+<p class="program">Scan file: eicar.txt</p>
+<p class="program">DETECT EICAR-Test-File</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">If the scanning operation failed, the scan result will contain one of the following error codes:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">NON_SCANNED</code><p class="listcontinue1">Specified object was not scanned. The reason for it is provided as well.</p>
+</li><li class="listbullet1"><code class="programcharacter">SERVER_ERROR</code><p class="listcontinue1">An error occurred in Kaspersky Scan Engine.</p>
+</li><li class="listbullet1"><code class="programcharacter">CONNECTION_CLOSED</code><p class="listcontinue1">Connection was closed by Kaspersky Scan Engine.</p>
+</li><li class="listbullet1"><code class="programcharacter">CLIENT_TIMEOUT</code><p class="listcontinue1">Operation timed out. This happens when the client timeout is exceeded.</p>
+</li><li class="listbullet1"><code class="programcharacter">CONNECTION_FAILED</code><p class="listcontinue1">Failed to establish a connection to Kaspersky Scan Engine.</p>
+</li><li class="listbullet1"><code class="programcharacter">HTTP_ERROR</code><p class="listcontinue1">The server has responded with an HTTP status code that is not equal to <code class="programcharacter">200</code>. The HTTP status code and its description are provided as well.</p>
+</li></ul>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

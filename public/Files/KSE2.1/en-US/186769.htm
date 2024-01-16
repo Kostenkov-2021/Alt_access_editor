@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Format of RAW logs in HTTP mode </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234363" class="heading3">Format of RAW logs in HTTP mode</h3>
+<p class="bodytext">If Kaspersky Scan Engine is configured to write syslog messages in RAW format, the log records about events appear as follows:</p>
+<p class="program">&lt;%PRIORITY%&gt;1 %TIMESTAMP% %HTTP_SERVICE_IP% KasperskyHTTPService %HTTP_SERVICE_PID% %MESSAGE_ID% - BOM %MESSAGE%\n</p>
+<p class="bodytext">A record has the following fields:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">%PRIORITY%</code><p class="listcontinue1">Severity level of the event. Possible values:</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">163</code><p class="listcontinue2">This value is specified for errors.</p>
+</li><li class="listbullet2"><code class="programcharacter">165</code><p class="listcontinue2">This value is specified if the scan result is something other than <code class="programcharacter">CLEAN</code>.</p>
+</li><li class="listbullet2"><code class="programcharacter">166</code><p class="listcontinue2">This value is specified for service events or if the scan result is <code class="programcharacter">CLEAN</code>.</p>
+</li></ul></li><li class="listbullet1"><code class="programcharacter">%TIMESTAMP%</code><p class="listcontinue1">Date and time of the event in the Coordinated Universal Time (UTC) time zone.</p>
+</li><li class="listbullet1"><code class="programcharacter">%HTTP_SERVICE_IP%</code><p class="listcontinue1">IP address that Kaspersky Scan Engine uses to receive scan requests from clients. If Kaspersky Scan Engine receives scan requests over a UNIX socket, the field contains the host name of the computer that Kaspersky Scan Engine runs on.</p>
+</li><li class="listbullet1"><code class="programcharacter">%HTTP_SERVICE_PID%</code><p class="listcontinue1">PID of Kaspersky Scan Engine.</p>
+</li><li class="listbullet1"><code class="programcharacter">%MESSAGE_ID%</code><p class="listcontinue1">Class of the event. Possible values:</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">AUDIT_MESSAGE</code><p class="listcontinue2">Audit event.</p>
+</li><li class="listbullet2"><code class="programcharacter">SERVICE_MESSAGE</code><p class="listcontinue2">Service event.</p>
+</li><li class="listbullet2"><code class="programcharacter">ERROR_MESSAGE</code><p class="listcontinue2">Error.</p>
+</li><li class="listbullet2"><code class="programcharacter">SCAN_RESULT_CLEAN_MESSAGE</code><p class="listcontinue2">Scanned object is considered clean.</p>
+</li><li class="listbullet2"><code class="programcharacter">SCAN_RESULT_DETECT_MESSAGE</code><p class="listcontinue2">Threat was detected.</p>
+</li><li class="listbullet2"><code class="programcharacter">SCAN_RESULT_OTHER_MESSAGE</code><p class="listcontinue2">Object was not scanned.</p>
+</li></ul></li><li class="listbullet1"><code class="programcharacter">%MESSAGE%</code><p class="listcontinue1">Description of the event. For example, the text of an error message.</p>
+</li></ul>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

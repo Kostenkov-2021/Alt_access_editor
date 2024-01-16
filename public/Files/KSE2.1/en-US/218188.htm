@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> About updating </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234270" class="heading2">About updating</h2>
+<p class="bodytext">Updating the anti-malware database and updatable modules on a regular basis ensures that Kaspersky Scan Engine provides a consistent level of security. See also <a id="h218299" class="englishcrossreferencetemplate" href="218298.htm" target="_self">best practices for database updates</a>.</p>
+<p class="bodytext">To update the database and modules, you must have a valid KEY file or an activation code for Kaspersky Scan Engine.</p>
+<p class="warningbody">When the anti-malware database and modules are updated, the encrypted <code class="programcharacter">User-Agent</code> string of Kaspersky Scan Engine is transferred to Kaspersky. See also the full list of data that is <a id="h180101" class="englishcrossreferencetemplate" href="180001.htm" target="_self">transferred to Kaspersky during an update</a>.</p>
+<p class="bodytext">Kaspersky Scan Engine supports the following methods of updating:</p>
+<ul class="listbullet1"><li class="listbullet1">Regular updating by using the built-in functionality of Kaspersky Scan Engine<p class="listcontinue1">This method does not require any additional software to be installed.</p>
+<p class="listcontinue1">This is the recommended method of updating.</p>
+</li><li class="listbullet1">Updating by using Updater SDK<p class="listcontinue1">You can use Updater SDK to download updates and to create mirror servers for updates.</p>
+<p class="listcontinue1">Updater SDK, including the documentation on Updater SDK API, is delivered as a separate package.</p>
+</li><li class="listbullet1">Manual updating<p class="listcontinue1">This method is not recommended.</p>
+</li></ul><p class="introheading">Updating by using the built-in functionality of Kaspersky Scan Engine</p>
+<p class="listheading">To configure regular updates by using the built-in functionality of Kaspersky Scan Engine:</p>
+<ul class="listbullet1"><li class="listbullet1">If you are using Kaspersky Scan Engine in HTTP mode, <a id="h180054" class="englishcrossreferencetemplate" href="179873.htm" target="_self">configure updating for HTTP mode</a>.</li><li class="listbullet1">If you are using Kaspersky Scan Engine in ICAP mode, <a id="h180564" class="englishcrossreferencetemplate" href="179902.htm" target="_self">configure updating for ICAP mode</a>.</li><li class="listbullet1">You can also <a id="h201469" class="englishcrossreferencetemplate" href="179701.htm" target="_self">configure updating in Kaspersky Scan Engine GUI</a>.</li></ul><p class="introheading">Updating by using Updater SDK</p>
+<p class="bodytext">Updater SDK allows you to update Kaspersky Scan Engine and to create mirrors that keep your own copies of updates for updatable modules and the anti-malware database downloaded from the Kaspersky update servers. These mirrors can be deployed within the boundaries of a local enterprise network, allowing you to retrieve updates once, and then redistribute the updates to multiple endpoints within the local network and without having to contact the Kaspersky update servers each time. You can also use Updater SDK to download the updated anti-malware database to computers with Kaspersky Scan Engine installed.</p>
+<p class="bodytext">For more information about updating with Updater SDK, see the Updater SDK documentation. You can get the Updater SDK documentation from the person at Kaspersky who provided you with the Kaspersky Scan Engine distribution kit.</p>
+<p class="introheading">Manual updating</p>
+<p class="attentionbody">Manual updating is not recommended.</p>
+<p class="bodytext">You can run an update manually in the following ways:</p>
+<ul class="listbullet1"><li class="listbullet1">Update the anti-virus database on demand <a id="h179933" class="englishcrossreferencetemplate" href="179882.htm" target="_self">in HTTP mode</a>.</li><li class="listbullet1">Update the anti-virus database by sending a <code class="programcharacter">SIGUSR2</code> signal <a id="h180564_2" class="englishcrossreferencetemplate" href="179902.htm" target="_self">in ICAP mode</a>.</li><li class="listbullet1">On the <a id="h180278" class="englishcrossreferencetemplate" href="179695.htm" target="_self">Kaspersky Scan Engine dashboard</a>, by clicking the <span class="guicharacter">Update</span> button.</li></ul><p class="introheading">About the update procedure</p>
+<p class="bodytext">Updates are available through the Kaspersky update servers, which are dedicated servers on the Internet operated by Kaspersky that have the most recent versions of files provided by Kaspersky. Kaspersky Scan Engine can also download updates from mirror servers created with Updater SDK.</p>
+<p class="attentionbody">When the update is performed from the Kaspersky infrastructure, data is transmitted over a secure channel. The HTTPS (TLS) protocol can be used. The protocol to use is selected by the Kaspersky infrastructure.</p>
+<p class="bodytext">The following data is downloaded during the update procedure of Kaspersky Scan Engine:</p>
+<ul class="listbullet1"><li class="listbullet1">Malware definition files<p class="listcontinue1">Malware definitions store malware signature data. Scanning components of Kaspersky Scan Engine use these definitions for detection.</p>
+</li><li class="listbullet1">Updates for updatable modules<p class="listcontinue1">Updatable modules implement enhanced detection methods in Kaspersky Scan Engine.</p>
+</li></ul><p class="bodytext">Updates are performed by using a differential updating technique. This technique allows Kaspersky Scan Engine to update files by downloading only the part of the file that has changed since the last update.</p>
+<p class="introheading">Getting information about the current anti-malware database</p>
+<p class="bodytext">You can get information about the current anti-malware database in the following ways:</p>
+<ul class="listbullet1"><li class="listbullet1">On the <a id="h180278_2" class="englishcrossreferencetemplate" href="179695.htm" target="_self">Kaspersky Scan Engine dashboard</a>.</li><li class="listbullet1">Sending <a id="h193115" class="englishcrossreferencetemplate" href="193005.htm" target="_self">an HTTP request</a> (in HTTP mode).</li><li class="listbullet1">Getting the status of the <code class="programcharacter">kavicapd</code> service by using the <code class="programcharacter"><a id="h209555" class="englishcrossreferencetemplate" href="192397.htm" target="_self">status</a></code> command (in ICAP mode).</li></ul>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

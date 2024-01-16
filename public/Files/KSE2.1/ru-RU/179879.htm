@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Настройка логирования в режиме HTTP </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234305" class="heading3">Настройка логирования в режиме HTTP</h3>
+<p class="bodytext">В этом разделе описано, как настроить логирование в режиме HTTP вручную без использования Kaspersky Scan Engine GUI.</p>
+<p class="bodytext">Смотрите также подробные инструкции по <a id="h180103" class="englishcrossreferencetemplate" href="179928.htm" target="_self">включению логирования</a>.</p>
+<p class="introheading">Настройка логирования</p>
+<p class="bodytext">Чтобы настроить логирование, измените параметры в файле конфигурации логирования httpdkavlog.ini (далее – файл конфигурации логирования), расположенном в директории <code class="programcharacter">%service_dir%/bin</code>. Файл конфигурации состоит из нескольких разделов.</p>
+<p class="introheading">Раздел DebugLogging</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">LogLevel</code> – указывает уровень логирования.<p class="listcontinue1">Возможные значения:</p> <ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">0</code><p class="listcontinue2">Выключает логирование. Это значение по умолчанию.</p>
+</li><li class="listbullet2"><code class="programcharacter">1</code><p class="listcontinue2">Включает режим полного логирования. Используйте этот режим для отладки.</p>
+<p class="warningcontinue2">Если вы включите режим полного логирования, учтите, что сообщения журнала будут содержать <a id="h206306" class="englishcrossreferencetemplate" href="179925.htm" target="_self">конфиденциальные данные</a>.</p>
+<p class="attentioncontinue2">Kaspersky Scan Engine в режиме HTTP не удаляет автоматически файлы логов предыдущих инициализаций. При необходимости вы можете удалить эти файлы логов вручную.</p>
+</li></ul></li><li class="listbullet1"><code class="programcharacter">LogFolder</code> – указывает путь к директории, в которой хранятся файлы журналов. <p class="listcontinue1">Путь может быть абсолютным или относительным. Относительный путь вычисляется относительно директории, содержащей бинарный файл <code class="programcharacter">kavhttpd</code>.</p> </li></ul><p class="introheading">Раздел SyslogLogging</p>
+<p class="bodytext">Приведенные ниже настройки доступны только для операционных систем Linux.</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">SyslogEnabled</code> – указывает, отправляет ли Kaspersky Scan Engine сообщения системного журнала.<p class="listcontinue1">Возможные значения:</p> <ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">0</code><p class="listcontinue2">Выключает отправку сообщений системного журнала. </p>
+</li><li class="listbullet2"><code class="programcharacter">1</code><p class="listcontinue2">Включает отправку сообщений системного журнала.</p>
+<p class="warningcontinue2">Если вы разрешаете отправку сообщений системного журнала, учтите, что эти сообщения будут содержать конфиденциальные данные, такие как личные данные, определенные GDPR, данные конфигурации продукта и информацию о лицензировании.</p>
+</li></ul></li></ul><p class="introheading">Раздел SyslogDestination </p>
+<p class="bodytext">Этот элемент содержит группу настроек, определяющих формат журналов. Если необходимо записывать журналы в разные места, вы можете указать несколько элементов <code class="programcharacter">SyslogDestination</code>. В этом случае значения подэлементов <code class="programcharacter">SyslogTarget</code> должны различаться.</p>
+<p class="attentionbody">Если <code class="programcharacter">SyslogEnabled</code> (см. выше) имеет значение <code class="programcharacter">1</code>, вы должны включить хотя бы один элемент <code class="programcharacter">SyslogDestination</code>.</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">SyslogFormat</code> – указывает формат сообщений системного журнала. <p class="listcontinue1">Возможные значения:</p> <ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">cef</code> – указывает формат <code class="programcharacter">cef</code> сообщений системного журнала.</li><li class="listbullet2"><code class="programcharacter">raw</code> – указывает формат <code class="programcharacter">raw</code> сообщений системного журнала. Значение <code class="programcharacter">raw</code> используется, когда значение, указанное в этом элементе, не является <code class="programcharacter">cef</code> или <code class="programcharacter">raw</code>, или если в этом элементе не указано значение, или если файл конфигурации логирования не содержит параметр <code class="programcharacter">SyslogFormat</code>.</li></ul></li><li class="listbullet1"><code class="programcharacter">SyslogTarget</code> – задает адрес назначения для сообщений системного журнала. <p class="listcontinue1">Возможные значения:</p> <ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">%PROTOCOL%%IP%:%PORT%</code>, где:<ul class="listbullet3"><li class="listbullet3"><code class="programcharacter">%PROTOCOL%</code> – сетевой протокол (используйте <code class="programcharacter">tcp://</code> или <code class="programcharacter">udp://</code> для этого значения). </li><li class="listbullet3"><code class="programcharacter">%IP%</code> – IPv4-адрес, который получает сообщения системного журнала. </li><li class="listbullet3"><code class="programcharacter">%PORT%</code> – порт, который получает сообщения системного журнала.</li></ul><p class="listcontinue2">Если вы не укажете протокол, как описано выше, Kaspersky Scan Engine будет использовать протокол UDP.</p> </li><li class="listbullet2"><code class="programcharacter">localhost</code> – указывает, что сообщения системного журнала перенаправляются в <code class="programcharacter">syslogd</code>.</li><li class="listbullet2">Путь к директории, в которой хранятся файлы с сообщениями системного журнала. Путь должен начинаться с <code class="programcharacter">/var/log/kaspersky</code>.<p class="listcontinue2">Директория содержит файл <code class="programcharacter">httpd_kav_syslog.log</code>. Файлы с сообщениями системного журнала, созданные предыдущими сеансами, не удаляются. Если в директории есть старый файл, Kaspersky Scan Engine записывает в этот файл новую информацию, не удаляя старые данные. </p> </li></ul></li><li class="listbullet1"><code class="programcharacter">SyslogEvents</code> – определяет события, которые необходимо зарегистрировать. <p class="listcontinue1">Допускается указывать несколько значений <code class="programcharacter">SyslogEvents</code>. Каждое из этих значений устанавливает тип события, которое будет зарегистрировано в местоположении, указанном в атрибуте <code class="programcharacter">SyslogTarget</code>. Если вы указываете несколько значений для одного места назначения, разделите их символом точки с запятой (<code class="programcharacter">;</code>).</p> <p class="listcontinue1">Возможные значения:</p> <ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">Audit</code> – указывает события аудита системы.</li><li class="listbullet2"><code class="programcharacter">Init</code> – указывает события инициализации службы. </li><li class="listbullet2"><code class="programcharacter">Deinit</code> – указывает события деинициализации службы и сторожевые события. </li><li class="listbullet2"><code class="programcharacter">Update</code> – указывает события обновления и перезагрузки антивирусных баз.</li><li class="listbullet2"><code class="programcharacter">License</code> – указывает события, связанные с лицензией.</li><li class="listbullet2"><code class="programcharacter">Engine</code> - указывает события антивирусного движка. Эти события могут часто публиковаться.</li><li class="listbullet2"><code class="programcharacter">ScanResultClean</code> – указывает события завершения сканирования, когда сканируемый объект считается безопасным.</li><li class="listbullet2"><code class="programcharacter">ScanResultDetect</code> – указывает события завершения сканирования при обнаружении угрозы.</li><li class="listbullet2"><code class="programcharacter">ScanResultOther</code> – указывает события завершения сканирования, когда объект не сканировался.</li></ul><p class="listcontinue1">Если элемент <code class="programcharacter">SyslogDestination</code> не содержит дочернего элемента <code class="programcharacter">SyslogEvents</code>, регистрируются все события HTTP. </p> <p class="listcontinue1">Если настройки <code class="programcharacter">SyslogDestination</code> неверны, логирование в указанное место назначения будет выключено.</p> <p class="listcontinue1">Когда логирование системного журнала включено, также включается аудит системы. Если ни один из элементов <code class="programcharacter">SyslogEvents</code> не содержит события <code class="programcharacter">Audit</code>, настройки аудита системы устанавливаются следующим образом: для <code class="programcharacter">SyslogFormat</code> задано значение <code class="programcharacter">raw</code>, для <code class="programcharacter">SyslogTarget</code> задано значение <code class="programcharacter">localhost</code>, а для <code class="programcharacter">SyslogEvents</code> задано значение <code class="programcharacter">audit</code>.</p> </li></ul><p class="attentionbody">Kaspersky Scan Engine может вести логи отладки и отправлять сообщения системного журнала одновременно или по отдельности.</p>
+<p class="introheading">Структура файла конфигурации логирования</p>
+<p class="bodytext">Ниже приведен пример файла конфигурации логирования:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">[DebugLogging]</p>
+<p class="program">LogLevel=0</p>
+<p class="program">LogFolder=logs</p>
+<p class="program">[SyslogLogging]</p>
+<p class="program">SyslogEnabled=0</p>
+<p class="program">[SyslogDestination]</p>
+<p class="program">SyslogFormat=raw</p>
+<p class="program">SyslogTarget=localhost</p>
+<p class="program">SyslogEvents=audit;init;deinit;update;license;engine</p>
+<p class="program">[SyslogDestination]</p>
+<p class="program">SyslogFormat=cef</p>
+<p class="program">SyslogTarget=/var/log/kaspersky/kse_udp_lic_events</p>
+<p class="program">SyslogEvents=license;update</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

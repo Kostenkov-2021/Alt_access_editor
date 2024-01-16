@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Формат логов RAW в режиме HTTP </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234363" class="heading3">Формат логов RAW в режиме HTTP</h3>
+<p class="bodytext">Если Kaspersky Scan Engine настроен на запись сообщений системного журнала в формате RAW, записи журнала о событиях выглядят следующим образом:</p>
+<p class="program">&lt;%PRIORITY%&gt;1 %TIMESTAMP% %HTTP_SERVICE_IP% KasperskyHTTPService %HTTP_SERVICE_PID% %MESSAGE_ID% - BOM %MESSAGE%\n</p>
+<p class="bodytext">Запись имеет следующие поля:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">%PRIORITY%</code><p class="listcontinue1">Уровень критичности события. Возможные значения:</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">163</code><p class="listcontinue2">Это значение указывается для ошибок.</p>
+</li><li class="listbullet2"><code class="programcharacter">165</code><p class="listcontinue2">Это значение указывается, если результат сканирования отличен от <code class="programcharacter">CLEAN</code>.</p>
+</li><li class="listbullet2"><code class="programcharacter">166</code><p class="listcontinue2">Это значение указывается для служебных событий или если результат сканирования – <code class="programcharacter">CLEAN</code>.</p>
+</li></ul></li><li class="listbullet1"><code class="programcharacter">%TIMESTAMP%</code><p class="listcontinue1">Дата и время события в часовом поясе всемирного координированного времени (UTC).</p>
+</li><li class="listbullet1"><code class="programcharacter">%HTTP_SERVICE_IP%</code><p class="listcontinue1">IP-адрес, который Kaspersky Scan Engine использует для получения запросов на сканирование от клиентов. Если Kaspersky Scan Engine получает запросы на сканирование через UNIX-сокет, в поле указывается имя хоста компьютера, на котором работает Kaspersky Scan Engine.</p>
+</li><li class="listbullet1"><code class="programcharacter">%HTTP_SERVICE_PID%</code><p class="listcontinue1">PID Kaspersky Scan Engine.</p>
+</li><li class="listbullet1"><code class="programcharacter">%MESSAGE_ID%</code><p class="listcontinue1">Класс события. Возможные значения:</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">AUDIT_MESSAGE</code><p class="listcontinue2">Событие аудита.</p>
+</li><li class="listbullet2"><code class="programcharacter">SERVICE_MESSAGE</code><p class="listcontinue2">Служебное событие.</p>
+</li><li class="listbullet2"><code class="programcharacter">ERROR_MESSAGE</code><p class="listcontinue2">Ошибка.</p>
+</li><li class="listbullet2"><code class="programcharacter">SCAN_RESULT_CLEAN_MESSAGE</code><p class="listcontinue2">Просканированный объект считается безопасным.</p>
+</li><li class="listbullet2"><code class="programcharacter">SCAN_RESULT_DETECT_MESSAGE</code><p class="listcontinue2">Обнаружена угроза.</p>
+</li><li class="listbullet2"><code class="programcharacter">SCAN_RESULT_OTHER_MESSAGE</code><p class="listcontinue2">Объект не просканирован.</p>
+</li></ul></li><li class="listbullet1"><code class="programcharacter">%MESSAGE%</code><p class="listcontinue1">Описание события. Например, текст сообщения об ошибке.</p>
+</li></ul>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

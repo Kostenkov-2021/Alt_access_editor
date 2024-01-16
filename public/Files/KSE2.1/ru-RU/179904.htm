@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Использование Kaspersky Scan Engine в режиме ICAP со Squid </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234581" class="heading3">Использование Kaspersky Scan Engine в режиме ICAP со Squid</h3>
+<p class="bodytext">Squid – это кеширующий и перенаправляющий прокси-сервер для Windows и UNIX-подобных систем. Вы можете использовать Kaspersky Scan Engine в режиме ICAP для проверки трафика, проходящего через прокси-сервер Squid.</p>
+<p class="introheading">Требования к установленному ПО</p>
+<ul class="listbullet1"><li class="listbullet1">Операционная система Ubuntu 18.04 или более поздней версии.</li><li class="listbullet1">Squid 4.5 или более поздняя версия.</li></ul><p class="introheading">Настройка Squid для работы с Kaspersky Scan Engine</p>
+<p class="bodytext">Чтобы Kaspersky Scan Engine работал со Squid в режиме ICAP, вы должны указать Kaspersky Scan Engine как службу ICAP в файле конфигурации Squid (squid.conf). </p>
+<p class="bodytext">В Squid ICAP-служба определяется в следующем формате: <code class="programcharacter">icap_service id vectoring_point [options] uri</code>.</p>
+<p class="procedureheading">Чтобы указать Kaspersky Scan Engine как службу ICAP:</p>
+<ol class="listnumber1"><li class="listnumber1">Откройте squid.conf для редактирования.</li><li class="listnumber1">Определите обязательные параметры <code class="programcharacter">id</code>, <code class="programcharacter">vectoring_point</code> и <code class="programcharacter">uri</code>:<ol class="listalpha2"><li class="listalpha2">Установите <code class="programcharacter">id</code> равным любому подходящему идентификатору. Например, <code class="programcharacter">srv_kl_resp</code> для режима REQMOD и <code class="programcharacter">srv_kl_req</code> для режима RESPMOD.</li><li class="listalpha2">Установите для <code class="programcharacter">vectoring_point</code> соответствующее значение <code class="programcharacter">*_precache</code>: <ul class="listbullet3"><li class="listbullet3">Для режима REQMOD укажите <code class="programcharacter">reqmod_precache</code>.</li><li class="listbullet3">Для режима RESPMOD укажите <code class="programcharacter">respmod_precache</code>.</li></ul></li><li class="listalpha2">Укажите в качестве <code class="programcharacter">uri</code> расположение Kaspersky Scan Engine: <ul class="listbullet3"><li class="listbullet3">Для режима REQMOD URI должен иметь следующий формат: <code class="programcharacter">icap://servername:port/req</code>.</li><li class="listbullet3">Для режима RESPMOD URI должен иметь следующий формат: <code class="programcharacter">icap://servername:port/resp</code>.</li></ul></li></ol></li><li class="listnumber1">Добавьте следующие строки в конец файла конфигурации Squid:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">icap_enable on</p>
+<p class="program">adaptation_send_username on</p>
+<p class="program">adaptation_send_client_ip on</p>
+<p class="program">icap_service srv_kl_resp respmod_precache 0 icap://localhost:1344/resp</p>
+<p class="program">icap_service srv_kl_req reqmod_precache 0 icap://localhost:1344/req</p>
+<p class="program">adaptation_access srv_kl_resp allow all</p>
+<p class="program">adaptation_access srv_kl_req allow all</p>
+<p class="program">icap_service_failure_limit -1</p>
+<p class="program">icap_service_revival_delay 30</p>
+<p class="program">icap_preview_enable off</p>
+</td>
+</tr>
+
+</table> <p class="listcontinue1">В приведенном выше примере <code class="programcharacter">srv_kl_resp</code> и <code class="programcharacter">srv_kl_req</code> – примеры <code class="programcharacter">id</code>; <code class="programcharacter">respmod_precache</code> и <code class="programcharacter">reqmod_precache</code> – значения <code class="programcharacter">vectoring_point</code>; <code class="programcharacter">0</code> – значение параметра Squid <code class="programcharacter">bypass</code>, а <code class="programcharacter">vectoring_point</code> и <code class="programcharacter">icap://127.0.0.1:1344/req</code> – примеры <code class="programcharacter">uri</code>.</p> <p class="attentioncontinue1">Вы можете использовать <code class="programcharacter">127.0.0.1</code> в <code class="programcharacter">uri</code>, только если Kaspersky Scan Engine установлен на том же компьютере, что и Squid. </p> </li><li class="listnumber1">Сохраните и закройте squid.conf.</li><li class="listnumber1">Перезапустите <code class="programcharacter">службу squid</code>.<p class="listcontinue1"><code class="programcharacter">service squid restart</code></p> </li></ol><p class="introheading">Настройка Squid для работы с Kaspersky Scan Engine и включение сканирования SSL</p>
+<p class="bodytext">По умолчанию Kaspersky Scan Engine не может проверять SSL/TLS-трафик, но вы можете настроить Squid расшифровывать его с помощью функции SSL Bumping.</p>
+<p class="procedureheading">Чтобы настроить Squid для работы с Kaspersky Scan Engine и включить SSL Bumping:</p>
+<ol class="listnumber1"><li class="listnumber1">Установите пакеты, необходимые для компиляции и настройки Squid:<p class="listcontinue1"><code class="programcharacter">apt-get install build-essential openssl libssl-dev pkg-config</code></p> </li><li class="listnumber1">Загрузите исходный код Squid 4.5 или более поздней версии.</li><li class="listnumber1">Распакуйте архив с исходным кодом Squid в требуемую директорию.</li><li class="listnumber1">Перейдите в эту директорию.</li><li class="listnumber1">Скомпилируйте Squid:<p class="listcontinue1"><code class="programcharacter">./configure --with-default-user=proxy --with-openssl --enable-ssl-crtd</code></p> <p class="listcontinue1"><code class="programcharacter">make all</code></p> <p class="listcontinue1"><code class="programcharacter">make install</code></p> <p class="listcontinue1">Параметры <code class="programcharacter">--with-openssl</code> и <code class="programcharacter">--enable-ssl-crtd</code> необходимы, чтобы включить SSL Bumping.</p> </li><li class="listnumber1">Установите правильное время и дату на сервере, на котором работает Squid. Время и дата проверяются каждый раз, когда клиент пытается проверить сертификат этого сервера.</li><li class="listnumber1">Настройте OpenSSL:<ol class="listalpha2"><li class="listalpha2">Найдите файл конфигурации OpenSSL по умолчанию <code class="programcharacter">openssl.cnf</code>. Расположение этого файла зависит от вашей операционной системы, но обычно это <code class="programcharacter">/etc/ssl/openssl.cnf</code>.</li><li class="listalpha2">Откройте <code class="programcharacter">openssl.cnf</code> для редактирования.</li><li class="listalpha2">Добавьте следующую строку в раздел <code class="programcharacter">[v3_ca]</code> файла конфигурации:<p class="listcontinue2"><code class="programcharacter">keyUsage = cRLSign, keyCertSign</code></p> </li><li class="listalpha2">Сохраните и закройте файл <code class="programcharacter">openssl.cnf</code>.</li></ol></li><li class="listnumber1">Подготовьте среду для хранения SSL-сертификатов:<ol class="listalpha2"><li class="listalpha2">Создайте директорию для хранения SSL-сертификатов:<p class="listcontinue2"><code class="programcharacter">mkdir /usr/local/squid/etc/ssl_cert -p</code></p> </li><li class="listalpha2">Измените пользователя и группу, которым принадлежит эта директория, на <code class="programcharacter">proxy</code>:<p class="listcontinue2"><code class="programcharacter">chown proxy:proxy /usr/local/squid/etc/ssl_cert -R</code></p> </li><li class="listalpha2">Измените разрешения для этой директории:<p class="listcontinue2"><code class="programcharacter">chmod 700 /usr/local/squid/etc/ssl_cert -R</code></p> </li></ol></li><li class="listnumber1">Перейдите во вновь созданную директорию:<p class="listcontinue1"><code class="programcharacter">cd /usr/local/squid/etc/ssl_cert</code></p> </li><li class="listnumber1">Сгенерируйте новый самозаверяющий SSL-сертификат и закрытый ключ для сервера Squid:<p class="listcontinue1"><code class="programcharacter">openssl req -new -newkey rsa:2048 -sha256 -days 365 -nodes -x509 -extensions v3_ca -keyout squid_ca.pem -out squid_ca.pem</code></p> </li><li class="listnumber1">Преобразуйте созданный сертификат в формат DER:<p class="listcontinue1"><code class="programcharacter">openssl x509 -in squid_ca.pem -outform DER -out squid_ca.der</code></p> </li><li class="listnumber1">Экспортируйте сгенерированный сертификат на клиентские компьютеры и установите его на них как сертификат центра сертификации. Способ выполнения этого действия зависит от браузера и операционной системы клиента.</li><li class="listnumber1">Создайте новую базу данных SSL для сервера Squid:<p class="listcontinue1"><code class="programcharacter">/usr/local/squid/libexec/security_file_certgen -c -s /usr/local/squid/var/logs/ssl_db -M 4MB</code></p> </li><li class="listnumber1">Измените пользователя и группу, которым принадлежит эта директория, на <code class="programcharacter">proxy</code>:<p class="listcontinue1"><code class="programcharacter">chown proxy:proxy /usr/local/squid/var/logs/ssl_db -R</code></p> </li><li class="listnumber1">Настройте Squid:<ol class="listalpha2"><li class="listalpha2">Найдите файл конфигурации Squid по умолчанию <code class="programcharacter">squid.conf</code>. Расположение этого файла зависит от вашей операционной системы, но обычно это<code class="programcharacter"> </code><code class="programcharacter">/usr/local/squid/etc/squid.conf</code>.</li><li class="listalpha2">Откройте <code class="programcharacter">squid.conf</code> и внесите следующие правки:</li><li class="listalpha2">Найдите следующую строку:<p class="listcontinue2"><code class="programcharacter">http_port 3128</code></p> </li><li class="listalpha2">Замените его строкой:<p class="listcontinue2"><code class="programcharacter">http_port 3128 ssl-bump cert=/usr/local/squid/etc/ssl_cert/squid_ca.pem generate-host-certificates=on dynamic_cert_mem_cache_size=4MB</code></p> <p class="listcontinue2">Эта строка включает SSL Bumping на порту 3128.</p> </li><li class="listalpha2">Добавьте следующий раздел:<p class="listcontinue2"><code class="programcharacter">acl step1 at_step SslBump1</code></p> <p class="listcontinue2"><code class="programcharacter">ssl_bump peek step1</code></p> <p class="listcontinue2"><code class="programcharacter">ssl_bump bump all</code></p> <p class="listcontinue2"><code class="programcharacter">sslcrtd_program /usr/local/squid/libexec/security_file_certgen -s /usr/local/squid/var/logs/ssl_db -M 4MB</code></p> </li><li class="listalpha2">Укажите Kaspersky Scan Engine в качестве службы ICAP в файле конфигурации Squid, как описано выше в подразделе &quot;Настройка Squid для работы с Kaspersky Scan Engine&quot;.</li><li class="listalpha2">Сохраните и закройте <code class="programcharacter">squid.conf</code>.</li></ol></li><li class="listnumber1">Измените пользователя и группу, которым принадлежит директория <code class="programcharacter">/usr/local/squid</code>, на <code class="programcharacter">proxy</code>:<p class="listcontinue1"><code class="programcharacter">chown -R proxy:proxy /usr/local/squid</code></p> </li><li class="listnumber1">Запустите Squid и инициализируйте кеш Squid:<p class="listcontinue1"><code class="programcharacter">/usr/local/squid/sbin/squid -z</code></p> </li></ol><p class="bodytext">Ниже приведен пример части файла конфигурации Squid: В этом примере Squid использует Kaspersky Scan Engine в режиме ICAP для проверки HTTP-сообщений как в режиме REQMOD, так и в режиме RESPMOD.</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program"># SSL bumping configuration</p>
+<p class="program">&nbsp;</p>
+<p class="program"><code class="programcharacter">acl step1 at_step SslBump1</code></p>
+<p class="program"><code class="programcharacter">ssl_bump peek step1</code></p>
+<p class="program"><code class="programcharacter">ssl_bump bump all</code></p>
+<p class="program">http_port 3128 ssl-bump cert=/usr/local/squid/etc/ssl_cert/squid_ca.pem generate-hostcertificates=on dynamic_cert_mem_cache_size=4MB</p>
+<p class="program"><code class="programcharacter">sslcrtd_program /usr/local/squid/libexec/security_file_certgen -s /usr/local/squid/var/logs/ssl_db -M 4MB</code></p>
+<p class="program">&nbsp;</p>
+<p class="program">&nbsp;</p>
+<p class="program"># ICAP configuration</p>
+<p class="program">&nbsp;</p>
+<p class="program">icap_enable on</p>
+<p class="program">adaptation_send_username on</p>
+<p class="program">adaptation_send_client_ip on</p>
+<p class="program">icap_service srv_kl_resp respmod_precache 0 icap://localhost:1344/resp</p>
+<p class="program">icap_service srv_kl_req reqmod_precache 0 icap://localhost:1344/req</p>
+<p class="program">adaptation_access srv_kl_resp allow all</p>
+<p class="program">adaptation_access srv_kl_req allow all</p>
+<p class="program">icap_service_failure_limit -1</p>
+<p class="program">icap_service_revival_delay 30</p>
+<p class="program">icap_preview_enable off</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

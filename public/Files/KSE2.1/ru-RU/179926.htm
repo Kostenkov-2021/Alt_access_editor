@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Файл конфигурации логирования </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234432" class="heading2">Файл конфигурации логирования</h2>
+<p class="bodytext">В этом разделе описаны свойства файла конфигурации логирования kave.ini. Файл конфигурации логирования kave.ini определяет параметры логирования Kaspersky Anti-Virus Engine. Логирование настраивается отдельно для служб <a id="h180157" class="englishcrossreferencetemplate" href="179879.htm" target="_self">kavhttpd</a> и <a id="h190568" class="englishcrossreferencetemplate" href="179896.htm" target="_self">kavicapd</a>.</p>
+<p class="attentionbody">Параметры логирования для служб kavicapd/kavhttpd и Kaspersky Anti-Virus Engine синхронизируются при запуске и перезапуске службы klScanEngineUI. Kaspersky Scan Engine устанавливает уровень логирования (<code class="programcharacter">WriteLog</code>) и директорию журнала (<code class="programcharacter">LogsFolder</code>) в kave.ini такими же, как указано в разделе <code class="programcharacter">DebugLogging</code> файла icapdkavlog.conf (для режима ICAP) или httpdkavlog.ini (для режима HTTP).</p>
+<p class="bodytext">В следующей таблице описаны свойства файла конфигурации логирования kave.ini.</p>
+<p class="tablename">Свойства файла конфигурации логирования</p>
+<p class="spacerfortables"></p>
+<table class="tableintopic" width="642" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="114"><p class="tableheading">Свойство</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="528"><p class="tableheading">Описание</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext"><code class="programcharacter">Append</code></p>
+</td>
+<td style="border:1px solid #010101;" width="528"><p class="tablebodytext">Указывает, будут ли предыдущие файлы журналов сохраняться или удаляться при каждой инициализации Kaspersky Scan Engine.</p>
+<p class="tablebodytext">Возможные значения:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet"><code class="programcharacter">0</code><p class="tablelistcontinue">Автоматически удалять существующие файлы журналов.</p>
+<p class="tablelistcontinue">Существующие файлы журналов в директории журналов автоматически удаляются при инициализации Kaspersky Scan Engine.</p>
+</li><li class="tablelistbullet"><code class="programcharacter">1</code><p class="tablelistcontinue">Сохранять существующие файлы журналов.</p>
+<p class="tablelistcontinue">Kaspersky Scan Engine записывает данные логирования в новые файлы журнала, каждый из которых соответствует определенному процессу. При выборе этого параметра Kaspersky Scan Engine не добавляет информацию в существующий журнал.</p>
+</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext"><code class="programcharacter">SizeLimit</code></p>
+</td>
+<td style="border:1px solid #010101;" width="528"><p class="attentionbody">Только для платформ Windows. На Unix-подобных платформах этот параметр игнорируется, даже если он указан в kave.ini.</p>
+<p class="tablebodytext">Устанавливает максимально возможный размер файла журнала в мегабайтах.</p>
+<p class="tablebodytext">Возможные значения:</p>
+<p class="tablebodytext">Любое положительное целое число в диапазоне от 0 до 4095.</p>
+<p class="tablebodytext">Особые случаи:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet">0<p class="tablelistcontinue">Нет ограничений на размер файла журнала. Файлы журнала могут расти бесконечно.</p> </li></ul><p class="attentionbody">Установка лимита на ненулевое значение автоматически включает режим добавления независимо от значения, указанного для свойства <code class="programcharacter">Append</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext"><code class="programcharacter">WriteLog</code></p>
+</td>
+<td style="border:1px solid #010101;" width="528"><p class="tablebodytext">Уровень логирования.</p>
+<p class="tablebodytext">Рекомендуемые значения:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet">0<p class="tablelistcontinue">Логирование выключено.</p> </li><li class="tablelistbullet">9<p class="tablelistcontinue">Уровень отладки.</p> </li></ul><p class="bodytext">Не рекомендуется использовать другие значения.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext"><code class="programcharacter">LogsFolder</code></p>
+</td>
+<td style="border:1px solid #010101;" width="528"><p class="tablebodytext">Путь к директории журналов.</p>
+<p class="tablebodytext">Не заключайте путь в кавычки и не используйте escape-последовательность для пробелов.</p>
+<p class="tablebodytext">Возможные значения:</p>
+<p class="introheading">Относительный путь</p>
+<p class="tablebodytext">Путь рассчитывается относительно директории, в которой находится файл конфигурации логирования kave.ini.</p>
+<p class="tablebodytext">Если вы укажете несуществующую директорию, файлы журнала будут созданы в директории, содержащей двоичный файл используемой службы (<code class="programcharacter">kavhttpd</code> в режиме HTTP и <code class="programcharacter">kavicapd</code> в режиме ICAP).</p>
+<p class="introheading">Абсолютный путь</p>
+<p class="tablebodytext">Если вы укажете несуществующую директорию, файлы журнала будут созданы в директории, содержащей двоичный файл используемой службы (<code class="programcharacter">kavhttpd</code> в режиме HTTP и <code class="programcharacter">kavicapd</code> в режиме ICAP).</p>
+<p class="introheading">Локальный путь</p>
+<p class="tablebodytext">Директория, содержащая kave.ini. Локальный путь можно указать, установив для параметра <code class="programcharacter">LogsFolder</code> значение <code class="programcharacter">&quot;.&quot;</code> (без кавычек) или оставив его пустым.</p>
+<p class="attentionbody">Полный пользовательский путь для файлов журнала не должен превышать ограничение в 260 символов, применяемое макросом <code class="programcharacter">MAX_PATH</code>.<br> Это целое число не включает дополнительные ограничения длины, такие как символ конца строки, используемый в C-строках, и другие ограничения, налагаемые платформами: например, когда файловая система сохраняет дополнительное короткое имя в формате 8.3 с исходным именем файла, чтобы поддерживать совместимость с предыдущими версиями.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext"><code class="programcharacter">Syslog</code></p>
+</td>
+<td style="border:1px solid #010101;" width="528"><p class="tablebodytext">Это свойство указывает, отправляет ли Kaspersky Scan Engine данные журнала демону syslog.</p>
+<p class="tablebodytext">При использовании демона syslog вы можете записывать данные логирования в файлы журнала, другие программы или перенаправлять их на другой хост в соответствии с настройками файла конфигурации для демона syslog.</p>
+<p class="tablebodytext">Возможные значения:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet">0<p class="tablelistcontinue">Не отправлять сообщения системного журнала демону syslog. Данные журнала записываются непосредственно в место, указанное в параметре <code class="programcharacter">LogsFolder</code>.</p> </li><li class="tablelistbullet">1<p class="tablelistcontinue">Перенаправить данные логирования демону syslog. В этом случае данные журнала хранятся в месте, указанном в файле конфигурации демона syslog. Значение параметра <code class="programcharacter">LogsFolder</code> игнорируется.</p> </li></ul><p class="attentionbody">Перед перенаправлением данных логирования демону syslog убедитесь, что демон syslog настроен для логирования отладки. Добавьте следующую строку в файл конфигурации <code class="programcharacter">syslog.conf</code>:<br><code class="programcharacter">*.=debug -/var/log/debug</code><br>Файл конфигурации syslog обычно находится в <code class="programcharacter">/etc/syslog.conf</code> и управляет выводом демона syslogd.</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+<p class="introheading">Замечания</p>
+<p class="bodytext">В некоторых случаях персональный технический менеджер (ПТМ) может попросить вас включить расширенное логирование. Расширенное логирование может помочь специалистам &quot;Лаборатории Касперского&quot; исследовать сложные проблемы.</p>
+<p class="procedureheading">Чтобы включить расширенное логирование:</p>
+<ol class="listnumber1"><li class="listnumber1">Откройте файл <code class="programcharacter">kave.ini</code> (при необходимости создайте новый в папке с бинарным файлом <code class="programcharacter">kavehost</code>).</li><li class="listnumber1">В разделе <code class="programcharacter">Logging</code> добавьте параметр <code class="programcharacter">BssLogsFolder</code> и укажите место для хранения файлов с расширенными данными журнала.<p class="listcontinue1">Это местоположение должно отличаться от вашего стандартного местоположения данных логирования, указанного в <code class="programcharacter">LogsFolder</code>.</p> </li></ol><p class="introheading">Примеры</p>
+<p class="bodytext">В следующем примере приводится пример файла конфигурации для каждой из целевых платформ. </p>
+<p class="bodytext">Следующий пример файла конфигурации может использоваться на UNIX-подобной платформе.</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">[LOGGING]</p>
+<p class="program">WriteLog=9</p>
+<p class="program">Append=0</p>
+<p class="program">LogsFolder=./logs</p>
+<p class="program">Syslog=0</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+<p class="bodytext"></p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

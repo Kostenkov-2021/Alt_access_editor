@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Troubleshooting </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h1 id="t234539" class="heading1">Troubleshooting</h1>
+<p class="bodytext">This section provides information to help you solve problems you might encounter when using Kaspersky Scan Engine.</p>
+<p class="bodytext">If you encounter a problem that is not mentioned in this section, turn on logging, repeat the actions that preceded the problem, and then send the logs and configuration files to your TAM.</p>
+<p class="introheading">Problem: Kaspersky Scan Engine does not start after system reboot and could not be started with systemctl</p>
+<p class="bodytext">The cause of this problem might be that the <code class="programcharacter">/opt/</code> directory is located on a mounted device. When Kaspersky Scan Engine initializes after reboot, the device is not yet mounted and the operating system cannot find systemd unit files for Kaspersky Scan Engine.</p>
+<p class="bodytext">To solve this problem, try the following actions:</p>
+<ol class="listnumber1"><li class="listnumber1">Disable Kaspersky Scan Engine services:<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">systemctl disable klScanEngineUI</code></li><li class="listbullet2">For HTTP mode:<p class="listcontinue2"><code class="programcharacter">systemctl disable kavhttpd</code></p>
+</li><li class="listbullet2">For ICAP mode:<p class="listcontinue2"><code class="programcharacter">systemctl disable kavicapd</code></p>
+</li></ul></li><li class="listnumber1">Delete symbolic links to Kaspersky Scan Engine configuration files:<p class="listcontinue1"><code class="programcharacter">rm /etc/klScanEngineUI.xml /etc/kavhttpd.xml /etc/kavicapd.xml</code></p>
+</li><li class="listnumber1">Copy Kaspersky Scan Engine unit files to <code class="programcharacter">/etc/systemd/system/</code>:<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">cp /opt/kaspersky/ScanEngine/etc/klScanEngineUI.service /etc/systemd/system/klScanEngineUI.service</code></li><li class="listbullet2">For HTTP mode:<p class="listcontinue2"><code class="programcharacter">cp /opt/kaspersky/ScanEngine/etc/kavhttpd.service /etc/systemd/system/kavhttpd.service</code></p>
+</li><li class="listbullet2">For ICAP mode:<p class="listcontinue2"><code class="programcharacter">cp /opt/kaspersky/ScanEngine/etc/kavicapd.service /etc/systemd/system/kavicapd.service</code></p>
+</li></ul></li><li class="listnumber1">Copy Kaspersky Scan Engine configuration files to /etc/:<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">cp /opt/kaspersky/ScanEngine/etc/klScanEngineUI.xml /etc/klScanEngineUI.xml</code></li><li class="listbullet2">For HTTP mode:<p class="listcontinue2"><code class="programcharacter">cp /opt/kaspersky/ScanEngine/etc/kavhttpd.xml /etc/kavhttpd.xml</code></p>
+</li><li class="listbullet2">For ICAP mode:<p class="listcontinue2"><code class="programcharacter">cp /opt/kaspersky/ScanEngine/etc/kavicapd.xml /etc/kavicapd.xml</code></p>
+</li></ul></li><li class="listnumber1">Reload systemd:<p class="listcontinue1"><code class="programcharacter">systemctl daemon-reload</code></p>
+</li><li class="listnumber1">Enable the Kaspersky Scan Engine services to start on system boot:<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">systemctl enable klScanEngineUI</code></li><li class="listbullet2">For HTTP mode:<p class="listcontinue2"><code class="programcharacter">systemctl enable kavhttpd</code></p>
+</li><li class="listbullet2">For ICAP mode:<p class="listcontinue2"><code class="programcharacter">systemctl enable kavicapd</code></p>
+</li></ul></li><li class="listnumber1">Start Kaspersky Scan Engine services:<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">service klScanEngineUI start</code></li><li class="listbullet2">For HTTP mode:<p class="listcontinue2"><code class="programcharacter">service kavhttpd start</code></p>
+</li><li class="listbullet2">For ICAP mode:<p class="listcontinue2"><code class="programcharacter">service kavicapd start</code></p>
+</li></ul></li></ol><p class="introheading">Problem: Kaspersky Scan Engine does start and does not print logs</p>
+<p class="bodytext">The cause of this problem might be that Kaspersky Scan Engine cannot find <code class="programcharacter">klScanEngineUI.xml</code>, or that the file is corrupted and Kaspersky Scan Engine cannot read it. </p>
+<ul class="listbullet1"><li class="listbullet1">To find the solution to this problem, check the log files that are created in the <code class="programcharacter">/tmp/</code> subdirectory of the Kaspersky Scan Engine installation directory.</li></ul><p class="introheading">Problem: An error occurred while loading data by the Kaspersky Scan Engine GUI (the dashboard or scan results page)</p>
+<p class="bodytext">The cause of this problem is a failure of Kaspersky Scan Engine to connect to the <code class="programcharacter">kavebase</code> database or read data from it.</p>
+<p class="bodytext">To solve this problem, try the following actions:</p>
+<ul class="listbullet1"><li class="listbullet1">Check whether the PostgreSQL instance is running.</li><li class="listbullet1">Check whether the PostgreSQL instance is accessible from your Kaspersky Scan Engine instance.</li><li class="listbullet1">Check whether the <code class="programcharacter">kavebase</code> database persists in the PostgreSQL instance.<p class="listcontinue1">If not, create the <code class="programcharacter">kavebase</code> database as described in section &quot;<a id="h181517" class="englishcrossreferencetemplate" href="180652.htm" target="_self">Manual installation (Linux)</a>&quot;.</p>
+</li><li class="listbullet1">Check whether the <code class="programcharacter">scanengine</code> database user persists in the PostgreSQL instance.<p class="listcontinue1">If not, create the <code class="programcharacter">scanengine</code> database user as described in section &quot;<a id="h181517_2" class="englishcrossreferencetemplate" href="180652.htm" target="_self">Manual installation (Linux)</a>&quot;.</p>
+</li></ul><p class="introheading">Problem: The Kaspersky Scan Engine GUI is not displayed in a browser</p>
+<p class="bodytext">To solve this problem, try the following actions:</p>
+<ul class="listbullet1"><li class="listbullet1">Check that the Kaspersky Scan Engine instance and the klScanEngineUI service are running.</li><li class="listbullet1">Check that you are using a <a id="h193112" class="englishcrossreferencetemplate" href="184795.htm" target="_self">supported browser</a>.</li><li class="listbullet1">Check that the klScanEngineUI.xml configuration file contains the following:<ul class="listbullet2"><li class="listbullet2">The value specified in the <code class="programcharacter">ServerSettings &gt; EnableUI</code> field is <code class="programcharacter">true</code>.</li><li class="listbullet2">The <code class="programcharacter">ServerSettings &gt; ConnectionString</code> element contains one of the following IP addresses:<ul class="listbullet3"><li class="listbullet3"><code class="programcharacter">127.0.0.1</code><p class="listcontinue3">In this case, the Kaspersky Scan Engine GUI is accessible from the same computer on which Kaspersky Scan Engine is installed.</p>
+</li><li class="listbullet3">A network IP address<p class="listcontinue3">In this case, the Kaspersky Scan Engine GUI is accessible over the network.</p>
+<p class="listcontinue3">Make sure that the firewall does not block access to the computer on which Kaspersky Scan Engine is installed.</p>
+</li></ul></li></ul></li></ul><p class="introheading">Problem: Untrusted connection error when connecting to the Kaspersky Scan Engine GUI</p>
+<p class="bodytext">The SSL certificates that are generated during the installation of Kaspersky Scan Engine are self-signed, so the browser you use informs you of an untrusted connection.</p>
+<p class="bodytext">To solve this problem, try the following:</p>
+<ul class="listbullet1"><li class="listbullet1">(Recommended) <a id="h182985" class="englishcrossreferencetemplate" href="182983.htm" target="_self">Use other certificates that are trusted</a> in your infrastructure.</li><li class="listbullet1">If you cannot use other certificates, you can <a id="h182986" class="englishcrossreferencetemplate" href="182984.htm" target="_self">add the initially generated certificates as trusted</a> to your browser or operating system.</li></ul><p class="introheading">Problem: An error occurred while saving settings in the Kaspersky Scan Engine GUI</p>
+<ul class="listbullet1"><li class="listbullet1">Check whether the settings that you have specified are correct.</li><li class="listbullet1">Check the status of the <code class="programcharacter">kavhttpd</code> or <code class="programcharacter">kavicapd</code> service by running one of the commands:<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">service kavhttpd status</code></li><li class="listbullet2"><code class="programcharacter">service kavicapd status</code></li></ul></li></ul><p class="introheading">Problem: An error occurred while deleting the database during uninstallation, database &quot;kavebase&quot; is being accessed by other users</p>
+<p class="bodytext">Probable cause: someone else is connected to the <code class="programcharacter">kavebase</code> database (for example, using pgAdmin).</p>
+<p class="bodytext">Solution: run the following query to <code class="programcharacter">kavebase</code>:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">SELECT *, pg_terminate_backend(pid)</p>
+<p class="program">FROM pg_stat_activity</p>
+<p class="program">WHERE pid &lt;&gt; pg_backend_pid()</p>
+<p class="program">AND datname = 'kavebase';</p>
+</td>
+</tr>
+
+</table>
+<p class="introheading">Problem: psql not recognized as an internal or external command</p>
+<p class="bodytext">This problem may occur in Windows. To solve it, add the PostgreSQL bin directory to the PATH environment variable.</p>
+<p class="procedureheading">In Windows, do the following:</p>
+<ol class="listnumber1"><li class="listnumber1">Go to <span class="boldcharacter">Control Panel</span> -&gt; <span class="boldcharacter">System and Security</span> -&gt; <span class="boldcharacter">System</span> -&gt; <span class="boldcharacter">Advanced system settings</span> -&gt; <span class="boldcharacter">Environment variables...</span><p class="listcontinue1">The <span class="boldcharacter">Environment variables</span> dialog opens.</p>
+</li><li class="listnumber1">In the list of System Variables (the lower half of the dialog), select <span class="boldcharacter">Path</span>, and then click <span class="boldcharacter">Edit</span>.</li><li class="listnumber1">Click <span class="boldcharacter">New</span>, and then type in the path to the PostgreSQL bin directory (for example <code class="programcharacter">C:\Program Files\PostgreSQL\13\bin</code>).</li><li class="listnumber1">Save changes by clicking <span class="boldcharacter">OK</span> in all of the dialogs.</li></ol><p class="introheading">Problem: SCRAM authentication requires libpq version 10 or above</p>
+<p class="bodytext">This problem can occur when installing Kaspersky Scan Engine if you are using PostgreSQL 13 and the <code class="programcharacter">password_encryption</code> value differs from <code class="programcharacter">md5</code>.</p>
+<p class="procedureheading">To solve this problem, do the following:</p>
+<ol class="listnumber1"><li class="listnumber1">In the <code class="programcharacter">postgresql.conf</code> configuration file, set the <code class="programcharacter">password_encryption</code> parameter to <code class="programcharacter">md5</code>. <p class="listcontinue1">Save changes.</p>
+</li><li class="listnumber1">Restart PostgreSQL:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">systemctl restart postgresql-13</p>
+</td>
+</tr>
+
+</table>
+</li><li class="listnumber1">Update the password for the database user with administrator rights (for example, the user <code class="programcharacter">postgres</code>), which will be used when installing Kaspersky Scan Engine:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">alter user postgres with password '%PASSWORD%';</p>
+</td>
+</tr>
+
+</table>
+</li><li class="listnumber1">Make sure that the authentication method is set to <code class="programcharacter">md5</code> <a id="h198591" class="englishcrossreferencetemplate" href="192975.htm" target="_self">in the pg_hba.conf file</a>.</li><li class="listnumber1">Retry the installation of Kaspersky Scan Engine.</li></ol><p class="introheading">Problem: The Kaspersky Scan Engine GUI does not display events (the dashboard or scan results page)</p>
+<p class="bodytext">This problem can occur if the <code class="programcharacter">kavebase</code> database is damaged.</p>
+<p class="procedureheading">To solve this problem, do the following:</p>
+<ol class="listnumber1"><li class="listnumber1">Stop the following processes:<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">klScanEngineUI</code></li><li class="listbullet2"><code class="programcharacter">kavhttpd</code> (HTTP mode) or <code class="programcharacter">kavicapd</code> (ICAP mode)</li></ul></li><li class="listnumber1">Delete the kavebase database by running the following command:<p class="listcontinue1"><code class="programcharacter">DROP DATABASE kavebase;</code></p>
+</li><li class="listnumber1">Create a new <code class="programcharacter">kavebase</code> database by running the following command:<p class="listcontinue1"><code class="programcharacter">CREATE DATABASE kavebase OWNER %owner%;</code></p>
+<p class="listcontinue1">Here,  <code class="programcharacter">%owner%</code> is the user that was created for working with <code class="programcharacter">kavebase</code> during the installation of Kaspersky Scan Engine.</p>
+</li><li class="listnumber1">Import the <code class="programcharacter">tables.sql</code> file from the <code class="programcharacter">%service_dir%/samples</code> directory by running the following command:<p class="listcontinue1"><code class="programcharacter">psql -d kavebase -a -f tables.sql</code></p>
+</li><li class="listnumber1">Restart the processes that you stopped in step 1.</li></ol><p class="warningbody">After this operation, the <code class="programcharacter">admin</code> password for Kaspersky Scan Engine GUI will be restored to the default one and all previous events will be deleted.</p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

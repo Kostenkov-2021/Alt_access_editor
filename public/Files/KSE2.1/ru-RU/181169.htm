@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Поддерживаемые методы API в протоколе KAV версии 3 </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h4 id="t234522" class="heading4">Поддерживаемые методы API в протоколе KAV версии 3</h4>
+<p class="bodytext">В следующей таблице перечислены методы API, которые Kaspersky Scan Engine поддерживает в режиме HTTP при использовании протокола KAV версии 3. Формат запросов не зависит от того, использует ли клиент TCP или UNIX-сокеты для взаимодействия с Kaspersky Scan Engine.</p>
+<p class="tablename">Методы API, поддерживаемые в режиме HTTP в протоколе KAV версии 3</p>
+<table class="tableintopic" width="1044" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="186"><p class="tableheading">Метод API</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="84"><p class="tableheading">Метод HTTP</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="84"><p class="tableheading">Формат</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="690"><p class="tableheading">Описание</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="tablebodytext"><code class="programcharacter">/api/v3.0/scanfile</code></p>
+<p class="tablebodytext"><code class="programcharacter">/api/v3.1/scanfile</code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext">POST</p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext"><a id="h193051" class="englishcrossreferencetemplate" href="193002.htm" target="_self">Формат запроса</a></p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="tablebodytext">Сканирует файл.</p>
+<p class="tablebodytext">Используйте метод API <code class="programcharacter">/api/v3.1/scanfile</code>, чтобы получить <a id="h193050" class="englishcrossreferencetemplate" href="193001.htm" target="_self">дополнительную информацию</a> о процессе сканирования.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="tablebodytext"><code class="programcharacter">/api/v3.0/scanmemory</code></p>
+<p class="tablebodytext"><code class="programcharacter">/api/v3.1/scanmemory</code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext">POST</p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="bodytext"><a id="h193113" class="englishcrossreferencetemplate" href="193003.htm" target="_self">Формат запроса</a></p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="tablebodytext">Сканирует блок системной памяти.</p>
+<p class="tablebodytext">Используйте метод API <code class="programcharacter">/api/v3.1/scanmemory</code>, чтобы получить <a id="h193050_2" class="englishcrossreferencetemplate" href="193001.htm" target="_self">дополнительную информацию</a> о процессе сканирования.</p>
+<p class="bodytext">При сканировании системной памяти используйте только режим очистки KAV_SKIP. Kaspersky Scan Engine не может лечить или удалять файлы в этом режиме.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="tablebodytext"><code class="programcharacter">/api/v3.0/checkurl</code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext">POST</p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext"><a id="h193114" class="englishcrossreferencetemplate" href="193004.htm" target="_self">Формат запроса</a></p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="tablebodytext">Проверяет URL-адрес.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="tablebodytext"><code class="programcharacter">/api/v3.0/basesdate</code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext">GET</p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext"><a id="h193115" class="englishcrossreferencetemplate" href="193005.htm" target="_self">Формат запроса</a></p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="tablebodytext">Получает дату выпуска антивирусных баз. Вы можете использовать этот метод, чтобы проверить, запущен ли <code class="programcharacter">kavhttpd</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="tablebodytext"><code class="programcharacter">/api/v3.0/version</code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext">GET</p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext"><a id="h193116" class="englishcrossreferencetemplate" href="193007.htm" target="_self">Формат запроса</a></p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="tablebodytext">Получает текущую версию KAV SDK. Вы можете использовать этот метод, чтобы проверить, запущен ли <code class="programcharacter">kavhttpd</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="tablebodytext"><code class="programcharacter">/api/v3.0/licenseinfo</code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext">GET</p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext"><a id="h193117" class="englishcrossreferencetemplate" href="193008.htm" target="_self">Формат запроса</a></p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="tablebodytext">Получает информацию о текущем файле ключа или коде активации. Вы можете использовать этот метод, чтобы проверить, запущен ли <code class="programcharacter">kavhttpd</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="tablebodytext"><code class="programcharacter">/api/v3.0/getstatistics</code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext">GET</p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext"><a id="h193118" class="englishcrossreferencetemplate" href="193009.htm" target="_self">Формат запроса</a></p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="tablebodytext">Получает накопленную статистику.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="tablebodytext"><code class="programcharacter">/api/v3.0/clearstatistics</code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext">POST</p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext"><a id="h193119" class="englishcrossreferencetemplate" href="193010.htm" target="_self">Формат запроса</a></p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="tablebodytext">Очищает накопленную статистику.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="tablebodytext"><code class="programcharacter">/api/v3.0/update/start</code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext">POST</p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext"><a id="h193120" class="englishcrossreferencetemplate" href="193011.htm" target="_self">Формат запроса</a></p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="tablebodytext">Обновляет антивирусные базы.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="tablebodytext"><code class="programcharacter">/api/v3.0/update/status</code></p>
+<p class="tablebodytext"><code class="programcharacter">/api/v3.1/update/status</code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext">GET</p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext"><a id="h193121" class="englishcrossreferencetemplate" href="193012.htm" target="_self">Формат запроса</a></p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="tablebodytext">Получает статус процесса обновления базы данных.</p>
+<p class="tablebodytext">Воспользуйтесь методом API <code class="programcharacter">/api/v3.1/update/status</code>, чтобы получить <a id="h179933" class="englishcrossreferencetemplate" href="179882.htm" target="_self">более подробную информацию</a> о процессе обновления антивирусных баз.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="tablebodytext"><code class="programcharacter">/api/v3.1/ksninfo</code></p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext">GET</p>
+</td>
+<td style="border:1px solid #010101;" width="84"><p class="tablebodytext"><a id="h193339" class="englishcrossreferencetemplate" href="193338.htm" target="_self">Формат запроса</a></p>
+</td>
+<td style="border:1px solid #010101;" width="690"><p class="tablebodytext">Получает информацию о KSN.</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

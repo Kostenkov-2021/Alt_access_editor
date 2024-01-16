@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Getting accumulated statistics in ICAP mode </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234368" class="heading2">Getting accumulated statistics in ICAP mode</h2>
+<p class="bodytext">In ICAP mode, Kaspersky Scan Engine collects information about its usage and creates statistics from this data. These statistics are stored on your hard disk. You can view the statistics to monitor trends in the data requested from your network. For example, you can check if users in your network are trying to download a lot of malicious files.</p>
+<p class="procedureheading">To view accumulated statistics:</p>
+<ol class="listnumber1"><li class="listnumber1">Open the directory specified in the <code class="programcharacter">TempPath</code> element of the <a id="h180154" class="englishcrossreferencetemplate" href="192989.htm" target="_self">configuration file</a>.</li><li class="listnumber1">Find the <code class="programcharacter">report.json</code> file and open it.</li></ol><p class="bodytext">Following is an example of the <code class="programcharacter">report.json</code> file.</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">{</p>
+<p class="program2">&quot;statistics&quot;: {</p>
+<p class="program3">&quot;total_requests&quot;: 3,</p>
+<p class="program3">&quot;infected_requests&quot;: 3,</p>
+<p class="program3">&quot;not_scanned_requests&quot;: 0,</p>
+<p class="program3">&quot;error_requests&quot;: 0,</p>
+<p class="program3">&quot;engine_errors&quot;: 1,</p>
+<p class="program3">&quot;processed_data&quot;: 204,</p>
+<p class="program3">&quot;infected_data&quot;: 0,</p>
+<p class="program3">&quot;processed_urls&quot;: 1,</p>
+<p class="program3">&quot;infected_urls&quot;: 1</p>
+<p class="program2">}</p>
+<p class="program">}</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">where <code class="programcharacter">statistics</code> is an object containing the following accumulated statistics:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">total_requests</code>&#8212;The total number of received requests in response modification (RESPMOD) mode and request modification (REQMOD) mode.</li><li class="listbullet1"><code class="programcharacter">infected_requests</code>&#8212;The number of requests for which Kaspersky Scan Engine returned a <code class="programcharacter">DETECT</code>, <code class="programcharacter">PHISHING</code>, or <code class="programcharacter">MACRO</code> scan result.</li><li class="listbullet1"><code class="programcharacter">not_scanned_requests</code>&#8212;The number of valid scan requests that were not processed. <p class="listcontinue1">Possible reasons: </p>
+<ul class="listbullet2"><li class="listbullet2">The object is too big or too small.</li><li class="listbullet2">The object is an encrypted archive.</li><li class="listbullet2">Kaspersky Scan Engine is configured to skip objects of the format that the object belongs to. </li></ul></li><li class="listbullet1"><code class="programcharacter">error_requests</code>&#8212;The number of incorrect ICAP requests that were received by Kaspersky Scan Engine.</li><li class="listbullet1"><code class="programcharacter">engine_errors</code>&#8212;The number of requests for which Kaspersky Scan Engine returned a <code class="programcharacter">FAILED</code> scan result.</li><li class="listbullet1"><code class="programcharacter">processed_data</code>&#8212;The total amount of scanned data in bytes.<p class="listcontinue1">This includes objects scanned in RESPMOD mode and objects in POST requests that were scanned in REQMOD mode.</p>
+</li><li class="listbullet1"><code class="programcharacter">infected_data</code>&#8212;The amount of scanned data, in bytes, for which Kaspersky Scan Engine returned a <code class="programcharacter">DETECT,</code> <code class="programcharacter">PHISHING</code>, or <code class="programcharacter">MACRO</code> scan result.<p class="listcontinue1">This includes objects scanned in RESPMOD mode and objects in POST requests that were scanned in REQMOD mode. </p>
+</li><li class="listbullet1"><code class="programcharacter">processed_urls</code>&#8212;The total number of checked URLs.</li><li class="listbullet1"><code class="programcharacter">infected_urls</code>&#8212;The number of URLs for which Kaspersky Scan Engine returned a <code class="programcharacter">DETECT</code> or <code class="programcharacter">PHISHING</code> scan result.</li></ul><p class="introheading">Resetting statistics</p>
+<p class="bodytext">You can reset accumulated statistics at any time.</p>
+<p class="procedureheading">To reset accumulated statistics:</p>
+<ol class="listnumber1"><li class="listnumber1">Open the directory specified in the <code class="programcharacter">TempPath</code> element of the <a id="h180154_2" class="englishcrossreferencetemplate" href="192989.htm" target="_self">configuration file</a>.</li><li class="listnumber1">Find the <code class="programcharacter">report.json</code> file and delete it.</li></ol><p class="bodytext">The kavicapd service will create a new <code class="programcharacter">report.json</code> file with all statistics set to <code class="programcharacter">0</code>.</p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Настройка ArcSight ESM </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234298" class="heading3">Настройка ArcSight ESM</h3>
+<p class="bodytext">Чтобы ArcSight ESM мог получать события от Kaspersky Scan Engine, должен быть установлен ArcSight SmartConnector типа Syslog Daemon. Вы можете установить ArcSight SmartConnector на любой компьютер, который может подключаться к Kaspersky Scan Engine и ArcSight ESM.</p>
+<p class="procedureheading">Чтобы установить ArcSight SmartConnector:</p>
+<ol class="listnumber1"><li class="listnumber1">Запустите программу установки ArcSight SmartConnector.<p class="attentioncontinue1">Эта программа является компонентом HP ArcSight и не входит в состав Kaspersky Scan Engine.</p> </li><li class="listnumber1">Укажите директорию установки ArcSight SmartConnector (далее <code class="programcharacter">%ARCSIGHT_HOME%</code>).</li><li class="listnumber1">Выберите <span class="boldcharacter">Don&#39;t create links</span>.</li><li class="listnumber1">После распаковки содержимого двоичного файла выберите <span class="boldcharacter">Add a Connector</span>.<p class="picture"><img id="f220907" src="arcsight_add_connector.png" class="linkedpngfiletemplate" alt="Окно &quot;Connector Setup&quot;. Выбран вариант &quot;Add a Connector&quot;." vspace="0" hspace="0" align="bottom" border="0"></p> <p class="picturename">Выбор <span class="boldcharacter">Add a Connector</span></p> <p class="listcontinue2">Если это окно не отображается, выполните следующую команду:</p> <p class="listcontinue2"><code class="programcharacter">%ARCSIGHT_HOME%/current/bin/runagentsetup.sh</code></p> </li><li class="listnumber1">Выберите <span class="boldcharacter">Syslog Daemon</span> в качестве типа коннектора.</li><li class="listnumber1">Укажите параметры коннектора в форме <span class="boldcharacter">Enter the parameter details</span> следующим образом:<ul class="listbullet2"><li class="listbullet2"><span class="boldcharacter">Network port</span>. Укажите порт, на который Kaspersky Scan Engine должен отправлять события обнаружения.<p class="listcontinue2">Укажите этот же порт в параметрах <a id="h220794" class="englishcrossreferencetemplate" href="220786.htm" target="_self">Kaspersky Scan Engine Syslog</a>.</p> </li><li class="listbullet2"><span class="boldcharacter">IP address</span>. Укажите IP-адрес, на который Kaspersky Scan Engine должен отправлять события обнаружения.<p class="listcontinue2">Укажите тот же IP-адрес в параметрах <a id="h220794_2" class="englishcrossreferencetemplate" href="220786.htm" target="_self">Kaspersky Scan Engine Syslog</a>.</p> <p class="attentioncontinue2">Вы можете указать <span class="boldcharacter">(ALL)</span>, если хотите, чтобы Arcsight SmartConnector получал события со всех сетевых интерфейсов компьютера, на котором он работает. Обратите внимание, что вы не можете указать (ALL) в файле конфигурации Kaspersky Scan Engine.</p> </li><li class="listbullet2"><span class="boldcharacter">Protocol</span>. Укажите <span class="boldcharacter">Raw TCP</span>.</li><li class="listbullet2"><span class="boldcharacter">Forwarder</span>. Укажите <span class="boldcharacter">false</span>.</li></ul><p class="picture"><img id="f220912" src="arcsight_connector_details.png" class="linkedpngfiletemplate" alt="Окно &quot;Connector Setup&quot;. Network port = 9998, IP Address = (ALL), Protocol = Raw TCP, Forwarder = false." vspace="0" hspace="0" align="bottom" border="0"></p> <p class="picturename">Определение параметров коннектора</p> <p class="listcontinue1">Нажмите <span class="boldcharacter">Next</span>.</p> </li><li class="listnumber1">Укажите <span class="boldcharacter">ArcSight Manager (encrypted)</span> в качестве типа назначения.<p class="picture"><img id="f220950" src="arcsight_destination_type.png" class="linkedpngfiletemplate" alt="Окно &quot;Connector Setup&quot;. Тип назначения. Выбран вариант &quot;ArcSight Manager (encrypted)&quot;." vspace="0" hspace="0" align="bottom" border="0"></p> <p class="picturename">Выбор типа назначения</p> <p class="listcontinue1">Нажмите <span class="boldcharacter">Next</span>.</p> </li><li class="listnumber1">Укажите параметры назначения:<ul class="listbullet2"><li class="listbullet2"><span class="boldcharacter">Manager Hostname</span>. Укажите хост, на котором запущен ArcSight Manager.</li><li class="listbullet2"><span class="boldcharacter">Manager Port</span>. Укажите хост, на котором доступен ArcSight Manager. Значение по умолчанию: 8443.</li><li class="listbullet2"><span class="boldcharacter">User</span>. Укажите имя пользователя ArcSight ESM, у которого есть права на регистрацию коннектора.</li><li class="listbullet2"><span class="boldcharacter">Password</span>. Укажите пароль пользователя ArcSight ESM.</li><li class="listbullet2"><span class="boldcharacter">AUP Master Destination</span>. Укажите <span class="boldcharacter">false</span>.</li><li class="listbullet2"><span class="boldcharacter">Filter Out All Events</span>. Укажите <span class="boldcharacter">false</span>.</li><li class="listbullet2"><span class="boldcharacter">Enable Demo CA</span>. Укажите <span class="boldcharacter">false</span>.</li></ul><p class="picture"><img id="f220984" src="arcsight_destination_parameters.png" class="linkedpngfiletemplate" alt="Окно &quot;Connector Setup&quot;. Manager Hostname = 127.0.0.1, Manager Port = 8443, User = admin, Password is hidden, AUP Master Destination = false, Filter Out All Events = false, Enable Demo CA = false." vspace="0" hspace="0" align="bottom" border="0"></p> <p class="picturename">Определение параметров назначения</p> <p class="listcontinue1">Нажмите <span class="boldcharacter">Next</span>.</p> </li><li class="listnumber1">Укажите детали коннектора:<ul class="listbullet2"><li class="listbullet2">Имя (можно указать произвольное значение).</li><li class="listbullet2">Местоположение (можно указать произвольное значение).</li><li class="listbullet2">Расположение устройства, которое должно отправлять события на коннектор (можно указать произвольное значение или оставить его пустым).</li><li class="listbullet2">Комментарий к коннектору (можно указать произвольное значение или оставить его пустым).</li></ul><p class="listcontinue1">Нажмите <span class="boldcharacter">Next</span>.</p> </li><li class="listnumber1">Если параметры ArcSight Manager действительны, примите импорт сертификата из места назначения.</li><li class="listnumber1">Если сертификат импортирован успешно, установите сервис ArcSight SmartConnector. <p class="listcontinue1">Если вы не запустите установку от имени пользователя root, отобразится следующее предупреждение:</p> <p class="picture"><img id="f220985" src="arcsight_root_needed.png" class="linkedpngfiletemplate" alt="Окно &quot;Connector Setup&quot;. Требуются права root." vspace="0" hspace="0" align="bottom" border="0"></p> <p class="picturename">Если вы не запускаете установку от имени пользователя root</p> <p class="listcontinue1">Файл <code class="programcharacter">%ARCSIGHT_HOME%/current/logs/agent.log</code> содержит сообщения о процессе установки.</p> <p class="listcontinue1">Вы можете пропустить следующий шаг, описывающий, как указать параметры службы.</p> <p class="listcontinue1">Если вы запускаете установку от имени пользователя root, выберите <span class="boldcharacter">Install as a service</span>.</p> <p class="listcontinue1">Нажмите <span class="boldcharacter">Next</span>.</p> </li><li class="listnumber1">Укажите параметры службы.<p class="listcontinue1">Рекомендуется установить имя службы, указанное в <span class="boldcharacter">Service Internal Name</span>, таким же, как имя коннектора.</p> <p class="picture"><img id="f220986" src="arcsight_service_parameters.png" class="linkedpngfiletemplate" alt="Окно &quot;Connector Setup&quot;. Service Internal Name = smartConnector, Service Display Name = KL Smart Connector, Start the service automatically = Yes." vspace="0" hspace="0" align="bottom" border="0"></p> <p class="picturename">Определение параметров службы</p> <p class="listcontinue1">Нажмите <span class="boldcharacter">Next</span>.</p> </li><li class="listnumber1">Чтобы запустить ArcSight SmartConnector, выполните следующую команду:<p class="listcontinue1"><code class="programcharacter">/etc/init.d/arc_$service_name start</code></p> <p class="listcontinue1">В этой команде <code class="programcharacter">$service_name</code> – это внутреннее имя службы.</p> </li></ol><p class="bodytext">После завершения настройки ArcSight ESM вы можете <a id="h220794_3" class="englishcrossreferencetemplate" href="220786.htm" target="_self">настроить Kaspersky Scan Engine</a>.</p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

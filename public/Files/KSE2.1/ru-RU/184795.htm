@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Системные требования </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234375" class="heading2">Системные требования</h2>
+<p class="bodytext">В этом разделе описаны системные требования Kaspersky Scan Engine.</p>
+<p class="introheading">Поддерживаемые операционные системы</p>
+<p class="bodytext">Kaspersky Scan Engine работает на 64-битной версии Linux® и на 64-битной версии Microsoft® Windows®.</p>
+<p class="introheading">Требования к установленному ПО</p>
+<p class="bodytext">Kaspersky Scan Engine GUI может быть доступен с помощью следующих браузеров:</p>
+<ul class="listbullet1"><li class="listbullet1">Google Chrome™ 60 и более поздние версии;</li><li class="listbullet1">Microsoft Internet Explorer® 11 и более поздние версии;</li><li class="listbullet1">Mozilla™ Firefox™ 55 и более поздние версии;</li><li class="listbullet1">Microsoft Edge 38 и более поздние версии.</li></ul><p class="bodytext">Kaspersky Scan Engine GUI работает при установленной <a id="h181518" class="englishcrossreferencetemplate" href="184775.htm" target="_self">PostgreSQL 10.7 или более поздней версии</a>.</p>
+<p class="bodytext">Пакет распространения Kaspersky Scan Engine не содержит исходного кода библиотек Boost и OpenSSL. Если вы хотите адаптировать HTTP-службу или ICAP-службу под свои нужды, отредактировав и пересобрав исходный код из пакета распространения Kaspersky Scan Engine, загрузите код библиотек Boost и OpenSSL с официальных сайтов и используйте в своей системе. Если вы внесете изменения в исходный код HTTP-службы или ICAP-службы и захотите использовать графический интерфейс Kaspersky Scan Engine, получите одобрение на изменения от вашего персонального технического менеджера, чтобы HTTP-служба или ICAP-служба по-прежнему работала с графическим интерфейсом Kaspersky Scan Engine.</p>
+<p class="bodytext">Для сборки HTTPD-службы и ICAP-службы используйте следующее ПО:</p>
+<ul class="listbullet1"><li class="listbullet1">Boost 1.72.0 или более поздней версии;</li><li class="listbullet1">OpenSSL (последнюю версию);</li><li class="listbullet1">GCC 7.3 или более позднюю версию;</li><li class="listbullet1">Brotli (только для ICAP);</li><li class="listbullet1">Библиотеки PostgreSQL с 6.4.4 по 7 (не включительно).<p class="listcontinue1">Мы рекомендуем вам установить пакет <code class="programcharacter">libpqxx-devel</code>.</p> </li></ul><p class="introheading">Требования к аппаратуре</p>
+<p class="bodytext">Kaspersky Scan Engine требует 1 ГБ свободного места на диске. Если вы планируете использовать Kaspersky Scan Engine GUI, вам нужно также выделить место для базы данных PostgreSQL, которая хранит служебные события. База данных PostgreSQL может храниться на том же компьютере, где установлено решение Kaspersky Scan Engine, либо на другом компьютере. Размер базы данных зависит от количества событий и может достигать нескольких гигабайт. В базе данных хранятся события, произошедшие за последние полгода.</p>
+<p class="bodytext">В нижеследующей таблице приведены минимальные требования к процессору и ОЗУ для работы Kaspersky Scan Engine в зависимости от используемой операционной системы.</p>
+<table class="tableintopic" width="750" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="375"><p class="tableheading">Операционная система</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="375"><p class="tableheading">Требования к ОЗУ и процессору</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="375"><p class="tablebodytext">64-битный Linux</p>
+</td>
+<td style="border:1px solid #010101;" width="375"><p class="tablebodytext">1 ГБ ОЗУ</p>
+<p class="tablebodytext">1 ГГц либо более быстрый 64-битный (x64) процессор</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="375"><p class="tablebodytext">64-битная Windows 7 и более поздние версии</p>
+<p class="tablebodytext">64-битная Windows Server 2008 R2 и более поздние версии</p>
+</td>
+<td style="border:1px solid #010101;" width="375"><p class="tablebodytext">1 ГБ ОЗУ</p>
+<p class="tablebodytext">1 ГГц либо более быстрый 64-битный (x64) процессор</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Заголовки ответов </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234481" class="heading2">Заголовки ответов</h2>
+<p class="introheading">X-Include</p>
+<p class="bodytext">Kaspersky Scan Engine включает этот заголовок в свой ответ на запрос OPTIONS от ICAP-клиента при выполнении следующих условий:</p>
+<ul class="listbullet1"><li class="listbullet1">Существует по крайней мере один элемент <a id="h225223" class="englishcrossreferencetemplate" href="225222.htm" target="_self">ICAPHeader</a>, который содержит значение <code class="programcharacter">HTTPUserNameICAPHeader</code> или <code class="programcharacter">HTTPClientIpICAPHeader</code>:<ul class="listbullet2"><li class="listbullet2">Если <code class="programcharacter">HTTPUserNameICAPHeader</code> указан в <code class="programcharacter">ICAPHeader</code>, должен быть элемент <a id="h201207" class="englishcrossreferencetemplate" href="200727.htm" target="_self">HTTPUserNameICAPHeader</a>, и он не должен быть пустым.</li><li class="listbullet2">Если <code class="programcharacter">HTTPClientIpICAPHeader</code> указан в <code class="programcharacter">ICAPHeader</code>, должен быть элемент <a id="h201206" class="englishcrossreferencetemplate" href="200726.htm" target="_self">HTTPClientIpICAPHeader</a>, и он не должен быть пустым.</li></ul></li></ul><p class="bodytext">Заголовок <code class="programcharacter">X-Include</code> включает заголовки, указанные в <code class="programcharacter">HTTPUserNameICAPHeader</code> и <code class="programcharacter">HTTPClientIpICAPHeader</code> в виде списка, разделенного запятыми. Значения по умолчанию для этих заголовков – <code class="programcharacter">X-Client-Username</code> и <code class="programcharacter">X-Client-IP</code> соответственно. Ниже приведен пример заголовка <code class="programcharacter">X-Include</code>:</p>
+<p class="bodytext"><code class="programcharacter">X-Include: X-Client-IP, X-Client-Username</code></p>
+<p class="bodytext">Заголовок <code class="programcharacter">X-Include</code> также может включать только один из этих заголовков, например:</p>
+<p class="bodytext"><code class="programcharacter">X-Include: X-Client-Username</code></p>
+<p class="bodytext"><a id="h225224" class="englishcrossreferencetemplate" href="225221.htm" target="_self">RequestingICAPHeaders</a> указывает, какие заголовки включены в <code class="programcharacter">X-Include</code>.</p>
+<p class="introheading">X-Infection-Found</p>
+<p class="bodytext">Этот заголовок содержит типы обнаруженных угроз или легитимных объектов, которые могут быть использованы злоумышленниками. Вы можете указать, будет ли Kaspersky Scan Engine включать этот заголовок в свой ответ в элементе <code class="programcharacter"><a id="h224483" class="englishcrossreferencetemplate" href="221147.htm" target="_self">SendInfectionFoundICAPHeader</a></code>. Заголовок будет присутствовать только в том случае, если во время проверки обнаружена угроза или легитимный объект, который может быть использован злоумышленниками.</p>
+<p class="bodytext">Заголовок имеет следующий формат:</p>
+<p class="program"><code class="programcharacter">X-Infection-Found: Type=0; Resolution=0; Threat={Threat_type};</code></p>
+<p class="bodytext">Здесь <code class="programcharacter">{Threat_type}</code> – это тип угрозы или легальной программы, которая может быть использована злоумышленниками. Если Kaspersky Scan Engine обнаруживает несколько объектов, все типы перечисляются через запятую (<code class="programcharacter">,</code>).</p>
+<p class="attentionbody">В текущей версии Kaspersky Scan Engine значения <code class="programcharacter">Type</code> и <code class="programcharacter">Resolution</code> всегда равны <code class="programcharacter">0</code>.</p>
+<p class="introheading">X-Response-Desc</p>
+<p class="bodytext">Этот заголовок содержит описания обнаруженных угроз или легитимных объектов, которые могут быть использованы злоумышленниками. Вы можете указать, включает ли Kaspersky Scan Engine этот заголовок в свой ответ в элементе <code class="programcharacter"><a id="h224486" class="englishcrossreferencetemplate" href="221160.htm" target="_self">SendResponseDescICAPHeader</a></code>. Заголовок будет присутствовать только в том случае, если во время проверки обнаружена угроза или легитимный объект, который может быть использован злоумышленниками.</p>
+<p class="bodytext">Заголовок имеет следующий формат:</p>
+<p class="program">X-Response-Desc: {Text}</p>
+<p class="bodytext">Здесь <code class="programcharacter">{Text}</code> может иметь следующие значения:</p>
+<table class="tableintopic" width="510" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="174"><p class="tableheading">Значение</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="336"><p class="tableheading">Описание</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Trojan malicious object detected</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружен троянец.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Malicious tool detected</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружено вредоносное ПО.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Highly dangerous malicious object detected</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружен особо опасный вредоносный объект, который не классифицируется ни по одному из доступных классов вредоносных программ.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Medium dangerous malicious object detected</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружен вредоносный объект средней опасности, который не классифицируется ни по одному из доступных классов вредоносных программ. </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Virware malicious object detected</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружена программа, которая заражает другие файлы, добавляя к ним свой код, чтобы получить контроль над зараженными файлами при их открытии.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Malicious URL</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружен вредоносный URL-адрес.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Phishing URL</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружен фишинговый URL-адрес.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Malicious host</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружен IP-адрес вредоносного хоста.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Adware URL</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружен URL-адрес, ведущий к рекламному ПО.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Riskware URL</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружен URL-адрес легальной программы, которая может быть использована злоумышленниками.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Adware host</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружен IP-адрес рекламного ПО.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Riskware host</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружен IP-адрес хоста, на котором хранится легальная программа, которая может быть использована злоумышленниками.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Detected legitimate software that can be used by intruders to damage your computer or personal data</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружена программа, которая не имеет вредоносных функций, но может быть частью среды разработки вредоносных программ.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Detected an attempt of unauthorized use of pay-per-use Internet services which are commonly pornographic websites (pornodialer), or pornotools, or a pornodownloader</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружена попытка несанкционированного использования платных интернет-сервисов (как правило, порнографических сайтов).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Adware detected</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружен URL-адрес, ведущий к рекламному ПО.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Multiple threats detected</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружено несколько объектов.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Detected a highly dangerous malicious object that cannot be classified using either of available classes of malware</p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружен особо опасный неклассифицированный объект.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">MS Office document containing a macro is detected </p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Обнаружен документ Microsoft Office, содержащий макрос.</p>
+</td>
+</tr>
+
+</table>
+<p class="introheading">X-Response-Info</p>
+<p class="bodytext">Этот заголовок содержит статус проверяемого объекта или ответ на запросы <code class="programcharacter">OPTIONS</code>. Вы можете указать, включает ли Kaspersky Scan Engine этот заголовок в свой ответ в элементе <code class="programcharacter"><a id="h224484" class="englishcrossreferencetemplate" href="221161.htm" target="_self">SendResponseInfoICAPHeader</a></code>.</p>
+<p class="bodytext">Заголовок имеет следующий формат:</p>
+<p class="program">X-Response-Info: {Token}</p>
+<p class="bodytext">Здесь <code class="programcharacter">{Token}</code> может иметь следующие значения:</p>
+<table class="tableintopic" width="510" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="174"><p class="tableheading">Значение</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="336"><p class="tableheading">Описание</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext"><code class="programcharacter">Allowed</code></p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Проверяемый файл или URL-адрес не являются вредоносными.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext"><code class="programcharacter">Blocked</code></p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Этот ответ может появиться по следующим причинам:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet">Обнаружена угроза или легальная программа, которая может быть использована злоумышленниками.</li><li class="tablelistbullet">Обнаружен макрос.</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext"><code class="programcharacter">Options</code></p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Ответ на запросы <code class="programcharacter">OPTIONS</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="introheading">X-Violations-Found</p>
+<p class="bodytext">Этот заголовок содержит информацию о проверяемом файле и об угрозах или легальной программе, которая может быть использована злоумышленниками, обнаруженными в этом файле. Вы можете указать, будет ли Kaspersky Scan Engine включать этот заголовок в свой ответ в элементе <code class="programcharacter"><a id="h224485" class="englishcrossreferencetemplate" href="221162.htm" target="_self">SendViolationsFoundICAPHeader</a></code>. Заголовок будет присутствовать только в том случае, если во время проверки обнаружена угроза или легитимный объект, который может быть использован злоумышленниками.</p>
+<p class="bodytext">Заголовок имеет следующий формат:</p>
+<p class="program"><code class="programcharacter">X-Violations-Found: {Count}</code></p>
+<p class="program"><code class="programcharacter"> {File_name}</code></p>
+<p class="program"><code class="programcharacter"> {Description}</code></p>
+<p class="program"><code class="programcharacter"> {Problem_ID}</code></p>
+<p class="program"><code class="programcharacter"> {Resolution_ID}</code></p>
+<p class="bodytext">Здесь <code class="programcharacter">{count}</code> – это количество объектов, которые были обнаружены в файле, <code class="programcharacter">{File_name}</code> – имя файла, <code class="programcharacter">{Description}</code> – имя первой обнаруженной угрозы или легитимного объекта, который может быть использован злоумышленниками в файле, <code class="programcharacter">{Problem_ID}</code> – идентификатор обнаруженной угрозы или легитимного объекта, который может быть использован злоумышленниками, <code class="programcharacter">{Resolution_ID}</code> – идентификатор действия над объектом, выполняемого Kaspersky Scan Engine.</p>
+<p class="attentionbody">В текущей версии Kaspersky Scan Engine значение {<code class="programcharacter">Resolution_ID}</code> всегда равно <code class="programcharacter">0</code>.</p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

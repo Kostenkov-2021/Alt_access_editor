@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Threat Protection </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234531" class="heading3">Threat Protection</h3>
+<p class="bodytext">Kaspersky Scan Engine helps you protect your network and data by detecting malware and legitimate software that can be used by intruders.</p>
+<p class="bodytext">Before you start using Kaspersky Scan Engine, decide on your use case, in the following order:</p>
+<ol class="listnumber1"><li class="listnumber1">Decide what data you want to scan:<ul class="listbullet2"><li class="listbullet2">Data uploaded to your network by your users.</li><li class="listbullet2">Data created inside your organization, such as documents.</li><li class="listbullet2">Data uploaded from sources outside your network. This can prevent supply chain attacks.</li></ul><p class="listcontinue1">You can also use Kaspersky Scan Engine to add scanning functionality to your own applications and security services. Kaspersky Scan Engine scans objects of any format, including packed objects.</p>
+</li><li class="listnumber1">Decide whether HTTP or ICAP mode is better for your environment.</li><li class="listnumber1">Decide where you want to deploy Kaspersky Scan Engine. </li><li class="listnumber1">Decide how you will gain access to scan results:<ul class="listbullet2"><li class="listbullet2">In Kaspersky Scan Engine GUI </li><li class="listbullet2">In a client application</li></ul></li><li class="listnumber1">Decide which features of Kaspersky Scan Engine you will use:<ul class="listbullet2"><li class="listbullet2">Decide whether you want to use <a id="h180137" class="englishcrossreferencetemplate" href="180133.htm" target="_self">Kaspersky Security Network (KSN) for checking the reputation of files and URLs</a></li><li class="listbullet2">Decide what level of heuristics you want to use</li><li class="listbullet2">Decide what actions Kaspersky Scan Engine must perform after detecting malware or legitimate software that can be used by intruders</li><li class="listbullet2">Decide whether you want to scan packed executables</li><li class="listbullet2">Decide whether you want to scan archives</li><li class="listbullet2">Decide whether you want to scan email</li><li class="listbullet2">Decide whether you want to scan email databases</li></ul></li></ol><p class="bodytext">After determining your use case for Kaspersky Scan Engine, proceed to <a id="h180690" class="englishcrossreferencetemplate" href="180558.htm" target="_self">getting started with Kaspersky Scan Engine</a>.</p>
+<p class="bodytext">Below, you can find instructions for typical tasks that Kaspersky Scan Engine performs in HTTP mode and in ICAP mode.</p>
+<p class="introheading">Scanning files with the sample HTTP client (HTTP mode)</p>
+<p class="bodytext">This instruction assumes that you have already <a id="h193042" class="englishcrossreferencetemplate" href="192974.htm" target="_self">installed</a> and configured Kaspersky Scan Engine, by using the <a id="h193111" class="englishcrossreferencetemplate" href="192980.htm" target="_self">configuration file</a> or the <a id="h180271" class="englishcrossreferencetemplate" href="179697.htm" target="_self">GUI</a>.</p>
+<p class="procedureheading">To scan files with Kaspersky Scan Engine:</p>
+<ol class="listnumber1"><li class="listnumber1"><a id="h193043" class="englishcrossreferencetemplate" href="192981.htm" target="_self">Start the kavhttpd service</a>.</li><li class="listnumber1">Start the sample HTTP client. The client is located in the <code class="programcharacter">/bin/kavhttp_client</code> directory of the <a id="h180273" class="englishcrossreferencetemplate" href="184793.htm" target="_self">distribution kit</a>.</li><li class="listnumber1">Pass the files that you want to scan to the sample HTTP client:<ul class="listbullet2"><li class="listbullet2">Scan files that are larger than 4 megabytes (MB) in <a id="h180274" class="englishcrossreferencetemplate" href="179884.htm" target="_self">scanfile mode</a>. Use the <code class="programcharacter">-f</code> option and pass the local paths to the files to the sample HTTP client.<p class="listcontinue2">The example below shows how to scan two files in scanfile mode:</p>
+</li></ul><table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">./kavhttp_client -f /usr/dir1/example1.zip /usr/dir2/example2.iso</p>
+</td>
+</tr>
+
+</table>
+<ul class="listbullet2"><li class="listbullet2">Scan files that are smaller than 4 MB in <a id="h180274_2" class="englishcrossreferencetemplate" href="179884.htm" target="_self">scanmemory mode</a>. Pass the paths (network or local) to the sample HTTP client. To do this, use the <code class="programcharacter">-s</code> option.<p class="listcontinue2">The example below shows how to scan a file in scanmemory mode:</p>
+</li></ul><table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">./kavhttp_client -s 192.0.2.0:888 /usr/dir/example.txt</p>
+</td>
+</tr>
+
+</table>
+</li><li class="listnumber1"><a id="h180276" class="englishcrossreferencetemplate" href="179886.htm" target="_self">Review the scan results</a>.</li></ol><p class="introheading">Scanning traffic that passes through a proxy server (ICAP mode)</p>
+<p class="bodytext">This instruction assumes that you have already <a id="h193042_2" class="englishcrossreferencetemplate" href="192974.htm" target="_self">installed</a> and configured Kaspersky Scan Engine, by using the <a id="h180154" class="englishcrossreferencetemplate" href="192989.htm" target="_self">configuration file</a> or the <a id="h180271_2" class="englishcrossreferencetemplate" href="179697.htm" target="_self">Kaspersky Scan Engine GUI</a>.</p>
+<p class="procedureheading">To scan traffic that passes through a proxy server:</p>
+<ol class="listnumber1"><li class="listnumber1">Configure your proxy server to work with Kaspersky Scan Engine (see the example of <a id="h180279" class="englishcrossreferencetemplate" href="179904.htm" target="_self">using Kaspersky Scan Engine in ICAP mode with Squid</a>).</li><li class="listnumber1">Create a <a id="h180188" class="englishcrossreferencetemplate" href="179895.htm" target="_self">response template that you want to display or script</a> to execute when malware or legitimate software that can be used by intruders is detected.</li><li class="listnumber1">Configure ICAP service rules for a situation when Kaspersky Scan Engine detects malware or legitimate software that can be used by intruders. You can do it either <a id="h180152" class="englishcrossreferencetemplate" href="179893.htm" target="_self">manually</a> or by <a id="h180831" class="englishcrossreferencetemplate" href="180283.htm" target="_self">using the GUI</a>.</li><li class="listnumber1"><a id="h193044" class="englishcrossreferencetemplate" href="192990.htm" target="_self">Start the kavicapd service</a>.</li></ol><p class="bodytext">Kaspersky Scan Engine will automatically detect malware or legitimate software that can be used by intruders, and then process it according to the ICAP service rules.</p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

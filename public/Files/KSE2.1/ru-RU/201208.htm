@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> TransferBeforeScanEnding </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h5 id="t234538" class="heading5">TransferBeforeScanEnding</h5>
+<p class="bodytext">Задает режим отправки по частям (Data Trickling) для файлов, которые отправляются на прокси-сервер. Этот режим позволяет сканировать файлы целиком и отправлять их частями пользователю до завершения проверки. Передача объекта начинается через столько секунд после начала приема объекта, сколько указано в атрибуте <code class="programcharacter">Delay</code>, и выполняется по фрагментам. Обратите внимание, что в секунду передается не более одного фрагмента. Эта функция не дает браузеру пользователя прервать соединение с прокси-сервером из-за тайм-аута.</p>
+<p class="introheading">Путь</p>
+<p class="bodytext"><code class="programcharacter">ICAPSettings &gt; TransferBeforeScanEnding</code></p>
+<p class="introheading">Атрибуты</p>
+<p class="bodytext">Этот элемент имеет следующие атрибуты.</p>
+<p class="tablename">Атрибуты элемента TransferBeforeScanEnding</p>
+<p class="spacerfortables"></p>
+<table class="tableintopic" width="510" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="174"><p class="tableheading">Атрибут</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="336"><p class="tableheading">Описание</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext"><code class="programcharacter">Delay</code></p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Интервал (в секундах) между началом приема объекта и началом отправки его первого фрагмента.</p>
+<p class="tablebodytext">Необязательный атрибут. Диапазон возможных значений от 1 до 3600.</p>
+<p class="tablebodytext">Значение по умолчанию: <code class="programcharacter">10</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext"><code class="programcharacter">ChunkSize</code></p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Размер фрагментов, передаваемых в период между началом приема объекта и окончанием проверки. Поскольку фрагменты передаются не чаще одного в секунду, атрибут <code class="programcharacter">ChunkSize</code> указывает максимальную скорость передачи (в килобайтах в секунду) до завершения сканирования. После этого, если объект безопасен, остальная часть объекта будет передаваться без ограничения скорости.</p>
+<p class="tablebodytext">Необязательный атрибут. Диапазон возможных значений от 1 до 1024.</p>
+<p class="tablebodytext">Значение по умолчанию: <code class="programcharacter">4</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext"><code class="programcharacter">BlockedUrlCacheEnabled</code></p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="bodytext">Определяет, как обрабатывать попытки повторного скачивания из браузера пользователя в режиме отправки по частям. Эта функция не дает браузеру пользователя автоматически повторно скачивать заблокированные файлы. Функция запрета повторного скачивания работает только при включенной опции <code class="programcharacter">TransferBeforeScanEnding</code>.</p>
+<p class="bodytext">Вы можете указать одно из следующих значений для этого параметра:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">0</code><p class="listcontinue1">Функция запрета повторного скачивания выключена.</p>
+</li><li class="listbullet1"><code class="programcharacter">1</code><p class="listcontinue1">Функция запрета повторного скачивания включена. Значение по умолчанию.</p>
+</li></ul><p class="bodytext">Если этот атрибут не указан, функция запрета повторного скачивания будет включена.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext"><code class="programcharacter">BlockedUrlCacheKb</code></p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Максимальный размер кеша в КБ для заблокированных URL-адресов. Это максимальный объем ОЗУ, выделяемый для кеширования заблокированных URL-адресов.</p>
+<p class="tablebodytext">Диапазон возможных значений от 1 до 100000.</p>
+<p class="tablebodytext">Значение по умолчанию: <code class="programcharacter">5000</code>.</p>
+<p class="tablebodytext">Если этот атрибут не указан, используется значение по умолчанию.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext"><code class="programcharacter">BlockedUrlCacheTtlSec</code></p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Время жизни заблокированных URL-адресов, сохраненных в кеше (в секундах).</p>
+<p class="tablebodytext">Диапазон возможных значений от 1 до 604800 (неделя).</p>
+<p class="tablebodytext">Значение по умолчанию: <code class="programcharacter">1800</code>.</p>
+<p class="tablebodytext">Если этот атрибут не указан, используется значение по умолчанию.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Выбирайте подходящие значения для <code class="programcharacter">атрибутов ChunkSize</code> и <code class="programcharacter">Delay</code>. Не рекомендуется указывать слишком большое значение <code class="programcharacter">ChunkSize</code> и слишком маленькое значение <code class="programcharacter">Delay</code>. Если не соблюдать эту рекомендацию, просканированный объект может быть отправлен почти целиком (без последнего фрагмента) задолго до окончания сканирования, и браузер пользователя прервет соединение.</p>
+<p class="spacer"></p>
+<p class="spacer"></p>
+<p class="introheading">Возможные значения</p>
+<p class="bodytext">Этот элемент имеет следующие возможные значения.</p>
+<p class="tablename">Возможные значения элемента TransferBeforeScanEnding</p>
+<p class="spacerfortables"></p>
+<table class="tableintopic" width="510" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="174"><p class="tableheading">Значение</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="336"><p class="tableheading">Описание</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext"><code class="programcharacter">0</code></p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Объект может быть отправлен только после окончания сканирования.</p>
+<p class="tablebodytext">Значение по умолчанию.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext"><code class="programcharacter">1</code></p>
+</td>
+<td style="border:1px solid #010101;" width="336"><p class="tablebodytext">Объект может быть отправлен до окончания сканирования.</p>
+</td>
+</tr>
+
+</table>
+<p class="introheading">Пример</p>
+<p class="bodytext">Ниже приведен пример этого элемента.</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">&lt;TransferBeforeScanEnding Delay=&quot;10&quot; ChunkSize=&quot;4&quot; BlockedURLCacheEnabled=&quot;1&quot; BlockedURLCacheKb=&quot;5000&quot; BlockedURLCacheTtlSec=&quot;1800&quot;&gt;1&lt;/TransferBeforeScanEnding&gt;</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

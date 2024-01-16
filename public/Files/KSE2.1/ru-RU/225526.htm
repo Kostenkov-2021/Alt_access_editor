@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Рекомендуемые настройки для режима HTTP </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t240944" class="heading2">Рекомендуемые настройки для режима HTTP</h2>
+<p class="bodytext">В этом разделе описаны рекомендуемые настройки Kaspersky Scan Engine в режиме HTTP.</p>
+<p class="bodytext">Если вы используете Kaspersky Scan Engine GUI, укажите рекомендуемые настройки, как описано в таблице ниже.</p>
+<p class="tablename">Рекомендуемые настройки режима HTTP в Kaspersky Scan Engine GUI</p>
+<p class="spacerfortables"></p>
+<table class="tableintopic" width="521" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="193"><p class="tableheading">Настройки в Kaspersky Scan Engine GUI</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="328"><p class="tableheading">Рекомендуемые настройки</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="193"><p class="tablebodytext">Service &gt; Keep-alive connection</p>
+</td>
+<td style="border:1px solid #010101;" width="328"><p class="tablebodytext">См. описание <code class="programcharacter">KeepAliveSettings</code> ниже.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="193"><p class="tablebodytext">Service &gt; Connection timeout</p>
+</td>
+<td style="border:1px solid #010101;" width="328"><p class="tablebodytext">См. описание <code class="programcharacter">TimeoutMs</code> в <code class="programcharacter">KeepAliveSettings</code> ниже.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="193"><p class="tablebodytext">Service &gt; Sessions</p>
+</td>
+<td style="border:1px solid #010101;" width="328"><p class="tablebodytext">См. описание <code class="programcharacter">MaxHTTPSessionsNum</code> ниже.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="193"><p class="tablebodytext">Service &gt; Connections</p>
+</td>
+<td style="border:1px solid #010101;" width="328"><p class="tablebodytext">См. описание <code class="programcharacter">MaxIncomingConnectionsNum</code> ниже.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="193"><p class="tablebodytext">Service &gt; Threads</p>
+</td>
+<td style="border:1px solid #010101;" width="328"><p class="tablebodytext">В два раза больше значения <code class="programcharacter">ScannersCount</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="193"><p class="tablebodytext">Service &gt; Processes</p>
+</td>
+<td style="border:1px solid #010101;" width="328"><p class="tablebodytext">Равно количеству ядер процессора.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="193"><p class="tablebodytext">Scanning &gt; Enable reputation checking</p>
+</td>
+<td style="border:1px solid #010101;" width="328"><p class="tablebodytext">Активируйте переключатель</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="193"><p class="tablebodytext">Scanning &gt; Enable Phishing Protection</p>
+</td>
+<td style="border:1px solid #010101;" width="328"><p class="tablebodytext">Активируйте переключатель</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="193"><p class="bodytext">Scanning &gt; Object scan timeout</p>
+</td>
+<td style="border:1px solid #010101;" width="328"><p class="tablebodytext">10000 (10 секунд)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="193"><p class="tablebodytext">Scanning &gt; Heuristic analysis level</p>
+</td>
+<td style="border:1px solid #010101;" width="328"><p class="bodytext">Low</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="193"><p class="tablebodytext">Scanning &gt; Actions on detected objects</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="328"><p class="tablebodytext">См. описание <code class="programcharacter">Mode</code> ниже.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="193"><p class="tablebodytext">Scanning &gt; Size limit for the received file</p>
+</td>
+<td style="border:1px solid #010101;" width="328"><p class="bodytext">10343 КБ (10,1 МБ)</p>
+<p class="attentionbody">Получайте обновленное значение от вашего технического менеджера по работе с клиентами не реже одного раза в год.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="193"><p class="tablebodytext">Scanning &gt; Maximum depth</p>
+</td>
+<td style="border:1px solid #010101;" width="328"><p class="tablebodytext">5</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="193"><p class="tablebodytext">Scanning &gt; Types of files to scan</p>
+</td>
+<td style="border:1px solid #010101;" width="328"><p class="tablebodytext">Установите флажок:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet">Packed objects</li><li class="tablelistbullet">Archives</li><li class="tablelistbullet">Emails databases</li><li class="tablelistbullet">Emails</li></ul></td>
+</tr>
+
+</table>
+<p class="bodytext">Если вы не используете Kaspersky Scan Engine GUI, укажите рекомендуемые настройки в файле конфигурации kavhttpd.xml, как описано в таблице ниже.</p>
+<p class="tablename">Рекомендуемые настройки для режима HTTP в файле конфигурации</p>
+<p class="spacerfortables"></p>
+<table class="tableintopic" width="512" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="180"><p class="tableheading">Параметр в kavhttpd.xml</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="332"><p class="tableheading">Рекомендуемые настройки</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tablebodytext">ScannersCount</p>
+</td>
+<td style="border:1px solid #010101;" width="332"><p class="bodytext">Равно количеству ядер процессора.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tablebodytext">ThreadsCount</p>
+</td>
+<td style="border:1px solid #010101;" width="332"><p class="bodytext">В два раза больше значения <code class="programcharacter">ScannersCount</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tablebodytext">MaxIncomingConnectionsNum</p>
+</td>
+<td style="border:1px solid #010101;" width="332"><p class="tablebodytext">См. описание <code class="programcharacter">MaxIncomingConnectionsNum</code> ниже.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tablebodytext">MaxHTTPSessionsNum</p>
+</td>
+<td style="border:1px solid #010101;" width="332"><p class="tablebodytext">См. описание <code class="programcharacter">MaxHTTPSessionsNum</code> ниже</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tablebodytext">QueueLen</p>
+</td>
+<td style="border:1px solid #010101;" width="332"><ul class="tablelistbullet"><li class="tablelistbullet">Больше или равно значению <code class="programcharacter">MaxHTTPSessionsNum</code></li><li class="tablelistbullet">Больше, чем значение <code class="programcharacter">ThreadsCount</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tablebodytext">MaxTCPFileSize</p>
+</td>
+<td style="border:1px solid #010101;" width="332"><p class="tablebodytext">10591440 байт (10,1 МБ)</p>
+<p class="attentionbody">Получайте обновленное значение от вашего технического менеджера по работе с клиентами не реже одного раза в год.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tablebodytext">Flags</p>
+</td>
+<td style="border:1px solid #010101;" width="332"><p class="tablebodytext">Укажите флаги:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet">KAV_O_M_PACKED</li><li class="tablelistbullet">KAV_O_M_ARCHIVED</li><li class="tablelistbullet">KAV_O_M_MAILPLAIN</li><li class="tablelistbullet">KAV_O_M_MAILBASES</li><li class="tablelistbullet">KAV_O_M_HEURISTIC_LEVEL_SHALLOW</li><li class="tablelistbullet">KAV_SHT_ENGINE_KSN</li><li class="tablelistbullet">KAV_SHT_ENGINE_APUF</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tablebodytext">Mode</p>
+</td>
+<td style="border:1px solid #010101;" width="332"><p class="tablebodytext">См. описание <code class="programcharacter">Mode</code> ниже.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tablebodytext">MaxArchivesScanningDepth</p>
+</td>
+<td style="border:1px solid #010101;" width="332"><p class="tablebodytext">5</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tablebodytext">SessionTimeout</p>
+</td>
+<td style="border:1px solid #010101;" width="332"><p class="tablebodytext">10000 (10 секунд)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tablebodytext">KeepAliveSettings</p>
+</td>
+<td style="border:1px solid #010101;" width="332"><p class="tablebodytext">См. описание <code class="programcharacter">KeepAliveSettings</code> ниже.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><a id="h201067" class="englishcrossreferencetemplate" href="201037.htm" target="_self">ScannersCount</a></p>
+<p class="bodytext">Этот параметр в Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Service</span> &gt; <span class="guicharacter">Processes</span>.</p>
+<p class="bodytext">Рекомендуемое количество сканирующих процессов равно количеству ядер процессора. Например, если Kaspersky Scan Engine работает на компьютере с 4-ядерным процессором, установите <code class="programcharacter">ScannersCount</code> равным <code class="programcharacter">4</code>.</p>
+<p class="bodytext">Смотрите также подраздел &quot;Пример работы Kaspersky Scan Engine в режиме HTTP в зависимости от настроек ScannersCount, ThreadsCount, QueueLen, MaxIncomingConnectionsNum и MaxHTTPSessionsNum&quot;.</p>
+<p class="bodytext"><a id="h201068" class="englishcrossreferencetemplate" href="201038.htm" target="_self">ThreadsCount</a></p>
+<p class="bodytext">Этот параметр в Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Service</span> &gt; <span class="guicharacter">Threads</span>.</p>
+<p class="bodytext">Рекомендуемое количество потоков сканирования зависит от количества процессов сканирования, указанного в <code class="programcharacter">ScannersCount</code>: значение <code class="programcharacter">ThreadsCount</code> в два раза больше значения <code class="programcharacter">ScannersCount</code>. Например, если Kaspersky Scan Engine работает на компьютере с 4-ядерным процессором, а <code class="programcharacter">ScannersCount</code> имеет значение <code class="programcharacter">4</code>, установите для <code class="programcharacter">ThreadsCount</code> значение <code class="programcharacter">8</code>.</p>
+<p class="bodytext">Смотрите также подраздел &quot;Пример работы Kaspersky Scan Engine в режиме HTTP в зависимости от настроек ScannersCount, ThreadsCount, QueueLen, MaxIncomingConnectionsNum и MaxHTTPSessionsNum&quot;.</p>
+<p class="bodytext"><a id="h201057" class="englishcrossreferencetemplate" href="201027.htm" target="_self">MaxIncomingConnectionsNum</a></p>
+<p class="bodytext">Этот параметр в Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Service</span> &gt; <span class="guicharacter">Connections</span>.</p>
+<p class="bodytext">Вы можете настроить этот параметр, чтобы задать длину очереди входящих TCP-соединений, ожидающих соединения с HTTPD. Подробнее о настройке очереди подключений см. в разделе &quot;<a id="h180043" class="englishcrossreferencetemplate" href="179869.htm" target="_self">Настройка очереди подключений в режиме HTTP</a>&quot;. </p>
+<p class="bodytext">Например, вы ожидаете в среднем десять одновременных подключений к клиентам. Если для параметра <code class="programcharacter">MaxHTTPSessionsNum</code> установлено значение 10, все 10 одновременных подключений будут приняты HTTPD для обработки. 11-е входящее TCP-соединение будет ожидать соединения с HTTPD. По крайней мере, 11 дополнительных подключений могут ждать принятия HTTPD, в то время как 12-е дополнительное подключение вызовет сообщение об ошибке. Поэтому при установке значения <code class="programcharacter">MaxIncomingConnectionsNum</code> учитывайте значение <code class="programcharacter">MaxHTTPSessionNum</code>: значение, указанное в <code class="programcharacter">MaxIncomingConnectionsNum</code>, должно быть в несколько раз больше, чем значение, указанное в <code class="programcharacter">MaxHTTPSessionNum</code>.</p>
+<p class="bodytext"><a id="h201058" class="englishcrossreferencetemplate" href="201028.htm" target="_self">MaxHTTPSessionsNum</a></p>
+<p class="bodytext">Этот параметр в Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Service</span> &gt; <span class="guicharacter">Sessions</span>.</p>
+<p class="bodytext">При указании значения этого параметра учитывайте следующее:</p>
+<ul class="listbullet1"><li class="listbullet1">Максимальное количество потоков сканирования (<code class="programcharacter">ThreadsCount</code>).</li><li class="listbullet1">Максимальную длину очереди задач сканирования (<code class="programcharacter">QueueLen</code>).</li><li class="listbullet1">Максимальную длину очереди ожидания сканирования (<code class="programcharacter">MaxIncomingConnectionsNum</code>).</li><li class="listbullet1">Специфику HTTPD: как правило, HTTPD запускает один процесс сканирования для одной задачи сканирования.</li></ul><p class="listheading">Рекомендуемое значение:</p>
+<ul class="listbullet1"><li class="listbullet1">больше или равно:<ol class="listalpha2"><li class="listalpha2">5*ThreadsCount/4 (при сканировании файлов и URL-адресов).</li><li class="listalpha2">3*ThreadsCount/2 (при сканировании системной памяти).</li></ol></li><li class="listbullet1">соответствует ожидаемому количеству HTTP-клиентов, выполняющих запросы к HTTPD.</li></ul><p class="bodytext">Смотрите также подраздел &quot;Пример работы Kaspersky Scan Engine в режиме HTTP в зависимости от настроек ScannersCount, ThreadsCount, QueueLen, MaxIncomingConnectionsNum и MaxHTTPSessionsNum&quot;.</p>
+<p class="bodytext"><a id="h201069" class="englishcrossreferencetemplate" href="200631.htm" target="_self">QueueLen</a></p>
+<p class="bodytext">Поскольку задачи сканирования ставятся в очередь из всех одновременно открытых сеансов, учитывайте параметры <code class="programcharacter">MaxHTTPSessionsNum</code>. Длина очереди не должна быть меньше значения <code class="programcharacter">MaxHTTPSessionsNum</code>. В противном случае некоторые клиенты получат ошибку при открытии сессий.</p>
+<p class="bodytext">Поскольку задачи сканирования обрабатываются потоками из очереди, длина очереди не должна быть меньше количества потоков в <code class="programcharacter">ThreadsCount</code>. В противном случае некоторые потоки не будут использоваться.</p>
+<p class="bodytext">Рекомендуемое значение <code class="programcharacter">QueueLen</code>:</p>
+<ul class="listbullet1"><li class="listbullet1">Больше, чем значение <code class="programcharacter">ThreadsCount</code>.</li><li class="listbullet1">Больше или равно значению <code class="programcharacter">MaxHTTPSessionsNum</code>.</li></ul><p class="bodytext">Смотрите также подраздел &quot;Пример работы Kaspersky Scan Engine в режиме HTTP в зависимости от настроек ScannersCount, ThreadsCount, QueueLen, MaxIncomingConnectionsNum и MaxHTTPSessionsNum&quot;.</p>
+<p class="bodytext"><a id="h201059" class="englishcrossreferencetemplate" href="201029.htm" target="_self">MaxTCPFileSize</a></p>
+<p class="bodytext">Во время сканирования HTTPD загружает файлы в системную память. Чем больше размер файла и количество активных сеансов, тем больше используется системная память. Указанное значение должно быть меньше размера ОЗУ.</p>
+<p class="bodytext">Чтобы повысить производительность, вы можете указать максимальный размер HTTP-сообщений, отправляемых в HTTPD, и установить значение 10591440 байт (10,1 МБ). Это значение обеспечивает обнаружение большинства вредоносных программ.</p>
+<p class="attentionbody">Если вы следовали приведенной выше рекомендации, мы также рекомендуем один раз в год проконсультироваться со своим персональным техническим менеджером, чтобы получить обновленное рекомендуемое значение, поскольку средний размер вредоносного ПО меняется из года в год.</p>
+<p class="bodytext"><a id="h201061" class="englishcrossreferencetemplate" href="201031.htm" target="_self">Flags</a></p>
+<p class="bodytext">Этот параметр в Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Scanning</span> &gt; <span class="guicharacter">Types of files to scan</span>, <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Scanning</span> &gt; <span class="guicharacter">Heuristic analysis level</span> и <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Scanning</span> &gt; <span class="guicharacter">Enable reputation checking</span>.</p>
+<p class="bodytext">Рекомендуемое значение для <code class="programcharacter">Flags</code> следующее:</p>
+<p class="bodytext"><code class="programcharacter">KAV_O_M_PACKED | KAV_O_M_ARCHIVED | KAV_O_M_MAILPLAIN | KAV_O_M_MAILBASES | KAV_O_M_HEURISTIC_LEVEL_SHALLOW | KAV_SHT_ENGINE_KSN</code></p>
+<p class="bodytext">Если используется флаг <code class="programcharacter">KAV_SHT_ENGINE_KSN</code>,<code class="programcharacter"> </code>также рекомендуется включить<code class="programcharacter"> </code>защиту от фишинга одним из следующих способов:</p>
+<ul class="listbullet1"><li class="listbullet1">В элементе Flags файла конфигурации kavhttpd.xml добавьте флаг <code class="programcharacter">KAV_SHT_ENGINE_APUF</code>.</li><li class="listbullet1">На странице <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Scanning</span> в Kaspersky Scan Engine GUI активируйте переключатель <span class="guicharacter">Enable Phishing Protection</span>.</li></ul><p class="bodytext">Защита от фишинга полезна, когда Kaspersky Scan Engine проверяет URL-адреса.<code class="programcharacter"> </code></p>
+<p class="bodytext"><a id="h201071" class="englishcrossreferencetemplate" href="201041.htm" target="_self">Mode</a></p>
+<p class="bodytext">Этот параметр в Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Scanning</span> &gt; <span class="guicharacter">Actions on detected objects</span>.</p>
+<p class="bodytext">Если предполагается указать локальный путь к объекту (запрос <code class="programcharacter">scanfile</code> для сканирования локального файла), укажите следующее:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">KAV_DELETE</code> (если требуется удалить объект без попытки лечения).</li><li class="listbullet1"><code class="programcharacter">KAV_CLEAN_DELETE</code> (если требуется вылечить объект или удалить его, если лечение невозможно).</li></ul><p class="bodytext">Во всех остальных случаях указывайте <code class="programcharacter">KAV_SKIP</code>.</p>
+<p class="bodytext"><a id="h206217" class="englishcrossreferencetemplate" href="207145.htm" target="_self">MaxArchivesScanningDepth</a></p>
+<p class="bodytext">Этот параметр в Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Scanning</span> &gt; <span class="guicharacter">Maximum depth</span>.</p>
+<p class="bodytext">Рекомендуется ограничить максимальную глубину распаковки вложенных архивов во время сканирования. Рекомендуемое значение <code class="programcharacter">MaxArchivesScanningDepth</code> – <code class="programcharacter">5</code>.</p>
+<p class="bodytext"><a id="h201060" class="englishcrossreferencetemplate" href="201030.htm" target="_self">SessionTimeout</a></p>
+<p class="bodytext">Этот параметр в Kaspersky Scan Engine GUI: <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Scanning</span> &gt; <span class="guicharacter">Object scan timeout</span>.</p>
+<p class="bodytext">Вы можете установить тайм-аут для всех операций в сеансе: соединение с клиентом, получение данных и проверка объекта. Настройку тайм-аута можно использовать с заголовком <code class="programcharacter">X-KAV-Timeout</code> (см. <a id="h179922" class="englishcrossreferencetemplate" href="179870.htm" target="_self">Настройка тайм-аута сеанса</a>). </p>
+<p class="bodytext">Настройка тайм-аута позволяет:</p>
+<ul class="listbullet1"><li class="listbullet1">немедленно освобождать поток сканирования, если время сеанса истекло.</li><li class="listbullet1">более быстро управлять очередью входящих TCP-соединений (длина очереди задается в <code class="programcharacter">MaxIncomingConnectionsNum</code>).</li></ul><p class="bodytext">Первоначально HTTPD получает данные, а затем загружает файлы в системную память во время сканирования. Чем больше размер файла и количество активных сеансов, тем больше используется системная память. Чтобы повысить производительность, вы можете указать максимальный размер HTTP-сообщений, отправляемых в HTTPD (см. <code class="programcharacter">MaxTCPFileSize</code> выше), и ограничить время сеанса в <code class="programcharacter">SessionTimeout</code>. Это позволит вам пропустить крупные объекты или объекты, требующие длительного времени для сканирования.</p>
+<p class="bodytext">Перед установкой значения <code class="programcharacter">SessionTimeout</code> рекомендуется оценить ожидаемое количество HTTP-клиентов, запрашивающих HTTPD, а также вероятную длину очереди входящих TCP-соединений.</p>
+<p class="bodytext">Обычно значение <code class="programcharacter">SessionTimeout</code> по умолчанию <code class="programcharacter">10000</code> (10 секунд).</p>
+<p class="bodytext"><a id="h207358" class="englishcrossreferencetemplate" href="207348.htm" target="_self">KeepAliveSettings</a></p>
+<p class="bodytext">Этот параметр в Kaspersky Scan Engine GUI <span class="guicharacter">Settings</span> &gt; <span class="guicharacter">Service</span> &gt; <span class="guicharacter">Keep-alive connection</span>.</p>
+<p class="bodytext">Мы рекомендуем включить Keep-Alive. Когда включен Keep-Alive, Kaspersky Scan Engine поддерживает постоянное соединение даже после обработки запроса и истечения времени ожидания сеанса. Это дает следующие преимущества:</p>
+<ul class="listbullet1"><li class="listbullet1">сокращение сетевого трафика.</li><li class="listbullet1">сокращение использования ресурсов сервера.</li><li class="listbullet1">сокращение времени задержки при обработке запросов.</li></ul><p class="bodytext">Keep-Alive особенно полезен для HTTPS-соединений, которые требуют больше процессорного времени и больше взаимодействий клиент-сервер.</p>
+<p class="bodytext">Чтобы включить Keep-Alive, установите для элемента <a id="h228936" class="englishcrossreferencetemplate" href="207346.htm" target="_self">Enabled</a> в <code class="programcharacter">KeepAliveSettings</code> значение <code class="programcharacter">1</code>.</p>
+<p class="bodytext">Чтобы определить значения для <code class="programcharacter"><a id="h228937" class="englishcrossreferencetemplate" href="207350.htm" target="_self">TimeoutMs</a></code> и <code class="programcharacter"><a id="h228938" class="englishcrossreferencetemplate" href="207352.htm" target="_self">MaxRequests</a></code>, оцените количество клиентов и количество запросов от клиентов.</p>
+<p class="bodytext">Например, вы рассчитали, что максимальное количество клиентов равно 10, поэтому устанавливаете <code class="programcharacter">MaxHTTPSessionsNum</code> равным 10. Если <code class="programcharacter">TimeoutMs</code> и <code class="programcharacter">MaxRequests</code> не ограничены и все 10 клиентов отправляют запросы непрерывно, Kaspersky Scan Engine поддерживает соединения с этими 10 клиентами без ограничений. В результате новые соединения не могут быть приняты HTTPD для обработки.</p>
+<p class="bodytext">Другой пример. Вы рассчитали, что максимальное количество клиентов равно 10, поэтому устанавливаете <code class="programcharacter">MaxHTTPSessionsNum</code> равным 10. Вы также подсчитали, что максимальное количество запросов от одного клиента составляет 15, поэтому вы устанавливаете <code class="programcharacter">MaxRequests</code> на <code class="programcharacter">15</code>. Если вы не установили ограничение для <code class="programcharacter">TimeoutMs</code> и клиенты не отправляют 15 запросов, Kaspersky Scan Engine поддерживает соединения с этими 10 клиентами без ограничений, поэтому новые соединения не могут быть приняты HTTPD для обработки.</p>
+<p class="introheading">Пример работы Kaspersky Scan Engine в режиме HTTP в зависимости от настроек ScannersCount, ThreadsCount, QueueLen, MaxIncomingConnectionsNum и MaxHTTPSessionsNum</p>
+<p class="bodytext">Допустим, Kaspersky Scan Engine установлен на компьютере с четырьмя ядрами процессора и у этого компьютера 15 одновременных подключений, а Kaspersky Scan Engine настроен следующим образом:</p>
+<ul class="listbullet1"><li class="listbullet1">ScannersCount = 4</li><li class="listbullet1">ThreadsCount = 8</li><li class="listbullet1">QueueLen = 20</li><li class="listbullet1">MaxHTTPSessionsNum = 10</li><li class="listbullet1">MaxIncomingConnectionsNum = 20</li></ul><p class="bodytext">В этом случае:</p>
+<ol class="listnumber1"><li class="listnumber1">Пять из пятнадцати клиентов будут поставлены в очередь на подключение.</li><li class="listnumber1">Десять сессий откроются для десяти клиентов.</li><li class="listnumber1">Десять открытых сессий сформируют очередь задач сканирования. Если количество задач сканирования превышает значение <code class="programcharacter">QueueLen</code>, клиент получит ошибку <code class="programcharacter">503</code> - <code class="programcharacter">Service overloaded.</code></li><li class="listnumber1">Kaspersky Scan Engine запускает четыре процесса сканирования.</li><li class="listnumber1">Четыре процесса сканирования создают восемь потоков для одновременной обработки восьми задач проверки из очереди (один поток для одной задачи сканирования).</li></ol>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

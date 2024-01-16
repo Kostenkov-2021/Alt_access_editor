@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Ручная установка (Linux) </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234441" class="heading3">Ручная установка (Linux)</h3>
+<p class="bodytext">В этом разделе описано, как запустить Kaspersky Scan Engine на системах Linux. </p>
+<p class="bodytext">Перед установкой и настройкой Kaspersky Scan Engine вам необходимо указать региональные настройки компьютера, на котором установлен Kaspersky Scan Engine. Используйте следующие команды.</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">LC_ALL=en_US.utf8</p>
+<p class="program">export LC_ALL</p>
+</td>
+</tr>
+
+</table>
+<p class="procedureheading">Чтобы установить Kaspersky Scan Engine вручную: </p>
+<ol class="listnumber1"><li class="listnumber1">Убедитесь, что у вас есть права администратора.</li><li class="listnumber1">Создайте директорию <code class="programcharacter">/opt/kaspersky/ScanEngine</code>. В этом справочном документе эта директория называется <code class="programcharacter">%service_dir%</code>.</li><li class="listnumber1">Распакуйте содержимое пакета распространения в директорию <code class="programcharacter">%service_dir%</code> на вашем компьютере.</li><li class="listnumber1">Распакуйте объекты из пакета распространения KAV SDK (далее <code class="programcharacter">%SDK_kit%</code>) следующим образом:<ul class="listbullet2"><li class="listbullet2">Объекты из <code class="programcharacter">%SDK_kit%/bin/bases</code> в <code class="programcharacter">%service_dir%/bin/bases</code>.</li><li class="listbullet2">Объекты из <code class="programcharacter">%SDK_kit%/include</code> в <code class="programcharacter">%service_dir%/include</code>.</li><li class="listbullet2">Объекты из <code class="programcharacter">%SDK_kit%/lib</code> в <code class="programcharacter">%service_dir%/lib</code>.</li><li class="listbullet2">Объекты из <code class="programcharacter">% %SDK_kit%/ppl</code> в <code class="programcharacter">%service_dir%/ppl</code>.</li><li class="listbullet2">Файл <code class="programcharacter">%SDK_kit%/tools/kavsigner</code> в <code class="programcharacter">%service_dir%/tools</code>.</li><li class="listbullet2">Файл<code class="programcharacter">% %SDK_kit%/tools/integrity_check_sdk.xml</code> в <code class="programcharacter">%service_dir%</code>.</li></ul><p class="attentioncontinue1">Только пользователи с правами администратора должны иметь доступ к объектам из <code class="programcharacter">%SDK_kit%</code>. <br>Для совместимости с Kaspersky Scan Engine используйте KAV SDK версии 8.9.2.595 или более поздней версии.</p> </li><li class="listnumber1">Ознакомьтесь с Пользовательским соглашением (End User License Agreement, EULA) для Kaspersky Scan Engine. Пользовательское соглашение находится по адресу <code class="programcharacter">%service_dir%/doc/license.txt</code>.<p class="listcontinue1">Если вы согласны с условиями Пользовательского соглашения, переходите к следующему шагу. Если вы отклоняете условия Пользовательского соглашения, отмените установку.</p> </li><li class="listnumber1">Откройте файл <code class="programcharacter">%service_dir%/etc/klScanEngineUI.xml</code>.</li><li class="listnumber1">Примите условия Пользовательского соглашения с конечным пользователем. В файле <code class="programcharacter">klScanEngineUI.xml</code> замените <code class="programcharacter">&lt;Common&gt;rejected&lt;/Common&gt;</code> на <code class="programcharacter">&lt;Common&gt;accepted&lt;/Common&gt;</code>.</li><li class="listnumber1">Если вы хотите использовать Kaspersky Security Network (KSN), ознакомьтесь с Пользовательским соглашением для KSN и Политикой конфиденциальности. Это Пользовательское соглашение также находится по адресу <code class="programcharacter">%service_dir%/doc/ksn_license.txt</code> и содержит ссылку на Политику конфиденциальности.<p class="listcontinue1">Если вы согласны с условиями Пользовательского соглашения для KSN и Политикой конфиденциальности, переходите к следующему шагу. Если вы отклоняете условия Пользовательского соглашения для KSN или Политику конфиденциальности, перейдите к шагу 10.</p> </li><li class="listnumber1">Примите Пользовательское соглашение для KSN. Измените <code class="programcharacter">&lt;KSN&gt;rejected&lt;/KSN&gt;</code> на <code class="programcharacter">&lt;KSN&gt;accepted&lt;/KSN&gt;</code> в <code class="programcharacter">klScanEngineUI.xml</code>.</li><li class="listnumber1">Сохраните и закройте <code class="programcharacter">%service_dir%/etc/klScanEngineUI.xml</code>.</li><li class="listnumber1">Создайте символьную ссылку на <code class="programcharacter">%service_dir%/etc/klScanEngineUI.xml</code> из директории <code class="programcharacter">/etc/</code>:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">ln -s <code class="programcharacter">%service_dir%/etc/klScanEngineUI.xml /etc/klScanEngineUI.xml</code></p>
+</td>
+</tr>
+
+</table> </li><li class="listnumber1">Если вы хотите использовать Kaspersky Scan Engine GUI, прочтите подраздел &quot;Включение Kaspersky Scan Engine GUI&quot; ниже.</li><li class="listnumber1">Создайте символьную ссылку на соответствующий файл конфигурации Kaspersky Scan Engine из директории <code class="programcharacter">/etc/</code>:<ul class="listbullet2"><li class="listbullet2">Для режима HTTP скопируйте файл <code class="programcharacter">%service_dir%/etc/kavhttpd.xml</code> в директорию <code class="programcharacter">/etc/</code>.</li><li class="listbullet2">Для режима ICAP скопируйте файл <code class="programcharacter">%service_dir%/etc/kavicapd.xml</code> в директорию <code class="programcharacter">/etc/</code>.</li></ul><p class="listcontinue1">Например, в режиме HTTP вы должны выполнить следующую команду:</p> <table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">ln -s <code class="programcharacter">%service_dir%/etc/kavhttpd.xml /etc/kavhttpd.xml</code></p>
+</td>
+</tr>
+
+</table> </li><li class="listnumber1">Если вы не используете Kaspersky Scan Engine GUI и требуется подключение через прокси-сервер, вы должны указать зашифрованное имя пользователя и пароль для прокси-сервера. Чтобы зашифровать имя пользователя и пароль:<ol class="listalpha2"><li class="listalpha2">Создайте ключ шифрования следующим образом:<p class="listcontinue2"><code class="programcharacter">openssl rand -out %service_dir%/httpsrv/kl_scanengine_db.key 512</code></p> </li><li class="listalpha2">Предоставьте право на чтение только владельцу, выполнив следующую команду:<p class="listcontinue2"><code class="programcharacter">chmod 400 %service_dir%/httpsrv/kl_scanengine_db.key</code></p> </li><li class="listalpha2">Чтобы зашифровать учетные данные, используйте утилиту <code class="programcharacter">kav_encrypt</code>. Эта утилита также автоматически записывает зашифрованные имя пользователя и пароль в файл конфигурации <code class="programcharacter">kavhttpd.xml</code> (для режима HTTP) или <code class="programcharacter">kavicapd.xml</code> (для режима ICAP). Утилита находится в директории <code class="programcharacter">%service_dir%/tools/</code>.<p class="listcontinue2">Запустите утилиту <code class="programcharacter">kav_encrypt</code> со следующими параметрами:</p> <p class="listcontinue2"><code class="programcharacter">-m &lt;httpd | icap&gt; -p &lt;user_name:password&gt;</code></p> </li></ol></li><li class="listnumber1">В <code class="programcharacter">/etc/systemd/system/multi-user.target.wants/</code> создайте символьные ссылки на следующие файлы:<ul class="listbullet2"><li class="listbullet2">В режиме ICAP создайте символьную ссылку на <code class="programcharacter">/opt/kaspersky/ScanEngine/etc/kavicapd.service</code> с помощью следующей команды:</li></ul><table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">ln -s /opt/kaspersky/ScanEngine/etc/kavicapd.service /etc/systemd/system/kavicapd.service</p>
+</td>
+</tr>
+
+</table> <ul class="listbullet2"><li class="listbullet2">Для режима HTTP создайте символьную ссылку на <code class="programcharacter">/opt/kaspersky/ScanEngine/etc/kavhttpd.service</code> с помощью следующей команды:</li></ul><table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">ln -s /opt/kaspersky/ScanEngine/etc/kavhttpd.service /etc/systemd/system/kavhttpd.service </p>
+</td>
+</tr>
+
+</table> </li><li class="listnumber1">Зарегистрируйте Kaspersky Scan Engine в системе с помощью следующих команд:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program"><code class="programcharacter">systemctl daemon-reload</code></p>
+<p class="program"><code class="programcharacter">systemctl enable kavhttpd</code></p>
+<p class="program"><code class="programcharacter">systemctl enable kavicapd</code></p>
+</td>
+</tr>
+
+</table> </li><li class="listnumber1">Запустите зарегистрированные службы Kaspersky Scan Engine:<ul class="listbullet2"><li class="listbullet2">Для режима ICAP запустите:</li></ul><table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program"> service kavicapd start</p>
+</td>
+</tr>
+
+</table> <ul class="listbullet2"><li class="listbullet2">Для режима HTTP запустите:</li></ul><table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program"> service kavhttpd start</p>
+</td>
+</tr>
+
+</table> </li><li class="listnumber1">Перейдите к следующим шагам, как описано в разделе &quot;Начало работы&quot; в <a id="h180269" class="englishcrossreferencetemplate" href="179865.htm" target="_self">режиме HTTP</a> или <a id="h180693" class="englishcrossreferencetemplate" href="179890.htm" target="_self">ICAP</a>.</li><li class="listnumber1">Активируйте Kaspersky Scan Engine в <a id="h180864" class="englishcrossreferencetemplate" href="179852.htm" target="_self">режиме лицензирования офлайн</a> или в <a id="h180819" class="englishcrossreferencetemplate" href="179855.htm" target="_self">режиме лицензирования онлайн</a>. </li></ol><p class="bodytext">После установки Kaspersky Scan Engine вы можете в любой момент проверить целостность его компонентов <a id="h209330" class="englishcrossreferencetemplate" href="209025.htm" target="_self">с помощью утилиты проверки целостности</a>.</p>
+<p class="introheading">Включение Kaspersky Scan Engine GUI</p>
+<p class="procedureheading">Чтобы включить Kaspersky Scan Engine GUI:</p>
+<ol class="listnumber1"><li class="listnumber1">Убедитесь, что у вас есть права администратора.</li><li class="listnumber1">Выполните одно из следующих действий.<ul class="listbullet2"><li class="listbullet2">Если вы ранее не устанавливали экземпляр Kaspersky Scan Engine GUI или не хотите <a id="h212028" class="englishcrossreferencetemplate" href="211897.htm" target="_self">добавлять новый экземпляр в существующий кластер</a>, выполните действия, описанные в разделе <a id="h181518" class="englishcrossreferencetemplate" href="184775.htm" target="_self">Подготовка к установке Kaspersky Scan Engine GUI</a>.</li><li class="listbullet2">Если у вас уже есть экземпляр Kaspersky Scan Engine GUI и вы хотите <a id="h212028_2" class="englishcrossreferencetemplate" href="211897.htm" target="_self">добавить новый экземпляр в тот же кластер</a>, перейдите к шагу 4.</li></ul></li><li class="listnumber1">На компьютере, на котором установлен PostgreSQL, выполните перечисленные ниже действия от имени пользователя, который может создавать новых пользователей и базы данных. Для выполнения этих действий вы можете использовать утилиту psql или pgAdmin.<p class="listcontinue1">Убедитесь, что пользователь, выполняющий запросы к базе данных, имеет доступ к директории, содержащей таблицы <code class="programcharacter">tables.sql</code>, а также имеет доступ на чтение к самому <code class="programcharacter">tables.sql</code>.</p> <ol class="listalpha2"><li class="listalpha2">Создайте нового пользователя PostgreSQL с именем <code class="programcharacter">scanengine</code>:<p class="listcontinue2"><code class="programcharacter">CREATE USER scanengine;</code></p> </li><li class="listalpha2">Задайте пароль для пользователя <code class="programcharacter">scanengine</code>:<p class="listcontinue2"><code class="programcharacter">ALTER USER scanengine WITH PASSWORD &#39;%PASSWORD%&#39;;</code></p> </li><li class="listalpha2">Используя PostgreSQL, создайте базу данных под названием <code class="programcharacter">kavebase</code>:<p class="listcontinue2"><code class="programcharacter">CREATE DATABASE kavebase OWNER scanengine;</code></p> </li><li class="listalpha2">В базе данных <code class="programcharacter">kavebase</code> выполните запросы, описанные в <code class="programcharacter">%service_dir%/samples/tables.sql</code>.<p class="listcontinue2"><code class="programcharacter">psql -d kavebase -a -f tables.sql</code></p> </li></ol></li><li class="listnumber1">Откройте <code class="programcharacter">/etc/klScanEngineUI.xml</code>.</li><li class="listnumber1">В элементе <code class="programcharacter">&lt;Mode&gt;</code> укажите режим работы Kaspersky Scan Engine:<p class="listcontinue1">Для режима HTTP:</p> <table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">&lt;Mode&gt;httpd&lt;/Mode&gt;</p>
+</td>
+</tr>
+
+</table> <p class="listcontinue1">Для режима ICAP:</p> <table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">&lt;Mode&gt;icap&lt;/Mode&gt;</p>
+</td>
+</tr>
+
+</table> </li><li class="listnumber1">Измените <code class="programcharacter">&lt;EnableUI&gt;false&lt;/EnableUI&gt;</code> на <code class="programcharacter">&lt;EnableUI&gt;true&lt;/EnableUI&gt;</code>.</li><li class="listnumber1">В элементе <code class="programcharacter">&lt;ConnectionString&gt;</code> укажите адрес веб-службы Kaspersky Scan Engine GUI в формате %IP%:%port%.<p class="listcontinue1">Например:</p> <table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">&lt;ConnectionString&gt;198.51.100.0:443&lt;/ConnectionString&gt;</p>
+</td>
+</tr>
+
+</table> </li><li class="listnumber1">Укажите SSL-сертификат для установки в веб-службе Kaspersky Scan Engine GUI.<ul class="listbullet2"><li class="listbullet2">Если у вас уже есть SSL-сертификат, который вы хотите установить в веб-службе Kaspersky Scan Engine GUI, укажите пути к вашему сертификату и вашему закрытому ключу:<ol class="listalpha3"><li class="listalpha3">В элементе <code class="programcharacter">&lt;SSLCertificatePath&gt;</code> укажите путь к вашему сертификату SSL.</li><li class="listalpha3">В элементе <code class="programcharacter">&lt;SSLPrivateKeyPath&gt;</code> укажите путь к вашему закрытому ключу.</li></ol></li><li class="listbullet2">Если у вас нет SSL-сертификата, который вы хотите установить в веб-службе Kaspersky Scan Engine GUI, сгенерируйте новый. Запустите утилиту <code class="programcharacter">%service_dir%/tools/openssl</code> следующим образом:</li></ul><table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">/opt/kaspersky/ScanEngine/tools/openssl req -x509 -nodes -days 1825 -subj /C=RU/CN=&quot;%ConnectionString%&quot; -newkey rsa:<code class="programcharacter">4096</code> -extensions EXT -config &quot;/opt/kaspersky/ScanEngine/tools/openssl.cnf&quot; -keyout &quot;/opt/kaspersky/ScanEngine/httpsrv/kl_scanengine_private.pem&quot; -out &quot;/opt/kaspersky/ScanEngine/httpsrv/kl_scanengine_cert.pem&quot;</p>
+</td>
+</tr>
+
+</table> <p class="listcontinue2">Здесь <code class="programcharacter">%ConnectionString%</code> – это значение, указанное в элементе <code class="programcharacter">%ConnectionString%</code>. Рекомендуется использовать значения <code class="programcharacter">rsa:4096</code> или <code class="programcharacter">rsa:3072</code> с параметром <code class="programcharacter">-newkey</code>. Минимальное поддерживаемое значение – <code class="programcharacter">rsa:2048</code>. </p> <p class="attentioncontinue2">Вы должны настроить доступ к файлу закрытого ключа для Kaspersky Scan Engine GUI, чтобы только пользователь root и учетная запись пользователя, под которой запущена служба, могли иметь разрешение на чтение.</p> </li><li class="listnumber1">Создайте ключ шифрования следующим образом:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">openssl rand -out %service_dir%/httpsrv/kl_scanengine_db.key 512</p>
+</td>
+</tr>
+
+</table> </li><li class="listnumber1">Предоставьте право на чтение только владельцу, выполнив следующую команду:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">chmod 400 %service_dir%/httpsrv/kl_scanengine_db.key</p>
+</td>
+</tr>
+
+</table> </li><li class="listnumber1">В элементе <code class="programcharacter">DatabaseSettings &gt; ConnectionString </code>укажите адрес новой или существующей базы данных kavebase, к которой вы хотите подключиться, используя формат %IP%:%port%.</li><li class="listnumber1">Сохраните и закройте <code class="programcharacter">/etc/klScanEngineUI.xml</code>.</li><li class="listnumber1">Зашифруйте имя пользователя и пароль пользователя, который будет использоваться для доступа к базе данных kavebase:<ul class="listbullet2"><li class="listbullet2">Если вы никогда раньше не устанавливали экземпляр Kaspersky Scan Engine с графическим интерфейсом пользователя или не хотите добавлять новый экземпляр в существующий кластер, зашифруйте имя и пароль пользователя, указанного на шаге 3. </li><li class="listbullet2">Если у вас уже есть экземпляр Kaspersky Scan Engine с графическим интерфейсом пользователя и вы хотите добавить новый экземпляр в тот же кластер, зашифруйте имя и пароль пользователя, который используется для доступа к базе данных kavebase кластера.</li></ul><p class="listcontinue1">Чтобы зашифровать учетные данные, <a id="h209335" class="englishcrossreferencetemplate" href="181814.htm" target="_self">используйте утилиту kav_encrypt</a>. Эта утилита также автоматически записывает зашифрованные имя пользователя и пароль в <code class="programcharacter">/etc/klScanEngineUI.xml</code>. Утилита находится в директории <code class="programcharacter">%service_dir%/tools/</code>.</p> <p class="listcontinue1">Запустите утилиту kav_encrypt со следующими параметрами:</p> <p class="listcontinue1"><code class="programcharacter">-d &#39;%username%:%password%&#39;</code></p> </li><li class="listnumber1">В <code class="programcharacter">/etc/systemd/system/multi-user.target.wants/</code> создайте символьную ссылку на <code class="programcharacter">/opt/kaspersky/ScanEngine/etc/klScanEngineUI.service</code> с помощью следующей команды:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">ln -s /opt/kaspersky/ScanEngine/etc/klScanEngineUI.service /etc/systemd/system/klScanEngineUI.service </p>
+</td>
+</tr>
+
+</table> </li><li class="listnumber1">Зарегистрируйте Kaspersky Scan Engine в системе с помощью следующих команд:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program"><code class="programcharacter">systemctl daemon-reload</code></p>
+<p class="program"><code class="programcharacter">systemctl enable klScanEngineUI</code></p>
+</td>
+</tr>
+
+</table> </li><li class="listnumber1">Запустите зарегистрированную службу Kaspersky Scan Engine:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program"><code class="programcharacter">service klScanEngineUI start</code></p>
+</td>
+</tr>
+
+</table> <p class="spacer"></p> </li></ol>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

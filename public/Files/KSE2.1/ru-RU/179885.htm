@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Примеры синтаксиса </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234525" class="heading3">Примеры синтаксиса</h3>
+<p class="bodytext">В этом разделе приведены примеры использования HTTP-клиента из командной строки.</p>
+<p class="introheading">Сканирование файлов и URL-адресов</p>
+<p class="bodytext">Использовать UNIX-сокет по умолчанию для сканирования одного файла, передав его содержимое:</p>
+<table class="tableintopic" width="642" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="642"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client eicar.txt</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Использовать UNIX-сокет по умолчанию для сканирования одного файла, передав путь к файлу:</p>
+<table class="tableintopic" width="642" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="642"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -f eicar.txt</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Подключиться к Kaspersky Scan Engine через TCP-сокет и просканировать два файла, передав их содержимое:</p>
+<table class="tableintopic" width="642" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="642"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -s 192.0.2.42:9999 eicar.txt test.sh</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Подключиться к Kaspersky Scan Engine через TCP-сокет и просканировать два файла, передав их содержимое с 10-секундным тайм-аутом:</p>
+<table class="tableintopic" width="678" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="678"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -s 192.0.2.42:9999 -t 10000 eicar.txt test.sh</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+<p class="bodytext">Подключиться к Kaspersky Scan Engine через TCP-сокет и просканировать файл, передав путь к нему:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -f -s 192.0.2.42:9999 /mnt/to_scan/eicar.txt</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Подключиться к Kaspersky Scan Engine через TCP-сокет и просканировать URL-адрес:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -s 192.0.2.42:9999 -u http://example.com</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Подключиться к Kaspersky Scan Engine через TCP-сокет и просканировать URL-адрес с IP-адресом хоста, на который ссылается URL-адрес:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -s 192.0.2.42:9999 -i 233.252.0.1 -u http://bug.qainfo.ru/TesT/Aphish_w</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Подключиться к Kaspersky Scan Engine через TCP-сокет и запросить дату выпуска антивирусных баз:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client –b -s 192.0.2.42:9999</p>
+</td>
+</tr>
+
+</table>
+<p class="introheading">Сканирование файлов и URL-адресов после авторизации с помощью токена API</p>
+<p class="bodytext">Авторизоваться с помощью токена API, подключиться к Kaspersky Scan Engine через TCP-сокет и просканировать файл, передав путь к файлу:</p>
+<table class="tableintopic" width="642" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="642"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -f -s https://192.0.2.42:443/mnt/to_scan/eicar.txt --auth-field --access-token Ab345-KAV</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Авторизоваться с помощью токена API, подключиться к Kaspersky Scan Engine через TCP-сокет и просканировать URL-адрес:</p>
+<table class="tableintopic" width="642" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="642"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -s https://192.0.2.42:443 -u http://example.com --auth-field --access-token Ab345-KAV</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Авторизоваться с помощью токена API и схемы аутентификации Bearer, подключиться к Kaspersky Scan Engine через TCP-сокет и просканировать файл, передав путь к файлу:</p>
+<table class="tableintopic" width="642" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="642"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -f -s https://192.0.2.42:443 /mnt/to_scan/eicar.txt --auth-field --add-bearer-prefix --access-token Ab345-KAV</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Авторизоваться с помощью токена API и схемы аутентификации Bearer, подключиться к Kaspersky Scan Engine через TCP-сокет и просканировать URL-адрес:</p>
+<table class="tableintopic" width="678" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="678"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -s https://192.0.2.42:443 -u http://example.com -auth-field --add-bearer-prefix --access-token Ab345-KAV</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+<p class="introheading">Сканирование файлов и URL-адресов и проверка сертификата TLS</p>
+<p class="bodytext">В Linux, чтобы использовать параметр <code class="programcharacter">--ca-path</code>, подготовьте директорию, содержащую сертификаты:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">openssl rehash /mnt/your-cert-dir/</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">В Windows, чтобы использовать параметр <code class="programcharacter">--ca-path</code>, вы должны назвать файлы сертификатов в директории поиска следующим образом: <em class="emphasischaracter">&lt;hash&gt;.0</em>, <em class="emphasischaracter">&lt;hash&gt;.1</em>, <em class="emphasischaracter">&lt;hash&gt;.2 </em>и т. д., где <em class="emphasischaracter">&lt;hash&gt;</em> – это хеш файла (например,<em class="emphasischaracter"> d93f38c8.0</em>).</p>
+<p class="bodytext">Чтобы получить хеш файла, используйте следующую команду:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">openssl.exe x509 -hash -noout -in &quot;full path to the certificate file&quot;</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Просканировать файл и указать полный путь к пакету сертификатов:</p>
+<ul class="listbullet1"><li class="listbullet1">В Windows:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">%service_dir%\bin\kavhttp_client -f -s https://127.0.0.1:443 C:\eicar.txt -j --ca-cert C:\your-cert-dir\CertificateFile.cert</p>
+</td>
+</tr>
+
+</table> </li><li class="listbullet1">В Linux:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -f -s https://127.0.0.1:443 /mnt/to_scan/eicar.txt --ca-cert /mnt/your-cert-dir/CertificateFile.cert</p>
+</td>
+</tr>
+
+</table> </li></ul><p class="bodytext">Просканировать URL-адрес и указать путь к папке, содержащей файл сертификата:</p>
+<ul class="listbullet1"><li class="listbullet1">В Windows:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">%service_dir%\bin\kavhttp_client -s https://127.0.0.1:443 –u https://example.com -j --ca-path C:\your-cert-dir\</p>
+</td>
+</tr>
+
+</table> </li><li class="listbullet1">В Linux:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -s https://127.0.0.1:443 –u https://example.com --ca-path /mnt/your-cert-dir/</p>
+</td>
+</tr>
+
+</table> </li></ul><p class="bodytext">Просканировать файл и указать параметры проверки сертификата:</p>
+<ul class="listbullet1"><li class="listbullet1">В Windows:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">%service_dir%\bin\kavhttp_client -f -s https://127.0.0.1:443 C:\eicar.txt -j --check-period</p>
+<p class="program">%service_dir%\bin\kavhttp_client -f -s https://127.0.0.1:443 C:\eicar.txt -j --check-subject</p>
+<p class="program">%service_dir%\bin\kavhttp_client -f -s https://127.0.0.1:443 C:\eicar.txt -j --check-chain</p>
+</td>
+</tr>
+
+</table> </li><li class="listbullet1">В Linux:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -f -s https://127.0.0.1:443 /mnt/to_scan/eicar.txt --check-period</p>
+<p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -f -s https://127.0.0.1:443 /mnt/to_scan/eicar.txt --check-subject</p>
+<p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -f -s https://127.0.0.1:443 /mnt/to_scan/eicar.txt --check-chain</p>
+</td>
+</tr>
+
+</table> </li></ul><p class="bodytext">Просканировать файл и указать параметры проверки сертификата одной командой:</p>
+<ul class="listbullet1"><li class="listbullet1">В Windows:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">%service_dir%\bin\kavhttp_client -f -s https://127.0.0.1:443 C:\eicar.txt -j --check-period --check-subject --check-chain --ca-path C:\your-cert-dir\</p>
+</td>
+</tr>
+
+</table> </li><li class="listbullet1">В Linux:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -f -s https://127.0.0.1:443 /mnt/to_scan/eicar.txt --check-period --check-subject --check-chain --ca-path /mnt/your-cert-dir/</p>
+</td>
+</tr>
+
+</table> </li></ul><p class="bodytext">Просканировать файл и проверить пакет сертификатов и файл сертификата:</p>
+<ul class="listbullet1"><li class="listbullet1">В Windows:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">%service_dir%\bin\kavhttp_client -f -s https://127.0.0.1:443 C:\eicar.txt -j --ca-path C:\your-cert-dir\ --ca-cert C:\your-cert-dir\CertificateFile.cert</p>
+</td>
+</tr>
+
+</table> </li><li class="listbullet1">В Linux:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">user@computer:/opt/kaspersky/ScanEngine/bin# ./kavhttp_client -f -s https://127.0.0.1:443 /mnt/to_scan/eicar.txt --ca-path /mnt/your-cert-dir/ --ca-cert /mnt/your-cert-dir/CertificateFile.cert</p>
+</td>
+</tr>
+
+</table> </li></ul><p class="bodytext"></p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

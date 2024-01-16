@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Using Kaspersky Scan Engine in ICAP mode with Dell EMC Isilon </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234572" class="heading3">Using Kaspersky Scan Engine in ICAP mode with Dell EMC Isilon</h3>
+<p class="bodytext">You can configure Kaspersky Scan Engine to work with Dell EMC Isilon. For convenience, this process is separated into several steps.</p>
+<p class="attentionbody">The instruction below applies to Dell EMC Isilon 9.1. For information about the interfaces of other versions, see Dell EMC Isilon documentation.</p>
+<p class="introheading">Step I. Configuring Kaspersky Scan Engine</p>
+<p class="procedureheading">To configure Kaspersky Scan Engine: </p>
+<ol class="listnumber1"><li class="listnumber1">Allow Kaspersky Scan Engine to send the <code class="programcharacter">204 No Content</code> HTTP status code by doing one of the following:<ul class="listbullet2"><li class="listbullet2">Turn on the <span class="guicharacter">Send code 204</span> toggle in <a id="h201467" class="englishcrossreferencetemplate" href="179698.htm" target="_self">Kaspersky Scan Engine GUI</a>.</li><li class="listbullet2">Set the value of the <code class="programcharacter">Allow204</code> element to <code class="programcharacter">1</code> in the <a id="h180154" class="englishcrossreferencetemplate" href="192989.htm" target="_self">ICAP mode configuration file</a>.</li></ul></li><li class="listnumber1"> Enable scanning of files in the response modification mode (RESPMOD) by doing one of the following:<ul class="listbullet2"><li class="listbullet2">Set the objects that must be scanned in RESPMOD to <span class="guicharacter">Files</span> in <a id="h182505" class="englishcrossreferencetemplate" href="179699.htm" target="_self">Kaspersky Scan Engine GUI</a>.</li><li class="listbullet2">Set the value of the <code class="programcharacter">ScanInRespMode</code> element to <code class="programcharacter">Content</code> in the <a id="h180154_2" class="englishcrossreferencetemplate" href="192989.htm" target="_self">ICAP mode configuration file</a>.</li></ul></li><li class="listnumber1">Set the address that Kaspersky Scan Engine uses to process responses in RESPMOD to <code class="programcharacter">avscan</code> by doing one of the following:<ul class="listbullet2"><li class="listbullet2">Set the value of <span class="guicharacter">Response mode address</span> field to <code class="programcharacter">avscan</code> in <a id="h201467_2" class="englishcrossreferencetemplate" href="179698.htm" target="_self">Kaspersky Scan Engine GUI</a>.</li><li class="listbullet2">Set the value of the RespModeAddress element to <code class="programcharacter">avscan</code> in the <a id="h180154_3" class="englishcrossreferencetemplate" href="192989.htm" target="_self">ICAP mode configuration file</a>.</li></ul></li></ol><p class="introheading">Step II. Configuring Dell EMC Isilon</p>
+<p class="procedureheading">To configure Dell EMC Isilon:</p>
+<ol class="listnumber1"><li class="listnumber1">In the Dell OneFS web administration interface, go to <span class="boldcharacter">Data Protection</span> &gt; <span class="boldcharacter">Antivirus</span> &gt; <span class="boldcharacter">ICAP</span>.<p class="picture"><img id="f220098" src="onefs-the-icap-tab.png" class="linkedpngfiletemplate" alt="&quot;ICAP&quot; tab and its elements: Policies, Detected threats, Servers, Settings." vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="picturename">The <span class="boldcharacter">ICAP</span> tab</p>
+</li><li class="listnumber1">In the <span class="boldcharacter">Servers</span> area, click <span class="boldcharacter">Add Server</span>.<p class="listcontinue1">The <span class="boldcharacter">Add ICAP antivirus server</span> dialog box appears.</p>
+</li><li class="listnumber1">In the <span class="boldcharacter">Add ICAP antivirus server</span> dialog box, do the following:<ol class="listalpha2"><li class="listalpha2">In the <span class="boldcharacter">Server URL</span> field, type the address Kaspersky Scan Engine: <code class="programcharacter">icap://%KSE_IP%:1344/avscan</code>. Here <code class="programcharacter">%KSE_IP%</code> is the IPv4 address.</li><li class="listalpha2">In the <span class="boldcharacter">Server name</span> field, type the name for the server, for example <code class="programcharacter">KasperskyScanEngine</code>.</li><li class="listalpha2">Click <span class="boldcharacter">Add Server</span>.</li></ol><p class="picture"><img id="f220100" src="onefs-add-icap-antivirus-server.png" class="linkedpngfiletemplate" alt="&quot;Add ICAP antivirus server&quot; dialog box. Server URL = icap://hidden IP:1344/avscan, Server name = KasperskyScanEngine, Enable this server checkbox is on." vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="picturename">The <span class="boldcharacter">Add ICAP antivirus server</span> dialog box</p>
+</li><li class="listnumber1">In the <span class="boldcharacter">Settings</span> area, specify the following:<ol class="listalpha2"><li class="listalpha2">The action on detection. For example, you can choose <span class="boldcharacter">Attempt to truncate file when threat is found</span>.</li><li class="listalpha2">Optionally, you can specify the maximum size of the files to scan. The default value is 2 GB.</li><li class="listalpha2">Optionally, you can specify the path prefixes. <em class="emphasischaracter">Path prefixes</em> are the paths in the filesystem that will trigger scanning when files are added to them.</li><li class="listalpha2">Optionally, you can specify the filters for object names. Filters for object names define objects that should or should not be scanned in On-Access mode.</li><li class="listalpha2">Optionally, you can enable the <span class="boldcharacter">Enable scan of files on open, Enable file access when scanning fails</span>, and <span class="boldcharacter">Enable scan of files on closed</span> settings.</li><li class="listalpha2">Optionally, configure scan report retention.</li><li class="listalpha2">Click <span class="boldcharacter">Submit</span>.</li></ol><p class="picture"><img id="f220101" src="onefs-all-scans.png" class="linkedpngfiletemplate" alt="All Scans. Action on detection = Attempt to truncate file when a threat is found, Maximum filescan size = 2 GB. Selected options for On access scans: Enable scan of files on open, Enable file access when scanning fails, Enable scan of files on close." vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="picturename">The <span class="boldcharacter">All scans </span>dialog box</p>
+</li><li class="listnumber1">Click <span class="boldcharacter">Switch antivirus service</span>.</li><li class="listnumber1">Turn on <span class="boldcharacter">Switch ICAP antivirus</span>.</li><li class="listnumber1">Click <span class="boldcharacter">Confirm</span>.</li></ol><p class="introheading">Schedule scanning</p>
+<p class="bodytext">You can configure scanning schedule to scan your storage on a regular basis.</p>
+<p class="procedureheading">To configure scanning schedule:</p>
+<ol class="listnumber1"><li class="listnumber1">In the Dell OneFS web administration interface, go to <span class="boldcharacter">Data protection</span> &gt; <span class="boldcharacter">Antivirus</span> &gt; <span class="boldcharacter">ICAP</span> &gt; <span class="boldcharacter">Policies</span>.</li><li class="listnumber1">Click the <span class="boldcharacter">Create an antivirus policy</span>.<p class="listcontinue1">The <span class="boldcharacter">Create a policy</span> dialog box appears.</p>
+<p class="picture"><img id="f220103" src="onefs-create-a-policy.png" class="linkedpngfiletemplate" alt="&quot;Create a policy&quot; dialog box. Antivirus policy is enabled. Policy name = ScanEngineRegularScan, Paths = /ifs/home/ftp/incoming, Recursion depth = Full recursion. Impact Policy = DEFAULT, Scheduled daily at 12:00 AM." vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="picturename">The <span class="boldcharacter">Create a policy</span> dialog box</p>
+</li><li class="listnumber1">Select the <span class="boldcharacter">Enable antivirus policy</span>&nbsp;check box.</li><li class="listnumber1">Specify the name of the policy in the&nbsp;<span class="boldcharacter">Policy name</span>&nbsp;text field.</li><li class="listnumber1">Enter the description of the policy in the <span class="boldcharacter">Description</span> text field.</li><li class="listnumber1">Add paths to the directories that you want to scan.</li><li class="listnumber1">Optionally, you can set a limit on the recursion depth in the <span class="boldcharacter">Recursion depth</span> section, but this is not recommended.</li><li class="listnumber1">Specify the impact policy settings:<ol class="listalpha2"><li class="listalpha2">Optionally, you can select <span class="boldcharacter">Enable force run of policy regardless of impact policy</span>, but this is not recommended. </li><li class="listalpha2">Select the <code class="programcharacter">DEFAULT</code> impact policy from the <span class="boldcharacter">Impact Policy</span>&nbsp;drop-down list.</li></ol></li><li class="listnumber1">Select the <span class="boldcharacter">Scheduled</span> radio button.</li><li class="listnumber1">Specify the scheduling settings:<ol class="listalpha2"><li class="listalpha2">Choose the interval for running the policy.</li><li class="listalpha2">Configure the policy to run at the desired time.</li></ol></li><li class="listnumber1">Click <span class="boldcharacter">Submit</span>.</li></ol><p class="introheading">Reviewing the detect objects</p>
+<p class="procedureheading">To review the detected objects,</p>
+<p class="bodytextindent">In the Dell OneFS web administration interface, go to <span class="boldcharacter">Data Protection</span> &gt; <span class="boldcharacter">Antivirus</span> &gt; <span class="boldcharacter">ICAP</span> &gt; <span class="boldcharacter">Detected Threats</span>.</p>
+<p class="picture"><img id="f220102" src="onefs-detected-objects.png" class="linkedpngfiletemplate" alt="Detected objects table. Columns: Name, Path, Remediation, Policy, Detected (date and time), Actions." vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="picturename">The list of detected objects</p>
+<p class="bodytextindent">This is the list of files that were quarantined or truncated, along with the name of the detected object, file path, remediation method, policy, and timestamp.</p>
+<p class="bodytextindent">Click the <span class="boldcharacter">View details</span> button next to a detected object to view the detailed information.</p>
+<p class="procedureheading">To restore a file from the list and allow user access to it:</p>
+<ol class="listnumber1"><li class="listnumber1">Click the&nbsp;<span class="boldcharacter">More</span>&nbsp;drop-down list. </li><li class="listnumber1">Select&nbsp;<span class="boldcharacter">Release file</span>.</li></ol><p class="introheading">Recommendations</p>
+<p class="bodytext">You must configure at least one copy of Kaspersky Scan Engine to provide virus scanning&nbsp;for each Isilon cluster. In a typical environment, a minimum of two Kaspersky Scan Engine instances are required to handle a NAS server. Having only one instance can cause denial of file access, in which case the instance does not respond. Isilon clusters handle load balancing across multiple Kaspersky Scan Engine instances automatically.</p>
+<p class="warningbody">All Kaspersky Scan Engine instances that are registered with an Isilon cluster must have identical configurations.</p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

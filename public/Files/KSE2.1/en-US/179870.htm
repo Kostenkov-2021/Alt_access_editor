@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Setting the session timeout </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234517" class="heading3">Setting the session timeout</h3>
+<p class="bodytext">There are parameters that affect the session timeout: the <code class="programcharacter">SessionTimeout</code> and <code class="programcharacter">TimeoutMs</code> parameters of the <a id="h179927" class="englishcrossreferencetemplate" href="184799.htm" target="_self">HTTP mode configuration file</a> and the <code class="programcharacter">X-KAV-Timeout</code> <a id="h179981" class="englishcrossreferencetemplate" href="179875.htm" target="_self">request header</a>. This section explains how to configure the session timeout for Kaspersky Scan Engine in HTTP mode by using these values.</p>
+<p class="introheading">SessionTimeout</p>
+<p class="bodytext">This parameter of the configuration file sets the maximum time that Kaspersky Scan Engine can spend on receiving a scan request for an object and on processing this request (scanning operation), in milliseconds. This timeout is valid for all objects sent to Kaspersky Scan Engine.</p>
+<p class="bodytext">Consider the following example: the value of <code class="programcharacter">SessionTimeout</code> is set to <code class="programcharacter">4000</code> (four seconds), and the request does not contain the <code class="programcharacter">X-KAV-Timeout</code> header. Kaspersky Scan Engine spends one second on receiving the request. Then Kaspersky Scan Engine spends the remaining three seconds on scanning.</p>
+<p class="introheading">X-KAV-Timeout</p>
+<p class="bodytext">This header sets the time that Kaspersky Scan Engine can spend on a scanning operation (in milliseconds), regardless of the value of the <code class="programcharacter">SessionTimeout</code> parameter.</p>
+<p class="bodytext">The range of values for this parameter is from <code class="programcharacter">0</code> to <code class="programcharacter">4294967295</code> (an unsigned 32-bit integer).</p>
+<p class="bodytext">Consider the following example: the value of <code class="programcharacter">SessionTimeout</code> is set to <code class="programcharacter">4000</code> (four seconds), and the value of <code class="programcharacter">X-KAV-Timeout</code> is set to <code class="programcharacter">10000</code> (10 seconds). Kaspersky Scan Engine spends one second on receiving the request. Then Kaspersky Scan Engine spends 10 seconds (which is the value of <code class="programcharacter">X-KAV-Timeout</code>) on scanning.</p>
+<p class="bodytext">If <code class="programcharacter">SessionTimeout</code> is exceeded during the reception of the request, the session is closed, regardless of the value of <code class="programcharacter">X-KAV-Timeout</code>.</p>
+<p class="bodytext">Consider the following example: the value of <code class="programcharacter">SessionTimeout</code> is set to <code class="programcharacter">4000</code> (four seconds), and the value of <code class="programcharacter">X-KAV-Timeout</code> is set to <code class="programcharacter">10000</code> (10 seconds). Kaspersky Scan Engine spends four seconds on receiving the request, and the session is closed because <code class="programcharacter">SessionTimeout</code> is exceeded.</p>
+<p class="bodytext">You can choose the value of <code class="programcharacter">X-KAV-Timeout</code> on the basis of the size of the files that you want to scan. For example, Kaspersky Scan Engine could require 10 seconds to scan a large file, or 0.1 seconds to scan a small one.</p>
+<p class="introheading">TimeoutMs</p>
+<p class="bodytext">By default, Kaspersky Scan Engine supports <a id="h207358" class="englishcrossreferencetemplate" href="207348.htm" target="_self">Keep-Alive connections</a>, so it can process multiple objects one after another, by using the same connection.</p>
+<p class="bodytext">For each new object, Kaspersky Scan Engine starts the new <code class="programcharacter">SessionTimeout</code>. After Kaspersky Scan Engine sends scan results, it keeps the connection open for as much time as <code class="programcharacter">TimeoutMs</code> specifies, even if the <code class="programcharacter">SessionTimeout</code> time has already expired. If a new object was received before <code class="programcharacter">TimeoutMs</code> expired, the new <code class="programcharacter">SessionTimeout</code> begins while the same connection remains open.</p>
+<p class="bodytext">If Keep-Alive connections support is disabled, Kaspersky Scan Engine closes the connection after the <code class="programcharacter">SessionTimeout</code> time is expired.</p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

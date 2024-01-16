@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Uninstallation using the uninstaller (Linux and Windows) </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234540" class="heading2">Uninstallation using the uninstaller (Linux and Windows)</h2>
+<p class="bodytext">This section describes how to uninstall Kaspersky Scan Engine using the <code class="programcharacter">uninstall</code> (Linux) and <code class="programcharacter">uninstall.exe</code> (Windows).</p>
+<p class="bodytext">Before uninstalling Kaspersky Scan Engine, make sure that files from the <code class="programcharacter">%service_dir%</code> are not used by any processes.</p>
+<p class="procedureheading">To uninstall Kaspersky Scan Engine:</p>
+<ol class="listnumber1"><li class="listnumber1">Make sure you have root (administrator) privileges.</li><li class="listnumber1">Go to a directory other than <code class="programcharacter">%service_dir%</code> and run <code class="programcharacter">uninstall</code> from there, for example, from the command line.<p class="listcontinue1">If there is a Kaspersky Scan Engine instance running on the computer, the uninstaller stops it.</p>
+</li><li class="listnumber1">Choose whether to delete the database that contains Kaspersky Scan Engine data.<p class="attentioncontinue1">The uninstaller skips this step if the Kaspersky Scan Engine instance you are deleting is part of a cluster containing other instances. You can delete the database when the last Kaspersky Scan Engine instance in the cluster is being deleted.</p>
+</li></ol><p class="bodytext">After this the <code class="programcharacter">uninstall</code> removes the following objects:</p>
+<ul class="listbullet1"><li class="listbullet1">The database that contains Kaspersky Scan Engine data (if you have chosen this)<p class="attentioncontinue1">The PostgreSQL installation will not be removed, nor will the PostgreSQL database user account that you created during installation. Only the Kaspersky Scan Engine <code class="programcharacter">kavebase</code> database will be removed. If you want to re-install Kaspersky Scan Engine, remove this database user account.</p>
+<p class="listcontinue1">To remove the database user account, run the following command:</p>
+<p class="listcontinue1"><code class="programcharacter">DROP ROLE &quot;%account_name%&quot;;</code></p>
+<p class="listcontinue1">Here, <code class="programcharacter">%account_name%</code> is the name of the database user account that you created during installation.</p>
+</li><li class="listbullet1">The directory to which Kaspersky Scan Engine is installed</li><li class="listbullet1">The directory that contains temporary files used by Kaspersky Scan Engine</li><li class="listbullet1">The Kaspersky Scan Engine service (from the list of services)</li></ul>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Использование Kaspersky Scan Engine с F5 BIG-IP Application Security Manager </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234573" class="heading3">Использование Kaspersky Scan Engine с F5 BIG-IP Application Security Manager</h3>
+<p class="bodytext">Вы можете настроить Kaspersky Scan Engine для работы с F5 BIG-IP® Application Security Manager ™ (далее ASM). Для удобства этот процесс разделен на несколько этапов.</p>
+<p class="introheading">Шаг 1. Настройка Kaspersky Scan Engine</p>
+<p class="procedureheading">Чтобы настроить Kaspersky Scan Engine, выполните любое из следующих действий:</p>
+<ul class="listbullet1"><li class="listbullet1">В <a id="h180154" class="englishcrossreferencetemplate" href="192989.htm" target="_self">файле конфигурации режима ICAP</a> установите для элемента <code class="programcharacter">VirusNameICAPHeader</code> значение <code class="programcharacter">X-Virus-ID</code>.</li><li class="listbullet1">На странице <span class="guicharacter">Service</span> Kaspersky Scan Engine GUI установите значение поля <span class="guicharacter">Detected object name HTTP header</span> на <code class="programcharacter">X-Virus-ID</code>.</li></ul><p class="introheading">Шаг 2. Настройка ASM</p>
+<p class="procedureheading">Чтобы настроить ASM:</p>
+<ol class="listnumber1"><li class="listnumber1">Войдите в утилиту Configuration.</li><li class="listnumber1">Перейдите в <span class="boldcharacter">Security &gt; Options &gt; Application Security &gt; Integrated Services &gt; Anti-Virus Protection</span>.<p class="picture"><img id="f221132" src="f5_1.png" class="linkedpngfiletemplate" alt="Конфигурация антивирусной защиты: Server Host Name/IP Address, Server Port Number, Guarantee Enforcement." vspace="0" hspace="0" align="bottom" border="0"></p> <p class="picturename">Антивирусная защита</p> </li><li class="listnumber1">В поле <span class="boldcharacter">Server Host Name/IP Address</span> укажите IP-адрес ICAP-сервера Kaspersky Scan Engine.</li><li class="listnumber1">В поле <span class="boldcharacter">Server Port Number</span> укажите порт ICAP-сервера Kaspersky Scan Engine или оставьте значение по умолчанию <code class="programcharacter">1344</code>.</li><li class="listnumber1">Установите флажок <span class="boldcharacter">Guarantee Enforcement</span>, если вы хотите, чтобы система выполняла проверку на вирусы, даже если это может замедлить работу вашего веб-приложения.</li><li class="listnumber1">Нажмите <span class="boldcharacter">Save</span>.</li><li class="listnumber1">Чтобы сразу же применить изменения политики безопасности, нажмите <span class="boldcharacter">Apply Policy</span>.</li><li class="listnumber1">Перейдите в <span class="boldcharacter">Security &gt; Options &gt; Application Security &gt; Advanced Configuration &gt; System Variables</span>.</li><li class="listnumber1">Настройте внутренние переменные:<ul class="listbullet2"><li class="listbullet2">В ASM 13.1.X–16.X:<ol class="listalpha3"><li class="listalpha3">Для параметра <span class="boldcharacter">icap_uri</span> введите <code class="programcharacter">/req</code> в параметре <span class="boldcharacter">Parameter Value</span>. Это значение по умолчанию в <code class="programcharacter"><a id="h207258" class="englishcrossreferencetemplate" href="207194.htm" target="_self">ReqModeAddress</a></code>.</li><li class="listalpha3">Для параметра <span class="boldcharacter">virus_header_name</span> введите <code class="programcharacter">X-Virus-ID</code> в параметре <span class="boldcharacter">Parameter Value</span>.</li><li class="listalpha3">Выберите <span class="boldcharacter">Update</span>.</li></ol></li><li class="listbullet2">В ASM 11.X–13.0.X:<ol class="listalpha3"><li class="listalpha3">Для параметра <span class="boldcharacter">icap_uri</span> введите <code class="programcharacter">/req</code> в параметре <span class="boldcharacter">Parameter Value</span>. Это значение по умолчанию в <code class="programcharacter"><a id="h207258_2" class="englishcrossreferencetemplate" href="207194.htm" target="_self">ReqModeAddress</a></code>.</li><li class="listalpha3">Для параметра <span class="boldcharacter">virus_header_name</span> введите <code class="programcharacter">X-Virus-ID</code>.</li><li class="listalpha3">Выберите <span class="boldcharacter">Save</span>.</li></ol></li></ul></li></ol><p class="introheading">Настройка блокировки обнаруженных объектов</p>
+<p class="procedureheading">Чтобы настроить блокировку обнаруженных объектов:</p>
+<ul class="listbullet1"><li class="listbullet1">В ASM 13.1.X–16.X:<ol class="listalpha2"><li class="listalpha2">Войдите в утилиту Configuration.</li><li class="listalpha2">Перейдите в <span class="boldcharacter">Security &gt; Application Security &gt; Policy Building &gt; Learning and Blocking Settings</span>.</li><li class="listalpha2">Установите режим просмотра <span class="boldcharacter">Advanced</span>.</li><li class="listalpha2">Раскройте меню <span class="boldcharacter">Antivirus</span> (раскройте меню <span class="boldcharacter">Antivirus Protection</span> в версиях ниже 14.X) и установите флажки <span class="boldcharacter">Alarm</span> и <span class="boldcharacter">Block</span> для типа нарушения <span class="boldcharacter">Virus Detected</span> или оба.</li><li class="listalpha2">Нажмите <span class="boldcharacter">Save</span>.</li><li class="listalpha2">Чтобы сразу же активировать изменения политики безопасности, выберите <span class="boldcharacter">Apply Policy</span>.</li></ol></li><li class="listbullet1">В ASM 12.X:<ol class="listalpha2"><li class="listalpha2">Войдите в утилиту Configuration.</li><li class="listalpha2">Перейдите в <span class="boldcharacter">Security &gt; Application Security &gt; Policy Building &gt; Learning and Blocking Settings</span>.</li><li class="listalpha2">Установите режим просмотра <span class="boldcharacter">Advanced</span>.</li><li class="listalpha2">Раскройте меню <span class="boldcharacter">Policy General Features</span> и установите флажки <span class="boldcharacter">Alarm</span> и <span class="boldcharacter">Block</span> для типа нарушения <span class="boldcharacter">Virus Detected</span>.</li><li class="listalpha2">Нажмите <span class="boldcharacter">Save</span>.</li><li class="listalpha2">Чтобы сразу же применить изменения политики безопасности, нажмите <span class="boldcharacter">Apply Policy</span>.</li></ol></li><li class="listbullet1">В ASM 11.X:<ol class="listalpha2"><li class="listalpha2">Войдите в утилиту Configuration.</li><li class="listalpha2">Перейдите в <span class="boldcharacter">Security &gt; Application Security &gt; Blocking.</span></li><li class="listalpha2">В разделе <span class="boldcharacter">Violations List</span> для параметра <span class="boldcharacter">Negative Security Violations</span> установите флажки <span class="boldcharacter">Alarm</span> и <span class="boldcharacter">Block</span> для типа нарушения <span class="boldcharacter">Virus Detected</span>.</li><li class="listalpha2">Нажмите <span class="boldcharacter">Save</span>.</li><li class="listalpha2">Чтобы сразу же активировать изменения политики безопасности, нажмите <span class="boldcharacter">Apply Policy</span>.</li></ol></li></ul><p class="introheading">Настройка сканирования загружаемых файлов и вложений электронной почты</p>
+<p class="procedureheading">Чтобы настроить сканирование загружаемых файлов и вложений электронной почты:</p>
+<ol class="listnumber1"><li class="listnumber1">Перейдите в <span class="boldcharacter">Security &gt; Application Security &gt; Integrated Services &gt; Anti-Virus Protection</span>.</li><li class="listnumber1">Выберите соответствующую политику безопасности из списка.</li><li class="listnumber1">Установите флажок <span class="boldcharacter">Inspect file uploads within HTTP requests</span>.</li><li class="listnumber1">Чтобы проверить вложения SOAP, переместите соответствующие XML-профили из списка <span class="boldcharacter">Antivirus Protection Disabled</span> в список <span class="boldcharacter">Antivirus Protection Enabled</span>.</li><li class="listnumber1">Нажмите <span class="boldcharacter">Save</span>.</li><li class="listnumber1">Чтобы сразу же применить изменения политики безопасности, нажмите <span class="boldcharacter">Apply Policy</span>.<p class="picture"><img id="f221134" src="f5_3.png" class="linkedpngfiletemplate" alt="&quot;Inspect file uploads within HTTP requests&quot; включено. Список &quot;Antivirus Protection Disabled&quot; содержит элемент &quot;Default&quot;." vspace="0" hspace="0" align="bottom" border="0"></p> <p class="picturename">Применить политику</p> </li></ol><p class="introheading">Просмотр обнаруженных объектов</p>
+<p class="procedureheading">Чтобы просмотреть отчеты об обнаруженных объектах:</p>
+<ol class="listnumber1"><li class="listnumber1">Войдите в утилиту Configuration.</li><li class="listnumber1">Перейдите в <span class="boldcharacter">Security &gt; Reporting &gt; Application &gt; Charts</span>.</li><li class="listnumber1">В списке диаграмм выберите <span class="boldcharacter">Top Viruses Detected</span>.<p class="listcontinue1">Система будет отображать обнаруженные вирусы с течением времени.</p> </li></ol>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

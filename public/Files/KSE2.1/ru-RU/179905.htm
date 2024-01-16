@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Сборка исполняемых файлов Kaspersky Scan Engine, используемых в режиме ICAP </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234287" class="heading2">Сборка исполняемых файлов Kaspersky Scan Engine, используемых в режиме ICAP</h2>
+<p class="bodytext">Вы можете скомпилировать службу kavicapd из исходного кода, расположенного в директории <code class="programcharacter">%service_dir%/samples/kavicap/</code>.</p>
+<p class="introheading">Требования к установленному ПО</p>
+<p class="bodytext">Чтобы скомпилировать службу kavicapd, вы должны установить на свой компьютер следующее программное обеспечение:</p>
+<ul class="listbullet1"><li class="listbullet1">Boost 1.72.0 или более поздней версии. Исходные файлы службы kavicapd статически связываются с Boost, для чего требуется пакет boost-static.x86_64.</li><li class="listbullet1">Библиотека GNU C и стандартная библиотека GNU C++ со статическими библиотеками.</li><li class="listbullet1">Библиотека OpenSSL (последняя версия) Рекомендуется установить пакет openssl-devel.</li><li class="listbullet1">Библиотеки PostgreSQL с 6.4.4 по 7 (не включительно). Рекомендуется установить пакет libpqxx-devel.</li><li class="listbullet1">Динамическая библиотека Brotli.</li></ul><p class="bodytext">Вам также понадобится набор компиляторов GNU (GCC) 7.3.0 или более поздней версии. Используйте одну и ту же версию GCC для компиляции Boost и службы kavicapd.</p>
+<p class="procedureheading">Чтобы скомпилировать Kaspersky Scan Engine для работы в режиме ICAP:</p>
+<ol class="listnumber1"><li class="listnumber1">Перейдите в директорию <code class="programcharacter">%service_dir%/samples/kavicap/</code>.</li><li class="listnumber1">Запустите <code class="programcharacter">gmake</code>.</li></ol>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Автоматическое обновление (Linux) </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234282" class="heading2">Автоматическое обновление (Linux)</h2>
+<p class="bodytext">Начиная с Kaspersky Scan Engine версии 2.0, вы можете автоматически обновить Kaspersky Scan Engine до более новой версии.</p>
+<p class="introheading">Использование утилиты install для обновления</p>
+<p class="bodytext">Вы можете обновить Kaspersky Scan Engine с помощью той же утилиты, которая используется для установки Kaspersky Scan Engine – утилиты <code class="programcharacter">install</code>. Вы можете найти утилиту в <a id="h180273" class="englishcrossreferencetemplate" href="184793.htm" target="_self">пакете распространения</a>.</p>
+<p class="bodytext">Утилита <code class="programcharacter">install</code> обновляет Kaspersky Scan Engine, если программа соответствует следующим требованиям:</p>
+<ul class="listbullet1"><li class="listbullet1">Kaspersky Scan Engine уже установлен на компьютере (то есть существует директория <code class="programcharacter">/opt/kaspersky/ScanEngine</code>).<p class="listcontinue1">Если на компьютере не установлен Kaspersky Scan Engine, утилита <code class="programcharacter">install</code> выполнит <a id="h193036" class="englishcrossreferencetemplate" href="192977.htm" target="_self">автоматическую установку</a>.</p> </li><li class="listbullet1">Уже установлен Kaspersky Scan Engine версии 2.0  или более поздней. Эта версия более ранняя, чем версия, устанавливаемая при обновлении.<p class="listcontinue1">Если версия Kaspersky Scan Engine не соответствует этому требованию, утилита <code class="programcharacter">install</code> выдает сообщение об ошибке и закрывается.</p> </li></ul><p class="bodytext">При обновлении Kaspersky Scan Engine утилита <code class="programcharacter">install</code> выполняет резервное копирование важных объектов, таких как файлы конфигурации, сертификаты TLS и лицензия. Успешное обновление означает, что все эти объекты уже интегрированы в новую версию Kaspersky Scan Engine. Если по какой-либо причине обновление не удается, утилита <code class="programcharacter">install</code> восстанавливает предыдущую версию Kaspersky Scan Engine, включая объекты, для которых выполнено резервное копирование.</p>
+<p class="introheading">Остановка экземпляров Kaspersky Scan Engine</p>
+<p class="bodytext">Если обновляемый экземпляр Kaspersky Scan Engine является частью кластера, вам необходимо остановить все экземпляры в кластере перед обновлением.</p>
+<p class="bodytext">Важно остановить все экземпляры, поскольку утилита <code class="programcharacter">install</code> изменяет базу данных <code class="programcharacter">kavebase</code> при обновлении Kaspersky Scan Engine.</p>
+<p class="procedureheading">Чтобы остановить экземпляр Kaspersky Scan Engine:</p>
+<ul class="listbullet1"><li class="listbullet1">Если экземпляр работает в режиме ICAP, выполните команду <code class="programcharacter">service kavicapd stop.</code></li><li class="listbullet1">Если экземпляр работает в режиме HTTP, выполните команду <code class="programcharacter">service kavhttpd stop.</code></li><li class="listbullet1">Если экземпляр использует Kaspersky Scan Engine GUI, выполните команду <code class="programcharacter">service klScanEngineUI stop.</code></li></ul><p class="introheading">Обновление Kaspersky Scan Engine</p>
+<p class="procedureheading">Для автоматического обновления Kaspersky Scan Engine:</p>
+<ol class="listnumber1"><li class="listnumber1">Убедитесь, что у вас есть права администратора.</li><li class="listnumber1">Запустите утилиту <code class="programcharacter">install</code>.</li><li class="listnumber1">Ознакомьтесь с Пользовательским соглашением (End User License Agreement, EULA) для Kaspersky Scan Engine.<p class="listcontinue1">Если вы согласны с условиями Пользовательского соглашения, примите его. Если вы не принимаете условия Пользовательского соглашения, обновление прекратится.</p> </li><li class="listnumber1">Если вы согласились использовать Kaspersky Security Network (KSN) ранее, утилита install отобразит текущие условия Пользовательского соглашения для KSN и Политику конфиденциальности. Ознакомьтесь с новым Пользовательским соглашением для KSN и Политикой конфиденциальности.<p class="listcontinue1">Если вы согласны с условиями Пользовательского соглашения и Политики конфиденциальности, примите их. Если вы не примете условия Пользовательского соглашения для KSN и Политики конфиденциальности, вы не сможете использовать KSN, но обновление продолжится. Вы сможете включить KSN позже, используя <a id="h182505" class="englishcrossreferencetemplate" href="179699.htm" target="_self">Kaspersky Scan Engine GUI</a> или файлы конфигурации Kaspersky Scan Engine (<a id="h201090" class="englishcrossreferencetemplate" href="201022.htm" target="_self">HTTP</a> или <a id="h201224" class="englishcrossreferencetemplate" href="200603.htm" target="_self">ICAP</a>).</p> </li><li class="listnumber1">Укажите абсолютный путь к директории, в которой находится пакет KAV SDK.<p class="listcontinue1">Пакет KAV SDK находится в отдельной директории, начиная с версии 2.1 Kaspersky Scan Engine.</p> </li></ol><p class="bodytext">После того как вы укажете необходимые данные, Kaspersky Scan Engine будет обновлен, а затем запущен.</p>
+<p class="bodytext">После обновления Kaspersky Scan Engine вы можете в любой момент проверить целостность его компонентов <a id="h209330" class="englishcrossreferencetemplate" href="209025.htm" target="_self">с помощью утилиты проверки целостности</a>.</p>
+<p class="introheading">Миграция из скрипта инициализации в файл модуля systemd</p>
+<p class="bodytext">Начиная с Kaspersky Scan Engine версии 2.1, скрипт <code class="programcharacter">инициализации</code> больше не поддерживается. Вместо этого скрипта вы можете использовать файл модуля <code class="programcharacter">systemd</code>.</p>
+<p class="bodytext">Если вы использовали скрипт <code class="programcharacter">инициализации</code> для управления Kaspersky Scan Engine в предыдущих версиях, утилита <code class="programcharacter">install</code> автоматически выполнит миграцию со скрипта <code class="programcharacter">инициализации</code> на <code class="programcharacter">systemd</code> во время обновления.</p>
+<p class="bodytext">Узнайте больше об использовании <code class="programcharacter">systemd</code> в <a id="h209554" class="englishcrossreferencetemplate" href="184956.htm" target="_self">режимах HTTP</a> и <a id="h209555" class="englishcrossreferencetemplate" href="192397.htm" target="_self">ICAP</a>.</p>
+<p class="introheading">Добавление новых элементов в файлы конфигурации</p>
+<p class="bodytext">В новой версии Kaspersky Scan Engine добавлены новые элементы. Утилита <code class="programcharacter">install</code> не добавляет эти элементы в файлы конфигурации во время обновления. Вы можете добавить новые элементы с помощью <a id="h180139" class="englishcrossreferencetemplate" href="179683.htm" target="_self">Kaspersky Scan Engine GUI</a> или напрямую в файлы конфигурации <a id="h179927" class="englishcrossreferencetemplate" href="184799.htm" target="_self">kavhttpd.xml</a> и <a id="h180154" class="englishcrossreferencetemplate" href="192989.htm" target="_self">kavicapd.xml</a>. Смотрите также подробную информацию о <a id="h222091" class="englishcrossreferencetemplate" href="209374.htm" target="_self">новых элементах в файле конфигурации</a>.</p>
+<p class="introheading">Очистка кеша браузера</p>
+<p class="bodytext">Если вы используете Kaspersky Scan Engine GUI, очистите кеш браузера после обновления.</p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

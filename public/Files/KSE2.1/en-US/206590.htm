@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Configuring Format Recognizer for use in ICAP mode </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234300" class="heading3">Configuring Format Recognizer for use in ICAP mode</h3>
+<p class="bodytext">Format Recognizer is a component that can be used in Kaspersky Scan Engine to recognize and skip files of certain formats during the scanning process. Skipping files increases the processing speed of Kaspersky Scan Engine.</p>
+<p class="introheading">Enabling Format Recognizer</p>
+<p class="procedureheading">To enable Format Recognizer:</p>
+<ol class="listnumber1"><li class="listnumber1">In the <a id="h180154" class="englishcrossreferencetemplate" href="192989.htm" target="_self">ICAP mode configuration file</a>, locate the <code class="programcharacter">FormatRecognizerSettings</code> section.<p class="listcontinue1">If this section is missing, add it manually as follows:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">&lt;FormatRecognizerSettings&gt;</p>
+<p class="program">...</p>
+<p class="program">&lt;/FormatRecognizerSettings&gt;  </p>
+</td>
+</tr>
+
+</table>
+</li><li class="listnumber1">Within this section, in the <code class="programcharacter">FormatsToSkipScanning</code> list, specify which <a id="h180224" class="englishcrossreferencetemplate" href="180222.htm" target="_self">file formats</a> must not be scanned by Kaspersky Scan Engine, as follows:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">&lt;FormatRecognizerSettings&gt;</p>
+<p class="program2">&lt;FormatsToSkipScanning&gt;</p>
+<p class="program3">&lt;KAV_FF_GENERAL_TXT/&gt;</p>
+<p class="program3">...</p>
+<p class="program3">&lt;KAV_FF_AUDIO_WMA/&gt;</p>
+<p class="program2">&lt;/FormatsToSkipScanning&gt;</p>
+<p class="program">&lt;/FormatRecognizerSettings&gt;</p>
+</td>
+</tr>
+
+</table>
+</li><li class="listnumber1">For the changes to take effect, restart the <code class="programcharacter">kavicapd</code> service with the following command:<p class="listcontinue1"><code class="programcharacter">service kavicapd restart</code></p>
+</li></ol><p class="bodytext">Format Recognizer will start recognizing and skipping files of the formats specified in the <code class="programcharacter">FormatsToSkipScanning</code> list. Kaspersky Scan Engine will not scan the skipped files, which will increase its processing speed.</p>
+<p class="introheading">Disabling Format Recognizer</p>
+<p class="procedureheading">To disable Format Recognizer:</p>
+<ol class="listnumber1"><li class="listnumber1">In the <a id="h180154_2" class="englishcrossreferencetemplate" href="192989.htm" target="_self">ICAP mode configuration file</a>, remove the <code class="programcharacter">FormatRecognizerSettings</code> section or leave the <code class="programcharacter">FormatsToSkipScanning</code> list empty.</li><li class="listnumber1">For the changes to take effect, restart the <code class="programcharacter">kavicapd</code> service with the following command:<p class="listcontinue1"><code class="programcharacter">service kavicapd restart</code></p>
+</li></ol><p class="bodytext"></p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

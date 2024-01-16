@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Формат ответа на POST-запрос на сканирование </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h4 id="t234359" class="heading4">Формат ответа на POST-запрос на сканирование</h4>
+<p class="bodytext">Если POST-запрос был успешно обработан, тело ответа будет содержать JSON-объект со следующими полями:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">{</p>
+<p class="program2">&quot;object&quot;: &quot;%SCAN_OBJECT%&quot;,</p>
+<p class="program2">&quot;scanResult&quot;: &quot;%SCAN_RESULT%&quot;,</p>
+<p class="program2">&quot;detectionName&quot;: &quot;%DETECTED_OBJECT%&quot;,</p>
+<p class="program2">&quot;name&quot;: &quot;%SCAN_OBJECT_NAME%&quot;,</p>
+<p class="program2">&quot;containsOfficeMacro&quot;: &quot;%IS_MACRO_CONTAINED%&quot;,</p>
+<p class="program2">&quot;subObjectsScanResults&quot;: [</p>
+<p class="program2">{</p>
+<p class="program3">&quot;object&quot;: &quot;%SCAN_FILE%&quot;,</p>
+<p class="program3">&quot;scanResult&quot;: &quot;%SCAN_RESULT%&quot;,</p>
+<p class="program3">&quot;detectionName&quot;: &quot;%DETECTED_OBJECT%&quot;,</p>
+<p class="program3">&quot;containsOfficeMacro&quot;: &quot;%IS_MACRO_CONTAINED%&quot;</p>
+<p class="program2">},</p>
+<p class="program2">...</p>
+<p class="program2">{</p>
+<p class="program3">&quot;object&quot;: &quot;%SCAN_FILE%&quot;,</p>
+<p class="program3">&quot;scanResult&quot;: &quot;%SCAN_RESULT%&quot;,</p>
+<p class="program3">&quot;detectionName&quot;: &quot;%DETECTED_OBJECT%&quot;,</p>
+<p class="program3">&quot;containsOfficeMacro&quot;: &quot;%IS_MACRO_CONTAINED%&quot;</p>
+<p class="program2">}</p>
+<p class="program2">]</p>
+<p class="program">}</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"> Здесь:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">object</code> – абсолютный путь до просканированного файла (если запрос был послан к <code class="programcharacter">/api/v3.0/scanfile</code>) или строка <code class="programcharacter">&quot;memory&quot;</code> (если запрос был послан к <code class="programcharacter">/api/v3.0/scanmemory</code>).</li><li class="listbullet1"><code class="programcharacter">scanResult</code> – результат сканирования веб-адреса. Может иметь следующие значения:<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">CLEAN</code></li><li class="listbullet2"><code class="programcharacter">DETECT</code></li><li class="listbullet2"><code class="programcharacter">DISINFECTED</code></li><li class="listbullet2"><code class="programcharacter">DELETED</code></li><li class="listbullet2"><code class="programcharacter">NON_SCANNED</code></li><li class="listbullet2"><code class="programcharacter">SERVER_ERROR</code></li></ul><p class="listcontinue1">Если запрос был послан к <code class="programcharacter">/api/v3.0/scanfile</code> или к <code class="programcharacter">/api/v3.0/scanmemory</code>, причина того, что объект не сканируется, может быть добавлена к результату <code class="programcharacter">NON_SCANNED</code>. Например:</p> <table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">{</p>
+<p class="program2">&quot;object&quot;: &quot;\/home\/user\/Documents\/filestoscan\/test.zip&quot;,</p>
+<p class="program2">&quot;scanResult&quot;: &quot;NON_SCANNED (PASSWORD PROTECTED)&quot;,</p>
+<p class="program2">&quot;containsOfficeMacro&quot;: &quot;false&quot;</p>
+<p class="program">}</p>
+</td>
+</tr>
+
+</table> <p class="listcontinue1">Возможные значения:</p> <ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">NON_SCANNED (CANCELED)</code><p class="listcontinue2">Сканирование отменено.</p>
+</li><li class="listbullet2"><code class="programcharacter">NON_SCANNED (CORRUPTED)</code><p class="listcontinue2">Сканируемый объект поврежден. </p>
+</li><li class="listbullet2"><code class="programcharacter">NON_SCANNED (ACCESS DENIED)</code><p class="listcontinue2">Доступ к объекту запрещен.</p>
+</li><li class="listbullet2"><code class="programcharacter">NON_SCANNED (SKIPPED)</code><p class="listcontinue2">Сканирование пропущено.</p>
+</li><li class="listbullet2"><code class="programcharacter">NON_SCANNED (PASSWORD PROTECTED)</code><p class="listcontinue2">Проверяемый объект защищен паролем.</p>
+</li><li class="listbullet2"><code class="programcharacter">NON_SCANNED</code><p class="listcontinue2">Причина, по которой объект не сканируется, не определена.</p>
+</li></ul></li><li class="listbullet1"><code class="programcharacter">detectionName</code> – имя обнаруженного вредоносного объекта в классификации &quot;Лаборатории Касперского&quot;.</li><li class="listbullet1"><code class="programcharacter">name</code> – имя объекта, указанного в поле <code class="programcharacter">name</code> тела запроса (если запрос был послан к <code class="programcharacter">/api/v3.1/scanmemory</code>). Если сканируемый объект имеет вложенные подобъекты, элемент <code class="programcharacter">name</code> указывается только в родительском объекте.</li><li class="listbullet1"><code class="programcharacter">containsOfficeMacro</code> – переменная логического типа, которая имеет значение <code class="programcharacter">true</code>, если в просканированном объекте был обнаружен макрос, и <code class="programcharacter">false</code> в противоположном случае.</li><li class="listbullet1"><code class="programcharacter">subObjectsScanResults</code> – массив, состоящий из результатов сканирования подобъектов, вложенных в просканированный объект. Это поле и все вложенные в него поля будут добавлены в ответ, только если просканированный объект включает вложенные подобъекты.<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">subObjectsScanResults/object</code> – путь до вложенного подобъекта. Обратите внимание, что путь к подобъекту отделен от пути к родительскому объекту двумя косыми чертами (<code class="programcharacter">//</code>), например:<p class="listcontinue2"><code class="programcharacter">/home/user/archive.tar//folder/subobject</code></p> </li><li class="listbullet2"><code class="programcharacter">subObjectsScanResults/scanResult</code> – результат сканирования вложенного подобъекта.</li><li class="listbullet2"><code class="programcharacter">subObjectsScanResults/detectionName</code> – имя обнаруженного вредоносного объекта в классификации &quot;Лаборатории Касперского&quot;.</li><li class="listbullet2"><code class="programcharacter">subObjectsScanResults/containsOfficeMacro</code> – переменная логического типа, которая имеет значение <code class="programcharacter">true</code>, если в просканированном подобъекте был обнаружен макрос, и <code class="programcharacter">false</code> в противоположном случае.</li></ul></li></ul><p class="bodytext">Если POST-запрос был обработан с ошибкой, тело ответа будет содержать JSON-объект с единственным полем <code class="programcharacter">error</code>:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">{</p>
+<p class="program2">&quot;error&quot;: &quot;%СООБЩЕНИЕ ОБ ОШИБКЕ%&quot;</p>
+<p class="program">}</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"> Здесь поле <code class="programcharacter">error</code> содержит описание ошибки, которая произошла во время обработки запроса.</p>
+<p class="introheading">Дополнительные поля в протоколе KAV версии 3.1</p>
+<p class="bodytext">Поле <code class="programcharacter">reason</code> появляется только в том случае, если вы используете протокол KAV версии 3.1. В этом поле указывается причина, по которой объект не проверяется. Это поле появляется, если запрос был послан к <code class="programcharacter">/api/v3.1/scanfile</code> или к <code class="programcharacter">/api/v3.1/scanmemory</code> и если значение поля <code class="programcharacter">scanResult</code> равно <code class="programcharacter">NON_SCANNED</code>.</p>
+<p class="bodytext">Возможные значения:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">Canceled</code><p class="listcontinue1">Сканирование отменено.</p>
+</li><li class="listbullet1"><code class="programcharacter">Corrupted</code><p class="listcontinue1">Сканируемый объект поврежден. </p>
+</li><li class="listbullet1"><code class="programcharacter">Access denied</code><p class="listcontinue1">Доступ к объекту запрещен.</p>
+</li><li class="listbullet1"><code class="programcharacter">Skipped</code><p class="listcontinue1">Сканирование пропущено. </p>
+</li><li class="listbullet1"><code class="programcharacter">Password protected</code><p class="listcontinue1">Проверяемый объект защищен паролем.</p>
+</li><li class="listbullet1"><code class="programcharacter">Max depth exceeded</code><p class="listcontinue1">Превышена максимальная глубина распаковки вложенных архивов при сканировании.</p>
+</li></ul>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

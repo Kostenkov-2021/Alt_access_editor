@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Настройка правил сервиса </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234307" class="heading3">Настройка правил сервиса</h3>
+<p class="bodytext">Эти правила определяют поведение Kaspersky Scan Engine в режиме ICAP. Они перечислены в файле конфигурации, расположенном в директории <code class="programcharacter">/opt/kaspersky/ScanEngine/icap_data/</code>. Расположение этого файла указывается в параметре <code class="programcharacter">RulesFilePath</code> <a id="h180154" class="englishcrossreferencetemplate" href="192989.htm" target="_self">файла конфигурации режима ICAP</a>. Пример файла конфигурации kavicapd_gui_rules.conf включен в пакет распространения.</p>
+<p class="attentionbody">Каждое правило, указанное в файле конфигурации, должно быть помещено в отдельную строку.</p>
+<p class="introheading">Синтаксис правила</p>
+<p class="bodytext">Правило службы <code class="programcharacter">kavicapd</code> состоит из трех частей:</p>
+<ul class="listbullet1"><li class="listbullet1">Режим ICAP<p class="listcontinue1">Возможные значения: </p> <ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">REQ</code><p class="listcontinue2">Режим модификации запросов (REQMOD).</p>
+</li><li class="listbullet2"><code class="programcharacter">RESP</code><p class="listcontinue2">Режим модификации ответов (RESPMOD).</p>
+</li><li class="listbullet2"><code class="programcharacter">ANY</code><p class="listcontinue2">Любой из режимов, перечисленных выше.</p>
+</li></ul></li><li class="listbullet1">Результат сканирования<p class="listcontinue1">Возможные значения перечислены ниже.</p> <p class="listcontinue1">Возможные значения:</p> <ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">NON_SCANNED</code><p class="listcontinue2">Объект не просканирован.</p>
+</li><li class="listbullet2"><code class="programcharacter">FAILED</code><p class="listcontinue2">Ошибка сканирования.</p>
+</li><li class="listbullet2"><code class="programcharacter">PHISHING</code><p class="listcontinue2">Обнаружен фишинговый веб-адрес.</p>
+</li><li class="listbullet2"><code class="programcharacter">DETECT</code><p class="listcontinue2">Проверяемый объект или URL-адрес заражены.</p>
+</li><li class="listbullet2"><code class="programcharacter">MACRO</code><p class="listcontinue2">Обнаружен документ Microsoft Office, содержащий макрос.</p>
+</li><li class="listbullet2"><code class="programcharacter">CLEAN</code><p class="listcontinue2">Проверяемый объект безопасен (не заражен).</p>
+</li></ul></li><li class="listbullet1">Ответ Kaspersky Scan Engine в режиме ICAP<p class="listcontinue1">Возможные значения:</p> <ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">SET_RESP=&lt;response_template&gt;</code><p class="listcontinue2">Kaspersky Scan Engine отправляет <a id="h180188" class="englishcrossreferencetemplate" href="179895.htm" target="_self">HTML-шаблон ответа</a> с указанным именем на прокси-сервер.</p>
+</li><li class="listbullet2"><code class="programcharacter">EXEC_CMD=&lt;script&gt;</code><p class="listcontinue2">Kaspersky Scan Engine запускает скрипт с указанным именем.</p>
+</li><li class="listbullet2"><code class="programcharacter">NONE</code><p class="listcontinue2">Kaspersky Scan Engine не изменяет проверяемый объект.</p>
+</li></ul><p class="listcontinue1">Если ответ Kaspersky Scan Engine не указан в правиле, используется значение по умолчанию <code class="programcharacter">NONE</code>. </p> </li></ul><p class="introheading">Чтение результатов сканирования</p>
+<p class="bodytext">В режиме ICAP Kaspersky Scan Engine проверяет как HTTP-трафик, так и веб-адреса, запрашиваемые пользователями. Результаты проверки ранжируются по степени серьезности, причем наиболее серьезному результату присваивается рейтинг <code class="programcharacter">1</code>. В следующем списке показано ранжирование поддерживаемых результатов сканирования по степени серьезности:</p>
+<ol class="listnumber1"><li class="listnumber1"><code class="programcharacter">PHISHING</code></li><li class="listnumber1"><code class="programcharacter">DETECT</code></li><li class="listnumber1"><code class="programcharacter">MACRO</code></li><li class="listnumber1"><code class="programcharacter">NON_SCANNED</code></li><li class="listnumber1"><code class="programcharacter">FAILED</code></li><li class="listnumber1"><code class="programcharacter">CLEAN</code></li></ol><p class="bodytext">Если сканирования трафика и URL-адресов дают разные результаты, в качестве итогового результата сканирования выбирается результат с наивысшим уровнем критичности. Если оба результата проверки – <code class="programcharacter">DETECT</code>, то итоговый результат проверки также будет <code class="programcharacter">DETECT</code>, а имя обнаруженного объекта, возвращаемое Kaspersky Scan Engine, берется из результата проверки URL-адреса. Результаты проверки, используемые в правилах службы, являются итоговыми результатами проверки.</p>
+<p class="introheading">Примеры правил</p>
+<p class="bodytext">Ниже приведены несколько примеров правил, которые вы можете указать:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">RESP DETECT SET_RESP=detect_resp EXEC_CMD=admin_notify</p>
+<p class="program">RESP FAILED SET_RESP=err_resp</p>
+<p class="program">REQ FAILED EXEC_CMD=admin_notify</p>
+<p class="program">REQ CLEAN</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

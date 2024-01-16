@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> ICAP mode configuration file </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234385" class="heading3">ICAP mode configuration file</h3>
+<p class="bodytext">The ICAP mode configuration file, <code class="programcharacter">kavicapd.xml</code>, consists of several sections that specify settings for the kavicapd service and KAV SDK.</p>
+<p class="introheading">Preparing the ICAP mode configuration file after manual installation</p>
+<p class="bodytext">If you <a id="h181517" class="englishcrossreferencetemplate" href="180652.htm" target="_self">installed Kaspersky Scan Engine manually</a>, you need to copy the ICAP mode configuration to a location where kavicapd service can find it. By default, the configuration file is located at <code class="programcharacter">%distr_kit%/etc/kavicapd.xml</code>.</p>
+<p class="bodytext">After <a id="h181517_2" class="englishcrossreferencetemplate" href="180652.htm" target="_self">installing Kaspersky Scan Engine</a>, copy <code class="programcharacter">kavicapd.xml</code> to your preferred location:</p>
+<ul class="listbullet1"><li class="listbullet1">If you copy <code class="programcharacter">kavicapd.xml</code> to the <code class="programcharacter">/etc/</code> directory, Kaspersky Scan Engine automatically finds and parses this file.</li><li class="listbullet1">If you copy <code class="programcharacter">kavicapd.xml</code> to a different location, you need to set the path to this location when you start Kaspersky Scan Engine <a id="h193471" class="englishcrossreferencetemplate" href="179900.htm" target="_self">manually</a>.</li></ul><p class="introheading">Parameters of the ICAP mode configuration file</p>
+<p class="bodytext">Following are the sections of the ICAP mode configuration file, kavicapd.xml. An example configuration file is at the end.</p>
+<p class="bodytext">The ICAP mode configuration file contains the following parent elements:</p>
+<ul class="listbullet1"><li class="listbullet1"><a id="h201223" class="englishcrossreferencetemplate" href="201103.htm" target="_self">SDKSettings</a></li><li class="listbullet1"><a id="h201224" class="englishcrossreferencetemplate" href="200603.htm" target="_self">KSNSettings</a></li><li class="listbullet1"><a id="h201226" class="englishcrossreferencetemplate" href="200605.htm" target="_self">UpdateSettings</a></li><li class="listbullet1"><a id="h201225" class="englishcrossreferencetemplate" href="200604.htm" target="_self">ProxySettings</a></li><li class="listbullet1"><a id="h206618" class="englishcrossreferencetemplate" href="206616.htm" target="_self">FormatRecognizerSettings</a></li><li class="listbullet1"><a id="h201227" class="englishcrossreferencetemplate" href="201129.htm" target="_self">ICAPSettings</a></li></ul><p class="warningbody">Some sections of the configuration file are optional. However, if a section exists in the configuration file, all of its child elements must be present. Elements must not be empty, unless stated otherwise.</p>
+<p class="introheading">Structure of the configuration file</p>
+<p class="bodytext">Following is an example ICAP mode configuration file.</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">&lt;Configuration&gt;</p>
+<p class="program">&nbsp;</p>
+<p class="program2">&lt;SDKSettings&gt;</p>
+<p class="program3">&lt;ScannersCount&gt;4&lt;/ScannersCount&gt;</p>
+<p class="program3">&lt;ThreadsCount&gt;8&lt;/ThreadsCount&gt;</p>
+<p class="program3">&lt;QueueLen&gt;1024&lt;/QueueLen&gt;</p>
+<p class="program3">&lt;ScanTimeout&gt;10000&lt;/ScanTimeout&gt; &lt;!-- 0 = unlimited --&gt;</p>
+<p class="program3">&lt;LicensePath&gt;<code class="programcharacter">/opt/kasper</code>sky/ScanEngine/bin&lt;/LicensePath&gt;</p>
+<p class="program3">&lt;BasesPath&gt;<code class="programcharacter">/opt/kasper</code>sky/ScanEngine/bin/bases&lt;/BasesPath&gt;</p>
+<p class="program3">&lt;TempPath&gt;/tmp/kavicapd&lt;/TempPath&gt;</p>
+<p class="program3">&lt;LicensingMode&gt;1&lt;/LicensingMode&gt;&lt;!-- 1 = offline licensing mode; 2 - online licensing mode --&gt;</p>
+<p class="program3">&lt;ScanningMode&gt;KAV_O_M_PACKED | KAV_O_M_ARCHIVED | KAV_O_M_MAILPLAIN | KAV_O_M_MAILBASES | KAV_O_M_HEURISTIC_LEVEL_SHALLOW&lt;/ScanningMode&gt;</p>
+<p class="program3">&lt;MaxArchivesScanningDepth&gt;0&lt;/MaxArchivesScanningDepth&gt;</p>
+<p class="program2">&lt;/SDKSettings&gt;</p>
+<p class="program">&nbsp;</p>
+<p class="program2">&lt;KSNSettings&gt;</p>
+<p class="program3">&lt;UseKSN&gt;0&lt;/UseKSN&gt;</p>
+<p class="program3">&lt;ObjectCheckOnDemandTimeoutMs&gt;10000&lt;/ObjectCheckOnDemandTimeoutMs&gt;</p>
+<p class="program3">&lt;CacheSizeKb&gt;30720&lt;/CacheSizeKb&gt;</p>
+<p class="program2">&lt;/KSNSettings&gt;</p>
+<p class="program">&nbsp;</p>
+<p class="program2">&lt;UpdateSettings&gt;</p>
+<p class="program3">&lt;DisableBackup&gt;0&lt;/DisableBackup&gt;</p>
+<p class="program3">&lt;UpdatePeriodMinutes&gt;30&lt;/UpdatePeriodMinutes&gt;  &lt;!-- 0 = turn update off --&gt;</p>
+<p class="program3">&lt;UseOnlyCustomSources&gt;0&lt;/UseOnlyCustomSources&gt;</p>
+<p class="program3">&lt;UpdateSources&gt;</p>
+<p class="program4">&lt;!-- &lt;Source&gt;&lt;/Source&gt; --&gt;</p>
+<p class="program3">&lt;/UpdateSources&gt;</p>
+<p class="program3">&lt;UpdatesCertFile&gt;&lt;/UpdatesCertFile&gt;</p>
+<p class="program3">&lt;CertificateConfirmationAction&gt;0&lt;/CertificateConfirmationAction&gt;</p>
+<p class="program3">&lt;UseReducedBases&gt;0&lt;/UseReducedBases&gt;</p>
+<p class="program2">&lt;/UpdateSettings&gt;</p>
+<p class="program">&nbsp;</p>
+<p class="program2">&lt;ProxySettings&gt;</p>
+<p class="program3">&lt;UseProxy&gt;0&lt;/UseProxy&gt;</p>
+<p class="program3">&lt;Host&gt;myproxy.mycompany.com&lt;/Host&gt;</p>
+<p class="program3">&lt;Port&gt;3128&lt;/Port&gt;</p>
+<p class="program3">&lt;User&gt;doOTrypDTxpVJxUHYeKQTw==&lt;/User&gt;</p>
+<p class="program3">&lt;Pass&gt;8mSHXFix3uL+RP9oNeKDZQ==&lt;/Pass&gt;</p>
+<p class="program2">&lt;/ProxySettings&gt;</p>
+<p class="program">&nbsp;</p>
+<p class="program2">&lt;FormatRecognizerSettings&gt;</p>
+<p class="program3">&lt;FormatsToSkipScanning&gt;</p>
+<p class="program4">&lt;KAV_FF_GENERAL_TXT/&gt;</p>
+<p class="program4">&lt;KAV_FF_GENERAL_CSV/&gt;</p>
+<p class="program4">&lt;KAV_FF_AUDIO_WMA/&gt;</p>
+<p class="program3">&lt;/FormatsToSkipScanning&gt;</p>
+<p class="program2">&lt;/FormatRecognizerSettings&gt;</p>
+<p class="program">&nbsp;</p>
+<p class="program2">&lt;ICAPSettings&gt;</p>
+<p class="program3">&lt;Port&gt;1344&lt;/Port&gt;</p>
+<p class="program3">&lt;ReqModeAddress&gt;req&lt;/ReqModeAddress&gt;</p>
+<p class="program3">&lt;RespModeAddress&gt;resp&lt;/RespModeAddress&gt;</p>
+<p class="program3">&lt;MaxIcapSessionsCount&gt;100&lt;/MaxIcapSessionsCount&gt;</p>
+<p class="program3">&lt;ScanMaxFileSize&gt;0&lt;/ScanMaxFileSize&gt; &lt;!-- 0 = unlimited --&gt;</p>
+<p class="program3">&lt;RAMUsageLimit&gt;0&lt;/RAMUsageLimit&gt; &lt;!-- 0 = unlimited --&gt;</p>
+<p class="program3">&lt;Allow204&gt;0&lt;/Allow204&gt;</p>
+<p class="program3">&lt;KeepAliveSettings&gt;&lt;!-- Support for processing multiple requests during one connection --&gt;</p>
+<p class="program4">&lt;Enabled&gt;1&lt;/Enabled&gt;</p>
+<p class="program4">&lt;TimeoutMs&gt;5000&lt;/TimeoutMs&gt;</p>
+<p class="program4">&lt;MaxRequests&gt;1000&lt;/MaxRequests&gt;</p>
+<p class="program3">&lt;/KeepAliveSettings&gt;</p>
+<p class="program3">&lt;RequestingICAPHeaders&gt;</p>
+<p class="program4">&lt;ICAPHeader&gt;HTTPUserNameICAPHeader&lt;/ICAPHeader&gt;</p>
+<p class="program4">&lt;ICAPHeader&gt;HTTPClientIpICAPHeader&lt;/ICAPHeader&gt;</p>
+<p class="program3">&lt;/RequestingICAPHeaders&gt;</p>
+<p class="program3">&lt;HTTPClientIpICAPHeader&gt;X-Client-IP&lt;/HTTPClientIpICAPHeader&gt;</p>
+<p class="program3">&lt;HTTPUserNameICAPHeader&gt;X-Client-Username&lt;/HTTPUserNameICAPHeader&gt;</p>
+<p class="program3">&lt;VirusNameICAPHeader&gt;&lt;/VirusNameICAPHeader&gt;</p>
+<p class="program3">&lt;DatabaseVersionICAPHeader&gt;X-AV-Database-time&lt;/DatabaseVersionICAPHeader&gt;</p>
+<p class="program3">&lt;SendInfectionFoundICAPHeader&gt;0&lt;/SendInfectionFoundICAPHeader&gt;</p>
+<p class="program3">&lt;SendResponseInfoICAPHeader&gt;0&lt;/SendResponseInfoICAPHeader&gt;</p>
+<p class="program3">&lt;SendResponseDescICAPHeader&gt;0&lt;/SendResponseDescICAPHeader&gt;</p>
+<p class="program3">&lt;SendViolationsFoundICAPHeader&gt;0&lt;/SendViolationsFoundICAPHeader&gt;</p>
+<p class="program3">&lt;ScanInReqMode&gt;All&lt;/ScanInReqMode&gt;</p>
+<p class="program3">&lt;ScanInRespMode&gt;Content&lt;/ScanInRespMode&gt;</p>
+<p class="program3">&lt;RulesFilePath&gt;/opt/kaspersky/ScanEngine/icap_data/kavicapd_gui_rules.conf&lt;/RulesFilePath&gt;</p>
+<p class="program3">&lt;CmdPath&gt;/opt/kaspersky/ScanEngine/icap_data/scripts&lt;/CmdPath&gt;</p>
+<p class="program3">&lt;ResponsesPath&gt;/opt/kaspersky/ScanEngine/icap_data/templates&lt;/ResponsesPath&gt;</p>
+<p class="program3">&lt;TransferBeforeScanEnding Delay=&quot;10&quot; ChunkSize=&quot;4&quot; BlockedUrlCacheEnabled=&quot;1&quot; BlockedUrlCacheKb=&quot;5000&quot; BlockedUrlCacheTtlSec=&quot;1800&quot;&gt;0&lt;/TransferBeforeScanEnding&gt;</p>
+<p class="program3">&lt;Exclusions&gt;</p>
+<p class="program3">&lt;!-- Signs of highly likely uninfected resources. --&gt;</p>
+<p class="program3">&lt;!-- Note: ContentSize - more or equal (use only once), ContentType - as is, RequestURL - masks can be used --&gt;</p>
+<p class="program3">&lt;!--</p>
+<p class="program4">&lt;ContentSize&gt;102400&lt;/ContentSize&gt;</p>
+<p class="program4">&lt;ContentType&gt;audio/mpeg&lt;/ContentType&gt;</p>
+<p class="program4">&lt;ContentType&gt;image/jpeg&lt;/ContentType&gt;</p>
+<p class="program4">&lt;RequestURL&gt;*.kaspersky.com/.*&lt;/RequestURL&gt;</p>
+<p class="program">		--&gt;</p>
+<p class="program3">&lt;/Exclusions&gt;</p>
+<p class="program3">&lt;!-- Possible values: update, reload, reopen-log (reopens syslog format log files) --&gt;</p>
+<p class="program3">&lt;USR1SignalAction&gt;update&lt;/USR1SignalAction&gt; </p>
+<p class="program3">&lt;USR2SignalAction&gt;reopen-log&lt;/USR2SignalAction&gt;</p>
+<p class="program3">&lt;!-- The path to the logging configuration file. Only this file will be used as the ICAP logging configuration file. If the LoggingConfigFilePath element has the empty value, the icapdkavlog.conf file located in the kavicapd binary file directory is used. --&gt;</p>
+<p class="program3">&lt;LoggingConfigFilePath&gt;&lt;/LoggingConfigFilePath&gt;</p>
+<p class="program2">&lt;/ICAPSettings&gt;</p>
+<p class="program">&nbsp;</p>
+<p class="program">&lt;/Configuration&gt;</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

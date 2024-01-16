@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Использование сокращенного набора баз </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234475" class="heading2">Использование сокращенного набора баз</h2>
+<p class="bodytext">Вы можете использовать сокращенный набор баз вместо полного набора баз. Сокращенный набор баз меньше по размеру, чем полный набор баз, и при использовании занимает меньше оперативной памяти. Чтобы обеспечить такой же коэффициент обнаружения, как и при использовании полного набора баз, вы должны использовать сокращенный набор баз вместе с KSN.</p>
+<p class="introheading">Сокращенный набор баз и KSN</p>
+<p class="bodytext">Не рекомендуется использовать сокращенный набор баз без KSN, так как коэффициент обнаружения будет ниже, чем при использовании полного набора баз. В случае отсутствия связи с серверами KSN (например, когда нет доступа в интернет) рекомендуется перейти на полный набор баз.</p>
+<p class="bodytext">Если вы загружаете базы на зеркальные серверы, всегда обновляйте как сокращенный, так и полный набор баз, чтобы полный набор баз был актуальным при переходе Kaspersky Scan Engine на него.</p>
+<p class="introheading">Переход на сокращенный набор баз с помощью встроенного функционала Kaspersky Scan Engine</p>
+<p class="bodytext">В инструкции ниже показан сценарий перехода на сокращенный набор баз с использованием встроенного функционала Kaspersky Scan Engine.</p>
+<p class="procedureheading">Чтобы перейти на сокращенный набор баз:</p>
+<ol class="listnumber1"><li class="listnumber1">Убедитесь, что текущая лицензия поддерживает использование KSN.</li><li class="listnumber1">Включите KSN одним из следующих методов:<ul class="listbullet2"><li class="listbullet2">Флаг <code class="programcharacter">KAV_SHT_ENGINE_KSN</code> в режиме HTTP.</li><li class="listbullet2">Параметр <code class="programcharacter">UseKSN</code> в разделе <code class="programcharacter">KSNSetting</code> <a id="h180154" class="englishcrossreferencetemplate" href="192989.htm" target="_self">файла конфигурации режима ICAP</a> в режиме ICAP.<p class="listcontinue2">Убедитесь, что вы прочитали и приняли Пользовательское соглашение с конечным пользователем (EULA). Вы можете найти текст Пользовательского соглашения в <code class="programcharacter">/doc/ksn_license.txt</code>. Чтобы принять Пользовательское соглашение, для параметра <code class="programcharacter">Settings &gt; EULA &gt; KSN</code> в файле конфигурации <code class="programcharacter">klScanEngineUI.xml</code> необходимо установить значение <code class="programcharacter">accepted</code>.</p> </li><li class="listbullet2">Включить переключатель <span class="guicharacter">Enable reputation checking</span> в <a id="h182505" class="englishcrossreferencetemplate" href="179699.htm" target="_self">настройках сканирования</a> в Kaspersky Scan Engine GUI.</li></ul></li><li class="listnumber1">Чтобы начать использовать сокращенный набор баз, в режимах HTTP и ICAP укажите <code class="programcharacter">1</code> для параметра <code class="programcharacter">UseReducedBases</code> файлов конфигурации <a id="h179927" class="englishcrossreferencetemplate" href="184799.htm" target="_self">kavhttpd.xml</a> и <a id="h180154_2" class="englishcrossreferencetemplate" href="192989.htm" target="_self">kavicapd.xml</a>. По умолчанию используется значение <code class="programcharacter">0</code>.</li><li class="listnumber1">Перезапустите <code class="programcharacter">kavhttpd</code> (в режиме HTTP) или <code class="programcharacter">kavicapd</code> (в режиме ICAP).</li></ol><p class="attentionbody">Обратите внимание, что полный набор баз не удаляется и остается на жестком диске.</p>
+<p class="introheading">Переход на полный набор баз с помощью встроенного функционала Kaspersky Scan Engine</p>
+<p class="bodytext">В приведенном ниже сценарии показано, как перейти на полный набор баз с помощью встроенных функций Kaspersky Scan Engine.</p>
+<p class="procedureheading">Чтобы перейти на полный набор баз:</p>
+<ol class="listnumber1"><li class="listnumber1">Установите для параметра <code class="programcharacter">UseReducedBases</code> значение <code class="programcharacter">0</code> (см. <code class="programcharacter">UseReducedBases</code> для режима <a id="h200662" class="englishcrossreferencetemplate" href="200655.htm" target="_self">HTTP</a> или <a id="h200792" class="englishcrossreferencetemplate" href="200715.htm" target="_self">ICAP</a>).</li><li class="listnumber1">Перезапустите <code class="programcharacter">kavhttpd</code> (в режиме HTTP) или <code class="programcharacter">kavicapd</code> (в режиме ICAP).</li></ol><p class="attentionbody">Обратите внимание, что сокращенный набор баз не удаляется и остается на жестком диске.</p>
+<p class="introheading">Переход с полного набора баз на сокращенный набор баз и удаление полного набора баз</p>
+<p class="procedureheading">Чтобы переключиться с полного набора баз на сокращенный, а затем удалить полный набор баз, необходимо сделать следующее:</p>
+<ol class="listnumber1"><li class="listnumber1">Выполните шаги с 1-го по 4-й из подраздела &quot;Переход на сокращенный набор баз с помощью встроенных функций Kaspersky Scan Engine&quot; (см. выше).</li><li class="listnumber1">Нажмите <span class="guicharacter">Update from scratch</span> на <a id="h180278" class="englishcrossreferencetemplate" href="179695.htm" target="_self">панели управления Kaspersky Scan Engine</a>.</li></ol><p class="bodytext">После этого будет загружен сокращенный набор баз.</p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

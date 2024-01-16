@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Specifying paths to plug-ins and libraries </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234520" class="heading3">Specifying paths to plug-ins and libraries</h3>
+<p class="bodytext">Before the <code class="programcharacter">kavicapd</code> service is ready to run, the following paths must be specified:</p>
+<ul class="listbullet1"><li class="listbullet1">Plug-in path<p class="listcontinue1">Path to a directory with PPL plug-in files.</p>
+</li><li class="listbullet1">Library path<p class="listcontinue1">Path to a directory with shared libraries.</p>
+</li></ul><p class="bodytext">The paths to plug-ins and shared libraries can be specified by exporting the <code class="programcharacter">KL_PLUGINS_PATH</code> and <code class="programcharacter">LD_LIBRARY_PATH</code> environment variables, respectively.</p>
+<p class="bodytext">The <code class="programcharacter">KL_PLUGINS_PATH</code> and <code class="programcharacter">LD_LIBRARY_PATH</code> variables can be exported manually, or automatically by using the ICAP systemd unit file. You can also use the kavicapd.sh shell script, which exports <code class="programcharacter">KL_PLUGINS_PATH</code> and <code class="programcharacter">LD_LIBRARY_PATH</code> and starts the <code class="programcharacter">kavicapd</code> service.</p>
+<p class="introheading">Specifying the path to plug-ins and libraries manually</p>
+<p class="bodytext">This method requires exporting the variables each time before you start the <code class="programcharacter">kavicapd</code> service in a new session (the variables only exist during the current shell session). </p>
+<p class="bodytext">The following example shows how to export the variables manually:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">[user@host ~]$ export KL_PLUGINS_PATH=&quot;/opt/kaspersky/ScanEngine/ppl&quot;</p>
+<p class="program">[user@host&nbsp;~]$&nbsp;export&nbsp;LD_LIBRARY_PATH=&quot;/opt/kaspersky/ScanEngine/lib:${KL_PLUGINS_PATH}:${LD_LIBRARY_PATH}&quot;</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+<p class="introheading">Specifying the path to plug-ins and libraries with the kavicapd.sh shell script</p>
+<p class="bodytext">You can modify kavicapd.sh so that it exports the variables automatically. </p>
+<p class="procedureheading">To export the variables by means of the kavicapd.sh shell script:</p>
+<ol class="listnumber1"><li class="listnumber1">Open kavicapd.sh for editing and locate the following lines:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">SDK_PATH=$PWD/../../../..</p>
+<p class="program">KL_PLUGINS_PATH=$SDK_PATH/ppl</p>
+<p class="program">LD_LIBRARY_PATH=$SDK_PATH/lib:$KL_PLUGINS_PATH:$LD_LIBRARY_PATH </p>
+</td>
+</tr>
+
+</table>
+</li><li class="listnumber1">Change the values of <code class="programcharacter">SDKPATH</code>, <code class="programcharacter">KL_PLUGINS_PATH</code>, and <code class="programcharacter">LD_LIBRARY_PATH</code> to point to the location of the KAV SDK directory, plug-in directory, and libraries directory, respectively.</li></ol><p class="bodytext">The kavicapd.sh shell script will export the variables when it is executed.</p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

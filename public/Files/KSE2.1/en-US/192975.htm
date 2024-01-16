@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Installing and configuring PostgreSQL (Linux) </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234393" class="heading3">Installing and configuring PostgreSQL (Linux)</h3>
+<p class="bodytext">Kaspersky Scan Engine GUI requires PostgreSQL 10.7 or later. The following procedure covers installation and configuration of PostgreSQL 10.7. The procedure for a later version may vary.</p>
+<p class="procedureheading">To install and configure PostgreSQL:</p>
+<ol class="listnumber1"><li class="listnumber1">Download and install PostgreSQL.<p class="listcontinue1">You can install PostgreSQL in one of the following ways:</p>
+<ul class="listbullet2"><li class="listbullet2">Install the package downloaded from the PostgreSQL website.<p class="listcontinue2">Visit <a class="hyperlinktemplate" href="https://www.postgresql.org/download/" target="_blank">https://www.postgresql.org/download/</a> to see a list of supported operating systems and installation instructions for each of them.</p>
+</li><li class="listbullet2">Install PostgreSQL from source code.<p class="listcontinue2">Visit <a class="hyperlinktemplate" href="https://www.postgresql.org/docs/10/installation.html" target="_blank">https://www.postgresql.org/docs/10/installation.html</a> for installation instructions.</p>
+</li></ul></li><li class="listnumber1">Open the <code class="programcharacter">postgresql.conf</code> configuration file. The location of this file varies depending on your operating system:<ul class="listbullet2"><li class="listbullet2">In Debian-based Linux distributions <code class="programcharacter">postgresql.conf</code> is located at <code class="programcharacter">/etc/postgresql/10/main/</code>.</li><li class="listbullet2">In RedHat-based Linux distributions <code class="programcharacter">postgresql.conf</code> is located at <code class="programcharacter">/var/lib/pgsql/data/</code>.</li></ul><p class="listcontinue1">If you use another operating system, the location of <code class="programcharacter">postgresql.conf</code> may be different.</p>
+</li><li class="listnumber1">Specify the IP address that Kaspersky Scan Engine must use to connect to PostgreSQL in the <code class="programcharacter">listen_addresses</code> setting of <code class="programcharacter">postgresql.conf</code>.</li><li class="listnumber1">Specify the port on which the PostgreSQL is to listen for connections from Kaspersky Scan Engine in the <code class="programcharacter">port</code> setting of <code class="programcharacter">postgresql.conf</code>.</li><li class="listnumber1">Save and close <code class="programcharacter">postgresql.conf</code>.</li><li class="listnumber1">Open the <code class="programcharacter">pg_hba.conf</code> configuration file. This file is located in the same directory as <code class="programcharacter">postgresql.conf</code>.</li><li class="listnumber1">Specify that PostgreSQL must require an MD5-encrypted password for authentication from all of its clients:<ol class="listalpha2"><li class="listalpha2">Find the following line in <code class="programcharacter">pg_hba.conf</code>:<p class="listcontinue2"><code class="programcharacter">host       all  all  127.0.0.1/32  peer</code></p>
+</li><li class="listalpha2">Change this line to:<p class="listcontinue2"><code class="programcharacter">host       all  all  127.0.0.1/32  md5</code></p>
+</li></ol><p class="attentioncontinue1">If the <code class="programcharacter">pg_hba.conf</code> configuration file does not contain the <code class="programcharacter">host       all  all  127.0.0.1/32  peer </code>line, you have to change the<code class="programcharacter"> host       all  all  127.0.0.1/32  ident </code>line.</p>
+</li><li class="listnumber1">If PostgreSQL and Kaspersky Scan Engine are installed on different computers, add the following line to <code class="programcharacter">pg_hba.conf</code>:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">host       all  all  %IP%/32  md5</p>
+</td>
+</tr>
+
+</table>
+<p class="listcontinue1">Here <code class="programcharacter">%IP%</code> is the IP address of the computer on which Kaspersky Scan Engine is installed.</p>
+</li><li class="listnumber1">Save and close <code class="programcharacter">pg_hba.conf</code>.</li><li class="listnumber1">Restart PostgreSQL by running the following command from the command line:<p class="listcontinue1"><code class="programcharacter">service postgresql restart</code></p>
+</li><li class="listnumber1">Set the password for the default PostgreSQL user.<p class="listcontinue1">During installation PostgreSQL creates a superuser called <code class="programcharacter">postgres</code>. By default, this user does not a have a password. </p>
+<p class="listcontinue1">To set the password for the <code class="programcharacter">postgres</code> user:</p>
+<ol class="listalpha2"><li class="listalpha2">From the command line, change the correct user to the <code class="programcharacter">postgres</code> user:<p class="listcontinue2"><code class="programcharacter">su postgres</code></p>
+</li><li class="listalpha2">Under the <code class="programcharacter">postgres</code> user account, start the psql utility by running the following command in the command line:<p class="listcontinue2"><code class="programcharacter">psql</code></p>
+</li><li class="listalpha2">In psql, change the password of the <code class="programcharacter">postgres</code> user by running the following command:<p class="listcontinue2"><code class="programcharacter">alter user postgres with password '%PASSWORD%';</code></p>
+<p class="listcontinue2">Here <code class="programcharacter">%PASSWORD%</code> is the new password for the <code class="programcharacter">postgres</code> user.</p>
+</li><li class="listalpha2">Quit the psql utility by running the following command in psql:<p class="listcontinue2"><code class="programcharacter">\q</code></p>
+</li></ol></li></ol><p class="bodytext">You can now install Kaspersky Scan Engine GUI.</p>
+<p class="bodytext">To install Kaspersky Scan Engine GUI, you need a PostgreSQL user that has permissions for creating new databases and users. You can use the postgres user for that, or create a new user.</p>
+<p class="bodytext">After installing PostgreSQL and setting the password for the <code class="programcharacter">postgres</code> user, you can proceed to section &quot;<a id="h193036" class="englishcrossreferencetemplate" href="192977.htm" target="_self">Automatic installation (Linux)</a>&quot; or &quot;<a id="h181517" class="englishcrossreferencetemplate" href="180652.htm" target="_self">Manual installation (Linux)</a>&quot;.</p>
+<p class="attentionbody">All data is stored in a single database called kavebase. Kaspersky Scan Engine does not use any other databases.</p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

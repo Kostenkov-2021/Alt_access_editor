@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Удаление с помощью деинсталлятора (Linux и Windows) </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234540" class="heading2">Удаление с помощью деинсталлятора (Linux и Windows)</h2>
+<p class="bodytext">В этом разделе описано, как удалить Kaspersky Scan Engine с помощью исполняемого файла <code class="programcharacter">uninstall</code> (Linux) или <code class="programcharacter">uninstall.exe</code> (Windows).</p>
+<p class="bodytext">Перед удалением Kaspersky Scan Engine убедитесь, что файлы из директории <code class="programcharacter">%service_dir%</code> не задействованы ни в одном процессе.</p>
+<p class="procedureheading">Чтобы удалить Kaspersky Scan Engine:</p>
+<ol class="listnumber1"><li class="listnumber1">Убедитесь, что у вас есть права администратора.</li><li class="listnumber1">Перейдите в директорию, отличную от <code class="programcharacter">%service_dir%</code>, и запустите <code class="programcharacter">uninstall</code> оттуда, например с помощью командной строки.<p class="listcontinue1">Если на компьютере запущен экземпляр Kaspersky Scan Engine, деинсталлятор остановит его.</p> </li><li class="listnumber1">Выберите, удалить базу с данными Kaspersky Scan Engine или нет.<p class="attentioncontinue1">Деинсталлятор пропускает этот шаг, если удаляемый экземпляр Kaspersky Scan Engine входит в состав кластера, содержащего другие экземпляры. Вы можете удалить базу данных при удалении последнего экземпляра Kaspersky Scan Engine в кластере.</p> </li></ol><p class="bodytext">Если вы выбрали удаление, <code class="programcharacter">uninstall</code> удалит следующее:</p>
+<ul class="listbullet1"><li class="listbullet1">Базу, которая содержит данные Kaspersky Scan Engine.<p class="attentioncontinue1">Установка PostgreSQL не будет удалена, как и учетная запись пользователя базы данных PostgreSQL, созданная вами во время установки. Будет удалена только база данных Kaspersky Scan Engine <code class="programcharacter">kavebase</code>. Если вы хотите переустановить Kaspersky Scan Engine, удалите учетную запись пользователя базы данных.</p> <p class="listcontinue1">Чтобы удалить учетную запись пользователя базы данных, выполните следующую команду:</p> <p class="listcontinue1"><code class="programcharacter">DROP ROLE &quot;%account_name%&quot;;</code></p> <p class="listcontinue1">Здесь <code class="programcharacter">%account_name%</code> – это имя учетной записи пользователя базы данных, которую вы создали во время установки.</p> </li><li class="listbullet1">Директорию, в которую был установлен Kaspersky Scan Engine.</li><li class="listbullet1">Директорию с временными файлами Kaspersky Scan Engine.</li><li class="listbullet1">Службу Kaspersky Scan Engine (из списка служб).</li></ul>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

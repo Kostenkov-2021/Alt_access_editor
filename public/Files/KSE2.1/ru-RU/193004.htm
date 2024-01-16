@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Пример HTTP-запроса на проверку URL-адреса </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h4 id="t234257" class="heading4">Пример HTTP-запроса на проверку URL-адреса</h4>
+<p class="bodytext">Ниже приведен пример HTTP-запроса на проверку URL-адреса:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">POST /api/v3.0/checkurl HTTP/1.0</p>
+<p class="program">Content-Type: application/octet-stream</p>
+<p class="program">Content-Length: 50</p>
+<p class="program">&nbsp;</p>
+<p class="program">{</p>
+<p class="program2">&quot;timeout&quot;: &quot;10000&quot;,</p>
+<p class="program2">&quot;url&quot;: &quot;http:\/\/<code class="programcharacter">bug.qainfo.ru</code>\/<code class="programcharacter">TesT</code>\/Aphish_w&quot;,</p>
+<p class="program2">&quot;hostIp&quot;: &quot;233.252.0.1&quot;</p>
+<p class="program">}</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Ниже приведен пример ответа на запрос:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">HTTP/1.0 200 OK</p>
+<p class="program">Connection: close</p>
+<p class="program">Content-Type: text/plain</p>
+<p class="program">Server: KAVHTTPD/1.0</p>
+<p class="program">X-KAV-ProtocolVersion: 3</p>
+<p class="program">Date: Wed, 30 Jan 2019 16:15:44 GMT</p>
+<p class="program">Content-Length: 104</p>
+<p class="program">&nbsp;</p>
+<p class="program">{</p>
+<p class="program2">&quot;url&quot;: &quot;http:\/\/<code class="programcharacter">bug.qainfo.ru</code>\/<code class="programcharacter">TesT</code>\/Aphish_w&quot;,</p>
+<p class="program2">&quot;scanResult&quot;: &quot;DETECT&quot;,</p>
+<p class="program2">&quot;detectionName&quot;: &quot;PHISHING_URL&quot;</p>
+<p class="program">}</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"> Здесь:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">url</code> – проверенный URL-адрес.</li><li class="listbullet1"><code class="programcharacter">scanResult</code> – результат сканирования веб-адреса. Может иметь следующие значения:<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">CLEAN</code></li><li class="listbullet2"><code class="programcharacter">DETECT</code></li><li class="listbullet2"><code class="programcharacter">DISINFECTED</code></li><li class="listbullet2"><code class="programcharacter">DELETED</code></li><li class="listbullet2"><code class="programcharacter">NON_SCANNED</code></li><li class="listbullet2"><code class="programcharacter">SERVER_ERROR</code></li></ul></li><li class="listbullet1"><code class="programcharacter">detectionName</code> – имя обнаруженного вредоносного объекта в классификации &quot;Лаборатории Касперского&quot;. Статус может иметь следующие значения:<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">PHISHING_URL</code></li><li class="listbullet2"><code class="programcharacter">MALICIOUS_URL</code></li><li class="listbullet2"><code class="programcharacter">ADWARE_URL</code></li><li class="listbullet2"><code class="programcharacter">RISKWARE_URL</code></li></ul></li></ul><p class="bodytext"></p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

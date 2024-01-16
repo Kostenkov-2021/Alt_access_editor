@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Format of CEF logs in HTTP mode </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234361" class="heading3">Format of CEF logs in HTTP mode</h3>
+<p class="bodytext">If Kaspersky Scan Engine is configured to write syslog messages in CEF format, the log records about events appears as follows:</p>
+<p class="program">CEF:0|Kaspersky|Scan Engine HTTP Service|%VERSION%|%EVENT_CLASS_ID%|%EVENT_NAME%|%SEVERITY%| msg=%EVENT_MSG% src=%CLIENT_IP% dvcpid=%HTTP_SERVICE_PID% sproc=unix_socket dvc=%HTTP_SERVICE_IP% dvchost=%HOSTNAME% start=%EVENT_TIME% fileHash=%SCANNED_FILE_MD5_HASH% fname=%SCANNED_FILE_NAME% request=%SCANNED_URL% act=%ACTION_MADE% cs1=%SCAN_RESULT% cs1Label=Scan result cs2=%VIRUS_NAME% cs2Label=Virus name flexString1=%SDK_VERSION% flexString1Label=Anti-Virus Engine version</p>
+<p class="bodytext">A record has the following fields:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">%VERSION%</code><p class="listcontinue1">Version of Kaspersky Scan Engine.</p>
+</li><li class="listbullet1"><code class="programcharacter">%EVENT_CLASS_ID%</code><p class="listcontinue1">Class of the event. Possible values:</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">1</code><p class="listcontinue2">Service event (not related to scanning).</p>
+</li><li class="listbullet2"><code class="programcharacter">2</code><p class="listcontinue2">Event related to errors.</p>
+</li><li class="listbullet2"><code class="programcharacter">3</code><p class="listcontinue2">Event related to scanning (for example, a scan result).</p>
+</li></ul></li><li class="listbullet1"><code class="programcharacter">%EVENT_NAME%</code><p class="listcontinue1">Name of the event. Possible values:</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">Initializing</code>&#8212;Kaspersky Scan Engine initialized.</li><li class="listbullet2"><code class="programcharacter">Deinitializing</code>&#8212;Kaspersky Scan Engine deinitialized.</li><li class="listbullet2"><code class="programcharacter">Service event</code>&#8212;Service event occurred.</li><li class="listbullet2"><code class="programcharacter">Service error</code>&#8212;Error occurred in the kavhttpd service.</li><li class="listbullet2"><code class="programcharacter">Core error</code>&#8212;Error occurred in Kaspersky Anti-Virus Engine.</li><li class="listbullet2"><code class="programcharacter">Scan result</code>&#8212;Kaspersky Scan Engine finished scanning an object.</li><li class="listbullet2"><code class="programcharacter">Audit</code>&#8212;<a id="h221151" class="englishcrossreferencetemplate" href="221141.htm" target="_self">System audit</a> event occurred.</li></ul></li><li class="listbullet1"><code class="programcharacter">%SEVERITY%</code><p class="listcontinue1">Importance level of the event. The higher the level, the more important the event. Possible values:</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">3</code><p class="listcontinue2">This value is specified for system audit events, informational level.</p>
+</li><li class="listbullet2"><code class="programcharacter">5</code><p class="listcontinue2">This value is specified for service events, when the scanning starts, or if the scan result is <code class="programcharacter">CLEAN</code>.</p>
+</li><li class="listbullet2"><code class="programcharacter">6</code><p class="listcontinue2">This value is specified for system audit events, warning level.</p>
+</li><li class="listbullet2"><code class="programcharacter">7</code><p class="listcontinue2">This value is specified for initialization, deinitialization, and errors.</p>
+</li><li class="listbullet2"><code class="programcharacter">8</code><p class="listcontinue2">This value is specified for system audit events (critical level) and if the scan result is something other than <code class="programcharacter">CLEAN</code>. These events are considered dangerous.</p>
+</li></ul></li><li class="listbullet1"><code class="programcharacter">%EVENT_MSG%</code><p class="listcontinue1">Description of the event. For example, the text of an error message.</p>
+</li><li class="listbullet1"><code class="programcharacter">%CLIENT_IP%</code><p class="listcontinue1">IP address of the HTTP client that sent the scan request to Kaspersky Scan Engine. This field appears only if the request is sent over a TCP socket and is related to scanning.</p>
+</li><li class="listbullet1"><code class="programcharacter">%HTTP_SERVICE_PID%</code><p class="listcontinue1">PID of Kaspersky Scan Engine.</p>
+</li><li class="listbullet1"><code class="programcharacter">%HTTP_SERVICE_IP%</code><p class="listcontinue1">IP address that Kaspersky Scan Engine uses to receive scan requests from clients. This field appears only if Kaspersky Scan Engine receives scan requests over a TCP socket.</p>
+</li><li class="listbullet1"><code class="programcharacter">%HOSTNAME%</code><p class="listcontinue1">Host name of the computer on which Kaspersky Scan Engine is working. This field appears only if syslog logging in CEF format is enabled.</p>
+</li><li class="listbullet1"><code class="programcharacter">%EVENT_TIME%</code><p class="listcontinue1">Time and date of the event. The time and date are taken from the computer that Kaspersky Scan Engine runs on.</p>
+</li><li class="listbullet1"><code class="programcharacter">sproc=unix_socket</code><p class="listcontinue1">This field appears only if Kaspersky Scan Engine receives scan requests over a UNIX socket.</p>
+</li><li class="listbullet1"><code class="programcharacter">%SCANNED_FILE_MD5_HASH%</code><p class="listcontinue1">Hash of the object that was passed for scanning to Kaspersky Scan Engine. This field appears only if a client sent a scan request and Kaspersky Scan Engine has finished scanning.</p>
+</li><li class="listbullet1"><code class="programcharacter">%SCANNED_FILE_NAME%</code><p class="listcontinue1">Name of the scanned file. If the client sent a request to scan a part of RAM, the value of this field is <code class="programcharacter">MEMORY_BLOCK</code>. This field appears only if a client sent a scan request and Kaspersky Scan Engine has finished scanning.</p>
+</li><li class="listbullet1"><code class="programcharacter">%SCANNED_URL%</code><p class="listcontinue1">URL specified in the <code class="programcharacter">X-KAV-ObjectURL</code> header of the scan request. This field appears only if a client sent a scan request and Kaspersky Scan Engine has finished scanning.</p>
+</li><li class="listbullet1"><code class="programcharacter">%ACTION_MADE%</code><p class="listcontinue1">Action that was performed on the detected threat or a legitimate software that can be used by intruders. This field appears only in events that contain scan results.</p>
+</li><li class="listbullet1"><code class="programcharacter">%SCAN_RESULT%</code> <p class="listcontinue1">Scan result. This field appears only in events that contain scan results.</p>
+</li><li class="listbullet1"><code class="programcharacter">cs1Label=Scan result</code><p class="listcontinue1">This field appears only in events that contain scan results.</p>
+</li><li class="listbullet1"><code class="programcharacter">%VIRUS_NAME%</code><p class="listcontinue1">Name of the detected threat or legitimate software that can be used by intruders. This field appears only if a threat or legitimate software that can be used by intruders was detected.</p>
+</li><li class="listbullet1"><code class="programcharacter">cs2Label=Virus name</code><p class="listcontinue1">This field appears only if a threat or legitimate software that can be used by intruders was detected.</p>
+</li><li class="listbullet1"><code class="programcharacter">%SDK_VERSION%</code><p class="listcontinue1">Version of KAV SDK that Kaspersky Scan Engine is based on.</p>
+</li></ul>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

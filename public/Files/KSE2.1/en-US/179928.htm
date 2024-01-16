@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Manually enabling logging </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234447" class="heading2">Manually enabling logging</h2>
+<p class="bodytext">This section describes how to enable logging manually.</p>
+<p class="bodytext">You can separately enable logging for Kaspersky Anti-Virus Engine</p>
+<p class="attentionbody">Logging significantly reduces Kaspersky Scan Engine performance. You are advised to use logging only for debugging purposes.</p>
+<p class="introheading">Enabling logging for Kaspersky Anti-Virus Engine</p>
+<p class="bodytext">By default, Kaspersky Scan Engine does not log KAV Engine events.</p>
+<p class="procedureheading">To enable logging in Kaspersky Anti-Virus Engine:</p>
+<ol class="listnumber1"><li class="listnumber1">Create a file named kave.ini in the ppl subdirectory of the installation directory.</li><li class="listnumber1">Add the following lines to kave.ini:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">[LOGGING]</p>
+<p class="program">WriteLog=9 </p>
+</td>
+</tr>
+
+</table>
+</li><li class="listnumber1">Specify other <a id="h179951" class="englishcrossreferencetemplate" href="179926.htm" target="_self">parameters</a>, if they are needed.</li><li class="listnumber1">Save and close kave.ini.</li><li class="listnumber1">Restart the Kaspersky Scan Engine service:<ul class="listbullet2"><li class="listbullet2">In HTTP mode, <a id="h193043" class="englishcrossreferencetemplate" href="192981.htm" target="_self">restart the kavhttpd service</a>.</li><li class="listbullet2">In ICAP mode, <a id="h193044" class="englishcrossreferencetemplate" href="192990.htm" target="_self">restart the kavicapd service</a>.</li></ul></li></ol><p class="attentionbody">Logging settings for the kavicapd/kavhttpd service and Kaspersky Anti-Virus Engine are synchronized on start and restart of the klScanEngineUI service. Kaspersky Scan Engine sets the logging level (<code class="programcharacter">WriteLog</code>) and log directory (<code class="programcharacter">LogsFolder</code>) in kave.ini to be the same as specified in the <code class="programcharacter">DebugLogging</code> section of icapdkavlog.conf (for ICAP mode) or httpdkavlog.ini (for HTTP mode).</p>
+<p class="introheading">Enabling logging in HTTP mode</p>
+<p class="bodytext">By default, logging in HTTP mode is disabled. Kaspersky Scan Engine checks for the httpdkavlog.ini logging configuration file when the kavhttpd service starts. If this file exists, Kaspersky Scan Engine reads parameters from it.</p>
+<p class="procedureheading">To enable logging for the kavhttpd service:</p>
+<ol class="listnumber1"><li class="listnumber1">Create a file named httpdkavlog.ini in the directory where the kavhttpd binary file is located.</li><li class="listnumber1">Change the value of the <code class="programcharacter">&lt;LogLevel&gt;</code> element to <code class="programcharacter">1</code>.</li><li class="listnumber1">Specify the rest of the <a id="h180157" class="englishcrossreferencetemplate" href="179879.htm" target="_self">parameters</a>, if needed.</li><li class="listnumber1">Save and close httpdkavlog.ini.</li><li class="listnumber1">Restart the kavhttpd service.</li></ol><p class="introheading">Enabling logging in ICAP mode</p>
+<p class="bodytext">By default, logging in ICAP mode is disabled. Kaspersky Scan Engine checks the icapdkavlog.conf logging configuration file when the kavicapd service starts.</p>
+<p class="procedureheading">To enable logging for the kavicapd service:</p>
+<ol class="listnumber1"><li class="listnumber1">Open the icapdkavlog.conf logging configuration file.</li><li class="listnumber1">Specify <code class="programcharacter">debug</code> or <code class="programcharacter">dbg</code> in the <code class="programcharacter">&lt;Level&gt;</code> element.</li><li class="listnumber1">Specify other <a id="h190568" class="englishcrossreferencetemplate" href="179896.htm" target="_self">parameters</a>, if they are needed.</li><li class="listnumber1">Save and close icapdkavlog.conf.</li><li class="listnumber1">Restart the kavicapd service.</li></ol><p class="introheading">Enabling logging in Kaspersky Scan Engine GUI</p>
+<p class="procedureheading">To enable logging in Kaspersky Scan Engine GUI:</p>
+<ol class="listnumber1"><li class="listnumber1">Enable logging in the configuration file that corresponds to the selected Kaspersky Scan Engine mode (HTTP or ICAP).<ul class="listbullet2"><li class="listbullet2">If HTTP mode is used, enable logging in the <a id="h180157_2" class="englishcrossreferencetemplate" href="179879.htm" target="_self">httpdkavlog.ini</a> logging configuration file.</li><li class="listbullet2">If ICAP mode is used, enable logging in the <a id="h190568_2" class="englishcrossreferencetemplate" href="179896.htm" target="_self">icapdkavlog.conf</a> logging configuration file.</li></ul></li><li class="listnumber1">In Kaspersky Scan Engine GUI, go to <span class="guicharacter">Settings</span>&nbsp;→ <span class="guicharacter">Logging</span> and enable logging.<p class="attentioncontinue1">You can enable or disable logging in Kaspersky Scan Engine GUI without restarting the kavicapd or kavhttpd service.</p>
+</li></ol>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

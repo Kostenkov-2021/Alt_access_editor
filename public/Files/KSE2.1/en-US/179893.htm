@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Configuring service rules </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234307" class="heading3">Configuring service rules</h3>
+<p class="bodytext">Rules define the behavior of Kaspersky Scan Engine in ICAP mode. These rules are listed in a service rules configuration file located in the <code class="programcharacter">/opt/kaspersky/ScanEngine/icap_data/</code> directory. The location of this file is specified in the <code class="programcharacter">RulesFilePath</code> parameter of the <a id="h180154" class="englishcrossreferencetemplate" href="192989.htm" target="_self">ICAP mode configuration file</a>. A sample configuration file, kavicapd_gui_rules.conf, is included in the distribution kit.</p>
+<p class="attentionbody">Each rule listed in the configuration file must be placed on a separate line.</p>
+<p class="introheading">Rule syntax</p>
+<p class="bodytext">A <code class="programcharacter">kavicapd</code> service rule consists of three parts:</p>
+<ul class="listbullet1"><li class="listbullet1">ICAP mode<p class="listcontinue1">Possible values: </p>
+<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">REQ</code><p class="listcontinue2">Request modification (REQMOD) mode</p>
+</li><li class="listbullet2"><code class="programcharacter">RESP</code><p class="listcontinue2">Response modification (RESPMOD) mode</p>
+</li><li class="listbullet2"><code class="programcharacter">ANY</code><p class="listcontinue2">Any of the modes listed above</p>
+</li></ul></li><li class="listbullet1">Scan result<p class="listcontinue1">Possible values are listed below.</p>
+<p class="listcontinue1">Possible values:</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">NON_SCANNED</code><p class="listcontinue2">The object was not scanned.</p>
+</li><li class="listbullet2"><code class="programcharacter">FAILED</code><p class="listcontinue2">Scan failed.</p>
+</li><li class="listbullet2"><code class="programcharacter">PHISHING</code><p class="listcontinue2">A phishing web address is detected.</p>
+</li><li class="listbullet2"><code class="programcharacter">DETECT</code><p class="listcontinue2">The scanned object or URL is infected.</p>
+</li><li class="listbullet2"><code class="programcharacter">MACRO</code><p class="listcontinue2">A Microsoft Office document containing a macro is detected.</p>
+</li><li class="listbullet2"><code class="programcharacter">CLEAN</code><p class="listcontinue2">The scanned object is clean (non-infected).</p>
+</li></ul></li><li class="listbullet1">Response of Kaspersky Scan Engine in ICAP mode<p class="listcontinue1">Possible values:</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">SET_RESP=&lt;response_template&gt;</code><p class="listcontinue2">Kaspersky Scan Engine sends an HTML <a id="h180188" class="englishcrossreferencetemplate" href="179895.htm" target="_self">response template</a> with the specified name to a proxy server.</p>
+</li><li class="listbullet2"><code class="programcharacter">EXEC_CMD=&lt;script&gt;</code><p class="listcontinue2">Kaspersky Scan Engine executes a script with the specified name.</p>
+</li><li class="listbullet2"><code class="programcharacter">NONE</code><p class="listcontinue2">Kaspersky Scan Engine does not modify the scanned object.</p>
+</li></ul><p class="listcontinue1">If the Kaspersky Scan Engine response is not specified in a rule, the default value of <code class="programcharacter">NONE</code> is used. </p>
+</li></ul><p class="introheading">Understanding scan results</p>
+<p class="bodytext">In ICAP mode, Kaspersky Scan Engine scans both HTTP traffic and web addresses requested by users. Scan results are ranked by severity, with the most severe result having the rank of <code class="programcharacter">1</code>. The following list shows the ranking of supported scan results by severity:</p>
+<ol class="listnumber1"><li class="listnumber1"><code class="programcharacter">PHISHING</code></li><li class="listnumber1"><code class="programcharacter">DETECT</code></li><li class="listnumber1"><code class="programcharacter">MACRO</code></li><li class="listnumber1"><code class="programcharacter">NON_SCANNED</code></li><li class="listnumber1"><code class="programcharacter">FAILED</code></li><li class="listnumber1"><code class="programcharacter">CLEAN</code></li></ol><p class="bodytext">If a traffic scan and a URL scan produce different scan results, the result with the highest severity level is chosen as the summary scan result. If both scan results are <code class="programcharacter">DETECT</code>, the summary scan result is also <code class="programcharacter">DETECT</code>, and the name of the detected object returned by Kaspersky Scan Engine is taken from the result of a URL scan. The scan results used in service rules are summary scan results.</p>
+<p class="introheading">Sample rules</p>
+<p class="bodytext">Below are a few sample rules that you can specify:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">RESP DETECT SET_RESP=detect_resp EXEC_CMD=admin_notify</p>
+<p class="program">RESP FAILED SET_RESP=err_resp</p>
+<p class="program">REQ FAILED EXEC_CMD=admin_notify</p>
+<p class="program">REQ CLEAN</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

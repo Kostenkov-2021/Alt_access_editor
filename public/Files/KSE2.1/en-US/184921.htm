@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Kaspersky Scan Engine and HTTP mode </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234404" class="heading2">Kaspersky Scan Engine and HTTP mode</h2>
+<p class="bodytext">Hypertext Transfer Protocol (HTTP) is the standard communication protocol in the client-server computer model. In HTTP mode, Kaspersky Scan Engine operates as a REST-like service that receives HTTP requests in JSON or plain text format from client applications. The service scans objects passed in these requests, and sends back HTTP responses with scan results in JSON or plain text format.</p>
+<p class="bodytext">In addition, a <a id="h179932" class="englishcrossreferencetemplate" href="179883.htm" target="_self">sample HTTP client</a> source code is shipped in the distribution package. This sample HTTP client demonstrates how to make requests to Kaspersky Scan Engine in HTTP mode. You can also use the compiled sample to <a id="h180274" class="englishcrossreferencetemplate" href="179884.htm" target="_self">scan files from the command line</a>.</p>
+<p class="introheading">Connection types</p>
+<p class="listheading">Kaspersky Scan Engine supports two connection types:</p>
+<ul class="listbullet1"><li class="listbullet1">TCP connection</li><li class="listbullet1">UNIX socket connection<p class="attentioncontinue1">For Linux systems only.</p>
+</li></ul><p class="introheading">Scanning capabilities</p>
+<p class="listheading">Kaspersky Scan Engine supports the following scan modes:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">scanfile</code><p class="listcontinue1">In this mode, the sample HTTP client passes file paths to Kaspersky Scan Engine, which reads the files and scans them.</p>
+</li><li class="listbullet1"><code class="programcharacter">scanmemory</code><p class="listcontinue1">In this mode, the sample HTTP client passes file contents to Kaspersky Scan Engine, which scans the contents. The maximum size of an object sent for scanning in scanmemory mode is limited by the system memory of the computer.</p>
+</li><li class="listbullet1"><code class="programcharacter">checkurl</code><p class="listcontinue1">In this mode, the sample HTTP client passes URLs to Kaspersky Scan Engine, which checks them for malicious and phishing addresses.</p>
+</li></ul><p class="bodytext">You can scan files and URLs by making HTTP requests via <a id="h179981" class="englishcrossreferencetemplate" href="179875.htm" target="_self">KAV protocols version 3</a> or <a id="h180281" class="englishcrossreferencetemplate" href="181038.htm" target="_self">KAV protocol versions 1 and 2</a>.</p>
+<p class="introheading">API token authorization</p>
+<p class="bodytext">Kaspersky Scan Engine supports API token authorization.</p>
+<p class="bodytext">If API token authorization is enabled, HTTP clients must specify an API token in the request header when sending requests to Kaspersky Scan Engine. This request header field used for sending an API token has a custom name. The Kaspersky Scan Engine administrator can specify this name in the <span class="guicharacter"><a id="h224242" class="englishcrossreferencetemplate" href="224195.htm" target="_self">Authorization</a></span> section of the Kaspersky Scan Engine GUI. The default name is <code class="programcharacter">Authorization</code>.</p>
+<p class="attentionbody">If you have enabled API token authorization and the kavhttpd service is not running, starting klScanEngineUI will also initiate the start of the kavhttpd service.</p>
+<p class="listheading">The usual procedure for creating and using an API token is as follows:</p>
+<ol class="listnumber1"><li class="listnumber1">The Kaspersky Scan Engine administrator creates a token in the <span class="guicharacter"><a id="h224242_2" class="englishcrossreferencetemplate" href="224195.htm" target="_self">Authorization</a></span> section of the Kaspersky Scan Engine GUI.</li><li class="listnumber1">The Kaspersky Scan Engine administrator provides the token to the users who can use it to get access to the <code class="programcharacter">kavhttpd</code> service.</li><li class="listnumber1">When making HTTP requests, the HTTP client sends the token as the value of the authorization field in the request header. The name of the authorization field in the request header must be the same as specified in the Kaspersky Scan Engine settings (see the description of the <span class="guicharacter">Authorization header field</span> element of the <span class="guicharacter"><a id="h224242_3" class="englishcrossreferencetemplate" href="224195.htm" target="_self">Authorization</a></span> section).</li><li class="listnumber1">If authorization is successful, Kaspersky Scan Engine provides access to its functions.</li></ol><p class="bodytext">To try API token authorization and understand how it works, you can use the <a id="h179932_2" class="englishcrossreferencetemplate" href="179883.htm" target="_self">HTTP client</a> provided with Kaspersky Scan Engine: configure Kaspersky Scan Engine to authorize requests, create an API token, and then use the HTTP client to send a request containing the token. You can find the examples of such requests sent over the KAV protocol <a id="h224455" class="englishcrossreferencetemplate" href="224307.htm" target="_self">version 1 or 2</a> and <a id="h224456" class="englishcrossreferencetemplate" href="224308.htm" target="_self">version 3</a>.</p>
+<p class="attentionbody">For security reasons, an <a id="h211898" class="englishcrossreferencetemplate" href="210245.htm" target="_self">HTTPS connection</a> is required to send requests that need authorization.</p>
+<p class="introheading">Keep-Alive connections</p>
+<p class="bodytext">By default, Kaspersky Scan Engine supports <a id="h207358" class="englishcrossreferencetemplate" href="207348.htm" target="_self">Keep-Alive connections</a>, so it can process multiple objects one after another, by using the same connection.</p>
+<p class="bodytext">To open a Keep-Alive connection, an HTTP client has to add the following header to the request:</p>
+<table class="tableintopic" width="162" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="162"><p class="program">Connection: Keep-Alive</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">To close the connection, an HTTP client has to add the following header to the request:</p>
+<table class="tableintopic" width="126" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="126"><p class="program">Connection: close</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

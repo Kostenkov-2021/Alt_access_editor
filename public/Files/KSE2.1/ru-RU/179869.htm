@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Настройка очереди подключений в режиме HTTP </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234518" class="heading3">Настройка очереди подключений в режиме HTTP</h3>
+<p class="bodytext">Очередь подключений содержит ожидающие подключения к Kaspersky Scan Engine. Настраивая очередь подключений, вы можете влиять на производительность Kaspersky Scan Engine в режиме HTTP. В этом разделе объясняется, как настроить очередь подключений.</p>
+<p class="bodytext">Три параметра позволяют настроить очередь подключений: <code class="programcharacter">MaxHTTPSessionsNum</code>, <code class="programcharacter">MaxIncomingConnectionsNum</code> и <code class="programcharacter">ThreadsCount</code>. Эти параметры можно задать в <a id="h179927" class="englishcrossreferencetemplate" href="184799.htm" target="_self">файле конфигурации режима HTTP</a>.</p>
+<p class="introheading">MaxHTTPSessionsNum</p>
+<p class="bodytext">Этот параметр указывает максимальное количество активных TCP-соединений, которые Kaspersky Scan Engine может поддерживать одновременно. Когда TCP-соединение с клиентом закрывается, Kaspersky Scan Engine может принять другое соединение вместо него.</p>
+<p class="introheading">MaxIncomingConnectionsNum</p>
+<p class="bodytext">Этот параметр указывает максимальное количество ожидающих TCP-соединений с Kaspersky Scan Engine. Если количество ожидающих соединений достигает <code class="programcharacter">MaxIncomingConnectionsNum</code>, дополнительные соединения могут быть прерваны.</p>
+<p class="introheading">ThreadsCount</p>
+<p class="bodytext">Этот параметр указывает максимальное количество одновременно работающих сканирующих программных потоков. Когда сканирующий поток завершает задачу сканирования, он берет другую из очереди сканирования.</p>
+<p class="introheading">Примеры настройки очереди подключений</p>
+<p class="bodytext">Эти примеры показывают, как вы можете использовать очередь соединений, чтобы повлиять на поведение Kaspersky Scan Engine.</p>
+<ul class="listbullet1"><li class="listbullet1">Kaspersky Scan Engine без очереди на подключение.<p class="listcontinue1">Рассмотрим следующий пример: значение <code class="programcharacter">MaxIncomingConnectionsNum</code> равно <code class="programcharacter">16</code>, значение <code class="programcharacter">ThreadsCount</code> равно <code class="programcharacter">16</code>, а значение <code class="programcharacter">MaxHTTPSessionsNum</code> равно <code class="programcharacter">50</code>. В этом примере Kaspersky Scan Engine может принимать только <code class="programcharacter">16</code> подключений одновременно, но, поскольку <code class="programcharacter">MaxHTTPSessionsNum</code> равен <code class="programcharacter">50</code>, их задачи проверки принимаются немедленно. Дополнительные соединения могут быть прерваны. Шестнадцати потоков сканирования обычно достаточно для быстрой обработки задач сканирования от 16 клиентов, поэтому очередь на сканирование будет небольшой.</p> </li><li class="listbullet1">Kaspersky Scan Engine с очередью подключений.<p class="listcontinue1">Рассмотрим следующий пример: значение <code class="programcharacter">MaxIncomingConnectionsNum</code> равно <code class="programcharacter">100</code>, значение <code class="programcharacter">ThreadsCount</code> равно <code class="programcharacter">16</code>, а значение <code class="programcharacter">MaxHTTPSessionsNum</code> равно <code class="programcharacter">50</code>. В этом примере Kaspersky Scan Engine может принимать <code class="programcharacter">50</code> подключений одновременно. Kaspersky Scan Engine запускает обработку задач сканирования от некоторых из клиентов в <code class="programcharacter">16</code> потоках сканирования, а остальные задачи сканирования формируют очередь сканирования. Другие ожидающие соединения формируют очередь соединений и ждут, пока их не примут. Дополнительные соединения могут быть прерваны.</p> </li></ul>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

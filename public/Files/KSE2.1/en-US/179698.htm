@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Service settings </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234515" class="heading3">Service settings</h3>
+<p class="bodytext">This section describes the <span class="guicharacter">Service</span> section of the <span class="guicharacter">Settings</span><span class="boldcharacter"> </span>page.</p>
+<p class="picture"><img id="f182810" src="settings_service.png" class="linkedpngfiletemplate" alt="Several service settings for HTTP mode: Protocol, IP address and port, Keep-alive connection." vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="picturename">Service settings</p>
+<p class="bodytext">If Kaspersky Scan Engine is initialized in HTTP mode, you can specify the following settings:</p>
+<ul class="listbullet1"><li class="listbullet1"><span class="guicharacter">Protocol</span>&#8212;Select HTTP, HTTPS, or a UNIX domain socket.</li><li class="listbullet1">Address that Kaspersky Anti-Virus Engine listens on for incoming objects to check.<p class="listcontinue1">It can be either a UNIX socket, or an IP address and port.</p>
+</li><li class="listbullet1"><span class="guicharacter">Private key path</span>&#8212;Path to the private key file for connection over HTTPS (TLS) protocol.<p class="listcontinue1">This can be either an absolute or a relative path. A relative path is calculated relative to the kavhttpd binary file.</p>
+<p class="listcontinue1">You must specify this setting if the HTTPS protocol is selected.</p>
+<p class="attentioncontinue1">When you configure this parameter, the following message may appear in the table with service events of the Kaspersky Scan Engine dashboard: &quot;Your private key has a low security level. Please check the permissions for the file &lt;path&gt;.&quot; In this case, you must configure access to the private key file so that only the root user and the user account under which the service is running can have the read permission.</p>
+</li><li class="listbullet1"><span class="guicharacter">Certificate</span>&#8212;Path to the certificate file for connection over HTTPS (TLS) protocol.<p class="listcontinue1">This can be either an absolute or a relative path. A relative path is calculated relative to the kavhttpd binary file.</p>
+<p class="listcontinue1">You must specify this setting if the HTTPS protocol is selected.</p>
+</li><li class="listbullet1"><span class="guicharacter">Keep-alive connection</span>&#8212;Indicates whether <a id="h207358" class="englishcrossreferencetemplate" href="207348.htm" target="_self">Keep-Alive</a> must be used.</li><li class="listbullet1"><span class="guicharacter">Connection timeout</span>&#8212;The amount of time an idle connection has to be kept open (in milliseconds), waiting for a new request from an HTTP client.<p class="listcontinue1">The range of possible values is from 0 to 18000. If this parameter is set to 0, there is no time limit for the connection.</p>
+</li><li class="listbullet1"><span class="guicharacter">Maximum requests per connection</span>&#8212;The maximum number of requests for one connection before the connection is closed.<p class="listcontinue1">The range of possible values is from 0 to 1000. If this parameter is set to 0, the number of requests for one connection is not limited.</p>
+</li><li class="listbullet1">Under <span class="guicharacter">Locations where remote scanning is allowed</span>, you can specify paths to the locations where scanning is allowed when an HTTP client sends scan requests over a TCP socket from a remote computer. Scanning in other locations is prohibited. These paths are located in the file system of the computer with the Kaspersky Scan Engine server. Restricting the scan area prevents scanning the whole file system of the Kaspersky Scan Engine server by a command from the outside.<p class="listcontinue1">It is not recommended to use links as paths, due to security reasons. Use absolute paths instead.</p>
+<p class="attentioncontinue1">Kaspersky Scan Engine does not add or remove objects in the directories specified in <span class="guicharacter">Locations where remote scanning is allowed</span>. The HTTP client has to send objects to scan, then remove them after scanning.</p>
+<p class="listcontinue1">Possible values:</p>
+<ul class="listbullet2"><li class="listbullet2">Absolute paths to a directory<p class="listcontinue2">This value allows you to scan files that are located inside this directory and all its subdirectories.</p>
+<p class="listcontinue2">The directory must be located on the same computer as Kaspersky Scan Engine or on a remote hard disk mounted on that computer. </p>
+<p class="listcontinue2">The path must start from the root directory of the computer that Kaspersky Scan Engine is installed on.</p>
+<p class="listcontinue2">The kavhttpd service must have permissions to read files in the directory and its subdirectories.</p>
+</li><li class="listbullet2">Absolute path to a file<p class="listcontinue2">Allows you to scan the specified file.</p>
+<p class="listcontinue2">The file must be located on the same computer as Kaspersky Scan Engine or on a remote hard disk mounted on that computer. </p>
+<p class="listcontinue2">The path must start from the root directory of the computer that Kaspersky Scan Engine is installed on.</p>
+<p class="listcontinue2">The kavhttpd service must have permissions to read the file.</p>
+</li><li class="listbullet2"><code class="programcharacter">/</code> (forward slash)<p class="listcontinue2">Allows you to scan all files.</p>
+</li></ul></li><li class="listbullet1"><span class="guicharacter">Cross-origin resource sharing</span>&#8212;Specifies the list of origins (IP addresses or host names with a protocol) to which access to the kavhttpd service must be provided.<p class="listcontinue1">Possible values:</p>
+<ul class="listbullet2"><li class="listbullet2">IP address or host name with a protocol </li><li class="listbullet2"><code class="programcharacter">*</code><p class="listcontinue2">This value allows any origin to access the kavhttpd service.</p>
+</li><li class="listbullet2">Empty value</li></ul><p class="listcontinue1">This setting is stored in the <code class="programcharacter"><a id="h201539" class="englishcrossreferencetemplate" href="201900.htm" target="_self">CORS</a></code> element of the HTTP mode configuration file.</p>
+</li></ul><p class="attentionbody">In Windows, we recommend specifying the full path to a file. In particular, it is strongly recommended to specify the full paths to the certificate (<span class="guicharacter">Certificate</span>) and the key file (<span class="guicharacter">Private key path</span>).</p>
+<p class="bodytext">If Kaspersky Scan Engine is initialized in ICAP mode, you can set the following settings:</p>
+<ul class="listbullet1"><li class="listbullet1"><span class="guicharacter">Port number</span>&#8212;Specifies the port that Kaspersky Scan Engine listens on for ICAP requests with contents to scan.</li><li class="listbullet1"><span class="guicharacter">Send code 204</span>&#8212;Specifies whether Kaspersky Anti-Virus Engine must send the 204 code.</li><li class="listbullet1"><span class="guicharacter">Request mode address</span>&#8212;The address that kavicapd uses to process requests in the request mode. <p class="listcontinue1">The default value is <code class="programcharacter">req</code>.</p>
+<p class="listcontinue1">Kaspersky Scan Engine includes the value from <span class="guicharacter">Request mode address</span> in the URL, for example:</p>
+<p class="listcontinue1"><code class="programcharacter">icap://icap-server.example.com:1344/req</code></p>
+<p class="attentioncontinue1">Do not use the same value for <span class="guicharacter">Request mode address</span> and <span class="guicharacter">Response mode address</span>.</p>
+</li><li class="listbullet1"><span class="guicharacter">Response mode address</span>&#8212;The address that kavicapd uses to process requests in the response mode.<p class="listcontinue1">The default value is <code class="programcharacter">resp</code>.</p>
+<p class="listcontinue1">Kaspersky Scan Engine includes the value from <span class="guicharacter">Response mode address</span> in the URL, for example:</p>
+<p class="listcontinue1"><code class="programcharacter">icap://icap-server.example.com:1344/resp</code></p>
+</li><li class="listbullet1"><span class="guicharacter">Keep-alive connection</span>&#8212;Indicates whether <a id="h207296" class="englishcrossreferencetemplate" href="207291.htm" target="_self">Keep-Alive</a> must be used.</li><li class="listbullet1"><span class="guicharacter">Use Keep-alive unconditionally</span>&#8212;Indicates whether Kaspersky Scan Engine always uses a Keep-Alive connection, even when ICAP clients do not request it.</li><li class="listbullet1"><span class="guicharacter">Connection timeout</span>&#8212;The amount of time an idle connection has to be kept open (in milliseconds), while waiting for a new request from an ICAP client.<p class="listcontinue1">The range of possible values is from 1 to 10000.</p>
+</li><li class="listbullet1"><span class="guicharacter">Maximum requests per connection</span>&#8212;The maximum number of requests for one connection before the connection is closed.<p class="listcontinue1">The range of possible values is from 1 to 1000.</p>
+</li><li class="listbullet1"><span class="guicharacter">Partial mode</span>&#8212;Allows scanning of files as a whole and partially sending them to a user before the scan is finished.<p class="listcontinue1">Possible settings for partial mode:</p>
+<ul class="listbullet2"><li class="listbullet2"><span class="guicharacter">Delay</span>&#8212;Specifies the interval (in seconds) between the start of receiving an object and the start of sending its first part.</li><li class="listbullet2"><span class="guicharacter">Chunk size</span>&#8212;Specifies the size of object chunks transferred in the period between the start of receiving an object and the end of scanning.</li><li class="listbullet2"><span class="guicharacter">Prevent re-downloading</span>&#8212;Prevents a browser attempt to re-download a blocked file after the connection is broken.</li><li class="listbullet2"><span class="guicharacter">Maximum cache size</span>&#8212;Maximum cache size for blocked URLs, in KB.<p class="listcontinue2">This is the maximum amount of RAM that can be allocated for a blocked URL's cache.</p>
+<p class="listcontinue2">The range of possible values is from 1 to 100000.</p>
+<p class="listcontinue2">The preset value is 5000.</p>
+</li><li class="listbullet2"><span class="guicharacter">Lifetime for blocked URLs</span>&#8212;Lifetime for blocked URLs in the cache, in seconds.<p class="listcontinue2">The range of possible values is from 1 to 604800 (one week).</p>
+<p class="listcontinue2">The preset value is 1800.</p>
+</li></ul></li><li class="listbullet1">Additional headers:<ul class="listbullet2"><li class="listbullet2"><span class="guicharacter">User name HTTP header</span>&#8212;The name of the HTTP header in which the username of the HTTP client is passed to the ICAP service.<p class="listcontinue2">The ICAP service will write this value to logs.</p>
+<p class="listcontinue2">The preset value is <code class="programcharacter">X-Client-Username</code>.</p>
+</li><li class="listbullet2"><span class="guicharacter">IP address HTTP header</span>&#8212;The name of the HTTP header in which the IP address of the HTTP client is passed to the ICAP service.<p class="listcontinue2">The ICAP service will write this value to logs.</p>
+<p class="listcontinue2">The preset value is <code class="programcharacter">X-Client-IP</code>.</p>
+</li><li class="listbullet2"><span class="guicharacter">Detected object name HTTP header</span>&#8212;The name of the header field that contains the name of the detected threat.<p class="listcontinue2">The ICAP service will write this value to logs.</p>
+<p class="listcontinue2">By default, the value of this setting is empty.</p>
+</li><li class="listbullet2"><span class="guicharacter">Database version name HTTP header</span>&#8212;The name of the header field that contains information about the anti-virus database version used by Kaspersky Scan Engine to scan objects.</li><li class="listbullet2"><span class="guicharacter">Send X-Include</span>&#8212;Specifies whether Kaspersky Scan Engine includes the <code class="programcharacter">X-Include</code> header in its response to the OPTIONS request from the ICAP client. To enable sending the <code class="programcharacter">X-Include</code> header, select one or both of the following checkboxes:<ul class="listbullet3"><li class="listbullet3"><span class="guicharacter">Request user name HTTP header</span>&#8212;The value specified in <span class="guicharacter">User name HTTP header</span>. If <span class="guicharacter">User name HTTP header</span> is empty, the <span class="guicharacter">Request user name HTTP header</span> checkbox is disabled.</li><li class="listbullet3"><span class="guicharacter">Request IP address HTTP header</span>&#8212;The value specified in <span class="guicharacter">IP address HTTP header</span>. If <span class="guicharacter">IP address HTTP header</span> is empty, the <span class="guicharacter">Request IP address HTTP header</span> checkbox is disabled.</li></ul><p class="listcontinue2">If none of these elements is selected, Kaspersky Scan Engine does not include the <code class="programcharacter">X-Include</code> header to responses.</p>
+</li><li class="listbullet2"><span class="guicharacter">Send X-Infection-Found header</span>&#8212;Specifies whether Kaspersky Scan Engine includes the <code class="programcharacter">X-Infection-Found</code> header in its response to the ICAP client.<p class="listcontinue2">By default, Kaspersky Scan Engine does not include the <code class="programcharacter">X-Infection-Found</code> header to responses.</p>
+</li><li class="listbullet2"><span class="guicharacter">Send X-Violations-Found header</span>&#8212;Specifies whether Kaspersky Scan Engine includes the <code class="programcharacter">X-Violations-Found</code> header in its response to the ICAP client.<p class="listcontinue2">By default, Kaspersky Scan Engine does not include the<code class="programcharacter"> X-Violations-Found</code> header to responses.</p>
+</li><li class="listbullet2"><span class="guicharacter">Send X-Response-Info header</span>&#8212;Specifies whether Kaspersky Scan Engine includes the <code class="programcharacter">X-Response-Info</code> header in its response to the ICAP client.<p class="listcontinue2">By default, Kaspersky Scan Engine does not include the <code class="programcharacter">X-Response-Info</code> header to responses.</p>
+</li><li class="listbullet2"><span class="guicharacter">Send X-Response-Desc header</span>&#8212;Specifies whether Kaspersky Scan Engine includes the <code class="programcharacter">X-Response-Desc</code> header in its response to the ICAP client.<p class="listcontinue2">By default, Kaspersky Scan Engine does not include the <code class="programcharacter">X-Response-Desc</code> header to responses.</p>
+</li></ul></li><li class="listbullet1"><span class="guicharacter">Action on signal</span>&#8212;An action that must be performed on receiving the <code class="programcharacter">SIGUSR1</code> and <code class="programcharacter">SIGUSR2</code> signals.<p class="listcontinue1">In the <span class="guicharacter">SIGUSR1 signal</span> and <span class="guicharacter">SIGUSR2 signal</span> drop-down lists, you can select the following actions for both signals:</p>
+<ul class="listbullet2"><li class="listbullet2"><span class="guicharacter">Update and reload the anti-virus database</span>&#8212;Updates and reloads the database by using built-in functionality of Kaspersky Scan Engine.<span class="guicharacter">  </span></li><li class="listbullet2"><span class="guicharacter">Reload the anti-virus database without updating</span>&#8212;Reloads the database without updating it.<p class="listcontinue2">It is assumed that the files in the database directory are already up to date and must be reloaded.</p>
+</li><li class="listbullet2"><span class="guicharacter">Close log files in syslog format, then reopen them</span>&#8212;Closes all log files in the syslog format that are being opened, then opens them again for writing logs at the end of these files.<p class="listcontinue2">If the files are missing, the ICAP plug-in will create them. This setting allows rotating the logs by using the logrotate utility in default mode or when the create directive is used.</p>
+</li></ul></li></ul><p class="bodytext">For either mode you can specify the following settings under <span class="guicharacter">Maximum values</span>:</p>
+<ul class="listbullet1"><li class="listbullet1"><span class="guicharacter">Sessions</span>&#8212;Maximum number of sessions.<p class="listcontinue1">The default value is <code class="programcharacter">10</code>.</p>
+<p class="attentioncontinue1">It is not recommended to specify a value greater than the number of TCP connections that your HTTP client can simultaneously maintain with Kaspersky Scan Engine.</p>
+</li><li class="listbullet1"><span class="guicharacter">Connections</span>&#8212;Maximum number of active TCP connections that KAV HTTP can maintain simultaneously.<p class="listcontinue1">The default value is <code class="programcharacter">100</code>.</p>
+</li><li class="listbullet1"><span class="guicharacter">Threads</span>&#8212;Maximum number of scanning threads. You can have up to 256 scanning threads. <p class="listcontinue1">The default value is <code class="programcharacter">8</code>.</p>
+</li><li class="listbullet1"><span class="guicharacter">Processes</span>&#8212;Maximum number of scanning processes. You can have up to 256 scanning processes. <p class="listcontinue1">The default value is <code class="programcharacter">4</code>.</p>
+</li></ul><p class="bodytext">When you apply new service settings, Kaspersky Anti-Virus Engine restarts.</p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

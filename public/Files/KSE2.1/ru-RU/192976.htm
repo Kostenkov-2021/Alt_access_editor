@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Установка и настройка PostgreSQL (Windows) </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234394" class="heading3">Установка и настройка PostgreSQL (Windows)</h3>
+<p class="procedureheading">Чтобы установить и настроить PostgreSQL:</p>
+<ol class="listnumber1"><li class="listnumber1">Загрузите и установите PostgreSQL.<p class="listcontinue1">Зайдите на сайт <a class="hyperlinktemplate" href="https://www.postgresql.org/download/" target="_blank">https://www.enterprisedb.com/downloads/postgres-postgresql-downloads</a>, чтобы просмотреть список поддерживаемых операционных систем и загрузить инсталлятор.</p> </li><li class="listnumber1">Откройте конфигурационный файл <code class="programcharacter">postgresql.conf</code>. Этот файл находится в папке <code class="programcharacter">%postgresql_dir%\data</code>. Здесь <code class="programcharacter">%postgresql_dir%</code> (например, <code class="programcharacter">C:\Program Files\PostgreSQL\11</code>) это папка, в которую был установлен PostgreSQL.</li><li class="listnumber1">Укажите IP-адрес, который решение Kaspersky Scan Engine должно использовать для соединения с PostgreSQL, в настройке <code class="programcharacter">listen_addresses</code> конфигурационного файла <code class="programcharacter">postgresql.conf</code>.</li><li class="listnumber1">Укажите порт, который СУБД PostgreSQL должна прослушивать в ожидании соединений от Kaspersky Scan Engine, в настройке <code class="programcharacter">port</code> конфигурационного файла <code class="programcharacter">postgresql.conf</code>.</li><li class="listnumber1">Для PostgreSQL версии 13 или более поздней найдите следующую строку в <code class="programcharacter">postgresql.conf</code>:<p class="listcontinue1"><code class="programcharacter">password_encryption = md5 # md5 или scram-sha-256</code></p> <p class="listcontinue1">Если метод шифрования пароля, указанный в этой строке, отличается от <code class="programcharacter">md5</code>, замените его на <code class="programcharacter">md5</code>.</p> </li><li class="listnumber1">Сохраните и закройте <code class="programcharacter">postgresql.conf</code>.</li><li class="listnumber1">Откройте конфигурационный файл <code class="programcharacter">pg_hba.conf</code> на редактирование. Этот файл расположен в той же папке, что и файл <code class="programcharacter">postgresql.conf</code>.</li><li class="listnumber1">Убедитесь, что для PostgreSQL требуются пароли, зашифрованные по алгоритму MD5, для аутентификации всех ее клиентов. Найдите следующую строку в файле <code class="programcharacter">pg_hba.conf</code>:<p class="listcontinue1"><code class="programcharacter">host all all 127.0.0.1/32 md5</code></p> <p class="listcontinue1">Если метод аутентификации, указанный в этой строке, отличается от <code class="programcharacter">md5</code>, замените его на <code class="programcharacter">md5</code>.</p> </li><li class="listnumber1">Если PostgreSQL и Kaspersky Scan Engine установлены на разных компьютерах, добавьте следующую строку в файл <code class="programcharacter">pg_hba.conf</code>:<p class="listcontinue1"><code class="programcharacter">host all all %IP%/32 md5</code></p> <p class="listcontinue1">Здесь <code class="programcharacter">%IP%</code> – IP-адрес компьютера, на котором установлено решение Kaspersky Scan Engine.</p> </li><li class="listnumber1">Сохраните и закройте файл <code class="programcharacter">pg_hba.conf</code>.</li><li class="listnumber1">Перезапустите PostgreSQL, выполнив следующие команды:<p class="listcontinue1"><code class="programcharacter">sc stop postgresql-x64-11</code></p> <p class="listcontinue1"><code class="programcharacter">sc start postgresql-x64-11</code></p> </li><li class="listnumber1">Если был выполнен шаг 5, вам необходимо обновить пароль суперпользователя на компьютере, на котором установлен PostgreSQL. Пользователь по умолчанию – <code class="programcharacter">postgres</code>. Вы можете использовать утилиту psql или pgAdmin для выполнения этого действия. Если вы используете утилиту psql, укажите пробел и имя пользователя после параметра -U, как показано ниже: <code class="programcharacter">psql -U postgres</code><p class="listcontinue1">Обновите пароль суперпользователя:</p> <p class="listcontinue1"><code class="programcharacter">ALTER ROLE username WITH PASSWORD &#39;your password&#39;;</code></p> </li></ol><p class="bodytext"> Теперь вы можете установить Kaspersky Scan Engine GUI.</p>
+<p class="bodytext">Чтобы установить Kaspersky Scan Engine GUI, вам нужен пользователь PostgreSQL с правами на создание новых баз данных и пользователей. Для этого вы можете использовать пользователя postgres или создать нового.</p>
+<p class="bodytext">После установки PostgreSQL вы можете перейти к разделу <a id="h184734" class="englishcrossreferencetemplate" href="192978.htm" target="_self">Установка с помощью установщика (Windows)</a> или <a id="h184731" class="englishcrossreferencetemplate" href="184719.htm" target="_self">Установка вручную (Windows)</a>.</p>
+<p class="attentionbody">Все данные хранятся в базе данных kavebase. Kaspersky Scan Engine не использует другие базы данных.</p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

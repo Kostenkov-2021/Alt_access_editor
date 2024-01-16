@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Identification of the event initiator </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234389" class="heading2">Identification of the event initiator</h2>
+<p class="bodytext">Each event in Kaspersky Scan Engine has an <em class="emphasischaracter">Initiator</em>&#8212;someone or something that triggered the event. </p>
+<p class="bodytext">You can find information about the initiator on the <a id="h180278" class="englishcrossreferencetemplate" href="179695.htm" target="_self">Kaspersky Scan Engine dashboard</a>, in the <span class="guicharacter">Initiator</span> column of the events table. If you want to display events triggered by a certain initiator, you can use the <span class="guicharacter">Initiator</span> filter. </p>
+<p class="bodytext">In the <span class="guicharacter">Initiator</span> column, the following values are possible:</p>
+<ul class="listbullet1"><li class="listbullet1"><span class="boldcharacter">The name of the user (the login)</span>. This value means that the user has initiated the event through the Kaspersky Scan Engine GUI. For example, logged in or restarted Kaspersky Scan Engine by clicking the <span class="guicharacter">Restart</span> button.</li><li class="listbullet1"><span class="boldcharacter">Service Scan Engine</span>. This value means that Kaspersky Scan Engine initiated the event, either itself or by user command. For example, Kaspersky Scan Engine itself can run an update on a schedule or run an update after a user has clicked the <span class="guicharacter">Update</span> button. Clicking the <span class="guicharacter">Update</span> button here is an event initiated by a user, and running the update is a separate event initiated by Kaspersky Scan Engine.</li><li class="listbullet1"><span class="boldcharacter">IP address</span>. This value means that an HTTP or ICAP client sent a request to the Kaspersky Scan Engine API. For example, sent a file to scan.<p class="attentioncontinue1">The IP address of a scan request initiator is also displayed in the <span class="guicharacter">Client</span> column of the scan results table. You can find this table on the <span class="guicharacter"><a id="h180597" class="englishcrossreferencetemplate" href="179696.htm" target="_self">Scan results</a></span> page of the Kaspersky Scan Engine GUI.</p>
+</li></ul><p class="bodytext">You can also find information about the initiator in <a id="h221488" class="englishcrossreferencetemplate" href="221189.htm" target="_self">syslog messages</a>.</p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

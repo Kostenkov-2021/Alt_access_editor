@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Синтаксис и параметры для HTTP-клиента </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234524" class="heading3">Синтаксис и параметры для HTTP-клиента</h3>
+<p class="bodytext">Вы можете указать один или несколько параметров для примера HTTP-клиента.</p>
+<p class="introheading">Options</p>
+<p class="bodytext">В примере HTTP-клиента доступны следующие параметры:</p>
+<p class="tablename">Параметры для запуска примера HTTP-клиента</p>
+<p class="spacerfortables"></p>
+<table class="tableintopic" width="804" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="240"><p class="tableheading">Параметр</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="564"><p class="tableheading">Описание</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">-s</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Задает адрес Kaspersky Scan Engine или путь к Unix-сокету. Строку подключения можно указывать в кавычках или без них. Если этот параметр не указан, используется Unix-сокет по умолчанию <code class="programcharacter">/tmp/.kavhttpd</code>.</p>
+<p class="tablebodytext">UNIX-сокеты поддерживаются только в системах Linux.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">-t</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Задает время ожидания обработки запроса в миллисекундах.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">-u</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Задает URL-адрес для сканирования.</p>
+<p class="attentionbody">Одновременно можно указать только один URL-адрес.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">-i</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Задает IP-адрес (IPv4 или IPv6) узла, на который ссылается URL-адрес. Этот параметр можно использовать только с <code class="programcharacter">-u</code> .</p>
+<p class="tablebodytext">Указание IP-адреса увеличивает коэффициент обнаружения Kaspersky Scan Engine.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">-f</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Включает режим сканирования файлов.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">-c</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Задает контекст задачи сканирования. Если указан этот параметр, запрос должен иметь заголовок <code class="programcharacter">X-KAV-ObjectURL</code>, содержащий значение параметра, без кавычек.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">--req</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Задает путь к файлу с заголовками запросов, которые были получены из HTTP-трафика для проверяемого объекта.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">--resp</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Задает путь к файлу с заголовками ответов, которые были получены из HTTP-трафика для проверяемого объекта.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">-b</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Показывает дату выпуска антивирусных баз. Вы можете использовать этот параметр, чтобы проверить, запущен ли <code class="programcharacter">kavhttpd</code>. Может использоваться с параметрами <code class="programcharacter">-s</code>, <code class="programcharacter">-t</code> и <code class="programcharacter">-j</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">-v</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Показывает текущую версию KAV SDK Вы можете использовать этот параметр, чтобы проверить, запущен ли <code class="programcharacter">kavhttpd</code>. Может использоваться с параметрами <code class="programcharacter">-s</code>, <code class="programcharacter">-t</code> и <code class="programcharacter">-j</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">-l</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Показывает информацию о текущем файле ключа. Вы можете использовать этот параметр, чтобы проверить, запущен ли <code class="programcharacter">kavhttpd</code>. Может использоваться с параметрами <code class="programcharacter">-s</code>, <code class="programcharacter">-t</code> и <code class="programcharacter">-j</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">-h</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Показывает справочную информацию.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">-j</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Выполняет HTTP-запрос в формате JSON.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">-d</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Выполняет HTTP-запрос на запуск обновления антивирусных баз. Может использоваться с параметрами <code class="programcharacter">-s</code>, <code class="programcharacter">-t</code> и <code class="programcharacter">-j</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">-p</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Показывает статус процесса обновления антивирусных баз. Может использоваться с параметрами <code class="programcharacter">-s</code>, <code class="programcharacter">-t</code> и <code class="programcharacter">-j</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">‑‑getstat</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Получает накопленную статистику. Может использоваться с параметрами <code class="programcharacter">-s</code>, <code class="programcharacter">-t</code> и <code class="programcharacter">-j</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">‑‑clearstat</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Очищает накопленную статистику. Может использоваться с параметрами <code class="programcharacter">-s</code>, <code class="programcharacter">-t</code> и <code class="programcharacter">-j</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">-o</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">При выполнении HTTP-запроса в формате JSON пропускает объекты с результатом сканирования <code class="programcharacter">CLEAN</code> из массива <code class="programcharacter">subObjectsScanResults</code> в ответном сообщении. Может использоваться только с параметром <code class="programcharacter">-j</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">--cipher</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="bodytext">Задает набор шифров, который должен использоваться для обмена с kavhttpd. </p>
+<p class="bodytext">В TLS 1.2 поддерживаются следующие наборы шифров:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet"><code class="programcharacter">ECDHE-ECDSA-AES256-GCM-SHA384</code></li><li class="tablelistbullet"><code class="programcharacter">ECDHE-ECDSA-AES256-SHA384</code></li><li class="tablelistbullet"><code class="programcharacter">ECDHE-ECDSA-AES128-GCM-SHA256</code></li><li class="tablelistbullet"><code class="programcharacter">ECDHE-ECDSA-AES128-SHA256</code></li><li class="tablelistbullet"><code class="programcharacter">ECDHE-RSA-AES256-GCM-SHA384</code></li><li class="tablelistbullet"><code class="programcharacter">ECDHE-RSA-AES256-SHA384</code></li><li class="tablelistbullet"><code class="programcharacter">ECDHE-RSA-AES128-GCM-SHA256</code></li><li class="tablelistbullet"><code class="programcharacter">ECDHE-RSA-AES128-SHA256</code></li><li class="tablelistbullet"><code class="programcharacter">ECDHE-RSA-CHACHA20-POLY1305</code></li><li class="tablelistbullet"><code class="programcharacter">DHE-RSA-AES256-GCM-SHA384</code></li><li class="tablelistbullet"><code class="programcharacter">DHE-RSA-AES256-SHA256</code></li><li class="tablelistbullet"><code class="programcharacter">DHE-RSA-AES128-SHA256</code></li><li class="tablelistbullet"><code class="programcharacter">DHE-RSA-CHACHA20-POLY1305</code></li></ul><p class="bodytext">В TLS 1.3 поддерживаются следующие наборы шифров:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet"><code class="programcharacter">TLS_AES_256_GCM_SHA384</code></li><li class="tablelistbullet"><code class="programcharacter">TLS_CHACHA20_POLY1305_SHA256</code></li><li class="tablelistbullet"><code class="programcharacter">TLS_AES_128_GCM_SHA256</code></li></ul><p class="bodytext">По умолчанию используется следующее значение: <code class="programcharacter">ECDHE-ECDSA-AES256-GCM-SHA384</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">‑-check‑period</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Проверяет, соответствует ли срок действия сертификата текущей дате в зависимости от часового пояса.</p>
+<p class="tablebodytext">По умолчанию проверка не выполняется.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">‑-check‑subject</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Проверяет, совпадает ли имя субъекта сертификата (поля <code class="programcharacter">SubjectAltNames</code> и <code class="programcharacter">Common Name</code>) с доменным именем сервера.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">--check‑chain</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Проверяет сертификат по пути сертификации.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">--ca-path</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Задает полный путь к директории, в которой хранятся сертификаты CA. Сертификат из указанной директории используется для проверки действительности сертификата TLS и его конфигурации.</p>
+<p class="tablebodytext">Если этот параметр не указан, HTTP-клиент использует следующие пути:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet"><code class="programcharacter">/etc/pki/tls/certs</code></li><li class="tablelistbullet"><code class="programcharacter">/etc/ssl/certs</code></li></ul><p class="bodytext">Чтобы использовать параметр <code class="programcharacter">--ca-path</code>, подготовьте директорию, содержащую сертификаты, как описано в <a id="h212473" class="englishcrossreferencetemplate" href="179885.htm" target="_self">примерах синтаксиса</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">--ca-cert</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Задает полный путь к директории, в которой хранится пакет CA. Пакетный файл используется для проверки действительности сертификата TLS и его конфигурации.</p>
+<p class="tablebodytext">Если этот параметр не указан в операционной системе Linux, HTTP-клиент использует один из следующих файлов (в зависимости от того, какой из них будет найден первым):</p>
+<ul class="tablelistbullet"><li class="tablelistbullet"><code class="programcharacter">/etc/ssl/certs/ca-certificates.crt</code></li><li class="tablelistbullet"><code class="programcharacter">/etc/pki/tls/certs/ca-bundle.crt</code></li><li class="tablelistbullet"><code class="programcharacter">/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem</code></li><li class="tablelistbullet"><code class="programcharacter">/etc/ssl/ca-bundle.pem</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">‑‑repeat‑timeout REPEAT_TIMEOUT</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Указывает, что сканирование объектов будет повторяться не менее <code class="programcharacter">REPEAT_TIMEOUT</code> секунд.</p>
+<p class="tablebodytext">Если аргумент не указан, все объекты будут просканированы один раз. В противном случае сканирование будет выполняться не менее указанного количества секунд.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">--quiet </code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Результаты сканирования не отображаются.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">‑‑threads THREADS (=1)</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Задает количество потоков для параллельного сканирования файлов.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">-m [ ‑‑measure ]</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Измеряет и отображает следующее:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet">Время сканирования в формате <code class="programcharacter">%H:%M:%S.%ms</code>.</li><li class="tablelistbullet">Накопленная статистика сканирования до и после сканирования.</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">--auth-field</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Указывает имя поля заголовка запроса, используемого для аутентификации.</p>
+<p class="tablebodytext">Если не указано иное, по умолчанию используется имя <code class="programcharacter">Authorization</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">--access-token</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Указывает значение токена API, используемого для аутентификации. </p>
+<p class="tablebodytext">Объедините эту опцию с <code class="programcharacter">--auth-field</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="240"><p class="tablebodytext"><code class="programcharacter">--add-bearer-prefix</code></p>
+</td>
+<td style="border:1px solid #010101;" width="564"><p class="tablebodytext">Добавляет префикс <code class="programcharacter">Bearer</code> к значению токена API, указанному в <code class="programcharacter">--access-token</code>.</p>
+<p class="tablebodytext">Объедините эту опцию с <code class="programcharacter">--access-token</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="introheading">Тип соединения</p>
+<p class="bodytext">Пример HTTP-клиента поддерживает два типа соединения:</p>
+<ul class="listbullet1"><li class="listbullet1">TCP-соединение<p class="listcontinue1">Чтобы использовать TCP-соединение, укажите IP-адрес в параметре <code class="programcharacter">-s</code> в следующем формате: &quot;<code class="programcharacter">ip_addr:port</code>&quot;.</p> </li><li class="listbullet1">Соединение через UNIX-сокет (только для Linux)<p class="listcontinue1">Чтобы использовать UNIX-сокет, укажите путь к сокету в параметре <code class="programcharacter">-s</code>.</p> <p class="listcontinue1">Этот параметр используется по умолчанию. Файл сокета по умолчанию <code class="programcharacter">/tmp/.kavhttpd</code>.</p> </li></ul><p class="introheading">Тайм-аут</p>
+<p class="bodytext">Пример HTTP-клиента использует значение, указанное в параметре <code class="programcharacter">-t</code>, для определения тайм-аута сканирования, аналогично <a id="h179981" class="englishcrossreferencetemplate" href="179875.htm" target="_self">заголовку</a> <code class="programcharacter">X-KAV-Timeout</code>.</p>
+<p class="bodytext">Значение тайм-аута по умолчанию <code class="programcharacter">2000</code>.</p>
+<p class="bodytext">Если в этом параметре указано <code class="programcharacter">0</code>, тайм-аут бесконечен.</p>
+<p class="introheading">Режим сканирования</p>
+<p class="bodytext">Пример HTTP-клиента поддерживает два режима проверки, которые можно указать с помощью параметра <code class="programcharacter">-f</code>:</p>
+<ul class="listbullet1"><li class="listbullet1">режим сканирования файлов (<code class="programcharacter">-f</code>).<p class="listcontinue1">В этом режиме пример HTTP-клиента передает пути к файлам в Kaspersky Scan Engine, который читает файлы и проверяет их.</p> <p class="listcontinue1">Чтобы отправить <a id="h182977" class="englishcrossreferencetemplate" href="182976.htm" target="_self">запрос на сканирование на удаленный компьютер через TCP-сокет</a>, вы должны указать пути к файлам, которые вы хотите сканировать, или директориям, которые содержат эти файлы. Вам не нужно этого делать, если пример HTTP-клиента и Kaspersky Scan Engine находятся на одном компьютере.</p> </li><li class="listbullet1">режим сканирования памяти (по умолчанию).<p class="listcontinue1">В этом режиме пример HTTP-клиента передает содержимое файла в Kaspersky Scan Engine, который сканирует содержимое.</p> <p class="attentioncontinue1">Используйте только режим очистки KAV_SKIP с режимом сканирования памяти. Kaspersky Scan Engine не может лечить или удалять файлы в этом режиме.</p> </li></ul><p class="introheading">Контекст задачи сканирования</p>
+<p class="bodytext">Kaspersky Scan Engine использует контекст задачи сканирования для повышения коэффициента обнаружения. Использование этого параметра не влияет на производительность сканирования.</p>
+<p class="bodytext">Рекомендуется использовать контекст задачи сканирования при интеграции типа gateway.</p>
+<p class="bodytext">Используйте следующий формат для контекста:</p>
+<ul class="listbullet1"><li class="listbullet1">Если объект для сканирования был получен из Интернета, укажите URL источника, включая протокол,<p class="listcontinue1">Пример: <code class="programcharacter">http://example.com</code></p> <p class="listcontinue1">Поддерживаются протоколы HTTP, HTTPS и FTP. Если исходный URL-адрес неизвестен, рекомендуется использовать <code class="programcharacter">http://example.com</code> в качестве контекста задачи сканирования.</p> </li><li class="listbullet1">Если объект для проверки был получен по электронной почте, укажите адрес отправителя. Используйте следующий формат: <code class="programcharacter">[from:%sender_address%]</code>.<p class="listcontinue1">Пример: <code class="programcharacter">[from:example@example.com]</code></p> </li></ul><p class="bodytext">Если объект получен по электронной почте, но адрес отправителя неизвестен, рекомендуется использовать <code class="programcharacter">[from:test@relay.example]</code> в качестве контекста задачи сканирования.</p>
+<p class="attentionbody">Контекст задачи сканирования применим только к сканированию файлов. Если вы укажете контекст задачи сканирования для URL-адреса, он будет проигнорирован.</p>
+<p class="introheading">Заголовки запросов и ответов</p>
+<p class="bodytext">Указание заголовков запросов и ответов, собранных из HTTP-трафика, относящегося к проверяемому объекту, повышает коэффициент обнаружения. Рекомендуется использовать заголовки запроса и ответа при интеграции  типа gateway.</p>
+<p class="introheading">Информационные сообщения</p>
+<p class="bodytext">Параметры <code class="programcharacter">-b</code>, <code class="programcharacter">-v</code> и <code class="programcharacter">-l</code> можно использовать только вместе с параметрами <code class="programcharacter">-s</code>, <code class="programcharacter">-j</code> и <code class="programcharacter">-t</code>. Если вы используете их с любым другим параметром, <code class="programcharacter">kavhttp_client</code> вернет ошибку.</p>
+<p class="bodytext">Вы можете использовать параметры <code class="programcharacter">-b</code>, <code class="programcharacter">-v</code> и <code class="programcharacter">-l</code>, чтобы проверить, запущен ли <code class="programcharacter">kavhttpd</code>.</p>
+<p class="introheading">Сканирование файлов</p>
+<p class="bodytext">Вы можете указать один или несколько файлов для сканирования, разделив их пробелом. В зависимости от режима сканирования, пример HTTP-клиента затем передает пути к этим файлам или их содержимому в Kaspersky Scan Engine.</p>
+<p class="bodytext">Также вы можете указать директорию, в которой хранятся файлы. Все файлы, находящиеся внутри этой директории и всех вложенных в нее директорий, будут просканированы.</p>
+<p class="bodytext">Используйте следующий синтаксис для сканирования файлов в режиме сканирования файлов:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">./kavhttp_client [-s &lt;ip:port | unix-socket&gt;] [-t &lt;timeout&gt;] [-c &lt;context&gt;] [--req &lt;req_file&gt;] [--resp &lt;resp_file&gt;] -f &lt;file1&gt; [&lt;file2&gt;...]</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Используйте следующий синтаксис для сканирования содержимого файлов в режиме сканирования памяти:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">./kavhttp_client [-s &lt;ip:port | unix-socket&gt;] [-t &lt;timeout&gt;] [-c &lt;context&gt;] [--req &lt;req_file&gt;] [--resp &lt;resp_file&gt;] &lt;file1&gt; [&lt;file2&gt;...]</p>
+</td>
+</tr>
+
+</table>
+<p class="introheading">Сканирование URL-адресов</p>
+<p class="bodytext">Вы можете указать URL-адрес для сканирования. Если URL-адрес содержит пробелы или табуляции, заключите URL-адрес в кавычки или используйте URL-кодирование. Аналогичным образом, если URL-адрес содержит кавычки (<code class="programcharacter">&quot;</code>), используйте URL-кодирование.</p>
+<p class="bodytext">Одновременное сканирование нескольких URL-адресов не поддерживается. Если вы укажете более одного URL-адреса, будет сканироваться только первый.</p>
+<p class="attentionbody">Файлы не могут быть просканированы, если указан параметр <code class="programcharacter">-u</code>. Параметры <code class="programcharacter">-u</code> и <code class="programcharacter">-f</code> нельзя использовать вместе.</p>
+<p class="bodytext">Используйте следующий синтаксис для сканирования URL-адреса:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">./kavhttp_client [-s &lt;IP:port | unix-socket&gt;] [-t &lt;timeout&gt;] [-i &lt;IP&gt;] -u &lt;URL&gt;</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

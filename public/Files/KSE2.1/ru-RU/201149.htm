@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> RAMUsageLimit </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h5 id="t234470" class="heading5">RAMUsageLimit</h5>
+<p class="bodytext">Указывает максимальный объем системной памяти (в килобайтах), который выделен для Kaspersky Scan Engine.</p>
+<p class="attentionbody">Не рекомендуется использовать настройку <code class="programcharacter">RAMUsageLimit</code> для машин с ограниченной производительностью процессора. Например, если Kaspersky Scan Engine запущен на виртуальной машине, а ресурсы процессора физического узла используются совместно с другими виртуальными машинами или процессами.</p>
+<p class="bodytext">Эта величина позволяет контролировать использование памяти. Чрезмерное использование оперативной памяти может возникнуть, когда Kaspersky Scan Engine сканирует большие файлы или получает много результатов сканирования одновременно. Когда лимит <code class="programcharacter">RAMUsageLimit</code> достигнут, Kaspersky Scan Engine заканчивает обработку объекта, который вызвал чрезмерное потребление памяти.</p>
+<p class="introheading">Путь</p>
+<p class="bodytext"><code class="programcharacter">ICAPSettings &gt; RAMUsageLimit</code></p>
+<p class="introheading">Атрибуты</p>
+<p class="bodytext">Этот элемент не имеет атрибутов.</p>
+<p class="introheading">Значение</p>
+<p class="bodytext">Рекомендуемое значение <code class="programcharacter">RAMUsageLimit</code>:</p>
+<ul class="listbullet1"><li class="listbullet1">Не превышает размер ОЗУ.</li><li class="listbullet1">В два раза больше максимального размера файла для сканирования больших файлов. Например, для сканирования файла размером 1 ГБ требуется около 2 ГБ ОЗУ.</li><li class="listbullet1">Не менее 600 МБ, что в два раза больше размера антивирусных баз и библиотек Kaspersky Scan Engine (всего 300 МБ). Такой размер необходим из-за того, что объем системной памяти удваивается при перезагрузке базы данных.</li></ul><p class="bodytext">Kaspersky Scan Engine также требует ресурсы памяти для всех своих компонентов.</p>
+<p class="attentionbody">Не устанавливайте значение параметра <code class="programcharacter">RAMUsageLimit</code> меньше 7 МБ. Это минимальный объем памяти, который обеспечивает правильное функционирование продукта.</p>
+<p class="bodytext">Если значение параметра равно <code class="programcharacter">0</code>, объем системной памяти, который может быть выделен для Kaspersky Scan Engine, не ограничен.</p>
+<p class="bodytext">Значение по умолчанию: <code class="programcharacter">0</code>.</p>
+<p class="attentionbody">Если значение параметра равно <code class="programcharacter">0</code>, памяти может не хватить. Если Kaspersky Scan Engine использует слишком много системной памяти, операционная система может остановить службу. </p>
+<p class="introheading">Пример</p>
+<p class="bodytext">Ниже приведен пример этого элемента.</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">&lt;RAMUsageLimit&gt;0&lt;/RAMUsageLimit&gt; &lt;!-- 0 = unlimited --&gt;</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

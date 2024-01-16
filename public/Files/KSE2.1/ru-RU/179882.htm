@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Обновление антивирусных баз в режиме HTTP </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234555" class="heading2">Обновление антивирусных баз в режиме HTTP</h2>
+<p class="bodytext">В конфигурации по умолчанию Kaspersky Scan Engine использует антивирусные базы из директории <code class="programcharacter">./bin/bases</code>. Вы можете обновить антивирусные базы, отправив сигнал или HTTP-запрос в Kaspersky Scan Engine.</p>
+<p class="warningbody">При обновлении антивирусных баз Kaspersky Scan Engine передает в &quot;Лабораторию Касперского&quot; зашифрованную строку user agent. Вы также можете посмотреть полный список данных, которые <a id="h180101" class="englishcrossreferencetemplate" href="180001.htm" target="_self">передаются в &quot;Лабораторию Касперского&quot; при обновлении</a>.</p>
+<p class="introheading">Обновление антивирусных баз по запросу</p>
+<p class="bodytext">Если вы хотите обновить антивирусные базы вручную, используйте обновление по запросу.</p>
+<p class="procedureheading">Чтобы обновить антивирусные базы по запросу с помощью сигналов:</p>
+<ol class="listnumber1"><li class="listnumber1">Перед запуском службы <code class="programcharacter">kavhttpd</code> укажите настройку обновления в kavhttpd.xml.</li><li class="listnumber1">Запустите <code class="programcharacter">службу kavhttpd</code>.</li><li class="listnumber1">Отправьте сигнал <code class="programcharacter">SIGUSR2</code> службе <code class="programcharacter">kavhttpd</code>.<p class="listcontinue1">Если клиент и Kaspersky Scan Engine установлены и работают на одном компьютере, вы можете отправить HTTP-запрос на адрес <code class="programcharacter">/api/v3.0/update/start</code> для обновления антивирусных баз. Если вы пошлете этот запрос c другого компьютера, Kaspersky Scan Engine вернет ошибку <code class="programcharacter">405 Method Not Allowed</code>. Если обновление антивирусных баз было успешно начато, ответ HTTP будет содержать следующий объект JSON:</p> <table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">{</p>
+<p class="program2">&quot;status&quot;: &quot;update started&quot;</p>
+<p class="program">} </p>
+</td>
+</tr>
+
+</table> <p class="listcontinue1">Чтобы узнать, как отслеживать статус обновления антивирусных баз, см. подраздел &quot;Получение статуса обновления антивирусных баз&quot; ниже.</p> </li></ol><p class="procedureheading">Чтобы обновить антивирусные базы по запросу с помощью примера HTTP-клиента,</p>
+<p class="bodytextindent">вызовите пример HTTP-клиента с параметром -d:</p>
+<p class="bodytextindent"><code class="programcharacter">kavhttp_client -j -d</code></p>
+<p class="procedureheading">Чтобы обновить антивирусные базы по запросу в Windows,</p>
+<p class="bodytextindent">вызовите пример HTTP-клиента с параметром <code class="programcharacter">-d</code>:</p>
+<p class="bodytextindent"><code class="programcharacter">kavhttp_client.exe -j -d</code></p>
+<p class="bodytext">Смотрите также подробную информацию о <a id="h180054" class="englishcrossreferencetemplate" href="179873.htm" target="_self">планировании автоматического обновления</a>.</p>
+<p class="introheading">Получение статуса обновления антивирусных баз</p>
+<p class="bodytext">Если вы хотите получить статус обновления антивирусных баз, отправьте GET-запрос по адресу <code class="programcharacter">/api/v3.0/update/status</code> или по адресу <code class="programcharacter">/api/v3.1/update/status</code>.</p>
+<p class="attentionbody">Вы можете отправить этот запрос, только если клиент и Kaspersky Scan Engine установлены и работают на одном компьютере.</p>
+<p class="bodytext">Когда Kaspersky Scan Engine получает запрос, он возвращает ответ в следующем формате:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">{</p>
+<p class="program2">&quot;status&quot;: &quot;%UPDATE_STATUS%&quot;,</p>
+<p class="program2">&quot;progress&quot;: &quot;%UPDATE_PROGRESS%&quot;,</p>
+<p class="program2">&quot;last_update_result&quot;: &quot;%UPDATE_RESULT%&quot;,</p>
+<p class="program2">&quot;last_update_time&quot;: &quot;%UPDATE_TIME%&quot;,</p>
+<p class="program">}</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Здесь:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">status</code> – текущий статус обновления. Статус может иметь следующие значения:<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">&quot;in progress&quot;</code></li><li class="listbullet2"><code class="programcharacter">&quot;not started&quot;</code></li></ul></li><li class="listbullet1"><code class="programcharacter">progress</code> – прогресс обновления антивирусных баз в процентах.<p class="listcontinue1">Этот элемент включается в ответ только в том случае, если обновление выполняется в данный момент (то есть если элемент <code class="programcharacter">status</code> имеет значение <code class="programcharacter">&quot;in progress&quot;</code>).</p> </li><li class="listbullet1"><code class="programcharacter">last_update_result</code> – результат последнего обновления. Статус может иметь следующие значения:<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">&quot;success&quot;</code></li><li class="listbullet2"><code class="programcharacter">&quot;all components are up to date&quot;</code></li><li class="listbullet2"><code class="programcharacter">&quot;invalid update sources&quot;</code></li><li class="listbullet2"><code class="programcharacter">&quot;not all components are updated&quot;</code></li><li class="listbullet2"><code class="programcharacter">&quot;download error&quot;</code></li><li class="listbullet2"><code class="programcharacter">&quot;error while updating&quot;</code></li><li class="listbullet2"><code class="programcharacter">&quot;error %ERROR_CODE% occurred&quot;</code>, где <code class="programcharacter">%ERROR_CODE%</code> – это код ошибки, полученный от Kaspersky Scan Engine</li></ul><p class="listcontinue1">Этот элемент включается в ответ только в том случае, если обновление не выполняется в данный момент (то есть если элемент <code class="programcharacter">status</code> имеет значение <code class="programcharacter">&quot;not started&quot;</code>).</p> </li><li class="listbullet1"><code class="programcharacter">last_update_time</code> – это дата и время последнего обновления в следующем формате: <code class="programcharacter">%hh%:%mm%:%ss% %DD%.%MM%.%YYYY%</code>.<p class="listcontinue1">Этот элемент включается в ответ только в том случае, если обновление не выполняется в данный момент (то есть если элемент <code class="programcharacter">status</code> имеет значение <code class="programcharacter">&quot;not started&quot;</code>).</p> </li></ul><p class="introheading">Дополнительные поля в протоколе KAV версии 3.1</p>
+<p class="bodytext">Если вы отправите GET-запрос на адрес <code class="programcharacter">/api/v3.1/update/status</code>, вы сможете получить дополнительную информацию о процессе обновления антивирусных баз. Некоторые обновления базы данных можно использовать только после перезагрузки операционной системы или перезапуска Kaspersky Scan Engine. В этом случае ответ имеет расширенный формат:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">{</p>
+<p class="program2">&quot;status&quot;: &quot;%UPDATE_STATUS%&quot;,</p>
+<p class="program2">&quot;progress&quot;: &quot;%UPDATE_PROGRESS%&quot;,</p>
+<p class="program2">&quot;last_update_result&quot;: &quot;%UPDATE_RESULT%&quot;,</p>
+<p class="program2">&quot;last_update_time&quot;: &quot;%UPDATE_TIME%&quot;,</p>
+<p class="program2">&quot;action_needed&quot;: &quot;%ACTION_NEEDED%&quot;,</p>
+<p class="program2">&quot;action_apply_period&quot;: &quot;%APPLY_PERIOD%&quot;</p>
+<p class="program">}</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Здесь:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">%ACTION_NEEDED%</code> – действие, которое необходимо выполнить, прежде чем вы сможете применить обновления. Статус может иметь следующие значения:<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">Product restart needed</code><p class="listcontinue2">Это означает, что вы должны перезапустить Kaspersky Scan Engine.</p>
+</li><li class="listbullet2"><code class="programcharacter">OS reboot needed</code><p class="listcontinue2">Это означает, что вы должны перезагрузить операционную систему, в которой работает Kaspersky Scan Engine.</p>
+</li></ul></li><li class="listbullet1"><code class="programcharacter">%APPLY_PERIOD%</code> – рекомендуемый период (в часах) для выполнения действия, указанного в <code class="programcharacter">%ACTION_NEEDED%</code>.<p class="listcontinue1">Это действие не выполняется автоматически, вы должны выполнить его самостоятельно.</p> </li></ul>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

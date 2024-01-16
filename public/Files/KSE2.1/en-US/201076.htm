@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> ScanningPaths </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h5 id="t234502" class="heading5">ScanningPaths</h5>
+<p class="bodytext">Contains paths to the locations where scanning is allowed when an HTTP client sends scan requests over a TCP socket from a remote computer. Scanning in other locations is prohibited. These paths are located in the file system of the computer with the Kaspersky Scan Engine server. Restricting the scan area prevents scanning the whole file system of the Kaspersky Scan Engine server by a command from the outside.</p>
+<p class="bodytext">By default, Kaspersky Scan Engine scans objects in <a id="h201071" class="englishcrossreferencetemplate" href="201041.htm" target="_self">KAV_SKIP mode</a>, which means that Kaspersky Scan Engine does not add or remove objects in the directories specified in <code class="programcharacter">ScanningPath</code>. The HTTP client has to send objects to scan, then remove them after scanning.</p>
+<p class="attentionbody">If Kaspersky Scan Engine scans objects in KAV_DELETE, KAV_CLEAN_DELETE, or KAV_CLEAN_SKIP mode, sometimes the directory specified in <code class="programcharacter">ScanningPaths</code> must have write access as root.</p>
+<p class="introheading">Path</p>
+<p class="bodytext"><code class="programcharacter">DirectorySettings &gt; ScanningPaths</code></p>
+<p class="introheading">Attributes</p>
+<p class="bodytext">This element has no attributes.</p>
+<p class="spacer"></p>
+<p class="spacer"></p>
+<p class="introheading">Nested elements</p>
+<p class="bodytext">This element is a container for the following nested elements:</p>
+<ul class="listbullet1"><li class="listbullet1"><em class="emphasischaracter">ScanningPath</em><p class="listcontinue1">Specifies a location where scanning over a TCP socket in scanfile mode is allowed.</p>
+<p class="attentioncontinue1">It is not recommended to use links as paths due to security reasons. Use absolute paths instead.</p>
+<p class="listcontinue1">Possible values:</p>
+<ul class="listbullet2"><li class="listbullet2">Absolute paths to a directory<p class="listcontinue2">Allows scanning files that are located inside this directory and all its subdirectories.</p>
+<p class="listcontinue2">The directory must be located on the same computer as Kaspersky Scan Engine or on a remote hard disk mounted on that computer.</p>
+<p class="listcontinue2">The path must start from the root directory of the computer that Kaspersky Scan Engine is installed on.</p>
+<p class="listcontinue2">The kavhttpd service must have permissions to read files in the directory and its subdirectories.</p>
+</li><li class="listbullet2">Absolute path to a file<p class="listcontinue2">Allows scanning of the specified file.</p>
+<p class="listcontinue2">The file must be located on the same computer as Kaspersky Scan Engine or on a remote hard disk mounted on that computer.</p>
+<p class="listcontinue2">The path must start from the root directory of the computer that Kaspersky Scan Engine is installed on.</p>
+<p class="listcontinue2">The kavhttpd service must have permissions to read the file.</p>
+</li><li class="listbullet2"><code class="programcharacter">/</code> (forward slash)<p class="listcontinue2">Allows scanning of all files.</p>
+<p class="attentioncontinue2">For Linux systems only.</p>
+</li></ul><p class="listcontinue1">Each path is specified inside its own <code class="programcharacter">&lt;ScanningPath&gt;</code> element.</p>
+</li></ul><p class="introheading">Example</p>
+<p class="bodytext">The following is an example of this element.</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">&lt;ScanningPaths&gt;</p>
+<p class="program2">&lt;ScanningPath&gt;&lt;/ScanningPath&gt;</p>
+<p class="program">&lt;/ScanningPaths&gt;</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

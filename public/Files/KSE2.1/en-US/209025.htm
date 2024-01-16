@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Using the integrity check tool </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h1 id="t234585" class="heading1">Using the integrity check tool</h1>
+<p class="bodytext">Kaspersky Scan Engine contains a multitude of various binary modules in the form of dynamic-link libraries, executable files, configuration files, and interface files. A hacker can replace one or more application executable modules or files with other files containing malicious code. To prevent the replacement of modules and files, Kaspersky Scan Engine can check the integrity of application components.</p>
+<p class="bodytext">The application checks modules and files for the presence of unauthorized changes or corruption. If an application module or file has an incorrect checksum, it is considered to be corrupted.</p>
+<p class="bodytext">The application also checks the integrity of the <em class="emphasischaracter">manifest file</em> containing a list of application files whose integrity is critical for the correct operation of application components.</p>
+<p class="bodytext">Starting from Kaspersky Scan Engine version 2.1, KAV SDK objects are delivered as a separate package. For this reason, there are two manifest files in Kaspersky Scan Engine:</p>
+<ul class="listbullet1"><li class="listbullet1">integrity_check.xml is used to check the integrity of the Kaspersky Scan Engine files.</li><li class="listbullet1">integrity_check_sdk.xml is used to check the integrity of the KAV SDK files. This file is delivered in the KAV SDK package.</li></ul><p class="bodytext">The integrity of the application components is checked by using the integrity check tool located in the directory %service_dir%, where %service_dir% is the directory of Kaspersky Scan Engine. </p>
+<p class="bodytext">The manifest files integrity_check.xml and integrity_check_sdk.xml (starting from Kaspersky Scan Engine version 2.1) are protected by the cryptographic signature of Kaspersky. The manifest files are located in the %service_dir% directory.</p>
+<p class="attentionbody">Root user account privileges are required to run the integrity check tool.</p>
+<p class="procedureheading">To check the integrity of application components, run the following command:</p>
+<p class="program2"><code class="programcharacter">integrity_checker [options]</code></p>
+<p class="bodytextindent">By default, the tool uses the integrity_check.xml file located in the directory %service_dir%.</p>
+<p class="procedureheading">To check the integrity of application components using the manifest file located in a directory other than the default one, run the following command:</p>
+<p class="program2"><code class="programcharacter">integrity_checker [options] %path%</code></p>
+<p class="bodytextindent">where <code class="programcharacter">%path%</code> is the path to the manifest file.</p>
+<p class="bodytext">You can run the integrity check tool with the following optional settings:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">--help</code>&#8212;display Help for tool settings.</li><li class="listbullet1"><code class="programcharacter">--version</code>&#8212;display tool version.</li><li class="listbullet1"><code class="programcharacter">--verbose</code>&#8212;expanded output of performed actions and results. If you specify this setting, the output will contain both successful and unsuccessful results of checking the objects listed in the manifest file. If you do not specify this setting, only objects that did not pass the check will be provided.</li><li class="listbullet1"><code class="programcharacter">--trace &lt;filename&gt;</code>, where <code class="programcharacter">&lt;filename&gt;</code> is the name of the file used for logging events that occur during a scan. The events will be logged at the DEBUG level.</li></ul><p class="bodytext">The result of checking each manifest file is displayed next to the name of the manifest file in the following format:</p>
+<ul class="listbullet1"><li class="listbullet1"><code class="programcharacter">SUCCEEDED</code>&#8212;integrity of the files is confirmed (return code <code class="programcharacter">0</code>).</li><li class="listbullet1"><code class="programcharacter">FAILED</code>&#8212;integrity of the files is not confirmed (return code is not <code class="programcharacter">0</code>).</li></ul><p class="warningbody">If you build executable files for <a id="h210511" class="englishcrossreferencetemplate" href="179888.htm" target="_self">HTTP mode</a> or <a id="h210512" class="englishcrossreferencetemplate" href="179905.htm" target="_self">ICAP mode</a> from the source code, the integrity check tool will always return <code class="programcharacter">FAILED</code> when checking %service_dir%/bin/kavhttpd and %service_dir%/bin/kavhttp_client  (HTTP mode), or  %service_dir%/bin/kavicapd (ICAP mode).</p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

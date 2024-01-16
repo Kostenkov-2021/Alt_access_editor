@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Working with the klScanEngineUI binary file </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234597" class="heading2">Working with the klScanEngineUI binary file</h2>
+<p class="bodytext">You can run the klScanEngineUI.exe binary file manually.</p>
+<p class="introheading">Working with the klScanEngineUI binary file in Linux</p>
+<p class="bodytext">Linux syntax:</p>
+<p class="bodytext"><code class="programcharacter">./klScanEngineUI [[-c &lt;path&gt;] [-p &lt;path&gt;] | [-w] | [-n] | [-v] | [-h]]</code></p>
+<p class="bodytext">The table below describes the klScanEngineUI options in Linux.</p>
+<p class="tablename">The klScanEngineUI options in Linux</p>
+<table class="tableintopic" width="624" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="234"><p class="tableheading">Option</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="390"><p class="tableheading">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="234"><p class="bodytext"><code class="programcharacter">-c &lt;path&gt;</code></p>
+<p class="bodytext"><code class="programcharacter">--config &lt;path&gt;</code></p>
+</td>
+<td style="border:1px solid #010101;" width="390"><p class="tablebodytext">Optional parameter.</p>
+<p class="tablebodytext">Specifies the path to the configuration file for the klScanEngine UI service.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="234"><p class="bodytext"><code class="programcharacter">-p &lt;path&gt;</code></p>
+<p class="bodytext"><code class="programcharacter">--pidfile &lt;path&gt;</code></p>
+</td>
+<td style="border:1px solid #010101;" width="390"><p class="tablebodytext">Optional parameter.</p>
+<p class="tablebodytext">Specifies the path to the PID file.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="234"><p class="tablebodytext"><code class="programcharacter">-w</code></p>
+<p class="tablebodytext"><code class="programcharacter">--watchdog</code></p>
+</td>
+<td style="border:1px solid #010101;" width="390"><p class="tablebodytext">Optional parameter.</p>
+<p class="tablebodytext">Runs the klScanEngine UI service in watchdog mode.</p>
+<p class="tablebodytext">In this mode, the klScanEngine UI automatically restarts if it freezes or crashes.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="234"><p class="tablebodytext"><code class="programcharacter">-n</code></p>
+<p class="tablebodytext"><code class="programcharacter">--no-daemon</code></p>
+</td>
+<td style="border:1px solid #010101;" width="390"><p class="tablebodytext">Optional parameter.</p>
+<p class="tablebodytext">Enables nodaemon mode for the klScanEngine UI service.</p>
+<p class="tablebodytext">Specifying this parameter forces the klScanEngine UI service to run in the foreground.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="234"><p class="tablebodytext"><code class="programcharacter">-v</code></p>
+<p class="tablebodytext"><code class="programcharacter">--version</code></p>
+</td>
+<td style="border:1px solid #010101;" width="390"><p class="tablebodytext">Optional parameter.</p>
+<p class="tablebodytext">Shows the Kaspersky Scan Engine version.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="234"><p class="tablebodytext"><code class="programcharacter">-h</code></p>
+<p class="tablebodytext"><code class="programcharacter">--help</code></p>
+</td>
+<td style="border:1px solid #010101;" width="390"><p class="tablebodytext">Optional parameter.</p>
+<p class="tablebodytext">Shows Help.</p>
+</td>
+</tr>
+
+</table>
+<p class="introheading">Working with the klScanEngineUI binary file in Windows</p>
+<p class="bodytext">Windows syntax:</p>
+<p class="bodytext"><code class="programcharacter">klScanEngineUI.exe [[--svc] | [--reg] | [--del] | [-v] | [-h]]</code></p>
+<p class="bodytext">The table below describes the klScanEngineUI options in Windows.</p>
+<p class="tablename">The klScanEngineUI options in Windows</p>
+<table class="tableintopic" width="624" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="234"><p class="tableheading">Option</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #010101;" width="390"><p class="tableheading">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="234"><p class="bodytext"><code class="programcharacter">--svc</code></p>
+</td>
+<td style="border:1px solid #010101;" width="390"><p class="tablebodytext">Starts the service.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="234"><p class="bodytext"><code class="programcharacter">--reg</code></p>
+</td>
+<td style="border:1px solid #010101;" width="390"><p class="tablebodytext">Adds the klScanEngine UI service to the list of Windows services.</p>
+<p class="tablebodytext">The name of the service and its displayed name is <code class="programcharacter">Kaspersky ScanEngine UI</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="234"><p class="tablebodytext"><code class="programcharacter">--del</code></p>
+</td>
+<td style="border:1px solid #010101;" width="390"><p class="tablebodytext">Deletes the klScanEngine UI service from the list of Windows services.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="234"><p class="tablebodytext"><code class="programcharacter">-v</code></p>
+<p class="tablebodytext"><code class="programcharacter">--version </code></p>
+</td>
+<td style="border:1px solid #010101;" width="390"><p class="tablebodytext">Optional parameter.</p>
+<p class="tablebodytext">Shows the Kaspersky Scan Engine version.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="234"><p class="tablebodytext"><code class="programcharacter">-h</code></p>
+<p class="tablebodytext"><code class="programcharacter">--help</code></p>
+</td>
+<td style="border:1px solid #010101;" width="390"><p class="tablebodytext">Optional parameter.</p>
+<p class="tablebodytext">Shows Help.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

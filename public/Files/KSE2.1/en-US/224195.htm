@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Authorization settings </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234277" class="heading3">Authorization settings</h3>
+<p class="bodytext">This section describes the <span class="boldcharacter">Authorization</span> section of the <span class="boldcharacter">Settings </span>page.</p>
+<p class="bodytext">If an error occurred during the loading of the web page and the settings are unavailable, reload the page.</p>
+<p class="bodytext">The <span class="boldcharacter">Authorization</span> section contains the following settings:</p>
+<ul class="listbullet1"><li class="listbullet1"><span class="guicharacter">Enable HTTP clients authorization</span>. Indicates whether Kaspersky Scan Engine should use API token authorization.<p class="attentioncontinue1"><a id="h211898" class="englishcrossreferencetemplate" href="210245.htm" target="_self">HTTPS connection</a> is required for API token authorization.</p>
+</li><li class="listbullet1"><span class="guicharacter">Authorization header field</span>. The name of the request header field that contains the API token. The value you specify here must meet the following requirements:<ul class="listbullet2"><li class="listbullet2">3 to 40 characters long.</li><li class="listbullet2">Consists of characters allowed for header field names according to <a class="hyperlinktemplate" href="https://tools.ietf.org/html/rfc7230#section-3.2.6" target="_blank">RFC 7230</a>.</li></ul><p class="listcontinue1">The default value is <span class="guicharacter">Authorization</span>.</p>
+</li><li class="listbullet1"><span class="guicharacter">Add bearer prefix</span>. Indicates whether Kaspersky Scan Engine supports the Bearer authentication scheme. If this toggle switch is turned on, Kaspersky Scan Engine expects that the request header field, named as specified in <span class="guicharacter">Authorization header field</span>, starts with the <code class="programcharacter">Bearer</code> prefix.</li></ul><p class="introheading">Managing tokens</p>
+<p class="bodytext">The <span class="guicharacter">API Tokens</span> table contains the following information about API tokens:</p>
+<ul class="listbullet1"><li class="listbullet1">Token name. Each token has a unique name.</li><li class="listbullet1">Description. Some descriptions may be missing. This property is optional.</li><li class="listbullet1">Status. Kaspersky Scan Engine authorizes an HTTP client only if its token is enabled.</li></ul><p class="bodytext"> From the table, you can edit (<img id="f219908" src="edit_settings_profile.png" class="linkedpngfiletemplate" alt="" vspace="0" hspace="0" align="bottom" border="0">) or delete (<img id="f201473" src="delete_settings_profile.png" class="linkedpngfiletemplate" alt="" vspace="0" hspace="0" align="bottom" border="0">) an existing token. Editing a token is similar to adding a token (see the instruction below).</p>
+<p class="procedureheading">To add a new token:</p>
+<ol class="listnumber1"><li class="listnumber1">Click the <span class="guicharacter">Add token</span> button.</li><li class="listnumber1">Specify the parameters of the new token:<ul class="listbullet2"><li class="listbullet2"><span class="guicharacter">Name</span>. The unique name of the token. The name must contain from 1 to 40 Unicode characters.</li><li class="listbullet2"><span class="guicharacter">Description</span>. Additional information about the token. For example, the name of the token owner. The description can contain up to 1000 Unicode characters.</li><li class="listbullet2"><span class="guicharacter">Token</span>. The token that the client must send to the Kaspersky Scan Engine API for authorization. The value must be unique and contain from 4 to 100 ASCII characters. There must be at least one uppercase Latin letter, one lowercase Latin letter, one digit, and one of the following special characters: <code class="programcharacter">-._~+/).</code><p class="listcontinue2">To make Kaspersky Scan Engine generate a unique token for you, click the <span class="guicharacter">Generate token</span> button. The generated token appears in the <span class="guicharacter">Token</span> field. You can change this value if you want.</p>
+<p class="attentioncontinue2">Copy the token somewhere you can find it later. After you click <span class="guicharacter">Save</span>, the token will not be available in the Kaspersky Scan Engine GUI. In the <code class="programcharacter">kavhttpd.xml</code> configuration file, the token value is encrypted. If you have forgotten or lost a token, you can generate a new token instead.</p>
+</li><li class="listbullet2"><span class="guicharacter">Enable token</span>. Turn on this toggle switch if you want Kaspersky Scan Engine to authorize clients that specified the token in the request header. If the toggle switch is turned off, Kaspersky Scan Engine does not authorize clients that specified the token in the request header.<p class="attentioncontinue2">If you have enabled API token authorization and the kavhttpd service is not running, starting klScanEngineUI will also initiate the start of the kavhttpd service.</p>
+</li></ul></li><li class="listnumber1">Click <span class="guicharacter">Save</span>.</li></ol><p class="bodytext">The new token appears in the <span class="guicharacter">API Tokens</span> table.</p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

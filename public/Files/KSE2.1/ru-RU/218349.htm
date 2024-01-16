@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Обновление с HTTPS-сервера </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234553" class="heading2">Обновление с HTTPS-сервера</h2>
+<p class="attentionbody">Эта функция доступна в Kaspersky Scan Engine, начиная с версии 2.0.</p>
+<p class="bodytext">Вы можете настроить среду для получения обновлений с HTTPS-сервера.</p>
+<p class="procedureheading">Чтобы настроить обновление с HTTPS-сервера:</p>
+<ol class="listnumber1"><li class="listnumber1">Создайте HTTPS-сервер как зеркало для хранения файлов антивирусных баз.</li><li class="listnumber1">На HTTPS-сервере настройте Updater SDK (или утилиту keep-up-to-date) для выполнения обновления и распространения файлов антивирусных баз.<p class="attentioncontinue1">Вы должны использовать Updater SDK или утилиту keep-up-to-date на HTTPS-сервере. Невозможно создать или настроить зеркальный сервер с помощью Kaspersky Scan Engine. Вы можете получить Updater SDK у представителя &quot;Лаборатории Касперского&quot;, который предоставил вам пакет распространения Kaspersky Scan Engine.</p> </li><li class="listnumber1">Настройте Kaspersky Scan Engine для загрузки обновлений с HTTPS-сервера на компьютерах, которые будут использовать HTTPS-сервер.<p class="listcontinue1">Для службы <a id="h179927" class="englishcrossreferencetemplate" href="184799.htm" target="_self">kavhttpd</a> или <a id="h180154" class="englishcrossreferencetemplate" href="192989.htm" target="_self">kavicapd</a> выполните следующие действия.</p> <ul class="listbullet2"><li class="listbullet2">В элементе <code class="programcharacter">UpdateSettings &gt; UpdatesCertFile</code> файла конфигурации <a id="h201083" class="englishcrossreferencetemplate" href="200653.htm" target="_self">kavhttpd</a> или <a id="h201190" class="englishcrossreferencetemplate" href="200713.htm" target="_self">kavicapd</a> укажите локальный путь к корневому сертификату ключа, которым подписан TLS-сертификат вашего HTTPS-сервера.<p class="listcontinue2">Вы можете оставить значение этого элемента пустым.</p> </li><li class="listbullet2">В элементе <code class="programcharacter">UpdateSettings &gt; UpdateSources</code> файла конфигурации <a id="h201082" class="englishcrossreferencetemplate" href="201051.htm" target="_self">kavhttpd</a> или <a id="h201189" class="englishcrossreferencetemplate" href="200712.htm" target="_self">kavicapd</a> укажите адрес HTTPS-сервера.</li><li class="listbullet2">В элементе <code class="programcharacter">UpdateSettings &gt; UseOnlyCustomSources</code> файла конфигурации <a id="h201081" class="englishcrossreferencetemplate" href="200651.htm" target="_self">kavhttpd</a> или <a id="h201188" class="englishcrossreferencetemplate" href="200711.htm" target="_self">kavicapd</a> укажите <code class="programcharacter">1</code>.</li><li class="listbullet2">В элементе <code class="programcharacter">UpdateSettings &gt; CertificateConfirmationAction</code> файла конфигурации <a id="h201084" class="englishcrossreferencetemplate" href="200654.htm" target="_self">kavhttpd</a> или <a id="h201191" class="englishcrossreferencetemplate" href="200714.htm" target="_self">kavicapd</a> укажите значение в соответствии с ожидаемым действием, если сервер обновлений использует недоверенный сертификат.</li></ul></li><li class="listnumber1">Перезапустите Kaspersky Scan Engine.</li></ol>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

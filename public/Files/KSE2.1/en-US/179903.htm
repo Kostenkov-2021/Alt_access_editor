@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Verifying detection capabilities in ICAP mode </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234591" class="heading2">Verifying detection capabilities in ICAP mode</h2>
+<p class="bodytext">This section explains how to verify that Kaspersky Scan Engine works correctly in ICAP mode.</p>
+<p class="introheading">Verifying that Kaspersky Scan Engine detects malicious and phishing URLs correctly</p>
+<p class="procedureheading">To verify that Kaspersky Scan Engine detects malicious URLs correctly:</p>
+<ol class="listnumber1"><li class="listnumber1">Make sure that the directory with response templates contains the <a id="h180188" class="englishcrossreferencetemplate" href="179895.htm" target="_self">detect_req default template</a>.</li><li class="listnumber1"><a id="h193107" class="englishcrossreferencetemplate" href="192988.htm" target="_self">Configure Kaspersky Scan Engine</a>. Set the value of the <code class="programcharacter">RulesFilePath</code> parameter to the directory that contains kavicapd_gui_rules.conf, sample service rules file that is included in the distribution kit. </li><li class="listnumber1"><a id="h193044" class="englishcrossreferencetemplate" href="192990.htm" target="_self">Start the kavicapd service</a>.</li><li class="listnumber1">Create a .txt file with the following content:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">REQMOD icap://icap-server.example.com/req ICAP/1.0</p>
+<p class="program">Host: icap-server.example.com</p>
+<p class="program">Encapsulated: req-hdr=0, null-body=110</p>
+<p class="program">&nbsp;</p>
+<p class="program">GET /TesT/Wmuf_w HTTP/1.1</p>
+<p class="program">Host: www.bug.qainfo.ru</p>
+<p class="program">Accept: text/html, text/plain</p>
+<p class="program">Accept-Encoding: compress</p>
+<p class="program">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="listcontinue1">Make sure that every line ends with CRLF, as required by RFC 2616. Also, make sure that the file ends with an empty line (a line consisting of CRLF symbols).</p>
+<p class="listcontinue1">This is a REQMOD GET ICAP request message. </p>
+<p class="listcontinue1">This message requests a test page that does not contain any real malicious content.</p>
+</li><li class="listnumber1">Save the file with an appropriate name. In the following example this file is named icap_reqmod_malicious_detect.txt.</li><li class="listnumber1">Send the message to the port that the kavicapd service listens on (port 1344 by default).<p class="listcontinue1">The exact method may vary depending on the operating system. This example shows how to send the message using netcat:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program"> cat icap_reqmod_malicious_detect_.txt | nc localhost 1344</p>
+</td>
+</tr>
+
+</table>
+<p class="listcontinue1">The kavicapd service will answer with the modified message headers and a response message that shows information about the blocked URL.</p>
+</li><li class="listnumber1">Verify that the test web page was blocked.<p class="listcontinue1">When the web page is blocked, the kavicapd service returns the <a id="h180188_2" class="englishcrossreferencetemplate" href="179895.htm" target="_self">detect_req HTML response template</a>. The response template contains the following information about the blocked web page:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">Mode:            REQMOD</p>
+<p class="program">Object name:</p>
+<p class="program">Date:            2017-May-31 14:13:29.295710</p>
+<p class="program">ICAPD version:   KL ICAP Service v1.0 (KAV SDK v8.5.1.83)</p>
+<p class="program">KAV SDK Version: KAV SDK v8.5.1.83</p>
+<p class="program">URL:             <code class="programcharacter">http://bug.qainfo.ru/TesT/Wmuf_w</code></p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+<p class="spacer"></p>
+</li><li class="listnumber1">Create a .txt file with the following content:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">REQMOD icap://icap-server.example.com/req ICAP/1.0</p>
+<p class="program">Host: icap-server.example.com</p>
+<p class="program">Encapsulated: req-hdr=0, null-body=110</p>
+<p class="program">&nbsp;</p>
+<p class="program">GET <code class="programcharacter">/TesT/Aphish_w</code> HTTP/1.1</p>
+<p class="program">Host: <code class="programcharacter">www.bug.qainfo.ru</code></p>
+<p class="program">Accept: text/html, text/plain</p>
+<p class="program">Accept-Encoding: compress</p>
+</td>
+</tr>
+
+</table>
+</li><li class="listnumber1">Save the file with an appropriate name. In the following example this file is named icap_reqmod_phishing_detect.txt.</li><li class="listnumber1">Send the message to the port that the kavicapd service listens on.<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">cat icap_reqmod_phishing_detect_.txt | nc localhost 1344</p>
+</td>
+</tr>
+
+</table>
+</li><li class="listnumber1">Verify that the test web page was blocked.<p class="listcontinue1">When the web page is blocked, the kavicapd service returns the <a id="h180188_3" class="englishcrossreferencetemplate" href="179895.htm" target="_self">detect_req HTML response template</a>. The response template contains the following information about the blocked web page:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">Mode:            REQMOD</p>
+<p class="program">Object name:</p>
+<p class="program">Date:            2017-May-31 14:13:29.295710</p>
+<p class="program">ICAPD version:   KL ICAP Service v1.0 (KAV SDK v8.5.1.83)</p>
+<p class="program">KAV SDK Version: KAV SDK v8.5.1.83</p>
+<p class="program">URL:             <code class="programcharacter">http://bug.qainfo.ru/TesT/Aphish_w</code></p>
+</td>
+</tr>
+
+</table>
+</li></ol><p class="introheading">Verifying that Kaspersky Scan Engine detects malicious content in HTTP traffic correctly</p>
+<p class="procedureheading">To verify that Kaspersky Scan Engine detects malicious content in HTTP traffic correctly:</p>
+<ol class="listnumber1"><li class="listnumber1">Make sure that the directory with response templates contains the <a id="h180188_4" class="englishcrossreferencetemplate" href="179895.htm" target="_self">detect_req default template</a>.</li><li class="listnumber1"><a id="h193107_2" class="englishcrossreferencetemplate" href="192988.htm" target="_self">Configure Kaspersky Scan Engine</a>. Set the value of the <code class="programcharacter">RulesFilePath</code> parameter to the directory that contains kavicapd_gui_rules.conf, sample service rules file that is included in the distribution kit. </li><li class="listnumber1"><a id="h193044_2" class="englishcrossreferencetemplate" href="192990.htm" target="_self">Start the kavicapd service</a>.</li><li class="listnumber1">Create a .txt file with the following content:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">REQMOD icap://icap-server.example.com/req?arg=87 ICAP/1.0</p>
+<p class="program">Host: icap-server.example.com</p>
+<p class="program">Encapsulated: req-hdr=0, req-body=155</p>
+<p class="program">&nbsp;</p>
+<p class="program">POST /origin-resource/form.pl HTTP/1.1</p>
+<p class="program">Host: www.origin-server.example.com</p>
+<p class="program">Accept: text/html, text/plain</p>
+<p class="program">Accept-Encoding: compress</p>
+<p class="program">Pragma: no-cache</p>
+<p class="program">&nbsp;</p>
+<p class="program">44</p>
+<p class="program">X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*</p>
+<p class="program">0</p>
+</td>
+</tr>
+
+</table>
+<p class="listcontinue1">Make sure that every line ends with CRLF, as required by RFC 2616.</p>
+<p class="listcontinue1">This is a REQMOD POST ICAP request message. </p>
+<p class="listcontinue1">This message contains <a id="h180192" class="englishcrossreferencetemplate" href="180178.htm" target="_self">EICAR Standard Anti-Virus Test File</a>. The EICAR Standard Anti-Virus Test File is not a virus and is often used for testing anti-virus software.</p>
+</li><li class="listnumber1">Save the file with an appropriate name. In the following example this file is named icap_reqmod_detect.txt.</li><li class="listnumber1">Send the message to the port that the kavicapd service listens to (port 1344 by default).<p class="listcontinue1">The exact method may vary depending on the operating system. This example shows how to send the message using netcat:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">cat icap_reqmod_detect.txt | nc localhost 1344</p>
+</td>
+</tr>
+
+</table>
+<p class="listcontinue1">The kavicapd service will answer with the modified message headers and a response message that shows information about the detected object.</p>
+</li><li class="listnumber1">Verify that EICAR Standard Anti-Virus Test File was detected.<p class="listcontinue1">When the EICAR file is detected, the kavicapd service returns the detect_req HTML response template. The response template contains the following information about the detected object:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">Mode:            REQMOD</p>
+<p class="program">Object name:     EICAR-Test-File</p>
+<p class="program">Date:            2017-May-31 14:17:12.077704</p>
+<p class="program">ICAPD version:   KL ICAP Service v1.0 (KAV SDK v8.5.1.83)</p>
+<p class="program">KAV SDK Version: KAV SDK v8.5.1.83</p>
+<p class="program">URL:             www.origin-server.example.com/origin-resource/form.pl</p>
+</td>
+</tr>
+
+</table>
+<p class="spacer"></p>
+</li></ol><p class="introheading">Verifying that File and URL Reputation Checking works correctly</p>
+<p class="procedureheading">To verify that File and URL Reputation Checking works correctly:</p>
+<ol class="listnumber1"><li class="listnumber1">Request the KSN test file from your Technical Account Manager. This file is not malicious, and is only used to verify that File and URL Reputation Checking works properly.</li><li class="listnumber1">Make sure that the directory with response templates contains the <a id="h180188_5" class="englishcrossreferencetemplate" href="179895.htm" target="_self">detect_req default template</a>.</li><li class="listnumber1"><a id="h193107_3" class="englishcrossreferencetemplate" href="192988.htm" target="_self">Configure Kaspersky Scan Engine</a>: <ul class="listbullet2"><li class="listbullet2">Set the value of the <code class="programcharacter">RulesFilePath</code> parameter to the directory that contains kavicapd_gui_rules.conf, sample service rules file that is included in the distribution kit.</li><li class="listbullet2">Make sure that the <code class="programcharacter">UseKSN</code> parameter is set to <code class="programcharacter">0</code>.</li></ul></li><li class="listnumber1"><a id="h193044_3" class="englishcrossreferencetemplate" href="192990.htm" target="_self">Start the kavicapd service</a>.</li><li class="listnumber1">Create a .txt file with the following content:<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">REQMOD icap://icap-server.example.com/req?arg=87 ICAP/1.0</p>
+<p class="program">Host: icap-server.example.com</p>
+<p class="program">Encapsulated: req-hdr=0, req-body=155</p>
+<p class="program">&nbsp;</p>
+<p class="program">POST /origin-resource/form.pl HTTP/1.1</p>
+<p class="program">Host: www.origin-server.example.com</p>
+<p class="program">Accept: text/html, text/plain</p>
+<p class="program">Accept-Encoding: compress</p>
+<p class="program">Pragma: no-cache</p>
+</td>
+</tr>
+
+</table>
+</li><li class="listnumber1">Below the content you added to the .txt file, insert a new line.</li><li class="listnumber1">Below the new line, insert the contents of the KSN test file.<p class="listcontinue1">Make sure that every line ends with CRLF, as required by RFC 2616.</p>
+</li><li class="listnumber1">Save the file with an appropriate name. In the following example this file is named icap_reqmod_detect_ksn.txt.</li><li class="listnumber1">Send the message to the port that the kavicapd service listens on (port 1344 by default).<p class="listcontinue1">The exact method may vary depending on the operating system. This example shows how to send the message by using the netcat utility:</p>
+<table class="tableintopic" width="1131" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse" bgcolor="#E5F1FB">
+<tr align="left" valign="top">
+<td bgcolor="#E5F1FB" width="1131"><p class="program">cat icap_reqmod_detect_ksn.txt | nc localhost 1344</p>
+</td>
+</tr>
+
+</table>
+</li><li class="listnumber1">Verify that the KSN test file is not detected.</li><li class="listnumber1">Set the value of the <code class="programcharacter">UseKSN</code> parameter of the ICAP mode configuration file to <code class="programcharacter">1</code>.</li><li class="listnumber1">Restart the kavicapd service.</li><li class="listnumber1">Send icap_reqmod_detect_ksn.txt to the kavicapd service again.</li><li class="listnumber1">Verify that the KSN test file is detected.</li></ol>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

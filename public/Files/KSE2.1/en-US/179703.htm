@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Logging settings </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234435" class="heading3">Logging settings</h3>
+<p class="bodytext">This section describes the <span class="boldcharacter">Logging</span> section of the <span class="boldcharacter">Settings </span>page.</p>
+<p class="bodytext">If an error occurred during loading of the web page and the settings are unavailable, reload the page.</p>
+<p class="bodytext">The <span class="boldcharacter">Logging</span> section contains two subsections: <span class="guicharacter">Syslog</span> and <span class="guicharacter">Log files</span>.</p>
+<p class="bodytext">The <span class="guicharacter">Syslog</span> section allows you to do the following:</p>
+<ul class="listbullet1"><li class="listbullet1">Start or stop syslog logging<p class="warningcontinue1">If you enable sending syslog messages, consider that these messages will contain sensitive data, such as personal data as defined by GDPR, configuration data of the product, and licensing information.</p>
+</li><li class="listbullet1">Specify syslog logging settings<p class="listcontinue1">The settings for HTTP mode and ICAP mode are different.</p>
+</li></ul><p class="procedureheading">To add and configure the destination for syslog messages in HTTP or ICAP mode:</p>
+<ol class="listnumber1"><li class="listnumber1">Choose the types of events that will be logged into the specified destination.<p class="attentioncontinue1">When syslog logging is enabled, the Audit events cannot be completely excluded from syslog messages.</p>
+</li><li class="listnumber1">Specify the format of syslog messages:<ul class="listbullet2"><li class="listbullet2">CEF<p class="listcontinue2">The format of CEF logs is different in <a id="h194736" class="englishcrossreferencetemplate" href="186767.htm" target="_self">HTTP mode</a> and <a id="h193363" class="englishcrossreferencetemplate" href="186631.htm" target="_self">ICAP mode</a>.</p>
+</li><li class="listbullet2">RAW<p class="listcontinue2">The format of RAW logs is different in <a id="h194737" class="englishcrossreferencetemplate" href="186769.htm" target="_self">HTTP mode</a> and <a id="h193364" class="englishcrossreferencetemplate" href="186652.htm" target="_self">ICAP mode</a>.</p>
+</li></ul></li><li class="listnumber1">Choose the destination that will be used for writing logs:<ul class="listbullet2"><li class="listbullet2">syslog daemon</li><li class="listbullet2">file<p class="listcontinue2">Specify the path to the directory where the log file will be created. This path could be absolute or relative to the directory that holds the executable file of the service (<code class="programcharacter">kavhttpd</code> for HTTP mode and <code class="programcharacter">kavicapd</code> for ICAP mode).</p>
+</li><li class="listbullet2">remote syslog<p class="listcontinue2">Specify the <code class="programcharacter">%PROTOCOL%%IP%:%PORT%</code> value, where <code class="programcharacter">%PROTOCOL%</code> is a network protocol (use tcp:// or udp:// for this value), <code class="programcharacter">%IP%</code> is an IPv4 address that receives syslog messages, and <code class="programcharacter">%PORT%</code> is a port that receives syslog messages.</p>
+</li></ul></li></ol><p class="bodytext">The <span class="guicharacter">Log files</span> section allows you to do the following:</p>
+<ul class="listbullet1"><li class="listbullet1">Start or stop debug logging<p class="warningcontinue1">If you enable debug logging, consider that the log messages will contain sensitive data, such as personal data as defined by GDPR, configuration data of the product, and licensing information.</p>
+</li><li class="listbullet1">Export log files<p class="listcontinue1">This action is available if debug logging is stopped.</p>
+</li><li class="listbullet1">Delete logs<p class="listcontinue1">This button is available if debug logging is stopped.</p>
+</li></ul><p class="bodytext">The <span class="guicharacter">Log files</span> section also displays:</p>
+<ul class="listbullet1"><li class="listbullet1"><span class="guicharacter">Log directory</span>&#8212;Path to the directory where log files will be stored</li></ul><p class="bodytext">You cannot change this setting by using the Kaspersky Scan Engine GUI. You must edit the corresponding configuration file. Depending on the mode that you chose in the <a id="h183008" class="englishcrossreferencetemplate" href="179825.htm" target="_self">Kaspersky Scan Engine configuration file</a>, specify the path in httpdkavlog.ini or icapdkavlog.conf for <a id="h180157" class="englishcrossreferencetemplate" href="179879.htm" target="_self">HTTP mode</a> and <a id="h190568" class="englishcrossreferencetemplate" href="179896.htm" target="_self">ICAP mode</a>, respectively.</p>
+<ul class="listbullet1"><li class="listbullet1"><span class="guicharacter">Log size (MB)</span>&#8212;Current log size in megabytes.</li></ul>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

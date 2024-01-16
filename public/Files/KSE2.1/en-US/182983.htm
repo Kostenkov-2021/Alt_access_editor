@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Generating SSL certificates for Kaspersky Scan Engine GUI </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234367" class="heading2">Generating SSL certificates for Kaspersky Scan Engine GUI</h2>
+<p class="bodytext">Kaspersky Scan Engine GUI uses an SSL certificate for HTTPS connections. By default, Kaspersky Scan Engine GUI uses a self-signed certificate and a private key that are generated during <a id="h193042" class="englishcrossreferencetemplate" href="192974.htm" target="_self">installation of Kaspersky Scan Engine</a>. The generated certificate is valid for two years.</p>
+<p class="bodytext">We recommend that you generate a certificate that will be trusted in your infrastructure and configure Kaspersky Scan Engine GUI to use this certificate instead of the self-signed certificate.</p>
+<p class="attentionbody">Before making changes, create a backup copy of the existing private key, certificate, and Kaspersky Scan Engine configuration file.</p>
+<p class="procedureheading">To generate a trusted certificate for Kaspersky Scan Engine GUI:</p>
+<ol class="listnumber1"><li class="listnumber1">Create a private key and a trusted certificate:<ol class="listalpha2"><li class="listalpha2">Create a new private and public key pair.</li><li class="listalpha2">Use the public key to generate an SSL Certificate Signing Request (CSR).</li><li class="listalpha2">Sign the CSR by using the trusted certificate authority (CA).<p class="listcontinue2">This creates a trusted certificate for the private key.</p>
+</li></ol></li><li class="listnumber1">Convert the private key and the trusted certificate to PEM format.</li><li class="listnumber1">Copy both the private key and the certificate to the <code class="programcharacter">%service_dir%/httpsrv</code> directory.<p class="attentioncontinue1">You must configure access to the private key file for ScanEngine GUI so that only the root user and the user account under which the service is running can have the read permission.</p>
+</li><li class="listnumber1">Edit the <code class="programcharacter">Settings &gt; ServerSettings &gt; SSLCertificatePath</code> and <code class="programcharacter">Settings &gt; ServerSettings &gt; SSLPrivatePath</code> elements of the <a id="h183008" class="englishcrossreferencetemplate" href="179825.htm" target="_self">Kaspersky Scan Engine configuration file</a> if necessary so that they will contain the paths to the certificate and private key respectively.<p class="listcontinue1">Save the Kaspersky Scan Engine configuration file.</p>
+</li><li class="listnumber1">Restart Kaspersky Scan Engine.<p class="spacer"></p>
+</li></ol>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

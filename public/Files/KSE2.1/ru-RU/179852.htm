@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Активация Kaspersky Scan Engine в режиме лицензирования оффлайн </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234272" class="heading2">Активация Kaspersky Scan Engine в режиме лицензирования оффлайн</h2>
+<p class="bodytext">В этом разделе описано, как активировать Kaspersky Scan Engine в режиме оффлайн после установки Kaspersky Scan Engine.</p>
+<p class="bodytext">Вы можете активировать Kaspersky Scan Engine на странице <a id="h180245" class="englishcrossreferencetemplate" href="179702.htm" target="_self">настроек лицензирования</a> в Kaspersky Scan Engine GUI.</p>
+<p class="bodytext">Для активации Kaspersky Scan Engine в режиме лицензирования оффлайн вам потребуется файл ключа. Файл ключа предоставляет ваш персональный технический менеджер (ПТМ).</p>
+<p class="procedureheading">Чтобы активировать Kaspersky Scan Engine в оффлайн-режиме, выполните следующее.</p>
+<ol class="listnumber1"><li class="listnumber1">Откройте файл конфигурации, соответствующий выбранному вами режиму:<ul class="listbullet2"><li class="listbullet2">Если вы используете Kaspersky Scan Engine в режиме HTTP, откройте <a id="h179927" class="englishcrossreferencetemplate" href="184799.htm" target="_self">файл конфигурации kavhttpd.xml</a>.</li><li class="listbullet2">Если вы используете Kaspersky Scan Engine в режиме ICAP, откройте <a id="h180154" class="englishcrossreferencetemplate" href="192989.htm" target="_self">файл конфигурации kavicapd.xml</a>.</li></ul></li><li class="listnumber1">Выполните одно из следующих действий.<ul class="listbullet2"><li class="listbullet2">Скопируйте файл ключа в директорию, указанную в элементе <code class="programcharacter">LicensePath</code> файла конфигурации.<p class="listcontinue2">Список других директорий, в которых Kaspersky Scan Engine автоматически выполняет поиск файла ключа, есть в описании элемента <code class="programcharacter">LicensePath</code>:</p> <ul class="listbullet3"><li class="listbullet3">В kavhttpd.xml (режим HTTP): DirectorySettings &gt; <a id="h201074" class="englishcrossreferencetemplate" href="201044.htm" target="_self">LicensePath</a>.</li><li class="listbullet3">В kavicapd.xml (режим ICAP): SDKSettings &gt; <a id="h201169" class="englishcrossreferencetemplate" href="201118.htm" target="_self">LicensePath</a>.</li></ul></li><li class="listbullet2">Если вы хотите сохранить файл ключа в другой директории, укажите путь к этой директории в элементе <code class="programcharacter">LicensePath</code> файла конфигурации и скопируйте туда файл appinfo.kli. Файл appinfo.kli находится в директории /bin пакета распространения.</li></ul></li><li class="listnumber1">В элементе <code class="programcharacter">LicensingMode</code> файла конфигурации укажите <code class="programcharacter">1</code>.</li><li class="listnumber1">Сохраните файл конфигурации.</li><li class="listnumber1">Перезагрузите службу Kaspersky Scan Engine.<ul class="listbullet2"><li class="listbullet2">В режиме HTTP <a id="h193043" class="englishcrossreferencetemplate" href="192981.htm" target="_self">перезапустите службу kavhttpd</a>.</li><li class="listbullet2">В режиме ICAP <a id="h193044" class="englishcrossreferencetemplate" href="192990.htm" target="_self">перезапустите службу kavicapd</a>.</li></ul></li></ol><p class="bodytext">Если активация прошла успешно, Kaspersky Scan Engine запустится в обычном режиме, и вы сможете обновить антивирусные базы. В противном случае Kaspersky Scan Engine вернет ошибку в командную строку.</p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>

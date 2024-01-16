@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Activating Kaspersky Scan Engine in online licensing mode </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234273" class="heading2">Activating Kaspersky Scan Engine in online licensing mode</h2>
+<p class="bodytext">This section describes how to activate Kaspersky Scan Engine in online licensing mode after Kaspersky Scan Engine is installed.</p>
+<p class="bodytext">You can activate Kaspersky Scan Engine on the <a id="h180245" class="englishcrossreferencetemplate" href="179702.htm" target="_self">license settings</a> page of the Kaspersky Scan Engine GUI.</p>
+<p class="bodytext">To activate Kaspersky Scan Engine in online licensing mode, you need an activation code. The activation code is provided to you by your technical account manager (TAM).</p>
+<p class="warningbody">Your computer must be connected to the Internet to activate Kaspersky Scan Engine in online licensing mode. When you use online licensing mode, Kaspersky Scan Engine transfers to Kaspersky information about the installed copy of Kaspersky Scan Engine and activation code. See also the full list of data that is <a id="h180251" class="englishcrossreferencetemplate" href="180002.htm" target="_self">transferred to Kaspersky in online licensing mode</a>.</p>
+<p class="procedureheading">To activate Kaspersky Scan Engine in online licensing mode:</p>
+<ol class="listnumber1"><li class="listnumber1">Create a text file named &quot;license&quot;.</li><li class="listnumber1">Copy your activation code to the newly created file.<p class="attentioncontinue1">Make sure that the format of the activation code is correct. The correct format is XXXXX-XXXXX-XXXXX-XXXXX, where X is a number (0-9) or an uppercase Latin letter (A-Z), excluding &quot;I&quot; and &quot;O&quot;. </p>
+<p class="listcontinue1">The file must not contain any other characters.</p>
+</li><li class="listnumber1">Save the file. </li><li class="listnumber1">Open the configuration file that corresponds to the your working mode:<ul class="listbullet2"><li class="listbullet2">If you are using Kaspersky Scan Engine in HTTP mode, open the <a id="h179927" class="englishcrossreferencetemplate" href="184799.htm" target="_self">kavhttpd.xml configuration file</a>.</li><li class="listbullet2">If you are using Kaspersky Scan Engine in ICAP mode, open the <a id="h180154" class="englishcrossreferencetemplate" href="192989.htm" target="_self">kavicapd.xml configuration file</a>.</li></ul></li><li class="listnumber1">Do one of the following:<ul class="listbullet2"><li class="listbullet2">Copy the license file to the directory specified in the <code class="programcharacter">LicensePath</code> element of the configuration file.<p class="listcontinue2">For a list of the other directories that Kaspersky Scan Engine automatically searches for the license file, see the description of the <code class="programcharacter">LicensePath</code> element:</p>
+<ul class="listbullet3"><li class="listbullet3">In kavhttpd.xml (HTTP mode): DirectorySettings &gt; <a id="h201074" class="englishcrossreferencetemplate" href="201044.htm" target="_self">LicensePath</a>.</li><li class="listbullet3">In kavicapd.xml (ICAP mode): SDKSettings &gt; <a id="h201169" class="englishcrossreferencetemplate" href="201118.htm" target="_self">LicensePath</a>.</li></ul></li><li class="listbullet2">If you want to store the license file in a different directory, specify the path to this directory in the <code class="programcharacter">LicensePath</code> element and copy the appinfo.kli file to that directory. The appinfo.kli file is located in the /bin directory of the distribution kit.</li></ul></li><li class="listnumber1">In the <code class="programcharacter">LicensingMode</code> element of the configuration file, specify <code class="programcharacter">2</code>.</li><li class="listnumber1">Save the configuration file.</li><li class="listnumber1">Restart the Kaspersky Scan Engine service:<ul class="listbullet2"><li class="listbullet2">In HTTP mode, <a id="h193043" class="englishcrossreferencetemplate" href="192981.htm" target="_self">restart the kavhttpd service</a>.</li><li class="listbullet2">In ICAP mode, <a id="h193044" class="englishcrossreferencetemplate" href="192990.htm" target="_self">restart the kavicapd service</a>.</li></ul></li></ol><p class="bodytext">If the activation is successful, Kaspersky Scan Engine will start normally and you will be able to update the anti-virus database. Otherwise Kaspersky Scan Engine will return an error to the command line.</p>
+<p class="bodytext">After successful activation in online licensing mode, the licensing information is synchronized with Kaspersky servers. This synchronization can be used, for example, to change the expiration date for the activation code (thus removing the need for a new online activation) or to change the available functionality.</p>
+<p class="bodytext">This is done automatically once per day. Maximum time without Internet connection is 15 to 30 days.</p>
+<p class="warningbody">In order to synchronize licensing information with Kaspersky servers, your computer must be connected to the Internet.</p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

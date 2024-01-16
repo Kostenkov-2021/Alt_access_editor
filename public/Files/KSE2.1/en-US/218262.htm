@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <title> Reduced anti-malware databases kit usage </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css"/>
+    <link rel="stylesheet" type='text/css' href="styles.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Please enable JavaScript in your browser!</a>
+	</noscript>
+	<div class="cont">
+	<h2 id="t234475" class="heading2">Reduced anti-malware databases kit usage</h2>
+<p class="bodytext">You can use the reduced databases kit instead of the full databases kit. The reduced databases kit is smaller in size than the full kit and takes up less RAM when used. To ensure the same detection rate as when using the full databases kit, you must use the reduced kit together with KSN.</p>
+<p class="introheading">Reduced anti-malware databases kit and KSN</p>
+<p class="bodytext">It is not recommended to use the reduced databases kit without KSN, because the detection rate will be lower than when using the full database kit. If there is no connection to the KSN servers (for example, when access to the Internet becomes unavailable), it is recommended to switch to the full databases kit.</p>
+<p class="bodytext">If you download databases to mirror servers, always update both the reduced and full databases kits, so that the full kit will be up-to-date when Kaspersky Scan Engine switches to it.</p>
+<p class="introheading">Switching to the reduced databases kit by using the built-in functionality of Kaspersky Scan Engine</p>
+<p class="bodytext">The instruction below shows the scenario of switching to the reduced databases kit by using the built-in functionality of Kaspersky Scan Engine.</p>
+<p class="procedureheading">To switch to the reduced databases kit:</p>
+<ol class="listnumber1"><li class="listnumber1">Make sure that the current license supports KSN usage.</li><li class="listnumber1">Enable KSN by using one of the following methods:<ul class="listbullet2"><li class="listbullet2"><code class="programcharacter">KAV_SHT_ENGINE_KSN</code> flag in HTTP mode.</li><li class="listbullet2"><code class="programcharacter">UseKSN</code> parameter of the <code class="programcharacter">KSNSetting</code> section of the <a id="h180154" class="englishcrossreferencetemplate" href="192989.htm" target="_self">ICAP mode configuration file</a> in ICAP mode.<p class="listcontinue2">Make sure that you have read and accepted the End User License Agreement (EULA). You can find the text of the EULA in <code class="programcharacter">/doc/ksn_license.txt</code>. To accept the EULA, the parameter <code class="programcharacter">Settings &gt; EULA &gt; KSN</code> in the <code class="programcharacter">klScanEngineUI.xml</code> configuration file must be set to <code class="programcharacter">accepted</code>.</p>
+</li><li class="listbullet2"><span class="guicharacter">Enable reputation checking</span> toggle switch in the <a id="h182505" class="englishcrossreferencetemplate" href="179699.htm" target="_self">scanning settings</a> of Kaspersky Scan Engine GUI.</li></ul></li><li class="listnumber1">To start using the reduced databases kit, in HTTP and ICAP modes, specify <code class="programcharacter">1</code> for the <code class="programcharacter">UseReducedBases</code> parameter of the <a id="h179927" class="englishcrossreferencetemplate" href="184799.htm" target="_self">kavhttpd.xml</a> and <a id="h180154_2" class="englishcrossreferencetemplate" href="192989.htm" target="_self">kavicapd.xml</a> configuration files. By default, the value is <code class="programcharacter">0</code>.</li><li class="listnumber1">Restart <code class="programcharacter">kavhttpd</code> (in HTTP mode) or <code class="programcharacter">kavicapd</code> (in ICAP mode).</li></ol><p class="attentionbody">Notice that the full databases kit is not removed and remains on the hard drive.</p>
+<p class="introheading">Switching to the full databases kit by using the built-in functionality of Kaspersky Scan Engine</p>
+<p class="bodytext">The scenario below demonstrates how to switch to the full databases kit by using the built-in functionality of Kaspersky Scan Engine.</p>
+<p class="procedureheading">To switch to the full databases kit:</p>
+<ol class="listnumber1"><li class="listnumber1">Set the <code class="programcharacter">UseReducedBases</code> parameter to <code class="programcharacter">0</code> (see <code class="programcharacter">UseReducedBases</code> for <a id="h200662" class="englishcrossreferencetemplate" href="200655.htm" target="_self">HTTP</a> or <a id="h200792" class="englishcrossreferencetemplate" href="200715.htm" target="_self">ICAP</a> mode).</li><li class="listnumber1">Restart <code class="programcharacter">kavhttpd</code> (in HTTP mode) or <code class="programcharacter">kavicapd</code> (in ICAP mode).</li></ol><p class="attentionbody">Notice that the reduced databases kit is not removed and remains on the hard drive.</p>
+<p class="introheading">Switching from the full databases kit to the reduced kit and removing the full databases kit</p>
+<p class="procedureheading">To switch from the full databases kit to the reduced kit, and then remove the full databases kit:</p>
+<ol class="listnumber1"><li class="listnumber1">Perform steps 1 to 4 from subsection &quot;Switching to the reduced databases kit by using the built-in functionality of Kaspersky Scan Engine&quot; (see above).</li><li class="listnumber1">Click <span class="guicharacter">Update from scratch</span> on the <a id="h180278" class="englishcrossreferencetemplate" href="179695.htm" target="_self">Kaspersky Scan Engine dashboard</a>.</li></ol><p class="bodytext">After this, the reduced databases kit is downloaded.</p>
+
+
+	<a href="#" class="bt-home">Page top</a>
+	</div>
+</body>
+
+</html>

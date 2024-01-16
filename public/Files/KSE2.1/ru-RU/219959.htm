@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru-RU" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <title> Использование Kaspersky Scan Engine в режиме ICAP с Dell EMC Isilon </title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MPK6ZG');</script>
+	<!-- End Google Tag Manager -->
+    <script type="text/javascript" src="../langs.js"></script>
+    <script type="text/javascript">
+        !function ( w, d ) {
+            var scriptsPath="/localization/";
+            if(w.location.pathname.match(/title\.htm$/)){scriptsPath="./js/"}d.writeln("\x3Cscript type='text/javascript' src='"+scriptsPath+d.documentElement.lang+".js'>\x3C/script>");
+        }( window, document );
+    </script>	
+    <script type="text/javascript" src="toc.js"></script>
+    
+    <script type="text/javascript" src="aiconverter_result.js"></script>
+    <link rel="stylesheet" type='text/css' href="typography.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="bootstrap.css">
+            <![endif]-->
+            <!--[if lte IE 8]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+            </head>
+
+<body id="who-content" class="no-js">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK6ZG" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<noscript class="no-js__message">
+	<a href="https://support.microsoft.com/en-us/kb/3135465" class="no-js__link">Пожалуйста, включите JavaScript в вашем браузере!</a>
+	</noscript>
+	<div class="cont">
+	<h3 id="t234572" class="heading3">Использование Kaspersky Scan Engine в режиме ICAP с Dell EMC Isilon</h3>
+<p class="bodytext">Вы можете настроить Kaspersky Scan Engine для работы с Dell EMC Isilon. Для удобства этот процесс разделен на несколько этапов.</p>
+<p class="attentionbody">Приведенная ниже инструкция применима к Dell EMC Isilon 9.1. Информацию об интерфейсах других версий см. в документации Dell EMC Isilon.</p>
+<p class="introheading">Шаг 1. Настройка Kaspersky Scan Engine</p>
+<p class="procedureheading">Чтобы настроить Kaspersky Scan Engine: </p>
+<ol class="listnumber1"><li class="listnumber1">Разрешите Kaspersky Scan Engine отправлять код состояния HTTP <code class="programcharacter">204 No Content</code>, выполнив одно из следующих действий:<ul class="listbullet2"><li class="listbullet2">Активируйте переключатель <span class="guicharacter">Send code 204</span> в <a id="h201467" class="englishcrossreferencetemplate" href="179698.htm" target="_self">Kaspersky Scan Engine GUI</a>.</li><li class="listbullet2">Задайте для элемента <code class="programcharacter">Allow204</code> значение <code class="programcharacter">1</code> в <a id="h180154" class="englishcrossreferencetemplate" href="192989.htm" target="_self">файле конфигурации режима ICAP</a>.</li></ul></li><li class="listnumber1"> Включите проверку файлов в режиме RESPMOD, выполнив одно из следующих действий:<ul class="listbullet2"><li class="listbullet2">Установите для объектов, которые необходимо проверить в RESPMOD, значение <span class="guicharacter">Files</span> в <a id="h182505" class="englishcrossreferencetemplate" href="179699.htm" target="_self">Kaspersky Scan Engine GUI</a>.</li><li class="listbullet2">Задайте для элемента <code class="programcharacter">ScanInRespMode</code> значение <code class="programcharacter">Content</code> в <a id="h180154_2" class="englishcrossreferencetemplate" href="192989.htm" target="_self">файле конфигурации режима ICAP</a>.</li></ul></li><li class="listnumber1">Установите в качестве адреса, который Kaspersky Scan Engine будет использовать для обработки ответов в RESPMOD, значение <code class="programcharacter">avscan</code>, выполнив любое из следующих действий:<ul class="listbullet2"><li class="listbullet2">Установите для поля <span class="guicharacter">Response mode address</span> значение <code class="programcharacter">avscan</code> в <a id="h201467_2" class="englishcrossreferencetemplate" href="179698.htm" target="_self">Kaspersky Scan Engine GUI</a>.</li><li class="listbullet2">Задайте для элемента RespModeAddress значение <code class="programcharacter">avscan</code> в <a id="h180154_3" class="englishcrossreferencetemplate" href="192989.htm" target="_self">файле конфигурации режима ICAP</a>.</li></ul></li></ol><p class="introheading">Шаг 2. Настройка Dell EMC Isilon</p>
+<p class="procedureheading">Чтобы настроить Dell EMC Isilon:</p>
+<ol class="listnumber1"><li class="listnumber1">В интерфейсе веб-администрирования Dell OneFS перейдите в раздел <span class="boldcharacter">Data Protection</span> &gt; <span class="boldcharacter">Antivirus</span> &gt; <span class="boldcharacter">ICAP</span>.<p class="picture"><img id="f220098" src="onefs-the-icap-tab.png" class="linkedpngfiletemplate" alt="Вкладка &quot;ICAP&quot; и элементы: Policies, Detected threats, Servers, Settings." vspace="0" hspace="0" align="bottom" border="0"></p> <p class="picturename">Вкладка <span class="boldcharacter">ICAP</span></p> </li><li class="listnumber1">В области <span class="boldcharacter">Servers</span> нажмите <span class="boldcharacter">Add Server</span>.<p class="listcontinue1">Откроется диалоговое окно <span class="boldcharacter">Add ICAP antivirus server</span>.</p> </li><li class="listnumber1">В диалоговом окне <span class="boldcharacter">Add ICAP antivirus server</span> выполните следующие действия.<ol class="listalpha2"><li class="listalpha2">В поле <span class="boldcharacter">Server URL</span> введите адрес Kaspersky Scan Engine: <code class="programcharacter">icap://%KSE_IP%:1344/avscan</code>. Здесь <code class="programcharacter">%KSE_IP%</code> – это IPv4-адрес.</li><li class="listalpha2">В поле <span class="boldcharacter">Server name</span> введите имя сервера, например <code class="programcharacter">KasperskyScanEngine</code>.</li><li class="listalpha2">Нажмите <span class="boldcharacter">Add Server</span>.</li></ol><p class="picture"><img id="f220100" src="onefs-add-icap-antivirus-server.png" class="linkedpngfiletemplate" alt="Диалоговое окно &quot;Add ICAP antivirus server&quot;. URL сервера = icap://hidden IP:1344/avscan, имя сервера = KasperskyScanEngine, установлен флажок Enable this server." vspace="0" hspace="0" align="bottom" border="0"></p> <p class="picturename">Диалоговое окно <span class="boldcharacter">Add ICAP antivirus server</span>.</p> </li><li class="listnumber1">В области <span class="boldcharacter">Settings</span> укажите следующее:<ol class="listalpha2"><li class="listalpha2">Действие при обнаружении. Например, вы можете выбрать <span class="boldcharacter">Attempt to truncate file when threat is found</span>.</li><li class="listalpha2">При необходимости вы можете указать максимальный размер файлов для проверки. Значение по умолчанию: 2 ГБ.</li><li class="listalpha2">При необходимости вы можете указать префиксы путей. <em class="emphasischaracter">Префиксы путей</em> – это пути в файловой системе, которые запускают сканирование при добавлении к ним файлов.</li><li class="listalpha2">При необходимости вы можете указать фильтры для имен объектов. Фильтры для имен объектов определяют объекты, которые следует или не следует проверять в режиме On-Access.</li><li class="listalpha2">При необходимости вы можете включить настройки <span class="boldcharacter">Enable scan of files on open, Enable file access when scanning fails</span> и <span class="boldcharacter">Enable scan of files on closed</span>.</li><li class="listalpha2">При необходимости настройте хранение отчета о проверке.</li><li class="listalpha2">Нажмите <span class="boldcharacter">Submit</span>.</li></ol><p class="picture"><img id="f220101" src="onefs-all-scans.png" class="linkedpngfiletemplate" alt="All scans. Action on detection = Attempt to truncate file when a threat is found, Maximum filescan size = 2 GB. Выбранные настройки сканирования в режиме On-access: Enable scan of files on open, Enable file access when scanning fails, Enable scan of files on close." vspace="0" hspace="0" align="bottom" border="0"></p> <p class="picturename">Диалоговое окно <span class="boldcharacter">All scans</span></p> </li><li class="listnumber1">Нажмите <span class="boldcharacter">Switch antivirus service</span>.</li><li class="listnumber1">Включите <span class="boldcharacter">Switch ICAP antivirus</span>.</li><li class="listnumber1">Нажмите <span class="boldcharacter">Confirm</span>.</li></ol><p class="introheading">Расписание сканирования</p>
+<p class="bodytext">Вы можете настроить расписание сканирования для регулярной проверки хранилища.</p>
+<p class="procedureheading">Чтобы настроить расписание сканирования:</p>
+<ol class="listnumber1"><li class="listnumber1">В интерфейсе веб-администрирования Dell OneFS перейдите в раздел <span class="boldcharacter">Data protection</span> &gt; <span class="boldcharacter">Antivirus</span> &gt; <span class="boldcharacter">ICAP</span> &gt; <span class="boldcharacter">Policies</span>.</li><li class="listnumber1">Нажмите на кнопку <span class="boldcharacter">Create an antivirus policy</span>.<p class="listcontinue1">Откроется диалоговое окно <span class="boldcharacter">Create a policy</span>.</p> <p class="picture"><img id="f220103" src="onefs-create-a-policy.png" class="linkedpngfiletemplate" alt="Диалоговое окно &quot;Create a policy&quot;. Антивирусная политика включена. Policy name = ScanEngineRegularScan, Paths = /ifs/home/ftp/incoming, Recursion depth = Full recursion. Impact Policy = DEFAULT, Scheduled daily at 12:00 AM." vspace="0" hspace="0" align="bottom" border="0"></p> <p class="picturename">Диалоговое окно <span class="boldcharacter">Create a policy</span>.</p> </li><li class="listnumber1">Установите флажок <span class="boldcharacter">Enable antivirus policy</span>.</li><li class="listnumber1">В текстовом поле <span class="boldcharacter">Policy name</span> укажите название политики.</li><li class="listnumber1">Введите описание политики в текстовое поле <span class="boldcharacter">Description</span>.</li><li class="listnumber1">Добавьте пути к директориям, которые вы хотите просканировать.</li><li class="listnumber1">При необходимости вы можете установить ограничение на глубину рекурсии в разделе <span class="boldcharacter">Recursion depth</span> (не рекомендуется).</li><li class="listnumber1">Укажите параметры политики воздействия:<ol class="listalpha2"><li class="listalpha2">При необходимости вы можете выбрать <span class="boldcharacter">Enable force run of policy regardless of impact policy</span> (не рекомендуется). </li><li class="listalpha2">Выберите политику воздействия <code class="programcharacter">DEFAULT</code> из раскрывающегося списка <span class="boldcharacter">Impact Policy</span>.</li></ol></li><li class="listnumber1">Выберите вариант <span class="boldcharacter">Scheduled</span>.</li><li class="listnumber1">Укажите параметры расписания:<ol class="listalpha2"><li class="listalpha2">Выберите интервал запуска политики.</li><li class="listalpha2">Настройте политику для запуска в ожидаемое время.</li></ol></li><li class="listnumber1">Нажмите <span class="boldcharacter">Submit</span>.</li></ol><p class="introheading">Просмотр обнаруженных объектов</p>
+<p class="procedureheading">Чтобы просмотреть обнаруженные объекты, необходимо сделать следующее:</p>
+<p class="bodytextindent">В интерфейсе веб-администрирования Dell OneFS перейдите в раздел <span class="boldcharacter">Data Protection</span> &gt; <span class="boldcharacter">Antivirus</span> &gt; <span class="boldcharacter">ICAP</span> &gt; <span class="boldcharacter">Detected Threats</span>.</p>
+<p class="picture"><img id="f220102" src="onefs-detected-objects.png" class="linkedpngfiletemplate" alt="Таблица обнаруженных объектов. Столбцы: Name, Path, Remediation, Policy, Detected (date and time), Actions." vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="picturename">Список обнаруженных объектов</p>
+<p class="bodytextindent">Это список файлов, которые были помещены в карантин или содержимое которых было удалено, а также имя обнаруженного объекта, путь к файлу, метод лечения, политика и метка времени.</p>
+<p class="bodytextindent">Нажмите на кнопку <span class="boldcharacter">View details</span> рядом с обнаруженным объектом, чтобы просмотреть подробную информацию.</p>
+<p class="procedureheading">Чтобы восстановить файл из списка и разрешить пользователю доступ к нему:</p>
+<ol class="listnumber1"><li class="listnumber1">Нажмите на раскрывающийся список <span class="boldcharacter">More</span>. </li><li class="listnumber1">Выберите <span class="boldcharacter">Release file</span>.</li></ol><p class="introheading">Рекомендации</p>
+<p class="bodytext">Необходимо настроить как минимум одну копию Kaspersky Scan Engine, чтобы обеспечить проверку на вирусы для каждого кластера Isilon. В стандартной среде для работы с NAS-сервером требуется как минимум два экземпляра Kaspersky Scan Engine. Наличие только одного экземпляра может вызвать отказ в доступе к файлу, и в этом случае экземпляр не отвечает. Кластеры Isilon автоматически балансируют нагрузку между несколькими экземплярами Kaspersky Scan Engine.</p>
+<p class="warningbody">Все экземпляры Kaspersky Scan Engine, зарегистрированные в кластере Isilon, должны иметь одинаковую конфигурацию.</p>
+
+
+	<a href="#" class="bt-home">В начало страницы</a>
+	</div>
+</body>
+
+</html>
