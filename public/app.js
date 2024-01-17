@@ -191,7 +191,8 @@ function gatherUpdatedDataFromTable(table, filePath) {
 return Array.from(table.querySelectorAll('tr')).slice(1).map(row => {
 const imgName = row.cells[0].textContent;
 const newAltText = row.cells[3].querySelector('textarea').value;
-return { filePath, imgName, newAltText };
+const imageIndex = row.cells[3].querySelector('textarea').dataset.index;
+return { filePath, imgName, newAltText, index: imageIndex };
 });
 }
 function getRecommendation(altText) {
