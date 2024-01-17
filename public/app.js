@@ -114,7 +114,7 @@ function displayHtmlFiles(data) {
 function createTable() {
     const table = document.createElement('table');
     const tableHeader = document.createElement('thead');
-    const headerRow = ['Название изображения', 'Текущий alt-текст', 'Рекомендации', 'Новый alt-текст']
+    const headerRow = ['Изображение', 'Текущий alt-текст', 'Рекомендации', 'Новый alt-текст']
         .map(text => {
             const th = document.createElement('th');
             th.textContent = text;
@@ -151,6 +151,8 @@ const newAltTextarea = document.createElement('textarea');
 newAltTextarea.dataset.filepath = filePath;
 newAltTextarea.dataset.index = index;
 newAltTextarea.value = img.alt;
+newAltTextarea.cols = 40;
+newAltTextarea.rows = 4;
 tdNewAlt.appendChild(newAltTextarea);
 
 tr.appendChild(tdName);
@@ -196,24 +198,24 @@ function getRecommendation(altText) {
     const recommendations = [];
 
     if (altText.length > 255) {
-        recommendations.push('Длина alt-текста превышает 255 символов. Рекомендуется сократить.');
+        recommendations.push('Длина alt-текста превышает 255 символов. Рекомендуется сократить');
     } else if (altText.length > 125) {
-        recommendations.push('Длина alt-текста более 125 символов. Рекомендуется сделать его более лаконичным.');
+        recommendations.push('Длина alt-текста более 125 символов. Рекомендуется сократить');
     }
 
     if (!altText.endsWith('.')) {
-        recommendations.push('В конце alt-текста рекомендуется ставить точку.');
+        recommendations.push('В конце alt-текста рекомендуется ставить точку');
     }
 
     const wordCount = altText.split(/\s+/).length;
     if (wordCount < 3) {
-        recommendations.push('Кажется, в alt-тексте менее 3 слов. Рекомендуется расширить описание.');
+        recommendations.push('Кажется, в alt-тексте менее 3 слов. Рекомендуется расширить описание');
     } else if (wordCount > 15) {
-        recommendations.push('Кажется, в alt-тексте более 15 слов. Рекомендуется сделать описание более кратким.');
+        recommendations.push('Кажется, в alt-тексте более 15 слов. Рекомендуется сократить');
     }
 
     if (/^(рисунок\|изображение\|картинка)\b/.test(altText.toLowerCase())) {
-        recommendations.push('Не рекомендуется начинать alt-текст со слов "рисунок", "изображение" или "картинка".');
+        recommendations.push('Не рекомендуется начинать alt-текст со слов "рисунок", "изображение" или "картинка"');
     }
 
 
